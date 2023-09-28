@@ -1,0 +1,36 @@
+# Dependencies
+/node_modules
+
+# Build directory (depends on the tool you're using)
+/dist
+/build
+
+# Environment settings
+.env
+.env.local
+.env.*.local
+
+# IDEs and Editors
+/.vscode
+.idea/
+*.iml
+*.sw*
+
+# OS generated
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Cache and temp folders
+.cache/
+.tmp/
+.temp/
+
+# Other
+*.log
+
+.history/

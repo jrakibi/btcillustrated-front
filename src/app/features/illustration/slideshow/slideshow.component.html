@@ -1,0 +1,229 @@
+<app-header [headerOptions]="headerOptions"></app-header>
+<div class="container">
+  <div class="main-content">
+    <div class="gallery-wrapper">
+      <div class="gallery-summary">
+        <h1 style="text-align: center">
+          <a target="_blank" class="title">{{ illustration?.title }}</a>
+          <a target="_blank" class="description">{{ illustration?.details }}</a>
+        </h1>
+
+        <div class="social-icons">
+          <ul>
+            <li>
+              <a
+                aria-label="Twitter"
+                href="https://twitter.com/BTCillustrated"
+                target="_blank"
+                class="icon-wrapper"
+              >
+                <svg
+                  class="icon-svg"
+                  xmlns="https://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                >
+                  <path
+                    d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                aria-label="GitHub"
+                href="https://github.com/jrakibi/BTCillustrated/"
+                target="_blank"
+                class="icon-wrapper"
+              >
+                <i class="fa fa-github"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="gallery-look-number">
+          <a
+            class="arrow left-arrow"
+            aria-label="Previous look"
+            (click)="previousImage()"
+          >
+            <svg
+              class="icon icon-arrow"
+              focusable="false"
+              viewBox="0 0 32 32"
+              width="32"
+              height="32"
+              xmlns="https://www.w3.org/2000/svg"
+            >
+              <title>Arrow</title>
+              <path
+                d="M22.33 15.5l-6.924-6.925.707-.707L24.245 16l-8.132 8.132-.707-.707 6.925-6.925H8v-1z"
+                fill-rule="nonzero"
+              ></path>
+            </svg>
+          </a>
+          SLIDE {{ currentImageIndex + 1 }} /
+          {{ illustration.imagePaths.length }}
+          <a
+            class="arrow right-arrow"
+            aria-label="Next look"
+            (click)="nextImage()"
+          >
+            <svg
+              class="icon icon-arrow"
+              focusable="false"
+              viewBox="0 0 32 32"
+              width="32"
+              height="32"
+              xmlns="https://www.w3.org/2000/svg"
+            >
+              <title>Arrow</title>
+              <path
+                d="M22.33 15.5l-6.924-6.925.707-.707L24.245 16l-8.132 8.132-.707-.707 6.925-6.925H8v-1z"
+                fill-rule="nonzero"
+              ></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="image-collection">
+        <div class="image-container">
+          <div [ngClass]="imageCollection[currentImageIndex]?.loaded ? 'image-wrapper' : 'image-wrapper-placehodler'">
+            <div class="ph-item" *ngIf="!imageCollection[currentImageIndex]?.loaded">
+              <div class="ph-col-12">
+                <div class="ph-picture"></div>
+                <div class="ph-row">
+                </div>
+              </div>
+            </div>
+            <!-- Actual image -->
+            <img
+              [src]="imageCollection[currentImageIndex]?.src"
+              [alt]="imageCollection[currentImageIndex]?.alt"
+              (load)="onLoadImage(imageCollection[currentImageIndex])"
+              [hidden]="!imageCollection[currentImageIndex]?.loaded"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="side-video-container">
+        <img
+          src="assets/btcIllustrated/slideshow/askGpt.gif"
+          alt="Your GIF Description"
+        />
+        <button class="ask-gpt-btn" *ngIf="!showGPTInput" (click)="toggleGPT()">
+          Ask GPT
+        </button>
+
+        <div class="gpt-input-section" *ngIf="showGPTInput">
+          <div class="input-wrapper">
+            <!-- Left "Magic" Icon -->
+            <i class="fa fa-magic"></i>
+
+            <!-- Input with Placeholder -->
+            <input
+              placeholder="Type your question for GPT:"
+              [(ngModel)]="gptQuestion"
+            />
+
+            <!-- Right "Send" Icon -->
+            <i class="fa fa-send" (click)="askGPT()"></i>
+          </div>
+          <div *ngIf="isLoading" class="loader"></div>
+
+          <p>{{ gptResponse }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Button & Collection Div at the bottom of the window -->
+<div class="collection-container" [ngClass]="{ expanded: showCollection }">
+  <button
+    mat-raised-button
+    class="explore-btn"
+    *ngIf="!showCollection"
+    (click)="toggleCollection()"
+  >
+    <!-- Filmstrip icon -->
+    <svg
+      class="icon icon-filmstrip-collapsed"
+      focusable="false"
+      width="40"
+      height="40"
+      viewBox="0 0 40 40"
+      fill="none"
+      xmlns="https://www.w3.org/2000/svg"
+    >
+      <title>Filmstrip</title>
+      <rect
+        x="10"
+        y="10"
+        width="12"
+        height="20"
+        stroke="white"
+        stroke-width="1.5"
+      ></rect>
+      <path
+        d="M26 10V30"
+        stroke="white"
+        stroke-width="1.5"
+        stroke-linecap="square"
+      ></path>
+      <path
+        d="M30 10V30"
+        stroke="white"
+        stroke-width="1.5"
+        stroke-linecap="square"
+      ></path>
+    </svg>
+    EXPLORE COLLECTION
+  </button>
+
+  <div class="collection-content" *ngIf="showCollection">
+    <!-- Hide Collection Button -->
+    <div class="hide-collection-header">
+      <button
+        class="hide-collection-btn"
+        mat-raised-button
+        (click)="toggleCollection()"
+      >
+        <i class="fa fa-angle-down"></i> HIDE COLLECTION
+      </button>
+
+      <div class="scroll-buttons">
+        <button class="scroll-btn scroll-left" (click)="scrollImages('left')">
+          <i class="fa fa-chevron-left"></i>
+        </button>
+        <button class="scroll-btn scroll-right" (click)="scrollImages('right')">
+          <i class="fa fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Image List -->
+    <div class="image-list">
+      <ng-container
+        *ngFor="let image of imageCollection; let i = index"
+      >
+        <div class="ph-item" *ngIf="!image.loaded">
+          <div class="ph-col-12">
+            <div class="ph-picture"></div>
+            <div class="ph-row">
+            </div>
+          </div>
+        </div>
+
+        <!-- Actual image -->
+        <img
+          [src]="image.src"
+          alt="Collection Image"
+          (click)="selectImage(i)"
+          (load)="onLoadImage(image)"
+          [hidden]="!image.loaded"
+        />
+      </ng-container>
+    </div>
+  </div>
+</div>

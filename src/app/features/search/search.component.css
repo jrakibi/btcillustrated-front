@@ -1,0 +1,94 @@
+.logo {
+  font-size: 4em;
+  font-weight: bold;
+  margin: 2px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.search-item input {
+  width: 100%;
+  padding: 16px;
+  padding-left: 60px;
+  background: #000000 ;
+  color: white;
+  border-top: 1px solid rgb(255, 255, 255);
+  border-bottom: 1px solid rgb(255, 255, 255);
+  border-left: none;
+  border-right: none;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 18px;
+  outline: none;
+}
+
+.search-item {
+  margin-top: 30px;
+}
+
+.cards-grid {
+  display: flex;
+  flex-wrap: wrap; /* This allows the items to wrap onto the next row */
+  margin-top: 50px;
+}
+
+.card {
+  flex: 0 0 calc(12.5%); /* For 6 cards per row */
+  border: 1px solid #ffffff;
+  border-left: 0px;
+  background: #000000 ; /* Black background */
+  color: white; /* White text */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0; /* Square corners */
+}
+
+.card-image {
+  width: 100%;
+}
+
+.card-title {
+  text-align: center;
+  width: 100%;
+  background: #000000 ;
+  padding: 25px 10px;
+  font-size: 16px;
+  border-top: 1px solid #fff;
+}
+
+
+.card .custom-link {
+  text-decoration: none !important; /* Remove underline */
+  color: inherit !important; /* Inherit text color so it doesn't use browser default blue */
+  cursor: pointer; /* Hand icon on hover */
+  width: -webkit-fill-available;
+}
+
+.card .custom-link:hover {
+  /* You can add styles for hover state here if you want */
+  text-decoration: none !important; /* Make sure underline remains removed */
+}
+
+
+.loading-image {
+  background-color: #f0f0f0;  /* Light gray background */
+  display: block;
+  width: 100%;
+  height: 200px;  /* You can adjust the height based on your needs */
+}
+
+
+
+
+.ph-item {
+  background-color: unset;
+  border: 1px solid #e6e6e6;
+}
+
+
+.ph-picture {
+  background-color: #ced4da00;
+  height: 120px;
+  width: 100%;
+}

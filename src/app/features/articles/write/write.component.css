@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #f9f9f9;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+  }
+  
+  .logo {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .page-title {
+    font-size: 1.5em;
+    color: #ffffff;
+  }
+  
+  .input-article-name {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .article-content {
+    margin-top: 20px;
+    color: #000000 ;
+  }
+  
+  .editor {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .save-btn:hover {
+    background-color: #555;
+  }
+  
+
+  .article-name-save {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 20px 0px;
+  }
+  
+  .input-article-name {
+    flex-grow: 1;  /* It will take the remaining space */
+    margin-right: 20px; /* Adds some space between the input and the button */
+  }
+  
+  .save-btn {
+    cursor: pointer;
+    background-color: #000000 ;
+    color: #fff;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 20%;
+  }
+
+  ::ng-deep .ql-container {
+    height: 300px !important;
+}

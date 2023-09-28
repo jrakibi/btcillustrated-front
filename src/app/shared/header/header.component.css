@@ -1,0 +1,324 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.img-container {
+  background-image: url(https://images.rawpixel.com/image_1000/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjg4Mi1rdWwtMzQuanBn.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card-container-clicked .logo {
+  border-bottom: 1px solid #000000 ;
+  padding-bottom: 70px; 
+  color: #000000 ;
+}
+
+.navbar {
+  background: none;
+  margin: 0px 2px 20px 2px;
+}
+
+.navbar .nav-link {
+  color: white;
+  text-transform: uppercase;
+  font-size: 17px;
+  font-weight: 100;
+  cursor: pointer;
+  
+}
+
+.navbar .nav-link:hover {
+  color: #ccc;
+}
+
+.nav-item {
+  margin:  0px 20px 0px 0px;
+}
+
+.card-container-clicked .navbar .nav-link {
+  color: #000000 ;
+}
+
+.navbar .nav-link-clicked {
+  font-weight: bold;
+}
+
+.additional-section {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.additional-item {
+  border: 1px solid white;
+  padding: 5px;
+  color: white;
+  margin: 5px;
+  font-size: 15px;
+  width: fit-content;
+
+}
+
+.additional-item>a {
+  color: #000000 ;
+  text-decoration: none;
+}
+
+.card-container-clicked .additional-item {
+  border: 1px solid #000000 ;
+  color: #000000 ;
+}
+
+.centered-image {
+  display: block;
+  width: 44%;
+  max-width: 100%;
+  margin: 166px 350px;
+}
+
+::ng-deep .navbar-expand-lg {
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.view-all {
+  width: fit-content;
+  background: yellow;
+}
+
+.search-container {
+  padding: 10px;
+}
+
+.search-input {
+  width: 300px;
+  background: #000000 ;
+  color: white;
+  padding: 5px;
+  border: 1px solid white;
+  font-size: 16px;
+  text-align: end;
+  text-transform: uppercase;
+  outline: none;
+  padding-right: 20px;
+}
+
+.content {
+  position: relative;
+  margin-top: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.layout-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000000 ;
+  padding: 30px 30px;
+  position: relative; /* Act as a positioning reference */
+  z-index: 1; /* Ensure the header stays on top */
+  height: 60px; /* Fix the height */
+  margin-bottom: 100px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white; /* To make the SVG icon visible against the #000000  background */
+  margin: 0; /* Adjust as needed */
+
+}
+
+.icon {
+  fill: white; /* This will make the SVG path white */
+}
+
+.logo {
+  font-family: 'Zara';
+  font-size: 1.6em;
+  font-weight: bold;
+  margin: 2px;
+  text-align: left;
+  cursor: pointer;
+  padding-bottom: 0px;
+  color: white; /* Make the text visible on a #000000  background */
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  margin: 0 15px;
+  cursor: pointer;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-link:hover, .nav-link-clicked {
+  color: yellow;
+}
+
+/* .card-container {
+  border: none;
+  transition: 0.3s ease;
+  width: 30%;
+  margin-left: 20px; 
+
+
+} */
+
+.card-container {
+  position: initial;
+  top: 100%; /* Start right below the header */
+  left: 0; /* Align to the left edge of the header */
+  border: none;
+  transition: 0.3s ease;
+  width: 30%;
+  z-index: 0; /* Ensure it's below the header */
+}
+
+/* .card-container-clicked {
+  border: 1px solid #00BFFF;
+  background-color: white;
+  color: #000000 ;
+  display: none;
+  flex-direction: column;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+} */
+
+.card-container-clicked {
+  border: 1px solid #00BFFF;
+  background-color: white;
+  color: #000000 ;
+  flex-direction: column;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  margin: auto;
+}
+
+.header-links {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  margin-left: 20px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.link:hover {
+  color: yellow;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.slide-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Make it span the entire width of the card-container */
+  gap: 30px; /* Provides spacing between links */
+}
+
+
+.slide-link {
+  text-transform: uppercase;
+  font-family: VogueAvantGarde, helvetica, sans-serif;
+  font-feature-settings: normal;
+  font-style: normal;
+  letter-spacing: 0.127811em;
+  line-break: auto;
+  line-height: 1.13615em;
+  font-size: 13px;
+  font-weight: 600;
+  overflow-wrap: normal;
+  border: none;
+  min-width: auto;
+  text-decoration: none;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+
+.slide-link:hover {
+  color: rgba(255, 255, 255, 0.8); /* Increase opacity on hover */
+}
+
+.active-link {
+  color: #fff; /* Set color of the active link to white */
+}
+
+
+.icon-btn, .card-container-slideshow, .header-links {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-container-slideshow {
+  position: initial;
+  top: 100%; /* Start right below the header */
+  left: 0; /* Align to the left edge of the header */
+  border: none;
+  transition: 0.3s ease;
+  width: 30%;
+  z-index: 0; /* Ensure it's below the header */
+}
+
+
+
+.icon-btn {
+  justify-content: flex-start;
+}
+
+.header-links {
+  justify-content: flex-end;
+}

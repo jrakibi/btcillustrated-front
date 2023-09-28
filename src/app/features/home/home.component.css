@@ -1,0 +1,151 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.img-container {
+  /* background-image: url('https://images.rawpixel.com/image_1000/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjg4Mi1rdWwtMzQuanBn.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; */
+
+  background-image: url(https://images.rawpixel.com/image_1000/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjg4Mi1rdWwtMzQuanBn.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card-container {
+  border: none;
+  transition: 0.3s ease;
+  position: absolute;
+  width: 40%; /* Reduced width */
+  left: 0; /* Align to left */
+  top: 0;
+  z-index: 2;
+}
+
+.card-container-clicked {
+  border: 1px solid #00BFFF;
+  background-color: white;
+  color: black;
+  padding: 20px;
+}
+
+.logo {
+  font-family: 'Zara';
+  font-size: 2.5em;
+  font-weight: bold;
+  margin: 2px;
+  text-align: left;
+  cursor: pointer;
+  padding-bottom: 0px;
+}
+
+.card-container-clicked .logo {
+  border-bottom: 1px solid black;
+  padding-bottom: 70px; 
+}
+.card-container-clicked .logo {
+  border-bottom: 1px solid black;
+}
+
+.navbar {
+  background: none;
+  margin: 0px 2px 20px 2px;
+}
+
+.navbar .nav-link {
+  color: white;
+  text-transform: uppercase;
+  font-size: 17px;
+  font-weight: 100;
+  cursor: pointer;
+  
+}
+
+.navbar .nav-link:hover {
+  color: #ccc;
+}
+
+.nav-item {
+  margin:  0px 20px 0px 0px;
+}
+
+.card-container-clicked .navbar .nav-link {
+  color: black;
+}
+
+.navbar .nav-link-clicked {
+  font-weight: bold;
+}
+
+.additional-section {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.additional-item {
+  border: 1px solid white;
+  padding: 5px;
+  color: white;
+  margin: 5px;
+  font-size: 15px;
+  width: fit-content;
+
+}
+
+.additional-item>a {
+  color: black;
+  text-decoration: none;
+}
+
+.card-container-clicked .additional-item {
+  border: 1px solid black;
+  color: black;
+}
+
+.centered-image {
+  display: block;
+  width: 44%;
+  max-width: 100%;
+  margin: 166px 350px;
+}
+
+::ng-deep .navbar-expand-lg {
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.view-all {
+  width: fit-content;
+  background: yellow;
+}
+
+.search-container {
+  position: absolute;
+  right: 0; /* Align to the right */
+  top: 0; /* Align to the top */
+  padding: 10px;
+}
+
+.search-input {
+  width: 400px;
+  background: black;
+  color: white;
+  padding: 5px;
+  border: 1px solid white;
+  font-size: 16px;
+  text-align: end;
+  text-transform: uppercase;
+  outline: none;
+  padding-right: 20px;
+}
+
+.content {
+  position: relative;
+  margin-top: 100px;
+}

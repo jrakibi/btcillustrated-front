@@ -1,0 +1,37 @@
+<app-header></app-header>
+<div class="search-item">
+    <input
+    class=""
+    (input)="onSearch($event.target.value)" 
+    placeholder="Search for an illustration, article ..."
+    aria-autocomplete="list"
+    autocomplete="off"
+    value=""
+  />
+</div>
+
+<div class="cards-grid">
+    <div *ngFor="let illustration of illustrations" class="card">
+        <a [routerLink]="['/illustration', illustration.id]" class="custom-link">
+            <!-- Placeholder container -->
+            <div class="ph-item" *ngIf="!illustration.thumbnailLoaded">
+                <div class="ph-col-12">
+                    <div class="ph-picture"></div>
+                    <div class="ph-row">
+                        <!-- Modify to suit your look -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Actual image -->
+            <img [src]="illustration.thumbnailImage" 
+                 alt="{{ illustration.title }}" 
+                 class="card-image" 
+                 (load)="onLoadImage(illustration)" 
+                 [hidden]="!illustration.thumbnailLoaded">
+
+            <!-- Title -->
+            <div class="card-title">{{ illustration.title }}</div>
+        </a>
+    </div>
+</div>

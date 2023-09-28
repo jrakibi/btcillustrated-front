@@ -1,0 +1,19 @@
+<app-header></app-header>
+<div class="container">
+  <div *ngIf="selectedArticleTitle && !fullListVisible" class="article-content">
+    <h2>{{selectedArticleTitle}}</h2>
+
+    <div class="article-meta">
+      <div class="author-info">
+          <img src="https://pbs.twimg.com/profile_images/1657093049497837573/R1Q-ePUV_400x400.jpg" alt="Author Image" class="author-img">
+          <a href="https://twitter.com/jrakibi" target="_blank" rel="noopener noreferrer" class="author-name">Jamal ERRAKIBI</a>
+      </div>
+      <span class="reading-time">{{readingTime}} min read</span>
+  </div>
+  
+    <div [innerHTML]="articleContent"></div>
+  </div>
+  <img *ngIf="!selectedArticleTitle" src="assets/article3.png" alt="Centered Image">
+  <img *ngIf="showHeartGif" src="assets/animations/gif/heart.gif" class="heart-gif visible" alt="Animated Heart">
+
+</div>

@@ -1,0 +1,118 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 20px 11%;
+  box-sizing: border-box;
+}
+
+.article-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 50px 0;
+  color: #ffffff;
+}
+
+.article-content h2 {
+  font-size: 3em;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: center;
+  transition: color 0.3s;
+  margin-bottom: 25px;
+}
+
+.article-content h2:hover {
+  color: #aaa;
+}
+
+.article-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the meta content */
+  width: 80%;
+  margin-bottom: 30px;
+  font-size: 0.9em;
+  border-top: 1px solid #ccc; /* Top border */
+  border-bottom: 1px solid #ccc; /* Bottom border */
+  padding: 10px 0; /* Some spacing inside borders */
+  margin-bottom: 40px;
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+  margin-right: 20px; /* A little spacing between author and other meta info */
+}
+
+.author-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.article-content p {
+  font-size: 1.2em;
+  line-height: 1.7;
+  max-width: 800px;
+  text-align: justify;
+}
+
+.centered-image {
+  display: block;
+  width: 80%;
+  margin: 50px auto;
+  border-radius: 8px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+:host::ng-deep .article-content>div {
+  width: 90%;
+}
+
+:host::ng-deep p {
+  font-size: 1.125rem;
+}
+
+.separator-line {
+  width: 80%;
+  margin: 20px auto;
+  border: 0;
+  height: 1px;
+  background-color: #ccc;
+}
+
+
+.heart-gif {
+  position: fixed;
+  right: 10%; 
+  top: 30%;
+  width: 60px;
+  opacity: 0; /* Start with the gif hidden */
+  transition: opacity 0.3s; /* Smooth transition */
+  visibility: hidden; /* To ensure it doesn't block any elements when hidden */
+}
+
+.heart-gif.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.author-name:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.author-name {
+  color: #ffffff; /* Set the default color to white */
+  text-decoration: none; /* Remove underline */
+}
+
+:host ::ng-deep a {
+  color: unset;
+}

@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.css";
+@import url("https://unpkg.com/placeholder-loading/dist/css/placeholder-loading.min.css");
+
+@font-face {
+    font-family: 'Zara';
+    src: url('./assets/fonts/Helvetica/Helvetica\ NeueLTW0693BlkExtObl.ttf') format('truetype');
+    /* Add other formats like woff or woff2 if you have them */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Zara Light';
+    src: url('./assets/fonts/Helvetica/Helvetica-Light.ttf') format('truetype');
+    /* Add other formats like woff or woff2 if you have them */
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    background-color: #000000;
+    color: white;
+    font-family: 'Zara Light', sans-serif;
+}
+

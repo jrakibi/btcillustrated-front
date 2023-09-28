@@ -1,0 +1,38 @@
+.modal-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-container.active {
+  display: flex;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+.close-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.course-form {
+  background-color: #fff;
+  padding: 2em;
+}
+
+.instructors-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Adjust for the number of columns you want */
+  gap: 1em;
+}
