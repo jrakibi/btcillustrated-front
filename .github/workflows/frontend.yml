@@ -13,6 +13,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.16.0'
+
+      - name: Install specific npm version
+        run: npm install -g npm@8.11.0
+        
       - name: Build Angular Project
         run: |
           cd ./
