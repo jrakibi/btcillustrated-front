@@ -29,7 +29,7 @@ Welcome to `Bitcoin Illustrated`, an interactive platform dedicated to teaching,
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome. Feel free to check [issues page](https://github.com/jrakibi/btcillustrated-web/issues) if you want to contribute.
+Contributions, issues, and feature requests are welcome. Feel free to check [issues page](https://github.com/jrakibi/btcillustrated-front/issues) if you want to contribute.
 
 ## Licensing
 All content here is free for non-commercial use. Remember to give appropriate attribution as outlined. For a deep dive into the licensing terms, especially on commercial usage, jump over to the [LICENSE](./LICENSE) file.
