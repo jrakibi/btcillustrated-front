@@ -21,11 +21,13 @@ jobs:
       - name: Install specific npm version
         run: npm install -g npm@8.11.0
         
+      - name: Install Dependencies
+        run: |
+          npm install --force
+
       - name: Build Angular Project
         run: |
-          cd ./
-          npm install --force # Install dependencies
-          ng build --prod  # Build your Angular app for production
+          npx ng build --prod
 
       - name: Configure AWS CLI
         run: |
