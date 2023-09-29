@@ -16,7 +16,7 @@ jobs:
       - name: Build Angular Project
         run: |
           cd ./
-          npm install  # Install dependencies
+          npm install --force # Install dependencies
           ng build --prod  # Build your Angular app for production
 
       - name: Configure AWS CLI
