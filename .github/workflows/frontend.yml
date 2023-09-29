@@ -31,10 +31,9 @@ jobs:
 
       - name: Configure AWS CLI
         run: |
-          # Install AWS CLI
           curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
           unzip awscliv2.zip
-          sudo ./aws/install
+          sudo ./aws/install --update
 
       - name: Sync Artifacts to S3
         run: |
