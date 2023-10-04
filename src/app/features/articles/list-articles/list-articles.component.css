@@ -103,7 +103,6 @@ h1 {
 
 .video-container {
     height: 400px;
-    z-index: -1;  /* This makes the video sit behind other elements */
     position: relative; /* Ensuring it's positioned so z-index takes effect */
 }
 

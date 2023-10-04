@@ -22,7 +22,6 @@
   width: 40%; /* Reduced width */
   left: 0; /* Align to left */
   top: 0;
-  z-index: 2;
 }
 
 .card-container-clicked {
