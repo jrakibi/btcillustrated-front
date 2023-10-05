@@ -155,7 +155,7 @@ export class SlideShowComponent {
   }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(LnurlPayDialogComponent, { width: '250px' });
+    const dialogRef = this.dialog.open(LnurlPayDialogComponent, { width: '600px' });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed', result);

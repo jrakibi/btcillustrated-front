@@ -51,8 +51,8 @@ export class LnurlPayDialogComponent implements OnInit  {
   async ngOnInit() {
     this.profile = this.data?.profile
     this.profile = {
-      lud06: "",
-      lud16: ""
+      lud16: "globaltadpole21@walletofsatoshi.com",
+      // lud06: "lnurl1dp68gurn8ghj7ampd3kx2ar0veekzar0wd5xjtnrdakj7tnhv4kxctttdehhwm30d3h82unvwqhkwmr0vfskcarpv3cx7mr9xgcs0q2ec0"
     }
     this.sendZapForm = this.formBuilder.group({
       amount: ['', [Validators.required]],
@@ -98,6 +98,7 @@ export class LnurlPayDialogComponent implements OnInit  {
   }
 
   async onSubmit() {
+    debugger
     if (this.sendZapForm.valid) {
       let comment = this.sendZapForm.get('comment')?.value
       let amount = this.sendZapForm.get('amount')?.value

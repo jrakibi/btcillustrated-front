@@ -20,7 +20,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
-// import { QRCodeModule } from 'angularx-qrcode';
+import { QRCodeModule } from 'angularx-qrcode';
 
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
@@ -44,7 +44,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     HttpClientModule,
     SharedModule,
     ReactiveFormsModule,
-    // QRCodeModule,
+    QRCodeModule,
     MatTooltipModule,
     MatFormFieldModule,
     MatIconModule,
@@ -54,7 +54,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatButtonModule,
     MatDialogModule
   ],
-  // schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   entryComponents: [LnurlPayDialogComponent],
 })
 export class IllustrationModule { }
