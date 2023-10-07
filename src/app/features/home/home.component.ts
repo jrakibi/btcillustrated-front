@@ -32,9 +32,6 @@ export class HomeComponent {
     if (link === 'Illustrations') {
       this.getIllustrations(); 
     }
-    if (link === 'About') {
-      this.getIllustrations(); 
-    }
   }
 
   getArticles() {

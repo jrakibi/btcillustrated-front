@@ -4,12 +4,8 @@
   height: 100%;
 }
 .img-container {
-  /* background-image: url('https://images.rawpixel.com/image_1000/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjg4Mi1rdWwtMzQuanBn.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center; */
-
-  background-image: url(https://images.rawpixel.com/image_1000/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjg4Mi1rdWwtMzQuanBn.jpg);
+  /* background-image: url(https://images.rawpixel.com/image_1000/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjg4Mi1rdWwtMzQuanBn.jpg); */
+  background-image: url(https://images.unsplash.com/photo-1653163061406-730a0df077eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1992&q=80);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -148,4 +144,5 @@
 .content {
   position: relative;
   margin-top: 100px;
+  height: 100vh;
 }

@@ -15,14 +15,14 @@
                         <li class="nav-item">
                             <a class="nav-link" [ngClass]="{'nav-link-clicked': activeLink === 'Article'}" (click)="setActiveLink('Article')">Consensus</a>
                         </li>
-                            <!-- <li class="nav-item">
-                                <a class="nav-link" [ngClass]="{'nav-link-clicked': activeLink === 'BITCOIN'}" (click)="setActiveLink('BITCOIN')">BITCOIN</a>
-                            </li> -->
+                            <li class="nav-item">
+                                <a class="nav-link" [routerLink]="['/roadmap']">Roadmap</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" [ngClass]="{'nav-link-clicked': activeLink === 'BIPS'}" (click)="setActiveLink('BIPS')">BIPS</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"  [routerLink]="['/about']" (click)="setActiveLink('About')">About</a>
+                                <a class="nav-link"  [routerLink]="['/about']" >About</a>
                             </li>
                         </ul>
                     </nav>
@@ -51,9 +51,8 @@
                         </div>
                     </div>
             </div>
-                    <!-- <img src="https://visualizevalue.com/cdn/shop/articles/prosp_1080.png" class="centered-image" alt="Centered Image"> -->
         <video autoplay  loop class="centered-image">
-            <source src="assets/homepage.mp4" type="video/mp4">
+            <!-- <source src="assets/homepage.mp4" type="video/mp4"> -->
             Your browser does not support HTML video.
         </video>
         </div>
