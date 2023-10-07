@@ -1,7 +1,26 @@
 .roadmap-container {
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
+}
+.right-dialog-container {
+    position: fixed; /* Use fixed positioning */
+    top: 0;
+    right: 0;
+    width: 30%; /* Match the width from openElementDialog */
+    height: 100%;
+    max-width: none !important;
+    max-height: none !important;
+    overflow: hidden; /* Add this to prevent any potential overflow */
+}
+.roadmap-path {
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    height: 100%; /* Take the full height of the parent container */
+}
+
+svg text {
+    font-family: "Balsamiq Sans Regular";
 }
 
 .header {
@@ -71,3 +90,5 @@ svg text {
     cursor: pointer;
     fill: #ffffff; /* Change the text color on hover */
 }
+
+

@@ -7,11 +7,15 @@ import { FormsModule } from '@angular/forms';
 import { RoadmapComponent } from './roadmap.component';
 import { RoadmapRoutingModule } from './roadmap.routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { ResourcesRightDialogComponent } from './resources-right-dialog/resources-right-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
   declarations: [
     RoadmapComponent,
+    ResourcesRightDialogComponent,
   ],
   imports: [
     RouterModule,
@@ -19,7 +23,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
     RoadmapRoutingModule,
     FormsModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    MatDialogModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
