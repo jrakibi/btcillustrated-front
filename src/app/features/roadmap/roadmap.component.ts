@@ -1,5 +1,5 @@
 // illustration.component.ts
-import { Component } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { HeaderLink, HeaderOptions } from 'src/app/shared/header/header-options';
 import { MatDialog } from '@angular/material/dialog';
 import { ResourcesRightDialogComponent } from './resources-right-dialog/resources-right-dialog.component';
@@ -9,9 +9,17 @@ import { ResourcesRightDialogComponent } from './resources-right-dialog/resource
   templateUrl: './roadmap.component.html',
   styleUrls: ['./roadmap.component.css']
 })
-export class RoadmapComponent {
+export class RoadmapComponent implements OnInit {
   show: boolean = true
-  constructor(public dialog: MatDialog) {}
+  headerOptions: HeaderOptions
+
+  constructor(public dialog: MatDialog) { }
+
+  ngOnInit(): void {
+    this.headerOptions = {
+      isUnderlineDisplayed: true,
+    }
+  }
 
   openDialog() {
     this.dialog.open(ResourcesRightDialogComponent, {
@@ -33,8 +41,26 @@ export class RoadmapComponent {
         top: '0'
       }
     });
+  }
+
+
+  // public isScrolled = false;
+
+  // @HostListener('window:scroll', ['$event'])
+  // onWindowScroll(event: Event): void {
+  //   const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+  //   this.isScrolled = scrollPosition > 50;
+  // }
+
+  public isScrolled = false;
+
+  // @HostListener('window:scroll', [])
+  // onWindowScroll() {
+  //   this.isScrolled = window.scrollY > 50;  // You can adjust this value based on when you want the transition to start
+  // }
+  @HostListener('window:scroll', [])
+  onWindowScroll(event: Event): void {
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    this.isScrolled = scrollPosition > 150; /* Adjust this as per your requirement */
 }
-
-
-  
 }

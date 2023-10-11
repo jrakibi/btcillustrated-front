@@ -9,7 +9,7 @@ import { HeaderOptions } from 'src/app/shared/header/header-options';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
-export class AboutComponent implements OnInit{
+export class AboutComponent implements OnInit {
   isLogoClicked = false;
   activeLink: string = '';
   articles: any[] = []; // Array to store the articles
