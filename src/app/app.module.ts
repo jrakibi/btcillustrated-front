@@ -40,6 +40,7 @@ import { AboutComponent } from './features/about/about.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     CommonModule,
     AppRoutingModule,
     HttpClientModule,
