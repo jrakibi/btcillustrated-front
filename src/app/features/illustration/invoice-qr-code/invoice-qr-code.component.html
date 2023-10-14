@@ -1,0 +1,13 @@
+<div mat-dialog-content style="text-align: center;">
+    <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+      <qrcode [qrdata]="invoice.pr" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+      <div class="profile-labels" (click)="copy(invoice.pr)" style="display: flex; align-items: center; cursor: pointer;">
+        <div class="profile-labels-left">
+          <a class="hoverable" style="width: 100%;">{{ invoice.pr | slice:0:10 }}...{{ invoice.pr | slice:-10 }}</a>
+        </div>
+        <div class="profile-labels-middle dimmed" style="text-align: right;">
+          <mat-icon class="profile-icon" style="margin-left: 5px;">content_copy</mat-icon>
+        </div>
+      </div>
+    </div>
+  </div>

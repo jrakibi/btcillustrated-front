@@ -13,10 +13,18 @@ import { HeaderComponent } from 'src/app/shared/header/header.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { IllustrationResourcesComponent } from './illustration-resources/illustration-resources.component';
 import { IllustrationGptComponent } from './illustration-gpt/illustration-gpt.component';
-import { FormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LnurlPayDialogComponent } from 'src/app/features/illustration/lnurl-pay-dialog/lnurl-pay-dialog.component';
+import { InvoiceQrCodeComponent } from './invoice-qr-code/invoice-qr-code.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { QRCodeModule } from 'angularx-qrcode';
 
-
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
     IllustrationComponent,
@@ -24,6 +32,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     IllustrationListComponent,
     IllustrationResourcesComponent,
     IllustrationGptComponent,
+    
+    LnurlPayDialogComponent,
+    InvoiceQrCodeComponent
   ],
   imports: [
     RouterModule,
@@ -32,7 +43,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     HttpClientModule,
     SharedModule,
+    ReactiveFormsModule,
+    QRCodeModule,
+    MatTooltipModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatSnackBarModule,
+    
+    MatInputModule,
+    MatButtonModule,
+    MatDialogModule
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  entryComponents: [LnurlPayDialogComponent],
 })
 export class IllustrationModule { }

@@ -6,6 +6,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Illustration } from 'src/app/core/model/illustration-model';
 import { HeaderLink, HeaderOptions } from 'src/app/shared/header/header-options';
 import { OpenaiService } from 'src/app/core/service/open-ai.service';
+import { MatDialog } from '@angular/material/dialog';
+import { LnurlPayDialogComponent } from 'src/app/features/illustration/lnurl-pay-dialog/lnurl-pay-dialog.component';
 declare var $: any; // Import jQuery
 
 @Component({
@@ -75,7 +77,8 @@ export class SlideShowComponent {
   illustration: Illustration
 
   constructor(private route: ActivatedRoute,
-    private openaiService: OpenaiService) {
+    private openaiService: OpenaiService,
+    public dialog: MatDialog) {
     const data = this.route.snapshot.data['data'];
     this.illustrations = data
   }
@@ -149,5 +152,13 @@ export class SlideShowComponent {
   onLoadImage(image: any) {
     debugger
     image.loaded = true
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(LnurlPayDialogComponent, { width: '600px' });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed', result);
+    });
   }
 }
