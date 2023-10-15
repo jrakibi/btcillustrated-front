@@ -79,17 +79,17 @@ svg text {
 
 .hover-group:hover path:first-of-type {
     cursor: pointer;
-    fill: #ffa000;
+    fill: #3d3d3d;
 }
   
 .hover-group:hover text, .hover-element-text:hover {
     cursor: pointer;
-    fill: #000;
+    /* fill: #ffffff; */
 }
 
-.hover-element:hover {
+.hover-element:hover  path:first-of-type {
     cursor: pointer;
-    fill: #e9ce9f;
+    fill: #ffe56b;    
 }
 @keyframes fadeInUp {
     0% {
@@ -149,6 +149,7 @@ svg text {
     left: 0;
     right: 0;
     z-index: 1001; 
+    /* z-index: 0 !important; */
 }
 
 .header {

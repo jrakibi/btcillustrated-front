@@ -12,3 +12,144 @@ img {
   height: auto;
   margin-bottom: 20px;
 }
+
+
+
+/* Updated Video Container Styles */
+.side-video-container {
+  grid-column: 3 / 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  overflow: hidden; 
+  flex-direction: column;
+  transition: all 0.3s ease; 
+}
+
+.show-gpt-input .side-video-container {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.gpt-input-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  
+}
+.side-video-container img  {
+  max-width: 80%; /* Adjust this percentage based on your desired size */
+  height: auto;
+  margin-bottom: 20px; /* Space between the GIF and the button */
+}
+
+
+/* Adjusted Button Styling */
+.ask-gpt-btn {
+  background-color: transparent; /* No background */
+  color: #aaa; /* Light gray text */
+  border: 1px solid #aaa; /* Light gray border */
+  padding: 8px 15px; /* Button padding */
+  font-weight: bold;
+  font-size: 0.8em;
+  border-radius: 0; /* Solid borders, no rounding */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  text-transform: uppercase;
+}
+
+.ask-gpt-btn:hover {
+  background-color: #444; /* Darker gray on hover */
+  color: #eee; /* Lighter gray text on hover */
+}
+
+
+.gpt-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Black with a bit of opacity */
+}
+
+.modal-content {
+  width: 40%;
+  padding: 20px;
+  background-color: #111; /* Dark background for the content box */
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+.close-btn {
+  cursor: pointer;
+  float: right;
+  width: 25px;
+  line-height: 25px;
+  background-color: red;
+  color: white;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 20px;
+}
+
+.input-wrapper input {
+  background-color: transparent;
+  border: none;
+  color: #fff; 
+  flex-grow: 1;
+  outline: none; 
+}
+
+.input-wrapper i.fa-magic, 
+.input-wrapper i.fa-send {
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+
+
+
+.loader {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 4px solid #aaa;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+
+
+.ph-item {
+  background-color: unset;
+  border: 1px solid #e6e6e6;
+  margin: inherit;
+}
+
+
+.ph-picture {
+  background-color: #ced4da00;
+  height: 120px;
+  width: 100%;
+}

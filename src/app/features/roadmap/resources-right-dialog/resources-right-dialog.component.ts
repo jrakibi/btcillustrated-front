@@ -12,4 +12,9 @@ export class ResourcesRightDialogComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  openLinkInNewTab(link: string): void {
+    window.open(link, '_blank');
+  }
+
 }

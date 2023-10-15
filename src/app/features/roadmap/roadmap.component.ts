@@ -26,6 +26,10 @@ export class RoadmapComponent implements OnInit {
       width: '30%',
       height: '100%',
       panelClass: 'right-dialog-container',
+      position: {
+        right: '0',
+        top: '0'
+      },
       hasBackdrop: true
     });
   }
@@ -62,5 +66,10 @@ export class RoadmapComponent implements OnInit {
   onWindowScroll(event: Event): void {
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     this.isScrolled = scrollPosition > 150; /* Adjust this as per your requirement */
-}
+  }
+
+  openLinkInNewTab(link: string): void {
+    window.open(link, '_blank');
+  }
+
 }

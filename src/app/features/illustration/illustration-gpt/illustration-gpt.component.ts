@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Illustration } from 'src/app/core/model/illustration-model';
+import { OpenaiService } from 'src/app/core/service/open-ai.service';
 import { HeaderOptions, HeaderLink } from 'src/app/shared/header/header-options';
 
 @Component({
@@ -10,11 +11,14 @@ import { HeaderOptions, HeaderLink } from 'src/app/shared/header/header-options'
 })
 export class IllustrationGptComponent implements OnInit {
   headerOptions: HeaderOptions
+  showGPTInput = false;
 
   illustrations: any[] = []
   illustration: Illustration
 
-  constructor(private route: ActivatedRoute,) { 
+  constructor(private route: ActivatedRoute,
+    private openaiService: OpenaiService,
+    ) { 
       const data = this.route.snapshot.data['data'];
       this.illustrations = data
     }
@@ -32,7 +36,7 @@ export class IllustrationGptComponent implements OnInit {
         route: '/illustration/' + id + '/resources'
       },
       {
-        title: 'ILLUSTRATIONS',
+        title: 'ILLUSTRATION',
         route: '/illustration/' + id + '/slides'
       },
       {
@@ -46,6 +50,30 @@ export class IllustrationGptComponent implements OnInit {
       isSlideShow: true,
       headerLinks: headerLinks
     }
+  }
+
+  gptQuestion: string = '';
+  gptResponse: string = '';
+  isLoading: boolean = false;
+
+  askGPT() {
+    this.isLoading = true;
+
+    this.openaiService.askGPT(this.gptQuestion).subscribe(
+      (responseText: string) => { // Explicitly type the response
+        this.gptResponse = responseText;
+        this.isLoading = false;
+      },
+      (error) => {
+        console.error('Error asking GPT:', error.message);
+        console.error('Full Error:', error);
+        this.isLoading = false;
+      }
+    );
+  }
+
+  toggleGPT() {
+    this.showGPTInput = !this.showGPTInput;
   }
 
 }
