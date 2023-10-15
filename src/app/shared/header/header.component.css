@@ -145,7 +145,6 @@
   background-color: #000000 ;
   padding: 30px 30px;
   position: relative; /* Act as a positioning reference */
-  z-index: 1; /* Ensure the header stays on top */
   height: 60px; /* Fix the height */
   margin-bottom: 100px;
 }
@@ -207,7 +206,6 @@
   border: none;
   transition: 0.3s ease;
   width: 30%;
-  z-index: 0; /* Ensure it's below the header */
 }
 
 /* .card-container-clicked {
@@ -310,7 +308,6 @@
   border: none;
   transition: 0.3s ease;
   width: 30%;
-  z-index: 0; /* Ensure it's below the header */
 }
 
 

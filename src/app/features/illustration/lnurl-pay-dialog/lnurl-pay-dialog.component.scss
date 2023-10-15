@@ -1,0 +1,71 @@
+body {
+  font-family: 'Arial', sans-serif; 
+  background-color: #f4f4f4;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+}
+
+.mat-mdc-form-field {
+  width: 100%; /* Makes the input fields span the entire width */
+  margin-bottom: 20px;
+}
+
+.mat-mdc-dialog-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.zap-button {
+  background-color: #FFC107; /* A shade of yellow */
+  color: #212121; /* A shade of black */
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.zap-button:hover {
+  background-color: #FFD54F; /* A lighter shade of yellow for hover effect */
+}
+
+.emoji-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.emoji-button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: 0 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.emoji-button:hover {
+  background-color: #f2e5f8; /* A light shade for the hover effect */
+}
+
+.emoji-number {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.mat-dialog-container {
+  z-index: 10000 !important;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.mat-form-field {
+  display: block !important;
+}

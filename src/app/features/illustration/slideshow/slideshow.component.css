@@ -1,9 +1,3 @@
-body {
-  font-family: 'Arial', sans-serif;
-  color: #333;
-  line-height: 1.6;
-  background-color: #000000 ; /* Assuming #000000  background for the body */
-}
 
 /* Main Content Styles */
 .main-content {
@@ -424,7 +418,6 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7); /* Black with a bit of opacity */
-  z-index: 1000; /* To make sure it's on top */
 }
 
 .modal-content {

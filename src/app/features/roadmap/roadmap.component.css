@@ -1,0 +1,241 @@
+.containerr {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #FCD313;
+
+
+}
+
+.roadmap-container {
+    width: 100%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.svg-container {
+    margin-top: 30%;
+}
+
+.right-dialog-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 100%;
+    max-width: none !important;
+    max-height: none !important;
+    overflow: hidden;
+}
+
+.roadmap-path {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 60%;
+    margin: auto;
+}
+
+
+/* Content, Footer, and Other Elements */
+.content, .footer {
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+    background-color: #FCD313;
+}
+
+.footer {
+    margin-top: 20px;
+    color: #777;
+    background-color: #FCD313;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.actions button {
+    background-color: #ddd;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* SVGs and Animations */
+svg text {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    font-family: "Balsamiq Sans Regular";
+}
+
+.hover-group:hover path:first-of-type {
+    cursor: pointer;
+    fill: #ffa000;
+}
+  
+.hover-group:hover text, .hover-element-text:hover {
+    cursor: pointer;
+    fill: #000;
+}
+
+.hover-element:hover {
+    cursor: pointer;
+    fill: #e9ce9f;
+}
+@keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+.in-view {
+    animation: fadeInUp 1s forwards;
+}
+
+.show:hover {
+    fill: chartreuse;
+    cursor: pointer;
+}
+
+.progress {
+    margin-top: 20px;
+    color: #777;
+}
+
+.footer {
+    margin-top: 0px;
+    color: #fff;
+    background: #1b1b16;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001; 
+}
+
+.header {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-top: 80px;
+    background-color: #1e1e1e;
+    transition: height 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+
+    max-height: 300px; 
+    overflow: hidden;
+    transition: max-height 0.3s ease, box-shadow 0.3s ease; 
+    background: linear-gradient(to bottom, #fcd31382 0%, #fcd313 89%), url(src\assets\roadmap\landscape.png) repeat-x 52% 16% / 707px auto;
+    border-bottom: solid black 1px;
+}
+
+.header.scrolled {
+    height: 70px;
+    max-height: 70px;
+
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.26);
+    padding-top: 0;
+    /* background: linear-gradient(to bottom, #fcd31382 -90%, #fcd313 ), url(src\assets\roadmap\landscape.png) repeat-x 49% 2% / 671px auto; */
+    background: linear-gradient(to bottom, rgb(0 0 0 / 45%) -450%, #111316 ), url(src\assets\roadmap\landscape.png) repeat-x 49% 2% / 671px auto;
+}
+
+.header-content {
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+    text-align: left; /* Ensures text is left-aligned */
+    justify-content: flex-start; /* Make sure content starts from the left */
+    align-items: flex-start;     /* Align vertically from the top */
+    width: auto;                 /* Remove the 100% width to allow natural content width */
+    margin-left: 20%;
+
+    z-index: -1;
+    transition: transform 0.3s ease;
+
+}
+
+.header-content h1, .header-content p {
+    text-align: left; /* Change to left aligned text */
+}
+
+.header-content h1 {
+    color: #000000;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+.header.scrolled .header-content h1 {
+    color: #fcd313;
+    font-size: 24px; 
+    margin-bottom: 0;
+}
+.header-content p {
+    font-size: 16px;
+    color: #2e2e2e;
+    margin-bottom: 20px;
+}
+
+.header-content button {
+    background-color: #000000;
+    color: #ffcc00;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.header-content button:hover {
+    background-color: #494949;
+}
+
+.header-actions {
+    display: flex; 
+    gap: 10px; 
+    place-content: flex-start; /* Change to start (left) */
+} 

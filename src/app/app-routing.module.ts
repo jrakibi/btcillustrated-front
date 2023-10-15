@@ -22,6 +22,10 @@ const routes: Routes = [
     path: 'illustration',
     loadChildren: () => import('./features/illustration/illustration.module').then(m => m.IllustrationModule)
   },
+  {
+    path: 'roadmap',
+    loadChildren: () => import('./features/roadmap/roadmap.module').then(m => m.RoadmapModule)
+  },
   { path: 'search',  component: SearchComponent },
   { path: 'about',  component: AboutComponent },
   { path: '**', redirectTo: '/home' }
