@@ -146,7 +146,7 @@
   padding: 30px 30px;
   position: relative; /* Act as a positioning reference */
   height: 60px; /* Fix the height */
-  margin-bottom: 100px;
+  /* margin-bottom: 100px; */
 }
 
 .icon-btn {

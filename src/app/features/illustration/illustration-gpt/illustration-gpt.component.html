@@ -1,15 +1,11 @@
 <app-header [headerOptions]="headerOptions"></app-header>
-<div class="coming-soon-container">
   <div class="side-video-container">
     <img
       src="assets/btcIllustrated/slideshow/askGpt.gif"
       alt="Your GIF Description"
     />
-    <button class="ask-gpt-btn" *ngIf="!showGPTInput" (click)="toggleGPT()">
-      Ask GPT
-    </button>
 
-    <div class="gpt-input-section" *ngIf="showGPTInput">
+    <div class="gpt-input-section">
       <div class="input-wrapper">
         <!-- Left "Magic" Icon -->
         <i class="fa fa-magic"></i>
@@ -27,5 +23,4 @@
 
       <p>{{ gptResponse }}</p>
     </div>
-  </div>
   </div>

@@ -1,11 +1,3 @@
-.coming-soon-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 80vh;
-  text-align: center;
-}
 
 img {
   max-width: 50%;
@@ -24,7 +16,11 @@ img {
   padding: 10px;
   overflow: hidden; 
   flex-direction: column;
+  /* text-align: center; */
   transition: all 0.3s ease; 
+
+  width: 33%;
+  margin: auto;
 }
 
 .show-gpt-input .side-video-container {

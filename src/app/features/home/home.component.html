@@ -15,6 +15,9 @@
                         <li class="nav-item">
                             <a class="nav-link" [ngClass]="{'nav-link-clicked': activeLink === 'Article'}" (click)="setActiveLink('Article')">Consensus</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" [routerLink]="['/mailing-list']">TLDR</a>
+                        </li>
                             <li class="nav-item">
                                 <a class="nav-link" [routerLink]="['/roadmap']">Roadmap</a>
                             </li>
@@ -51,10 +54,9 @@
                         </div>
                     </div>
             </div>
-                    <!-- <img src="https://visualizevalue.com/cdn/shop/articles/prosp_1080.png" class="centered-image" alt="Centered Image"> -->
         <video autoplay  loop class="centered-image">
-            <source src="assets/homepage.mp4" type="video/mp4">
-            Your browser does not support HTML video.
+            <!-- <source src="assets/homepage.mp4" type="video/mp4"> -->
+            <!-- Your browser does not support HTML video. -->
         </video>
         </div>
     </div>
