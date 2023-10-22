@@ -1,35 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INDITEX Modal</title>
-</head>
-<body>
-
-<div class="modal-container">
-    <div class="modal-header">
-        <h2>INDITEX</h2>
-        <button class="close-btn">X</button>
-    </div>
-
-    <form class="course-form">
-        <label for="title">Titulo del nuevo curso</label>
-        <input type="text" id="title">
-
-        <label for="location">Lugar</label>
-        <select id="location">
-            <!-- Populate with your locations, e.g.: -->
-            <!-- <option value="location1">Location 1</option> -->
-        </select>
-
-        <h3>PRODUCTO</h3>
-        <div class="instructors-grid">
-            <!-- Dynamically add instructors here using JS -->
+<div class="containerr">
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+              <strong>BTCillustrated</strong>
+            </div>
+            <nav>
+                <div class="nav-items">
+                  <div class="dropdown">
+                    <button class="dropbtn">Products</button>
+                    <div class="dropdown-content">
+                      <a [routerLink]="['/search']">Visuals</a>
+                      <a [routerLink]="['/mailing-list']">MailMerge</a>
+                      <a [routerLink]="['/roadmap']">RoadMap</a>
+                      <a [routerLink]="['/list']">Blog</a>
+                      <a [routerLink]="['/about']">Plateform</a>
+                    </div>
+                  </div>
+                  <a [routerLink]="['/mailing-list']">Newsletter</a>
+                  <a [routerLink]="['/about']">#Support</a>
+                </div>
+                <!-- Search Bar -->
+                <div class="search-bar">
+                  <input type="text" [routerLink]="['/search']"  placeholder="Search ..." class="search-input">
+                  <i class="fa fa-search search-icon"></i>
+                </div>
+              </nav>
+              
+          </header>
+          
+        <div class="content">
+        <h1 class="title">BTCillustrated</h1>
+          <p class="center-text">
+            The all-new interactive learning experience that teaches you everything about Bitcoin
+          </p>
+          <div class="cards">
+            <div class="card" [routerLink]="[card.link]" *ngFor="let card of cards">
+              <img [src]="card.icon" alt="icon" />
+              <p>{{ card.text }}</p>
+            </div>
+          </div>
         </div>
-    </form>
+      </div>
 </div>
-
-<script src="script.js"></script>
-</body>
-</html>

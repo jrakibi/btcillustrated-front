@@ -1,151 +1,167 @@
-.container {
-  position: relative;
+.containerr {
   width: 100%;
-  height: 100%;
-}
-.img-container {
-  /* background-image: url('https://images.rawpixel.com/image_1000/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjg4Mi1rdWwtMzQuanBn.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center; */
-
-  background-image: url(https://images.rawpixel.com/image_1000/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjg4Mi1rdWwtMzQuanBn.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.card-container {
-  border: none;
-  transition: 0.3s ease;
-  position: absolute;
-  width: 40%; /* Reduced width */
-  left: 0; /* Align to left */
-  top: 0;
-  z-index: 2;
-}
-
-.card-container-clicked {
-  border: 1px solid #00BFFF;
-  background-color: white;
-  color: black;
-  padding: 20px;
-}
-
-.logo {
-  font-family: 'Zara';
-  font-size: 2.5em;
-  font-weight: bold;
-  margin: 2px;
-  text-align: left;
-  cursor: pointer;
-  padding-bottom: 0px;
-}
-
-.card-container-clicked .logo {
-  border-bottom: 1px solid black;
-  padding-bottom: 70px; 
-}
-.card-container-clicked .logo {
-  border-bottom: 1px solid black;
-}
-
-.navbar {
-  background: none;
-  margin: 0px 2px 20px 2px;
-}
-
-.navbar .nav-link {
-  color: white;
-  text-transform: uppercase;
-  font-size: 17px;
-  font-weight: 100;
-  cursor: pointer;
-  
-}
-
-.navbar .nav-link:hover {
-  color: #ccc;
-}
-
-.nav-item {
-  margin:  0px 20px 0px 0px;
-}
-
-.card-container-clicked .navbar .nav-link {
-  color: black;
-}
-
-.navbar .nav-link-clicked {
-  font-weight: bold;
-}
-
-.additional-section {
+  height: 100vh;
   display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  width: 100%;
-  padding: 10px 0;
-}
-
-.additional-item {
-  border: 1px solid white;
-  padding: 5px;
-  color: white;
-  margin: 5px;
-  font-size: 15px;
-  width: fit-content;
-
-}
-
-.additional-item>a {
+  justify-content: center;
+  align-items: center;
   color: black;
+  background-color: #FCD313;
+}
+
+.container {
+  width: 80%;
+  background-color: #FCD313;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: white;
+  border: 2px solid black;
+  border-radius: 100px;
+  margin-bottom: 100px;
+}
+
+.logo strong {
+  font-size: 1.5em;
+}
+
+nav a,
+.dropbtn {
+  margin-left: 20px;
   text-decoration: none;
-}
-
-.card-container-clicked .additional-item {
-  border: 1px solid black;
   color: black;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  background: unset;
+  border: unset;
 }
 
-.centered-image {
-  display: block;
-  width: 44%;
-  max-width: 100%;
-  margin: 166px 350px;
+nav a:hover,
+.dropbtn:hover {
+  color: #ddd;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-::ng-deep .navbar-expand-lg {
-  flex-wrap: nowrap;
-  justify-content: flex-start;
+.nav-items {
+  display: flex;
+  align-items: center;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
 
-.view-all {
-  width: fit-content;
-  background: yellow;
-}
-
-.search-container {
+.dropdown-content {
+  display: none;
   position: absolute;
-  right: 0; /* Align to the right */
-  top: 0; /* Align to the top */
-  padding: 10px;
+  background-color: #ffffff;
+  min-width: 160px;
+  z-index: 1;
+  border: 1px solid;
+  border-radius: 6px;
+  padding: 4px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.search-bar {
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 50px;
+  overflow: hidden; /* This will keep the child elements inside the rounded borders */
+  margin-left: 20px;
 }
 
 .search-input {
-  width: 400px;
-  background: black;
-  color: white;
-  padding: 5px;
-  border: 1px solid white;
-  font-size: 16px;
-  text-align: end;
-  text-transform: uppercase;
+  flex-grow: 1;
+  padding: 8px 12px;
+  border: none;
   outline: none;
-  padding-right: 20px;
+  border-radius: 5px 0 0 5px; /* Rounded on the left side */
 }
 
+.search-icon {
+  padding: 8px 12px;
+  color: black;
+  background-color: white;
+  border-radius: 0 5px 5px 0; /* Rounded on the right side */
+}
+
+.search-input::placeholder {
+  color: #888;
+}
 .content {
-  position: relative;
-  margin-top: 100px;
+  padding: 40px 20px;
+}
+
+.center-text {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 110px;
+}
+.title {
+  text-align: center;
+  font-size: 3.5em;
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+.cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  flex: 1;
+  background-color: white;
+  padding: 10px;
+  border: 2px solid black;
+  box-shadow: 3px 3px 0 #000;
+  border-radius: 5px;
+  text-align: center;
+  margin: 0 10px;
+  position: relative;  /* To enable absolute positioning for hover effect */
+  cursor: pointer;
+  /* Add transitions for top, left, and box-shadow */
+}
+
+.card:hover {
+  top: 2px;  /* Move the card by 2px downward */
+  left: 2px;  /* Move the card by 2px to the right */
+  box-shadow: 1px 1px 0 #000;  /* Adjust the shadow on hover */
+  transition: top 0.5s ease-in-out, left 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+
+}
+
+.card img {
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 20px;
+  display: block;
+}
+
+.card p {
+  margin: 0;
+  font-weight: bold;
 }

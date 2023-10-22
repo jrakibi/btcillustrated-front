@@ -9,43 +9,12 @@ import { IllustrationService } from 'src/app/core/service/illustration-service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  isLogoClicked = false;
-  activeLink: string = '';
-  articles: any[] = []; // Array to store the articles
-  illustrations: any[] = []; // Array to store the illustrations
+  cards = [
+    { icon: 'assets/icons/visual.png', text: 'Visuals', link: '/search' },
+    { icon: 'assets/icons/feed.svg', text: 'MailMerge', link: '/mailing-list' },
+    { icon: 'assets/icons/roadmap.png', text: 'RoadMap', link: '/roadmap' },
+    { icon: 'assets/icons/blog.svg', text: 'Blog', link: '/list"' },
+    { icon: 'assets/icons/terminal.png', text: 'Plateform', link: '' }
+];
 
-  constructor(private http: HttpClient, 
-    private articleService: ArticleService,
-    private illustrationService: IllustrationService,
-    ) { }
-
-  toggleLogoClick() {
-    this.isLogoClicked = !this.isLogoClicked;
-  }
-
-  setActiveLink(link: string) {
-    this.isLogoClicked = true;
-    this.activeLink = link;
-    if (link === 'Article') {
-      this.getArticles(); 
-    }
-    if (link === 'Illustrations') {
-      this.getIllustrations(); 
-    }
-    if (link === 'About') {
-      this.getIllustrations(); 
-    }
-  }
-
-  getArticles() {
-    this.articleService.getArticles().subscribe(articles => {
-      this.articles = articles
-    })
-  }
-
-  getIllustrations() {
-    this.illustrationService.getIllustrations().subscribe(illustrations => {
-      this.illustrations = illustrations
-    })
-  }
 }
