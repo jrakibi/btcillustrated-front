@@ -11,7 +11,7 @@ import { map } from 'rxjs/operators';
 })
 export class MailingListService {
   // private jsonUrl = `${environment.mailingListRepo}/homepage.json`;
-  private jsonUrl = "https://raw.githubusercontent.com/bitcoinsearch/mailing-list-summaries/efff0fc2cd42620657666839c867e980b58a1057/static/homepage.json"
+  private jsonUrl = "https://raw.githubusercontent.com/bitcoinsearch/mailing-list-summaries/main/static/homepage.json"
   private mailUrl = "https://raw.githubusercontent.com/bitcoinsearch/mailing-list-summaries/main"
   constructor(private http: HttpClient) { }
 

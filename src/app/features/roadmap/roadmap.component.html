@@ -23,7 +23,7 @@
             Suggest Changes
           </button>
 
-          <button *ngIf="!isScrolled">Download</button>
+          <!-- <button *ngIf="!isScrolled">Download</button> -->
         </div>
       </div>
     </div>
@@ -121,8 +121,6 @@
           </g>
           <mask></mask>
           <g
-            class="hover-element"
-            (click)="openElementDialog()"
             stroke-linecap="round"
             transform="translate(1020.3570355875363 53.01101064543718) rotate(0 173.09516455409448 65.92462477960692)"
           >
@@ -140,8 +138,6 @@
             ></path>
           </g>
           <g
-            class="hover-element"
-            (click)="openElementDialog()"
             stroke-linecap="round"
             transform="translate(72.00422708519 46.84190100332489) rotate(0 212.5699749111618 70.2671807660488)"
           >
@@ -1405,7 +1401,7 @@
               direction="ltr"
               dominant-baseline="text-before-edge"
             >
-              @BTCillustrated
+              <a href="https://twitter.com/BTCillustrated" style="text-decoration: auto; fill: rgb(255, 255, 255);">@BTCillustrated</a>
             </text>
           </g>
           <g stroke-linecap="round">
@@ -6477,7 +6473,7 @@
       </div>
     </div>
     <div class="footer">
-      <div>This roadmap was created by @BTCillstrated</div>
+      <div>This roadmap was created by <span href="https://twitter.com/BTCillustrated">@BTCillustrated</span></div>
       <div>Please contribute to keep it up to date</div>
     </div>
   </div>
