@@ -13,8 +13,8 @@ export class HomeComponent {
     { icon: 'assets/icons/visual.png', text: 'Visuals', link: '/search' },
     { icon: 'assets/icons/feed.svg', text: 'MailMerge', link: '/mailing-list' },
     { icon: 'assets/icons/roadmap.png', text: 'RoadMap', link: '/roadmap' },
-    { icon: 'assets/icons/blog.svg', text: 'Blog', link: '/list"' },
-    { icon: 'assets/icons/terminal.png', text: 'Plateform', link: '' }
+    { icon: 'assets/icons/blog.svg', text: 'Blog', link: '/list' },
+    { icon: 'assets/icons/terminal.png', text: 'Platform', link: '' }
 ];
 
 }
