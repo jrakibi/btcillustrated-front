@@ -1,0 +1,225 @@
+
+.container {
+    text-align: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 40px 60px;
+    border-radius: 12px;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.search-box {
+    position: relative;
+}
+
+.search-box input {
+    color: white;
+    padding: 15px 15px;
+    width: 75%;
+    height: 48px;
+    text-align: center;
+    background: black;
+    border: 2px solid #fff;
+    border-radius: 24px;
+    font-size: 1rem;
+    outline: none;
+}
+
+/* Base style for the search container */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    background-color: black; /* Replace with your specific background color */
+}
+
+/* Style for the search input */
+.search-container input[type="text"] {
+    width: 80%;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-container input[type="text"]::placeholder {
+    color: rgba(255, 255, 255, 0.7); 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #E5F0FF;
+    padding: 50px;
+}
+
+
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: calc(4 * 250px + 3 * 20px); 
+    margin: auto;
+    
+}
+/* .card {
+    flex: 1 0 calc(25% - 20px);
+} */
+
+.card-container {
+    background-color: #ffffe9;
+    padding: 20px;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.card {
+    background-color: yellow;
+    width: 300px; /* Adjust as needed */
+    padding: 40px;
+    border-radius: 10px; /* Added for rounded corners */
+    font-family: Arial, sans-serif; /* Adjust as needed */
+  }
+
+  .card img {
+    width: 180px; /* Adjust as needed */
+    margin-bottom: 15px;
+  }
+
+  .card-title {
+    font-size: 44px; /* Adjust as needed */
+    font-weight: bold;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .card-description {
+    margin-bottom: 20px;
+  }
+
+  .tags-title {
+    font-size: 14px; /* Adjust as needed */
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .tag {
+    display: inline-block;
+    background-color: #ffffe9;
+    padding: 2px 8px;
+    border-radius: 15px;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.card-container .cards .card:nth-child(1) {
+    background-color: #47B5B2; /* Teal-ish color */
+}
+
+.card-container .cards .card:nth-child(2) {
+    background-color: #ED6A75; /* Red-ish color */
+}
+
+.card-container .cards .card:nth-child(3) {
+    background-color: #47B05A; /* Green-ish color */
+}
+
+.card-container .cards .card:nth-child(4) {
+    background-color: #F6B04D; /* Yellow-ish color */
+}
+
+.card-container .cards .card:nth-child(5) {
+    background-color: #4C78A9; /* Blue-ish color */
+}
+
+.card-container .cards .card:nth-child(6) {
+    background-color: #E55934; /* Another shade of red */
+}
+
+.card-container .cards .card:nth-child(7) {
+    background-color: #2A9D8F; /* Another shade of teal */
+}
+
+
+
+
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; 
+    width: 100%;
+}
+
+.card {
+    /* flex: 1; */
+    width: 100%;
+    margin: 15px;
+}
+
+
+  ::ng-deep .mat-dialog-container {
+    padding: 20px !important;
+
+    /* background-color: unset !important; */
+    box-shadow: unset !important;
+  }
+  

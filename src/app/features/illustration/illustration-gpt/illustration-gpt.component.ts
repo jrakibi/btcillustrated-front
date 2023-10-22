@@ -11,7 +11,6 @@ import { HeaderOptions, HeaderLink } from 'src/app/shared/header/header-options'
 })
 export class IllustrationGptComponent implements OnInit {
   headerOptions: HeaderOptions
-  showGPTInput = false;
 
   illustrations: any[] = []
   illustration: Illustration
@@ -72,8 +71,6 @@ export class IllustrationGptComponent implements OnInit {
     );
   }
 
-  toggleGPT() {
-    this.showGPTInput = !this.showGPTInput;
-  }
+
 
 }

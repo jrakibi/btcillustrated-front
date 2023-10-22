@@ -1,0 +1,124 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.blog-hero {
+  height: 40%;
+  background-color: #1c1c1c;
+}
+
+.blog-container {
+  /* background-color: cadetblue; */
+}
+.container {
+  padding: 50px 0px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.author-info {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+  margin: 70px 0;
+}
+
+.author-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.author-info strong {
+  font-size: 1.2em;
+}
+
+.article-content h2 {
+  margin-top: 20px;
+  font-size: 2em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+html{
+  background:#333;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;}
+
+#bitcoin{
+  width:200px;
+  margin:auto;
+  display:block;
+  text-align:center;
+  color:#888888;
+  height: 100%;
+}
+
+.path {
+  stroke-dasharray: 2110;
+  stroke-dashoffset: 2110;
+  stroke-width:2;
+  stroke-linecap:round;
+  animation: dash 6s linear infinite;
+  fill-opacity:0;
+  stroke:orange;
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 2110;
+    opacity:0;
+    stroke:orange;
+  }
+  15%{
+    opacity:1;
+    stroke:orange;
+  }
+  70%{
+    opacity:1;
+    stroke:orange;
+  }
+  100%{
+    stroke-dashoffset:0;
+    opacity:0;
+    stroke:yellow;
+  }
+}
+
+svg {
+  height: 100%;
+}
