@@ -10,6 +10,7 @@ import { TestComponent } from './test/test.component';
 import { SlideShowComponent } from './features/illustration/slideshow/slideshow.component';
 import { IllustrationComponent } from './features/illustration/illustration.component';
 import { AboutComponent } from './features/about/about.component';
+import { MailingListComponent } from './features/mailing-list/mailing-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -28,6 +29,10 @@ const routes: Routes = [
   },
   { path: 'search',  component: SearchComponent },
   { path: 'about',  component: AboutComponent },
+  {
+    path: 'mailing-list',
+    loadChildren: () => import('./features/mailing-list/mailing-list.module').then(m => m.MailingListModule)
+  },
   { path: '**', redirectTo: '/home' }
 ];
 

@@ -10,6 +10,9 @@
   align-items: center;
 }
 
+.container {
+  margin-top: 100px;
+}
 /* Gallery Styles */
 .gallery-wrapper {
   display: grid;

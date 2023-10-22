@@ -1,33 +1,73 @@
 <div class="custom-dialog-header">
-    <span>Internet</span>
-    <button mat-icon-button class="close-button" mat-dialog-close>
-      <mat-icon>close</mat-icon>
-    </button>
-  </div>
-  
-  <div class="custom-dialog-content">
-    <p>
-      The Internet is a global network of computers connected to each other which
-      communicate through a standardized set of protocols.
-    </p>
-  
-    <p>Visit the following resources to learn more:</p>
-  
-    <ul>
-      <li>How does the Internet Work?</li>
-      <li>The Internet Explained</li>
-      <li>How Does the Internet Work?</li>
-      <li>Introduction to Internet</li>
-      <li>How does the Internet work?</li>
-      <li>How the Internet Works in 5 Minutes</li>
-      <li>Computer Network | Google IT Support Certificate</li>
-    </ul>
-  
-    <div class="link-submit">
-      <p>Help others learn by submitting links to learn more about this topic</p>
-      <button mat-raised-button class="submit-link-button">
-        Submit a Link
+  <h2 style="font-weight: bold">Halving</h2>
+  <mat-icon>close</mat-icon>
+</div>
+
+<div class="custom-dialog-content">
+  <p>
+    Bitcoin's supply dynamic, notably the "halving" event, refers to the
+    reduction by half of the block rewards miners receive, which occurs
+    approximately every four years, effectively slowing down the creation of new
+    bitcoins and capping the total supply at 21 million.
+  </p>
+
+  <p>Visit the following resources to learn more:</p>
+
+  <ul>
+    <li>
+      <a
+        href="https://www.forbes.com/advisor/investing/cryptocurrency/bitcoin-halving/"
+        target="_blank"
+        class="clickable-link"
+        >Bitcoin Halving: What You Need to Know?</a
+      >
+    </li>
+    <li>
+      <a href="" target="_blank" class="clickable-link"
+        >Bitcoin Halving, Explained</a
+      >
+    </li>
+    <li>
+      <a href="" target="_blank" class="clickable-link"
+        >What is a Bitcoin halving?</a
+      >
+    </li>
+    <li>
+      <a href="" target="_blank" class="clickable-link"
+        >Bitcoin Halving History: BTC Halving Explained</a
+      >
+    </li>
+    <li>
+      <a href="" target="_blank" class="clickable-link"
+        >Bitcoin Halving: A Deep Dive into Crypto Markets Dynamics</a
+      >
+    </li>
+    <li>
+      <a href="" target="_blank" class="clickable-link"
+        >With Bitcoin's Fourth Halving Under 200 Days Out, What's at Stake
+        for</a
+      >
+    </li>
+    <li>
+      <a href="" target="_blank" class="clickable-link"
+        >What is Bitcoin Halving? Will it Affect Price? Guide to ...</a
+      >
+    </li>
+  </ul>
+
+  <div class="link-submit">
+    <p>Help others learn by submitting links to learn more about this topic</p>
+    <div class="header-actions">
+      <button
+        class="submit-button-style"
+        (click)="
+          openLinkInNewTab(
+            'https://github.com/jrakibi/btcillustrated-front/issues/new/choose'
+          )
+        "
+      >
+        Suggest Changes
       </button>
     </div>
   </div>
-  
+</div>

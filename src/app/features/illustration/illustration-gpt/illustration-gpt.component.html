@@ -1,5 +1,26 @@
 <app-header [headerOptions]="headerOptions"></app-header>
-<div class="coming-soon-container">
-    <!-- <img src="assets/btcIllustrated/soon.webp" alt="Coming Soon Image"> -->
-    <img src="assets/btcIllustrated/soon2.jpg" alt="Coming Soon Image">
+  <div class="side-video-container">
+    <img
+      src="assets/btcIllustrated/slideshow/askGpt.gif"
+      alt="Your GIF Description"
+    />
+
+    <div class="gpt-input-section">
+      <div class="input-wrapper">
+        <!-- Left "Magic" Icon -->
+        <i class="fa fa-magic"></i>
+
+        <!-- Input with Placeholder -->
+        <input
+          placeholder="Type your question for GPT:"
+          [(ngModel)]="gptQuestion"
+        />
+
+        <!-- Right "Send" Icon -->
+        <i class="fa fa-send" (click)="askGPT()"></i>
+      </div>
+      <div *ngIf="isLoading" class="loader"></div>
+
+      <p>{{ gptResponse }}</p>
+    </div>
   </div>
