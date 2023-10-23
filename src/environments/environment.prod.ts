@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://api.btc-illustrated.com/api'
+  apiUrl: 'https://api.btc-illustrated.com/api'
 };
