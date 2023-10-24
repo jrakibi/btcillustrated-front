@@ -18,6 +18,7 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutComponent } from './features/about/about.component';
+import { NewsletterComponent } from './features/newsletter/newsletter.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { AboutComponent } from './features/about/about.component';
     ListArticlesComponent,
     TestComponent,
     AboutComponent,
+    NewsletterComponent,
 
   ],
   imports: [

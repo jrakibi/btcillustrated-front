@@ -11,6 +11,7 @@ import { SlideShowComponent } from './features/illustration/slideshow/slideshow.
 import { IllustrationComponent } from './features/illustration/illustration.component';
 import { AboutComponent } from './features/about/about.component';
 import { MailingListComponent } from './features/mailing-list/mailing-list.component';
+import { NewsletterComponent } from './features/newsletter/newsletter.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -29,6 +30,7 @@ const routes: Routes = [
   },
   { path: 'search',  component: SearchComponent },
   { path: 'about',  component: AboutComponent },
+  { path: 'newsletter',  component: NewsletterComponent },
   {
     path: 'mailing-list',
     loadChildren: () => import('./features/mailing-list/mailing-list.module').then(m => m.MailingListModule)

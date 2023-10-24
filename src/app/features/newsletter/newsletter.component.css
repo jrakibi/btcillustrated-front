@@ -1,0 +1,67 @@
+
+.newsletter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f7c435;
+    color: black;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    padding: 20px;
+    /* background-color: #fff; */
+}
+
+.left, .right {
+    flex: 1;
+}
+
+.left {
+    padding-right: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+small {
+    display: block;
+    margin-top: 20px;
+}
+
+.logos {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.right img {
+    width: 100%;
+    height: auto;
+}
+
+/* Add additional styles for logos, responsiveness, etc. as needed */

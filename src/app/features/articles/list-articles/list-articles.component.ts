@@ -3,6 +3,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Article } from 'src/app/core/model/article-model';
 import { ArticleService } from 'src/app/core/service/article-service';
 import { TweenLite } from 'gsap';
+import { LoadingService } from 'src/app/core/service/laoding-service';
 
 @Component({
   selector: 'app-list-articles',
@@ -18,6 +19,7 @@ export class ListArticlesComponent implements OnInit {
 
   constructor(private http: HttpClient, 
     private articleService: ArticleService,
+    private loadingService: LoadingService
     ) { }
 
   ngOnInit(): void {
@@ -28,7 +30,7 @@ export class ListArticlesComponent implements OnInit {
 
   getArticles() {
     this.articleService.getArticles().subscribe(articles => {
-      
+      this.loadingService.show();
       this.articles = articles
     })
   }
