@@ -13,10 +13,12 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { TruncatePipe } from "../core/pipe/truncate-pipe";
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
     declarations: [
         HeaderComponent,
+        LoaderComponent,
 
 
     ],

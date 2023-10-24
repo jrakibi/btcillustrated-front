@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { SearchService } from 'src/app/core/service/search-service';
 import { SearchResultModel } from 'src/app/core/model/search-result-model';
 import { Illustration } from 'src/app/core/model/illustration-model';
+import { LoadingService } from 'src/app/core/service/laoding-service';
 
 @Component({
   selector: 'app-search',
@@ -21,12 +22,15 @@ export class SearchComponent {
   constructor(
     private router: Router,
     private searchService: SearchService,
-    private illustrationService: IllustrationService
+    private illustrationService: IllustrationService,
+    private loadingService: LoadingService
     ) { }
 
   ngOnInit(): void {
     this.illustrationService.getIllustrations().subscribe((illustrations: Illustration[]) => {
       debugger
+      this.loadingService.hide();
+
       this.illustrations = illustrations.map(illustration => ({
         id: illustration.id,
         title: illustration.title,

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Illustration } from '../model/illustration-model';
 import { environment } from 'src/environments/environment';
+import { LoadingService } from './laoding-service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,13 +11,15 @@ import { environment } from 'src/environments/environment';
 export class IllustrationService {
   private apiUrl = `${environment.apiUrl}/illustrations`;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private loadingService: LoadingService) { }
 
   getIllustrations(): Observable<Illustration[]> {
+    this.loadingService.show();
     return this.http.get<Illustration[]>(this.apiUrl);
   }
 
   getIllustration(id: string): Observable<Illustration> {
+    this.loadingService.show();
     return this.http.get<Illustration>(`${this.apiUrl}/${id}`);
   }
 
