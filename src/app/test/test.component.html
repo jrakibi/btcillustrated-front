@@ -1,44 +1,58 @@
-<div class="containerr">
-    <div class="container">
-        <header class="header">
-            <div class="logo">
-              <strong>BTCillustrated</strong>
+<div class="container mt-5">
+  <div class="row">
+      <!-- Card 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card rounded-lg shadow" style="width: 18rem; height: 28rem;">
+            <img src="https://source.unsplash.com/random/1" class="card-img h-100" alt="Random Image">
+            <div class="card-img-overlay d-flex flex-column justify-content-between">
+                <a href="https://twitter.com/your_twitter_link" target="_blank" class="text-right">
+                    <i class="fab fa-twitter-square fa-2x"></i>
+                </a>
+                <h5 class="card-title">Card title 1</h5>
+                <p class="card-text">Some example text for card 1.</p>
             </div>
-            <nav>
-                <div class="nav-items">
-                  <div class="dropdown">
-                    <button class="dropbtn">Products</button>
-                    <div class="dropdown-content">
-                      <a [routerLink]="['/search']">Visuals</a>
-                      <a [routerLink]="['/mailing-list']">MailMerge</a>
-                      <a [routerLink]="['/roadmap']">RoadMap</a>
-                      <a [routerLink]="['/list']">Blog</a>
-                      <a [routerLink]="['/about']">Plateform</a>
-                    </div>
-                  </div>
-                  <a [routerLink]="['/mailing-list']">Newsletter</a>
-                  <a [routerLink]="['/about']">#Support</a>
-                </div>
-                <!-- Search Bar -->
-                <div class="search-bar">
-                  <input type="text" [routerLink]="['/search']"  placeholder="Search ..." class="search-input">
-                  <i class="fa fa-search search-icon"></i>
-                </div>
-              </nav>
-              
-          </header>
-          
-        <div class="content">
-        <h1 class="title">BTCillustrated</h1>
-          <p class="center-text">
-            The all-new interactive learning experience that teaches you everything about Bitcoin
-          </p>
-          <div class="cards">
-            <div class="card" [routerLink]="[card.link]" *ngFor="let card of cards">
-              <img [src]="card.icon" alt="icon" />
-              <p>{{ card.text }}</p>
-            </div>
-          </div>
         </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+      <div class="card rounded-lg shadow" style="width: 18rem; height: 28rem;">
+          <img src="https://source.unsplash.com/random/1" class="card-img h-100" alt="Random Image">
+          <div class="card-img-overlay d-flex flex-column justify-content-between">
+              <a href="https://twitter.com/your_twitter_link" target="_blank" class="text-right">
+                  <i class="fab fa-twitter-square fa-2x"></i>
+              </a>
+              <h5 class="card-title">Card title 1</h5>
+              <p class="card-text">Some example text for card 1.</p>
+          </div>
       </div>
+  </div>
+
+  <div class="col-md-4 mb-4">
+    <div class="card rounded-lg shadow" style="width: 18rem; height: 28rem;">
+        <img src="https://source.unsplash.com/random/1" class="card-img h-100" alt="Random Image">
+        <div class="card-img-overlay d-flex flex-column justify-content-between">
+            <a href="https://twitter.com/your_twitter_link" target="_blank" class="text-right">
+                <i class="fab fa-twitter-square fa-2x"></i>
+            </a>
+            <h5 class="card-title">Card title 1</h5>
+            <p class="card-text">Some example text for card 1.</p>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 mb-4">
+  <div class="card rounded-lg shadow" style="width: 18rem; height: 28rem;">
+      <div style="background-color: bisque;" class="card-img h-100" alt="Random Image"></div>
+      <div class="card-img-overlay d-flex flex-column justify-content-between">
+          <a href="https://twitter.com/your_twitter_link" target="_blank" class="text-right">
+              <i class="fab fa-twitter-square fa-2x"></i>
+          </a>
+          <h5 class="card-title">Card title 1</h5>
+          <p class="card-text">Some example text for card 1.</p>
+      </div>
+  </div>
+</div>
+
+<!-- ... Duplicate the above card structure for 8 more cards, just update the image URL by incrementing the number at the end, like "/random/2", "/random/3" and so on ... -->
+  </div>
 </div>

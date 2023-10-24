@@ -11,7 +11,6 @@
 .container {
   width: 80%;
   background-color: #FCD313;
-  font-family: Arial, sans-serif;
 }
 
 .header {
@@ -117,14 +116,17 @@ nav {
 }
 
 .center-text {
+  font-family:'Outfit';
+  font-weight: 400;
   text-align: center;
   font-size: 1.5em;
   margin-bottom: 110px;
 }
 .title {
+  font-family:'Outfit';
+  font-weight: 700;
   text-align: center;
   font-size: 3.5em;
-  font-weight: bolder;
   margin-bottom: 10px;
 }
 .cards {

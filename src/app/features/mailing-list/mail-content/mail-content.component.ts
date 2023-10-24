@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Topic } from 'src/app/core/model/daily-update-model';
 import { MailingListService } from 'src/app/core/service/mailing-list-service';
 
@@ -10,12 +11,15 @@ import { MailingListService } from 'src/app/core/service/mailing-list-service';
 export class MailContentComponent implements OnInit {
 
   topic: Topic;
-
-  constructor(private xmlService: MailingListService) {}
+  filePath: string
+  constructor(
+    private xmlService: MailingListService,
+    private route: ActivatedRoute) {}
 
   ngOnInit() {
     debugger
-    this.xmlService.fetchXmlData('static/bitcoin-dev/Oct_2022/combined_Refreshed-BIP324.xml')
+    this.filePath = this.route.snapshot.paramMap.get('filePath')
+    this.xmlService.fetchXmlData(this.filePath)
       .subscribe((data: any) => {
         debugger
         this.topic = data;

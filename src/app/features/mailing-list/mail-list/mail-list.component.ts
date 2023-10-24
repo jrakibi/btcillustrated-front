@@ -75,7 +75,7 @@ export class MailListComponent implements OnInit {
     const navigationExtras: NavigationExtras = {
       state: dataToSend,
     };
-    this.router.navigate(['/mailing-list', post.id], navigationExtras);
+    this.router.navigate(['/mailing-list', post.file_path], navigationExtras);
 
   }
 
