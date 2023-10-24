@@ -15,7 +15,7 @@ const routes: Routes = [
         pathMatch: 'full'
       },
       {
-        path: ':id',
+        path: ':filePath',
         component: MailContentComponent,
       },
       

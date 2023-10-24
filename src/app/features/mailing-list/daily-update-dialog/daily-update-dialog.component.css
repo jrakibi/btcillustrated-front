@@ -74,7 +74,6 @@ p {
 
 
 body {
-    font-family: Arial, sans-serif;
     background-color: #E5F0FF;
     padding: 50px;
 }
@@ -130,7 +129,6 @@ body {
     width: 300px; /* Adjust as needed */
     padding: 40px;
     border-radius: 10px; /* Added for rounded corners */
-    font-family: Arial, sans-serif; /* Adjust as needed */
   }
 
   .card img {

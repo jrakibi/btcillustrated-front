@@ -27,12 +27,97 @@
     url("https://db.onlinewebfonts.com/t/6fa8408b1af234380e3d6860b3d7f417.ttf")format("truetype"),
     url("https://db.onlinewebfonts.com/t/6fa8408b1af234380e3d6860b3d7f417.svg#Balsamiq Sans Regular")format("svg");
 }
+
+/* Outfit-Black */
+@font-face {
+    font-family: 'Outfit';
+    src: url('assets/fonts/outfit/Outfit-Black.ttf');
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* Outfit-Bold */
+@font-face {
+    font-family: 'Outfit';
+    src: url('assets/fonts/outfit/Outfit-Bold.ttf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Outfit-ExtraBold */
+@font-face {
+    font-family: 'Outfit';
+    src: url('assets/fonts/outfit/Outfit-ExtraBold.ttf');
+    font-weight: 800;
+    font-style: normal;
+}
+
+/* Outfit-ExtraLight */
+@font-face {
+    font-family: 'Outfit';
+    src: url('assets/fonts/outfit/Outfit-ExtraLight.ttf');
+    font-weight: 200;
+    font-style: normal;
+}
+
+/* Outfit-Light */
+@font-face {
+    font-family: 'Outfit';
+    src: url('assets/fonts/outfit/Outfit-Light.ttf');
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* Outfit-Medium */
+@font-face {
+    font-family: 'Outfit';
+    src: url('assets/fonts/outfit/Outfit-Medium.ttf');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* Outfit-Regular */
+@font-face {
+    font-family: 'Outfit';
+    src: url('assets/fonts/outfit/Outfit-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Outfit-SemiBold */
+@font-face {
+    font-family: 'Outfit';
+    src: url('assets/fonts/outfit/Outfit-SemiBold.ttf');
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* Outfit-Thin */
+@font-face {
+    font-family: 'Outfit';
+    src: url('assets/fonts/outfit/Outfit-Thin.ttf');
+    font-weight: 100;
+    font-style: normal;
+}
+
+/* Outfit-VariableFont_wght */
+@font-face {
+    font-family: 'Outfit Variable';
+    src: url('assets/fonts/outfit/Outfit-VariableFont_wght.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 body {
     height: 100%;
     background-color: #000000;
     color: white;
-    font-family: 'Zara Light', sans-serif;
 }
 
 
 html, body { height: 100%; }
+body, html {
+    font-family: 'Outfit', sans-serif; /* Fallback to a generic font in case 'Outfit' doesn't load */
+    font-weight: 200;
+}
