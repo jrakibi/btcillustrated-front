@@ -1,0 +1,151 @@
+
+.newsletter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f7c435;
+    color: black;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    padding: 20px;
+    /* background-color: #fff; */
+}
+
+.left, .right {
+    flex: 1;
+}
+
+.left {
+    padding-right: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+small {
+    display: block;
+    margin-top: 20px;
+}
+
+.logos {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.right img {
+    width: 100%;
+    height: auto;
+}
+
+/* Add additional styles for logos, responsiveness, etc. as needed */
+.custom-search {
+    position: relative;
+    width: 88%;
+  }
+  .custom-search-input {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 100px;
+    padding: 10px 100px 10px 20px; 
+    line-height: 2.3;
+    box-sizing: border-box;
+    outline: none;
+  }
+  .custom-search-botton {
+    position: absolute;
+    right: 7px;
+    top: 5px;
+    bottom: 5px;
+    border: 0;
+    background: #f7932f;
+    color: #fff;
+    outline: none;
+    margin: 0;
+    padding: 0 30px;
+    border-radius: 100px;
+    z-index: 2;
+  }
+
+
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    cursor: pointer;
+}
+
+
+
+.twitter-cta {
+    margin-top: 20px;
+  }
+  
+  .twitter-cta p {
+    font-size: 1em;
+    margin-bottom: 10px;
+  }
+  
+  .twitter-icon {
+    height: 25px;
+    width: auto;
+    margin-top: 0px;
+    margin-right: 0px;
+    vertical-align: middle;
+    border-radius: 15px;
+  
+  }
+  

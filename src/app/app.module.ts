@@ -19,6 +19,7 @@ import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutComponent } from './features/about/about.component';
 import { NewsletterComponent } from './features/newsletter/newsletter.component';
+import { SupportComponent } from './features/support/support.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { NewsletterComponent } from './features/newsletter/newsletter.component'
     TestComponent,
     AboutComponent,
     NewsletterComponent,
+    SupportComponent,
 
   ],
   imports: [
