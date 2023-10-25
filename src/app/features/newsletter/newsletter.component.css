@@ -65,3 +65,65 @@ small {
 }
 
 /* Add additional styles for logos, responsiveness, etc. as needed */
+.custom-search {
+    position: relative;
+    width: 88%;
+  }
+  .custom-search-input {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 100px;
+    padding: 10px 100px 10px 20px; 
+    line-height: 2.3;
+    box-sizing: border-box;
+    outline: none;
+  }
+  .custom-search-botton {
+    position: absolute;
+    right: 7px;
+    top: 5px;
+    bottom: 5px;
+    border: 0;
+    background: #f7932f;
+    color: #fff;
+    outline: none;
+    margin: 0;
+    padding: 0 30px;
+    border-radius: 100px;
+    z-index: 2;
+  }
+
+
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    cursor: pointer;
+}
