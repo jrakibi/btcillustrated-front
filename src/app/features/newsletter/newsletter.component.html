@@ -1,4 +1,5 @@
 <app-header></app-header>
+
 <div class="newsletter-container">
     <div class="container">
         <div class="left">
@@ -6,12 +7,10 @@
                 <span style="font-weight: 600;">Bitcoin</span>
             </h1>
             <p>Dive deep into the world of Bitcoin without the jargon. I break down complex concepts using simple and engaging illustrations.</p>
-            <!-- <input type="email" placeholder="Enter email address">
-            <button>Get Bitcoin Illustrations in Your Inbox</button> -->
             <div class="custom-search">
-                <input type="text" class="custom-search-input" placeholder="Enter your email">
-                <button class="custom-search-botton" type="submit">Subscribe</button>  
-              </div>
+                <input type="text" class="custom-search-input" placeholder="Enter your email" [(ngModel)]="email">
+                <button class="custom-search-button" type="submit" (click)="subscribe()">Subscribe</button>
+            </div>
             <small>Subscribe now and receive enlightening Bitcoin illustrations directly in your email.</small>
             <div class="logos">
                 <!-- Add logos here. E.g., <img src="path/to/logo.png" alt="Logo Name"> -->
@@ -23,11 +22,9 @@
     </div>
 </div>
 
-
-<div class="modal"  *ngIf="showThankYouModal">
+<div class="modal" *ngIf="showThankYouModal">
     <div class="modal-content">
-      <span class="close-button" (click)="close()">×</span>
-      <p>Thanks for subscribing! Keep an eye on your inbox for enlightening Bitcoin illustrations.</p>
+        <span class="close-button" (click)="hideModal()">×</span>
+        <p>Thanks for subscribing! Keep an eye on your inbox for enlightening Bitcoin illustrations.</p>
     </div>
-  </div>
-  
+</div>
