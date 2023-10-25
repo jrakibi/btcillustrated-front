@@ -8,7 +8,7 @@ import { QuillModule } from 'ngx-quill';
 import { HttpClientModule } from '@angular/common/http';
 import { WriteComponent } from './features/articles/write/write.component';
 import { ReadComponent } from './features/articles/read/read.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule, DatePipe } from '@angular/common';
 import { SearchComponent } from './features/search/search.component';
 import { LayoutMenuComponent } from './shared/layout-menu/layout-menu.component';
@@ -19,6 +19,7 @@ import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutComponent } from './features/about/about.component';
 import { NewsletterComponent } from './features/newsletter/newsletter.component';
+import { MatDialogModule } from '@angular/material/dialog';
 import { SupportComponent } from './features/support/support.component';
 
 @NgModule({
@@ -44,8 +45,10 @@ import { SupportComponent } from './features/support/support.component';
     HttpClientModule,
     QuillModule.forRoot(),
     FormsModule,
+    ReactiveFormsModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+    MatDialogModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent],
