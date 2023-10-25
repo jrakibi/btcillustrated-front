@@ -1,4 +1,10 @@
 <app-header></app-header>
+<div class="modal">
+    <div class="modal-content">
+        <span class="close-button" (click)="hideModal()">×</span>
+        <p>Thanks for subscribing! Keep an eye on your inbox for enlightening Bitcoin illustrations.</p>
+    </div>
+</div>
 <div class="newsletter-container">
     <div class="container">
         <div class="left">
@@ -6,15 +12,15 @@
                 <span style="font-weight: 600;">Bitcoin</span>
             </h1>
             <p>Dive deep into the world of Bitcoin without the jargon. I break down complex concepts using simple and engaging illustrations.</p>
-            <!-- <input type="email" placeholder="Enter email address">
-            <button>Get Bitcoin Illustrations in Your Inbox</button> -->
-            <div class="custom-search">
-                <input type="text" class="custom-search-input" placeholder="Enter your email">
+            
+            <form [formGroup]="emailForm" (ngSubmit)="subscribe()" class="custom-search">
+                <input type="email" class="custom-search-input" formControlName="email" placeholder="Enter your email">
                 <button class="custom-search-botton" type="submit">Subscribe</button>  
-              </div>
+            </form>
+            
             <small>Subscribe now and receive enlightening Bitcoin illustrations directly in your email.</small>
             <div class="logos">
-                <!-- Add logos here. E.g., <img src="path/to/logo.png" alt="Logo Name"> -->
+                  <!-- Add logos here. E.g., <img src="path/to/logo.png" alt="Logo Name"> -->
             </div>
         </div>
         <div class="right">
@@ -23,11 +29,9 @@
     </div>
 </div>
 
-
-<div class="modal"  *ngIf="showThankYouModal">
+<div class="modal" *ngIf="showThankYouModal">
     <div class="modal-content">
-      <span class="close-button" (click)="close()">×</span>
-      <p>Thanks for subscribing! Keep an eye on your inbox for enlightening Bitcoin illustrations.</p>
+        <span class="close-button" (click)="hideModal()">×</span>
+        <p>Thanks for subscribing! Keep an eye on your inbox for enlightening Bitcoin illustrations.</p>
     </div>
-  </div>
-  
+</div>

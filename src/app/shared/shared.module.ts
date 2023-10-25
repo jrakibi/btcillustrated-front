@@ -14,11 +14,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { TruncatePipe } from "../core/pipe/truncate-pipe";
 import { LoaderComponent } from './loader/loader.component';
+import { ThankYouDialogComponent } from './thank-you-dialog/thank-you-dialog.component';
 
 @NgModule({
     declarations: [
         HeaderComponent,
         LoaderComponent,
+        ThankYouDialogComponent,
 
 
     ],

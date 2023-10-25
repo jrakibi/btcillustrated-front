@@ -82,7 +82,7 @@ small {
     position: absolute;
     right: 7px;
     top: 5px;
-    bottom: 5px;
+    bottom: 16px;
     border: 0;
     background: #f7932f;
     color: #fff;
@@ -127,3 +127,11 @@ small {
     color: black;
     cursor: pointer;
 }
+
+
+
+
+
+:ng-deep .thank-you-dialog .mat-dialog-container {
+    padding: 0 !important;
+  }
