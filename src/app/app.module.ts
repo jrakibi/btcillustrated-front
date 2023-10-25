@@ -20,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutComponent } from './features/about/about.component';
 import { NewsletterComponent } from './features/newsletter/newsletter.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { SupportComponent } from './features/support/support.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     TestComponent,
     AboutComponent,
     NewsletterComponent,
+    SupportComponent,
 
   ],
   imports: [
