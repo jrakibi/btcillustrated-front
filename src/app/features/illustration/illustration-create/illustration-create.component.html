@@ -1,0 +1,59 @@
+<div class="container mt-4">
+    <h2>Create New Illustration</h2>
+    <form [formGroup]="illustrationForm" (ngSubmit)="onSubmit()" class="mt-4">
+  
+      <div class="mb-3">
+        <label for="title" class="form-label">Title:</label>
+        <input id="title" type="text" class="form-control" formControlName="title">
+      </div>
+  
+      <div class="mb-3">
+        <label for="thumbnailImage" class="form-label">Thumbnail Image URL:</label>
+        <input id="thumbnailImage" type="text" class="form-control" formControlName="thumbnailImage">
+      </div>
+  
+      <div formArrayName="imagePaths" class="mb-3">
+        <label class="form-label">Image Paths:</label>
+        <div *ngFor="let imagePath of imagePaths.controls; let i = index" class="d-flex align-items-center mb-2">
+          <input [formControlName]="i" class="form-control me-2">
+          <button (click)="removeImagePath(i)" class="btn btn-danger btn-sm">Remove</button>
+        </div>
+        <button (click)="addImagePath()" type="button" class="btn btn-primary btn-sm">Add Image Path</button>
+      </div>
+  
+      <!-- ... similar structure for tags and categories ... -->
+  
+      <div class="mb-3">
+        <label for="details" class="form-label">Details:</label>
+        <textarea id="details" class="form-control" rows="4" formControlName="details"></textarea>
+      </div>
+  
+      <div class="mb-3">
+        <label for="metaTitle" class="form-label">Meta Title:</label>
+        <input id="metaTitle" type="text" class="form-control" formControlName="metaTitle">
+      </div>
+  
+      <div class="mb-3">
+        <label for="metaDescription" class="form-label">Meta Description:</label>
+        <input id="metaDescription" type="text" class="form-control" formControlName="metaDescription">
+      </div>
+  
+      <div class="mb-3">
+        <label for="slug" class="form-label">Slug:</label>
+        <input id="slug" type="text" class="form-control" formControlName="slug">
+      </div>
+  
+      <div class="mb-3">
+        <label for="githubRepoUrl" class="form-label">GitHub Repository URL:</label>
+        <input id="githubRepoUrl" type="text" class="form-control" formControlName="githubRepoUrl">
+      </div>
+  
+      <div class="mb-3">
+        <label for="tweetLink" class="form-label">Tweet Link:</label>
+        <input id="tweetLink" type="text" class="form-control" formControlName="tweetLink">
+      </div>
+  
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+  </div>
+  

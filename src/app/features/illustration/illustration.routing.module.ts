@@ -7,6 +7,7 @@ import { IllustrationComponent } from './illustration.component';
 import { IllustrationListComponent } from './illustration-list/illustration-list.component';
 import { IllustrationResourcesComponent } from './illustration-resources/illustration-resources.component';
 import { IllustrationGptComponent } from './illustration-gpt/illustration-gpt.component';
+import { IllustrationCreateComponent } from './illustration-create/illustration-create.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,11 @@ const routes: Routes = [
         path: '',
         component: IllustrationListComponent,
         pathMatch: 'full'
+      },
+
+      {
+        path: 'create',
+        component: IllustrationCreateComponent,
       },
       {
         path: ':id',
