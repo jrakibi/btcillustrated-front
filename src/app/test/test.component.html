@@ -1,58 +1,215 @@
-<div class="container mt-5">
-  <div class="row">
-      <!-- Card 1 -->
-      <div class="col-md-4 mb-4">
-        <div class="card rounded-lg shadow" style="width: 18rem; height: 28rem;">
-            <img src="https://source.unsplash.com/random/1" class="card-img h-100" alt="Random Image">
-            <div class="card-img-overlay d-flex flex-column justify-content-between">
-                <a href="https://twitter.com/your_twitter_link" target="_blank" class="text-right">
-                    <i class="fab fa-twitter-square fa-2x"></i>
-                </a>
-                <h5 class="card-title">Card title 1</h5>
-                <p class="card-text">Some example text for card 1.</p>
-            </div>
-        </div>
+<app-header [headerOptions]="headerOptions"></app-header>
+<header class="header">
+  <div class="brand-and-search-container">
+    <div class="brand">BTC<span class="illustrated">illustrated</span></div>
+    <div class="search-bar">
+      <i class="fa fa-search"></i>
+      <input type="text" placeholder="Search a topic">
     </div>
+  </div>
+  <div class="tags-line">
+    <span class="tags-title">Popular Tags:</span>
+    <div class="tags-container">
+      <div class="tags">
+        <span class="tag">Lightning (18)</span>
+        <span class="tag">Bitcoin (20)</span>
+        <span class="tag">BIPs (5)</span>
+        <span class="tag">Transactions (18)</span>
+        <span class="tag">Taproot (3)</span>
+        <!-- ... other tags ... -->
+      </div>
+    </div>
+  </div>
+</header>
 
-    <div class="col-md-4 mb-4">
-      <div class="card rounded-lg shadow" style="width: 18rem; height: 28rem;">
-          <img src="https://source.unsplash.com/random/1" class="card-img h-100" alt="Random Image">
-          <div class="card-img-overlay d-flex flex-column justify-content-between">
-              <a href="https://twitter.com/your_twitter_link" target="_blank" class="text-right">
-                  <i class="fab fa-twitter-square fa-2x"></i>
-              </a>
-              <h5 class="card-title">Card title 1</h5>
-              <p class="card-text">Some example text for card 1.</p>
+
+
+
+<div class="container">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Filter Sidebar -->
+      <div class="col-md-3 filter-container">
+        <div class="filter-sidebar bg-dark text-white" aria-label="Filters">
+          <div class="text-center">
+            <div class="my-3">Showing 1-18 of 1335 products</div>
+            <a href="#" role="button" class="text-decoration-underline text-white d-block mb-3">Clear</a>
           </div>
-      </div>
-  </div>
-
-  <div class="col-md-4 mb-4">
-    <div class="card rounded-lg shadow" style="width: 18rem; height: 28rem;">
-        <img src="https://source.unsplash.com/random/1" class="card-img h-100" alt="Random Image">
-        <div class="card-img-overlay d-flex flex-column justify-content-between">
-            <a href="https://twitter.com/your_twitter_link" target="_blank" class="text-right">
-                <i class="fab fa-twitter-square fa-2x"></i>
-            </a>
-            <h5 class="card-title">Card title 1</h5>
-            <p class="card-text">Some example text for card 1.</p>
+          <hr class="my-2 text-white"> <!-- Separator -->
+        
+          <div class="my-3">
+            <div>3D</div>
+            <div>Writing & Publishing</div>
+            <div>Other</div>
+          </div>
+          <hr class="my-2 text-white"> <!-- Separator -->
+        
+          <div class="my-3">
+            <fieldset>
+              <legend>Sort by</legend>
+              <select id="sort" class="form-select">
+                <option value="custom">Custom</option>
+                <!-- Add other options here -->
+              </select>
+            </fieldset>
+          </div>
+          <hr class="my-2 text-white"> <!-- Separator -->
+        
+          <div class="my-3">
+            <fieldset>
+              <legend>Showing</legend>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="all_illustrations" style="float: right;">
+                <label class="form-check-label" for="all_illustrations">All illustrations</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="bitcoin" checked style="float: right;">
+                <label class="form-check-label" for="bitcoin">Bitcoin</label>
+              </div>
+              <!-- Repeat for each checkbox option -->
+              <!-- ... -->
+              <div class="mt-3 text-center">
+                <a href="#" role="button" class="text-decoration-underline text-white d-block mt-3">Load more...</a>
+              </div>
+            </fieldset>
+          </div>
         </div>
-    </div>
-</div>
-
-<div class="col-md-4 mb-4">
-  <div class="card rounded-lg shadow" style="width: 18rem; height: 28rem;">
-      <div style="background-color: bisque;" class="card-img h-100" alt="Random Image"></div>
-      <div class="card-img-overlay d-flex flex-column justify-content-between">
-          <a href="https://twitter.com/your_twitter_link" target="_blank" class="text-right">
-              <i class="fab fa-twitter-square fa-2x"></i>
-          </a>
-          <h5 class="card-title">Card title 1</h5>
-          <p class="card-text">Some example text for card 1.</p>
+        </div>
+  
+  
+  
+  
+    <div class="offset-md-1 col-md-8">
+      <div class="card-container">
+      <div class="row">
+        <div class="col-md-3 mb-3">
+          <div class="card">
+            <div class="card-icons">
+              <span class="icon-circle"><i class="fab fa-github"></i></span>
+              <span class="icon-circle"><i class="fab fa-twitter"></i></span>
+            </div>
+            
+            <div class="card-image" style="text-align: center; padding: 20px;">
+              <!-- Insert your image here -->
+              <img src="https://github.com/jrakibi/BTCillustrated/blob/main/Mempool/slide1.jpg?raw=true" alt="Image description" style="max-width: 100%; height: auto;">
+            </div>
+            
+            <div class="card-title">
+              <button>Reorg</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <div class="card">
+            <div class="card-icons">
+              <span class="icon-circle"><i class="fab fa-github"></i></span>
+              <span class="icon-circle"><i class="fab fa-twitter"></i></span>
+            </div>
+            
+            <div class="card-image" style="text-align: center; padding: 20px;">
+              <!-- Insert your image here -->
+              <img src="https://github.com/jrakibi/BTCillustrated/blob/main/Mempool/slide1.jpg?raw=true" alt="Image description" style="max-width: 100%; height: auto;">
+            </div>
+            
+            <div class="card-title">
+              <button>Reorg</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <div class="card">
+            <div class="card-icons">
+              <span class="icon-circle"><i class="fab fa-github"></i></span>
+              <span class="icon-circle"><i class="fab fa-twitter"></i></span>
+            </div>
+            
+            <div class="card-image" style="text-align: center; padding: 20px;">
+              <!-- Insert your image here -->
+              <img src="https://github.com/jrakibi/BTCillustrated/blob/main/Mempool/slide1.jpg?raw=true" alt="Image description" style="max-width: 100%; height: auto;">
+            </div>
+            
+            <div class="card-title">
+              <button>Reorg</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <div class="card">
+            <div class="card-icons">
+              <span class="icon-circle"><i class="fab fa-github"></i></span>
+              <span class="icon-circle"><i class="fab fa-twitter"></i></span>
+            </div>
+            
+            <div class="card-image" style="text-align: center; padding: 20px;">
+              <!-- Insert your image here -->
+              <img src="https://github.com/jrakibi/BTCillustrated/blob/main/Mempool/slide1.jpg?raw=true" alt="Image description" style="max-width: 100%; height: auto;">
+            </div>
+            
+            <div class="card-title">
+              <button>Reorg</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <div class="card">
+            <div class="card-icons">
+              <span class="icon-circle"><i class="fab fa-github"></i></span>
+              <span class="icon-circle"><i class="fab fa-twitter"></i></span>
+            </div>
+            
+            <div class="card-image" style="text-align: center; padding: 20px;">
+              <!-- Insert your image here -->
+              <img src="https://github.com/jrakibi/BTCillustrated/blob/main/Mempool/slide1.jpg?raw=true" alt="Image description" style="max-width: 100%; height: auto;">
+            </div>
+            
+            <div class="card-title">
+              <button>Reorg</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <div class="card">
+            <div class="card-icons">
+              <span class="icon-circle"><i class="fab fa-github"></i></span>
+              <span class="icon-circle"><i class="fab fa-twitter"></i></span>
+            </div>
+            
+            <div class="card-image" style="text-align: center; padding: 20px;">
+              <!-- Insert your image here -->
+              <img src="https://github.com/jrakibi/BTCillustrated/blob/main/Mempool/slide1.jpg?raw=true" alt="Image description" style="max-width: 100%; height: auto;">
+            </div>
+            
+            <div class="card-title">
+              <button>Reorg</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <div class="card">
+            <div class="card-icons">
+              <span class="icon-circle"><i class="fab fa-github"></i></span>
+              <span class="icon-circle"><i class="fab fa-twitter"></i></span>
+            </div>
+            
+            <div class="card-image" style="text-align: center; padding: 20px;">
+              <!-- Insert your image here -->
+              <img src="https://github.com/jrakibi/BTCillustrated/blob/main/Mempool/slide1.jpg?raw=true" alt="Image description" style="max-width: 100%; height: auto;">
+            </div>
+            
+            <div class="card-title">
+              <button>Reorg</button>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
   </div>
-</div>
-
-<!-- ... Duplicate the above card structure for 8 more cards, just update the image URL by incrementing the number at the end, like "/random/2", "/random/3" and so on ... -->
+  
+  
+  
+  
+  
+  
   </div>
+  
 </div>

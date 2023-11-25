@@ -1,12 +1,334 @@
-.card {
-  background-color: #ffeb3b; /* Yellow color */
+
+.container {
+  margin: 50px auto;
+}
+
+/* Header settings */
+.header {
+  background-color: #FCD313;
+  padding: 50px 0;  
+  text-align: center;
+}
+
+/* Brand and search container settings */
+.brand-and-search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+/* Brand styling */
+.brand {
+  font-weight: bold;
+  color: black;
+  font-size: 30px;
+  margin-right: 30px; /* Space between brand and search bar */
+}
+
+/* Search bar styling */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  border-radius: 5px;
+  padding: 10px 20px; /* Padding increased for visual appeal */
+  width: 60%; /* Width of search bar increased */
+  max-width: 800px; /* Maximum width of search bar */
+  border: 1px solid white;
+}
+
+.search-bar i {
+  color: white;
+  margin-right: 10px; /* Space between icon and input field */
+}
+
+.search-bar input {
   border: none;
+  background-color: transparent;
+  color: white;
+  outline: none;
+  padding-left: 5px;
+  width: 100%; /* Input field takes up the rest of the search bar */
+  font-size: 16px; /* Font size increased for readability */
 }
 
-.card-title, .card-text {
-  color: #212121; /* Dark text to contrast with yellow */
+/* Tags line styling */
+.tags-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Allow tags to wrap to next line if needed */
 }
 
-.fab {
-  color: #1da1f2; /* Twitter blue */
+/* Tags title styling */
+.tags-title {
+  font-size: 18px; /* Font size for visual consistency */
+  color: black;
+  margin-right: 10px;
+  align-self: center; /* Vertically center with tags */
 }
+
+/* Tags container styling */
+.tags-container {
+  display: flex;
+  justify-content: center; /* Center tags horizontally */
+  flex-wrap: wrap; /* Wrap tags if they don't fit on one line */
+}
+
+/* Individual tag styling */
+.tag {
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  padding: 6px 14px; /* Increased padding for tags */
+  margin: 5px; /* Space between tags */
+  font-size: 14px; /* Font size increased for tags for readability */
+  border: 1px solid white;
+}
+
+/* Optional scrollbar styling */
+.tags-container::-webkit-scrollbar {
+  height: 5px;
+}
+
+.tags-container::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.tags-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.card-container {
+  padding: 20px; /* Padding around the entire grid */
+}
+
+.card {
+  background-color: #FCD313;
+  border-radius:6px;
+  border: 1px solid white;
+  padding: 15px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.card-icons {
+  text-align: right;
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  cursor: pointer;
+
+}
+
+.icon-circle {
+  display: inline-block;
+  background-color: white;
+  border: 0.5px solid black;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  line-height: 22px;
+  margin-left: 5px;
+}
+
+.icon-circle i {
+  color: black;
+  font-size: 14px;
+}
+
+.card-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Center the image */
+}
+
+.card-title button {
+  background-color: white;
+  border: 0.5px solid black;
+  border-radius: 25px;
+  padding: 7px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: block;
+  width: 100%; 
+  text-align: center;
+}
+
+/* Optional: Add responsiveness for smaller screens */
+@media (max-width: 600px) {
+  .card-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.filter-container {
+  padding: 1rem;
+
+}
+.filter-sidebar {
+  width: 100%; /* Responsive width */
+  max-width: 250px; /* Max width for larger screens */
+  background-color: #000; /* Black background */
+  padding: 1rem;
+  color: #fff; /* White text */
+  display: flex;
+  flex-direction: column;
+  border: 0.5px solid white;
+}
+
+/* Text and links inside the sidebar */
+.filter-sidebar div,
+.filter-sidebar a {
+  color: #fff; /* White text */
+}
+
+/* Centered text and buttons */
+.filter-sidebar .text-center {
+  text-align: center;
+}
+
+/* Styling for 'Clear' and 'Load more...' links */
+.filter-sidebar .text-decoration-underline {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Font weight for categories */
+.filter-sidebar .fw-bold {
+  font-weight: bold;
+  margin-bottom: 0.5rem; /* Space between categories */
+}
+
+/* Separator lines */
+.filter-sidebar hr {
+  border: 0;
+  height: 1.5px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+  margin: 1rem 0; /* Space above and below the line */
+}
+
+/* Style for form elements and their labels */
+.filter-sidebar .form-check {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0; /* Space above and below each checkbox */
+}
+
+.filter-sidebar .form-check-input {
+  position: absolute;
+  right: 0; /* Checkbox on the right side */
+  top: 50%;
+  transform: translateY(-50%); /* Center checkbox vertically */
+}
+
+.filter-sidebar .form-check-label {
+  display: block;
+  width: 80%; /* Prevent label from overlapping the checkbox */
+  line-height: 1.5; /* Height of the label's line */
+}
+
+/* Select dropdown styling */
+.filter-sidebar select.form-select {
+  width: 100%;
+  border: 0.5px solid #fff; /* White border */
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  padding: 0.5rem;
+  margin-bottom: 0.5rem; /* Space below the dropdown */
+}
+
+/* Adjustments for larger screens */
+@media (min-width: 576px) {
+  .filter-sidebar {
+    width: 250px; /* Fixed width for larger screens */
+  }
+}
+.filter-sidebar div,
+.filter-sidebar a {
+  color: #fff; /* White text */
+  text-align: left; /* Left-align text */
+  border-radius: 4px;
+}
+
+.form-check-input:checked {
+  background-color: #000000;
+  border-color: #ffffff;
+}
+
+legend {
+  font-size: 1rem;
+  font-weight: 500;
+}
+

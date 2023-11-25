@@ -22,5 +22,14 @@ export class TestComponent  {
     { icon: 'assets/icons/blog.svg', text: 'Blog', link: '/list"' },
     { icon: 'assets/icons/terminal.png', text: 'Plateform', link: '' }
 ];
+headerOptions: HeaderOptions
+constructor(
+) { }
 
+
+ngOnInit(): void {
+  this.headerOptions = {
+    isUnderlineDisplayed: true,
+  }
+}
 }
