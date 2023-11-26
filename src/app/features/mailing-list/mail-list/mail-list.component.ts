@@ -36,15 +36,11 @@ export class MailListComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    this.headerOptions = {
-      isUnderlineDisplayed: true,
-    }
-
     this.getDailyUpdate();
 
-    setTimeout(() => {
-      this.openDialog();
-    }, 2500);  // 5 seconds delay
+    // setTimeout(() => {
+    //   this.openDialog();
+    // }, 2500);  // 5 seconds delay
   }
 
   getDailyUpdate() {

@@ -35,6 +35,7 @@ export class IllustrationListComponent implements OnInit {
   ngOnInit(): void {
     this.headerOptions = {
       isUnderlineDisplayed: true,
+      isDarkMode: true
     }
     this.loadIllustrations();
     this.loadTagsWithCounts()

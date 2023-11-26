@@ -1,13 +1,18 @@
+.illustration-list-container {
+  background-color: #111b21;
+}
 
 .container {
-  margin: 50px auto;
+  margin: 0px auto;
+  padding-top: 60px;
 }
 
 /* Header settings */
 .header {
-  background-color: #FCD313;
+  background-color: #111B21;
   padding: 50px 0;  
   text-align: center;
+  border-bottom: 0.5px solid white;
 }
 
 /* Brand and search container settings */
@@ -21,16 +26,18 @@
 /* Brand styling */
 .brand {
   font-weight: bold;
-  color: black;
+  color: #fcd83c;
   font-size: 30px;
   margin-right: 30px; /* Space between brand and search bar */
 }
-
+.illustrated {
+  font-weight: 100;
+}
 /* Search bar styling */
 .search-bar {
   display: flex;
   align-items: center;
-  background-color: black;
+  background-color: #111B21;
   border-radius: 5px;
   padding: 10px 20px; /* Padding increased for visual appeal */
   width: 60%; /* Width of search bar increased */
@@ -64,7 +71,7 @@
 /* Tags title styling */
 .tags-title {
   font-size: 12px; /* Font size for visual consistency */
-  color: black;
+  color: #111B21;
   margin-right: 10px;
   align-self: center; /* Vertically center with tags */
 }
@@ -78,7 +85,7 @@
 
 /* Individual tag styling */
 .tag {
-  background-color: black;
+  background-color: #111B21;
   color: white;
   border-radius: 20px;
   padding: 6px 14px; /* Increased padding for tags */
@@ -90,8 +97,8 @@
 
 .tag.active {
   /* styles to highlight the active tag, e.g., change background color */
-  background-color: #f0ad4e;
-  color: white;
+  background-color: #fcd83c;
+  color: black;
 }
 
 /* Optional scrollbar styling */
@@ -170,19 +177,29 @@
 
 .icon-circle {
   display: inline-block;
-  background-color: white;
-  border: 0.5px solid black;
+  background-color: #fbd414;
+  border: 0.5px solid #000000;
   border-radius: 50%;
   width: 22px;
   height: 22px;
   text-align: center;
   line-height: 20px;
   margin-left: 5px;
+  cursor: pointer;
+}
+
+.icon-circle:hover {
+  background-color: #111b21;
+  border: 0.5px solid #ffffff;
 }
 
 .icon-circle i {
-  color: black;
+  color: #111B21;
   font-size: 12px;
+}
+
+.icon-circle:hover i {
+  color: #ffffff;
 }
 
 .card-image img {
@@ -194,20 +211,26 @@
 }
 
 .card-title button {
-  background-color: white;
-  border: 0.5px solid black;
+  color: #ffffff;
+  background-color: #111b21;
+  border: 0.7px solid #ffffff;
   border-radius: 25px;
   padding: 7px 20px;
-  font-size: 12px;  
+  font-size: 12px;
   cursor: pointer;
   display: block;
   width: 100%;
   text-align: center;
-  overflow: hidden; /* Ensure the overflow text is hidden */
-  white-space: nowrap; /* Keep the text on a single line */
-  text-overflow: ellipsis; /* Add an ellipsis at the end of the text */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
+.card-title:hover button {
+  color: black;
+  background-color: #fcd211;
+  border: 0.7px solid #000000;
+}
 .custom-tooltip {
   max-width: none; /* Or set to your preferred max-width */
   white-space: nowrap; /* Ensure the text doesn't wrap */
@@ -257,7 +280,7 @@
 .filter-sidebar {
   width: 100%; /* Responsive width */
   max-width: 250px; /* Max width for larger screens */
-  background-color: #000; /* Black background */
+  background-color: #111B21 !important; /* #111B21 background */
   padding: 1rem;
   color: #fff; /* White text */
   display: flex;
@@ -325,7 +348,7 @@
 .filter-sidebar select.form-select {
   width: 100%;
   border: 0.5px solid #fff; /* White border */
-  background-color: #000; /* Black background */
+  background-color: #111B21; /* #111B21 background */
   color: #fff; /* White text */
   padding: 0.5rem;
   margin-bottom: 0.5rem; /* Space below the dropdown */
@@ -345,13 +368,13 @@
 }
 
 .form-check-input:checked {
-  background-color: #000000;
+  background-color: #111B21;
   border-color: #ffffff;
 }
 .form-check-input:checked + .form-check-label {
   /* Styles for checked labels, e.g., bold text or different color */
   font-weight: bold;
-  color: #f0ad4e;
+  color: #fcd83c;
 }
 
 legend {
@@ -379,7 +402,7 @@ legend {
 
 /* Active category style */
 .category-list > div.active {
-  color: #f0ad4e; /* White text for active category */
+  color: #fcd83c; /* White text for active category */
 }
 
 .form-select {
@@ -387,7 +410,7 @@ legend {
   border: 1px solid #ccc;
   border-radius: 0.25rem;
   background-color: white;
-  color: black;
+  color: #111B21;
 }
 
 
@@ -451,7 +474,7 @@ legend {
 /* Focus effect for select */
 .custom-form-select:focus {
   outline: none;
-  border-color: #f0ad4e; /* Highlight color for focus */
+  border-color: #fcd83c; /* Highlight color for focus */
   box-shadow: 0 0 0 2px rgba(240, 173, 78, 0.5); /* Glow effect for focus */
 }
 

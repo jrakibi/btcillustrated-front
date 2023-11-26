@@ -113,7 +113,8 @@ export class SlideShowComponent {
     this.headerOptions = {
       isUnderlineDisplayed: true,
       isSlideShow: true,
-      headerLinks: headerLinks
+      headerLinks: headerLinks,
+      isDarkMode: true
     }
   }
 

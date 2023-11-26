@@ -11,12 +11,16 @@ import { HeaderOptions } from 'src/app/shared/header/header-options';
 export class MailingListComponent implements OnInit {
   headerOptions: HeaderOptions
   constructor(
-  ) { }
+  ) { 
+    debugger
+    this.headerOptions = {
+      isUnderlineDisplayed: true,
+      isDarkMode: false
+    }
+  }
 
 
   ngOnInit(): void {
-    this.headerOptions = {
-      isUnderlineDisplayed: true,
-    }
+
   }
 }

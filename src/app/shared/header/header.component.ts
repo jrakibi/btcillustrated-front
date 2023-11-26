@@ -9,48 +9,64 @@ import { HeaderOptions } from './header-options';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit{
   @Input() headerOptions: HeaderOptions
-  isLogoClicked = false;
-  activeLink: string = '';
-  articles: any[] = []; // Array to store the articles
-  illustrations: any[] = []; // Array to store the illustrations
-  isCardContainerClicked: boolean = false;
+  isDarkMode = true; // Assuming dark mode is the default
+  state = false;
+  // showFeatures = false;
 
-  constructor(private http: HttpClient, 
-    private articleService: ArticleService,
-    private illustrationService: IllustrationService,
-    ) { }
+  // toggleFeatures(expand: boolean): void {
+  //   this.state = expand;
+  // }
+  showFeatures: boolean = false;
 
-  toggleCardContainer() {
-    this.isCardContainerClicked = !this.isCardContainerClicked;
-    this.isLogoClicked = !this.isLogoClicked;
+  constructor() {
+
   }
-
-
-  setActiveLink(link: string) {
-    this.isLogoClicked = true;
-    this.activeLink = link;
-    if (link === 'Article') {
-      this.getArticles(); 
-    }
-    if (link === 'illustration') {
-      this.getIllustrations(); 
-    }
-    if (link === 'Bips') {
-      this.getIllustrations(); 
+  ngOnInit(): void {
+    debugger
+    if(this.headerOptions) {
+      this.isDarkMode = this.headerOptions.isDarkMode
     }
   }
 
-  getArticles() {
-    this.articleService.getArticles().subscribe(articles => {
-      this.articles = articles
-    })
+  toggleFeatures(): void {
+    this.showFeatures = !this.showFeatures;
   }
-
-  getIllustrations() {
-    this.illustrationService.getIllustrations().subscribe(illustrations => {
-      this.illustrations = illustrations
-    })
+  toggleMode(): void {
+    this.isDarkMode = !this.isDarkMode;
   }
+  features: Array<{title: string, description: string, icon: string, link: string}> = [
+    {
+      title: 'Visuals',
+      description: 'End-to-end encryption and privacy controls.',
+      icon: 'assets/icons/visual.png',
+      link: '/illustration'
+    },
+    {
+      title: 'MailMerge',
+      description: 'Message and call for free* around the world.',
+      icon: 'assets/icons/feed.svg',
+      link: '/mailing-list'
+    },
+    {
+      title: 'RoadMap',
+      description: 'Message and call for free* around the world.',
+      icon: 'assets/icons/roadmap.png',
+      link: '/roadmap'
+    },
+    {
+      title: 'Blog',
+      description: 'Message and call for free* around the world.',
+      icon: 'assets/icons/blog.svg',
+      link: '/list'
+    },
+    {
+      title: 'Platform',
+      description: 'Message and call for free* around the world.',
+      icon: 'assets/icons/terminal.png',
+      link: '/support'
+    }
+    // Add other features as needed
+  ];
 }
