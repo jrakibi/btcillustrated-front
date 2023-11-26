@@ -50,7 +50,7 @@ export class MailListComponent implements OnInit {
   getDailyUpdate() {
     this.mailingListService.getDailyUpdate().subscribe(
       (data: any) => {
-        debugger
+        
         this.dailyUpdateData = data
       },
       (error) => {
@@ -70,7 +70,7 @@ export class MailListComponent implements OnInit {
   }
 
   openTopic(post: Post) {
-    debugger
+    
     const dataToSend = { post: post };
     const navigationExtras: NavigationExtras = {
       state: dataToSend,

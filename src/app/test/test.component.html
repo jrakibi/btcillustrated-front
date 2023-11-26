@@ -4,22 +4,31 @@
     <div class="brand">BTC<span class="illustrated">illustrated</span></div>
     <div class="search-bar">
       <i class="fa fa-search"></i>
-      <input type="text" placeholder="Search a topic">
+      <input type="text" 
+      (input)="onSearch($event.target.value)" 
+      placeholder="Search a topic">
     </div>
   </div>
   <div class="tags-line">
     <span class="tags-title">Popular Tags:</span>
     <div class="tags-container">
       <div class="tags">
-        <span class="tag">Lightning (18)</span>
-        <span class="tag">Bitcoin (20)</span>
-        <span class="tag">BIPs (5)</span>
-        <span class="tag">Transactions (18)</span>
-        <span class="tag">Taproot (3)</span>
-        <!-- ... other tags ... -->
+        <!-- Special "ALL" tag -->
+        <span class="tag" [class.active]="activeTag === null" (click)="filterIllustrationsByTag(null)">
+          All
+        </span>
+        
+        <!-- Iterate over tags and highlight the active tag -->
+        <span *ngFor="let tag of tagsWithCounts | keyvalue"
+              class="tag" [class.active]="tag.key === activeTag"
+              (click)="filterIllustrationsByTag(tag.key)">
+          {{ tag.key }} ({{ tag.value }})
+        </span>
       </div>
     </div>
+    
   </div>
+  
 </header>
 
 
@@ -32,46 +41,67 @@
       <div class="col-md-3 filter-container">
         <div class="filter-sidebar bg-dark text-white" aria-label="Filters">
           <div class="text-center">
-            <div class="my-3">Showing 1-18 of 1335 products</div>
-            <a href="#" role="button" class="text-decoration-underline text-white d-block mb-3">Clear</a>
+            <!-- Show the number of displayed illustrations -->
+            <div class="my-3">Showing {{ displayedIllustrationsCount }} of {{ allIllustrations.length }} illustrations</div>
+            <!-- Clear button to reset filters -->
+            <a (click)="clearFilters()" role="button" class="text-decoration-underline text-white d-block mb-3">Clear</a>
           </div>
           <hr class="my-2 text-white"> <!-- Separator -->
         
-          <div class="my-3">
-            <div>3D</div>
-            <div>Writing & Publishing</div>
-            <div>Other</div>
+          <!-- Category list with clickable items -->
+          <div class="my-3 category-list">
+            <!-- "All" category to reset the filter -->
+            <legend>Categories</legend>
+
+            <div (click)="toggleCategorySelection(null)"
+                [class.active]="selectedCategory === null">
+              All
+            </div>
+            
+            <!-- List of categories -->
+            <div *ngFor="let category of categories" 
+                (click)="toggleCategorySelection(category.name)"
+                [class.active]="selectedCategory === category.name">
+              {{ category.name }}
+            </div>
           </div>
+
+          
           <hr class="my-2 text-white"> <!-- Separator -->
         
-          <div class="my-3">
+          <div class="my-3 sort-fieldset">
             <fieldset>
               <legend>Sort by</legend>
-              <select id="sort" class="form-select">
+              <select id="sort" class="custom-form-select" [(ngModel)]="sortOrder" (change)="sortIllustrations(sortOrder)">
                 <option value="custom">Custom</option>
-                <!-- Add other options here -->
+                <option value="alphabetical-asc">Alphabetical (A to Z)</option>
+                <option value="alphabetical-desc">Alphabetical (Z to A)</option>
+                <!-- Add other sorting options here -->
               </select>
             </fieldset>
           </div>
+          
+          
           <hr class="my-2 text-white"> <!-- Separator -->
         
           <div class="my-3">
             <fieldset>
               <legend>Showing</legend>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="all_illustrations" style="float: right;">
+                <input class="form-check-input" type="checkbox" id="all_illustrations"
+                       (change)="selectedTags.clear(); filterIllustrations();"
+                       [checked]="selectedTags.size === 0">
                 <label class="form-check-label" for="all_illustrations">All illustrations</label>
               </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="bitcoin" checked style="float: right;">
-                <label class="form-check-label" for="bitcoin">Bitcoin</label>
+              <div class="form-check" *ngFor="let tag of tagsWithCounts | keyvalue">
+                <input class="form-check-input" type="checkbox" [id]="tag.key"
+                       (change)="toggleTagSelection(tag.key)"
+                       [checked]="selectedTags.has(tag.key)">
+                <label class="form-check-label" [for]="tag.key">{{ tag.key }}</label>
               </div>
-              <!-- Repeat for each checkbox option -->
               <!-- ... -->
-              <div class="mt-3 text-center">
-                <a href="#" role="button" class="text-decoration-underline text-white d-block mt-3">Load more...</a>
-              </div>
             </fieldset>
+            
           </div>
         </div>
         </div>
@@ -82,123 +112,71 @@
     <div class="offset-md-1 col-md-8">
       <div class="card-container">
       <div class="row">
-        <div class="col-md-3 mb-3">
+        <div class="col-md-3 mb-3"  *ngFor="let illustration of illustrations">
           <div class="card">
             <div class="card-icons">
-              <span class="icon-circle"><i class="fab fa-github"></i></span>
-              <span class="icon-circle"><i class="fab fa-twitter"></i></span>
+              <a href="{{ illustration.githubRepoUrl || 'https://github.com/jrakibi/btcillustrated/' }}" target="_blank" rel="noopener noreferrer">
+                <span class="icon-circle">
+                  <i class="fab fa-github"></i>
+                </span>
+              </a>
+              <a href="{{ illustration.tweetLink || 'https://twitter.com/BTCillustrated' }}" target="_blank" rel="noopener noreferrer">
+                <span class="icon-circle">
+                  <i class="fab fa-twitter"></i>
+                </span>
+              </a>
             </div>
             
-            <div class="card-image" style="text-align: center; padding: 20px;">
-              <!-- Insert your image here -->
-              <img src="https://github.com/jrakibi/BTCillustrated/blob/main/Mempool/slide1.jpg?raw=true" alt="Image description" style="max-width: 100%; height: auto;">
-            </div>
             
-            <div class="card-title">
-              <button>Reorg</button>
-            </div>
-          </div>
+            
+<!-- ... -->
+<div class="card-image" [routerLink]="['/illustration', illustration.id]" style="text-align: center; padding: 20px;">
+    <!-- Placeholder container -->
+    <div class="ph-item" *ngIf="!illustration.thumbnailLoaded">
+    <div class="ph-col-12">
+        <div class="ph-picture"></div>
+        <div class="ph-row">
+            <!-- Modify to suit your look -->
         </div>
-        <div class="col-md-3 mb-3">
-          <div class="card">
-            <div class="card-icons">
-              <span class="icon-circle"><i class="fab fa-github"></i></span>
-              <span class="icon-circle"><i class="fab fa-twitter"></i></span>
-            </div>
-            
-            <div class="card-image" style="text-align: center; padding: 20px;">
-              <!-- Insert your image here -->
-              <img src="https://github.com/jrakibi/BTCillustrated/blob/main/Mempool/slide1.jpg?raw=true" alt="Image description" style="max-width: 100%; height: auto;">
-            </div>
-            
-            <div class="card-title">
-              <button>Reorg</button>
-            </div>
+    </div>
+</div>
+
+    <img [src]="illustration.thumbnailImage || (illustration.imagePaths.length > 0 ? illustration.imagePaths[0] : 'default_image_path')" 
+    alt="{{ illustration.title }}" 
+    style="max-width: 100%; height: auto;"
+    (load)="onLoadImage(illustration)"
+    [hidden]="!illustration.thumbnailLoaded">
+
+</div>
+
+<!-- <div class="card-image" [routerLink]="['/illustration', illustration.id]" style="text-align: center; padding: 20px;">
+  <ng-container *ngIf="illustration.thumbnailLoaded; else loadingPlaceholder">
+    <img [src]="illustration.thumbnailImage || (illustration.imagePaths.length > 0 ? illustration.imagePaths[0] : 'default_image_path')" 
+    alt="{{ illustration.title }}" 
+    style="max-width: 100%; height: auto;"
+    (load)="onLoadImage(illustration)">
+
+  </ng-container>
+  <ng-template #loadingPlaceholder>
+    <div class="ph-item" *ngIf="!illustration.thumbnailLoaded">
+      <div class="ph-col-12">
+          <div class="ph-picture"></div>
+          <div class="ph-row">
           </div>
-        </div>
-        <div class="col-md-3 mb-3">
-          <div class="card">
-            <div class="card-icons">
-              <span class="icon-circle"><i class="fab fa-github"></i></span>
-              <span class="icon-circle"><i class="fab fa-twitter"></i></span>
+      </div>
+  </div>
+  </ng-template>
+</div> -->
+
+<!-- ... -->
+
+            <div class="card-title" [routerLink]="['/illustration', illustration.id]">
+              <button matTooltip="{{ illustration.title }}" matTooltipClass="custom-tooltip">
+                {{ illustration.title }}
+              </button>
             </div>
             
-            <div class="card-image" style="text-align: center; padding: 20px;">
-              <!-- Insert your image here -->
-              <img src="https://github.com/jrakibi/BTCillustrated/blob/main/Mempool/slide1.jpg?raw=true" alt="Image description" style="max-width: 100%; height: auto;">
-            </div>
             
-            <div class="card-title">
-              <button>Reorg</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 mb-3">
-          <div class="card">
-            <div class="card-icons">
-              <span class="icon-circle"><i class="fab fa-github"></i></span>
-              <span class="icon-circle"><i class="fab fa-twitter"></i></span>
-            </div>
-            
-            <div class="card-image" style="text-align: center; padding: 20px;">
-              <!-- Insert your image here -->
-              <img src="https://github.com/jrakibi/BTCillustrated/blob/main/Mempool/slide1.jpg?raw=true" alt="Image description" style="max-width: 100%; height: auto;">
-            </div>
-            
-            <div class="card-title">
-              <button>Reorg</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 mb-3">
-          <div class="card">
-            <div class="card-icons">
-              <span class="icon-circle"><i class="fab fa-github"></i></span>
-              <span class="icon-circle"><i class="fab fa-twitter"></i></span>
-            </div>
-            
-            <div class="card-image" style="text-align: center; padding: 20px;">
-              <!-- Insert your image here -->
-              <img src="https://github.com/jrakibi/BTCillustrated/blob/main/Mempool/slide1.jpg?raw=true" alt="Image description" style="max-width: 100%; height: auto;">
-            </div>
-            
-            <div class="card-title">
-              <button>Reorg</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 mb-3">
-          <div class="card">
-            <div class="card-icons">
-              <span class="icon-circle"><i class="fab fa-github"></i></span>
-              <span class="icon-circle"><i class="fab fa-twitter"></i></span>
-            </div>
-            
-            <div class="card-image" style="text-align: center; padding: 20px;">
-              <!-- Insert your image here -->
-              <img src="https://github.com/jrakibi/BTCillustrated/blob/main/Mempool/slide1.jpg?raw=true" alt="Image description" style="max-width: 100%; height: auto;">
-            </div>
-            
-            <div class="card-title">
-              <button>Reorg</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 mb-3">
-          <div class="card">
-            <div class="card-icons">
-              <span class="icon-circle"><i class="fab fa-github"></i></span>
-              <span class="icon-circle"><i class="fab fa-twitter"></i></span>
-            </div>
-            
-            <div class="card-image" style="text-align: center; padding: 20px;">
-              <!-- Insert your image here -->
-              <img src="https://github.com/jrakibi/BTCillustrated/blob/main/Mempool/slide1.jpg?raw=true" alt="Image description" style="max-width: 100%; height: auto;">
-            </div>
-            
-            <div class="card-title">
-              <button>Reorg</button>
-            </div>
           </div>
         </div>
       </div>

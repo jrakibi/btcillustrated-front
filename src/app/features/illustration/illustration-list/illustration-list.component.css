@@ -1,14 +1,539 @@
-.coming-soon-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+
+.container {
+  margin: 50px auto;
+}
+
+/* Header settings */
+.header {
+  background-color: #FCD313;
+  padding: 50px 0;  
   text-align: center;
 }
 
-img {
+/* Brand and search container settings */
+.brand-and-search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+/* Brand styling */
+.brand {
+  font-weight: bold;
+  color: black;
+  font-size: 30px;
+  margin-right: 30px; /* Space between brand and search bar */
+}
+
+/* Search bar styling */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  border-radius: 5px;
+  padding: 10px 20px; /* Padding increased for visual appeal */
+  width: 60%; /* Width of search bar increased */
+  max-width: 800px; /* Maximum width of search bar */
+  border: 1px solid white;
+}
+
+.search-bar i {
+  color: white;
+  margin-right: 10px; /* Space between icon and input field */
+}
+
+.search-bar input {
+  border: none;
+  background-color: transparent;
+  color: white;
+  outline: none;
+  padding-left: 5px;
+  width: 100%; /* Input field takes up the rest of the search bar */
+  font-size: 12px; /* Font size increased for readability */
+}
+
+/* Tags line styling */
+.tags-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Allow tags to wrap to next line if needed */
+}
+
+/* Tags title styling */
+.tags-title {
+  font-size: 12px; /* Font size for visual consistency */
+  color: black;
+  margin-right: 10px;
+  align-self: center; /* Vertically center with tags */
+}
+
+/* Tags container styling */
+.tags-container {
+  display: flex;
+  justify-content: center; /* Center tags horizontally */
+  flex-wrap: wrap; /* Wrap tags if they don't fit on one line */
+}
+
+/* Individual tag styling */
+.tag {
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  padding: 6px 14px; /* Increased padding for tags */
+  margin: 5px; /* Space between tags */
+  font-size: 12px; /* Font size increased for tags for readability */
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.tag.active {
+  /* styles to highlight the active tag, e.g., change background color */
+  background-color: #f0ad4e;
+  color: white;
+}
+
+/* Optional scrollbar styling */
+.tags-container::-webkit-scrollbar {
+  height: 5px;
+}
+
+.tags-container::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.tags-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.card-container {
+  padding: 20px; /* Padding around the entire grid */
+}
+
+.card {
+  background-color: #FCD313;
+  border-radius:6px;
+  border: 1px solid white;
+  padding: 15px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.card-icons {
+  text-align: right;
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  cursor: pointer;
+
+}
+
+.icon-circle {
+  display: inline-block;
+  background-color: white;
+  border: 0.5px solid black;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  text-align: center;
+  line-height: 20px;
+  margin-left: 5px;
+}
+
+.icon-circle i {
+  color: black;
+  font-size: 12px;
+}
+
+.card-image img {
   max-width: 100%;
   height: auto;
-  margin-bottom: 20px;
+  display: block;
+  margin: 0 auto; /* Center the image */
+  cursor: pointer;
+}
+
+.card-title button {
+  background-color: white;
+  border: 0.5px solid black;
+  border-radius: 25px;
+  padding: 7px 20px;
+  font-size: 12px;  
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  text-align: center;
+  overflow: hidden; /* Ensure the overflow text is hidden */
+  white-space: nowrap; /* Keep the text on a single line */
+  text-overflow: ellipsis; /* Add an ellipsis at the end of the text */
+}
+
+.custom-tooltip {
+  max-width: none; /* Or set to your preferred max-width */
+  white-space: nowrap; /* Ensure the text doesn't wrap */
+}
+
+
+/* Optional: Add responsiveness for smaller screens */
+@media (max-width: 600px) {
+  .card-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.filter-container {
+  padding: 1rem;
+  font-size: 12px;
+
+}
+.filter-sidebar {
+  width: 100%; /* Responsive width */
+  max-width: 250px; /* Max width for larger screens */
+  background-color: #000; /* Black background */
+  padding: 1rem;
+  color: #fff; /* White text */
+  display: flex;
+  flex-direction: column;
+  border: 0.5px solid white;
+}
+
+/* Text and links inside the sidebar */
+.filter-sidebar div,
+.filter-sidebar a {
+  color: #fff; /* White text */
+}
+
+/* Centered text and buttons */
+.filter-sidebar .text-center {
+  text-align: center;
+}
+
+/* Styling for 'Clear' and 'Load more...' links */
+.filter-sidebar .text-decoration-underline {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Font weight for categories */
+.filter-sidebar .fw-bold {
+  font-weight: bold;
+  margin-bottom: 0.5rem; /* Space between categories */
+}
+
+/* Separator lines */
+.filter-sidebar hr {
+  border: 0;
+  height: 1.5px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+  margin: 1rem 0; /* Space above and below the line */
+}
+
+/* Style for form elements and their labels */
+.filter-sidebar .form-check {
+  position: relative;
+  display: block;
+  padding: 4px 0px;
+}
+
+.filter-sidebar .form-check-input {
+  position: absolute;
+  right: 0; /* Checkbox on the right side */
+  top: 50%;
+  transform: translateY(-50%); /* Center checkbox vertically */
+  cursor: pointer;
+
+}
+
+.filter-sidebar .form-check-label {
+  display: block;
+  width: 80%; /* Prevent label from overlapping the checkbox */
+  line-height: 1.5; /* Height of the label's line */
+  cursor: pointer;
+
+}
+
+
+/* Select dropdown styling */
+.filter-sidebar select.form-select {
+  width: 100%;
+  border: 0.5px solid #fff; /* White border */
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  padding: 0.5rem;
+  margin-bottom: 0.5rem; /* Space below the dropdown */
+}
+
+/* Adjustments for larger screens */
+@media (min-width: 576px) {
+  .filter-sidebar {
+    width: 250px; /* Fixed width for larger screens */
+  }
+}
+.filter-sidebar div,
+.filter-sidebar a {
+  color: #fff; /* White text */
+  text-align: left; /* Left-align text */
+  border-radius: 4px;
+}
+
+.form-check-input:checked {
+  background-color: #000000;
+  border-color: #ffffff;
+}
+.form-check-input:checked + .form-check-label {
+  /* Styles for checked labels, e.g., bold text or different color */
+  font-weight: bold;
+  color: #f0ad4e;
+}
+
+legend {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+
+
+
+
+
+
+/* Style for each category item */
+.category-list > div {
+  cursor: pointer;
+  padding: 4px 0px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover effect for each category */
+.category-list > div:hover {
+  color: #555; /* Darker background on hover */
+}
+
+/* Active category style */
+.category-list > div.active {
+  color: #f0ad4e; /* White text for active category */
+}
+
+.form-select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  background-color: white;
+  color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* sort styling  */
+/* Styles for the sort-by fieldset */
+.sort-fieldset {
+  color: #fff; /* Adjust if you have a different color scheme */
+  margin-bottom: 1rem;
+}
+
+/* Styles for the legend */
+legend {
+  padding: 0;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+/* Custom styles for the form-select */
+.custom-form-select {
+  background-color: #333; /* Dark background to match the design */
+  border: 1px solid #777; /* Slightly lighter border for visibility */
+  color: #fff; /* White text color */
+  border-radius: 4px;
+  padding: 0.5rem 1rem 0.5rem 0.5rem; /* Added top padding to lower the text */
+  appearance: none; /* To remove default browser styles */
+  position: relative;
+  width: 100%;
+}
+
+/* Styles for the dropdown arrow */
+.custom-form-select::after {
+  content: '\25BC'; /* Unicode for down arrow */
+  color: #fff; /* White color arrow */
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* Makes it non-interactive */
+}
+
+/* Optionally, style the option elements (some browsers may not support this) */
+.custom-form-select option {
+  background-color: #555; /* Darker background for options */
+  color: #fff; /* White text for options */
+}
+
+/* Hover effect for select - optional */
+.custom-form-select:hover {
+  border-color: #aaa; /* Lighter border on hover */
+}
+
+/* Focus effect for select */
+.custom-form-select:focus {
+  outline: none;
+  border-color: #f0ad4e; /* Highlight color for focus */
+  box-shadow: 0 0 0 2px rgba(240, 173, 78, 0.5); /* Glow effect for focus */
+}
+
+/* For browsers that do not support the ::after approach, this will hide the default arrow */
+.custom-form-select::-ms-expand {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.skeleton {
+  background: #ddd; /* Light grey background */
+  border-radius: 4px; /* Optional: if you want rounded corners */
+  animation: pulse 1.5s infinite ease-in-out; /* Animation for the pulsating effect */
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.card-image-placeholder {
+  height: 200px; /* Adjust the height according to your design */
+  width: 100%; /* This will ensure it takes full width of the parent */
+  display: block; /* To make it a block-level element */
+}
+
+
+
+
+
+
+
+
+
+.ph-item {
+  background-color: unset;
+  border: 1px solid #e6e6e6;
+}
+
+
+.ph-picture {
+  background-color: #ced4da00;
+  height: 120px;
+  width: 100%;
 }

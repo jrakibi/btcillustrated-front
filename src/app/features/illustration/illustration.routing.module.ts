@@ -19,9 +19,8 @@ const routes: Routes = [
         component: IllustrationListComponent,
         pathMatch: 'full'
       },
-
       {
-        path: 'create',
+        path: 'form/:id',
         component: IllustrationCreateComponent,
       },
       {

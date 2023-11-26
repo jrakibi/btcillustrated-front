@@ -23,7 +23,7 @@ export class MailingListService {
   fetchXmlData(topicUrl: string) {
     return this.http.get(`${this.mailUrl}/${topicUrl}`, { responseType: 'text' }).pipe(
         map((xmlString: string) => {
-          debugger
+          
             const parser = new DOMParser();
             const xmlDoc = parser.parseFromString(xmlString, "application/xml");
 

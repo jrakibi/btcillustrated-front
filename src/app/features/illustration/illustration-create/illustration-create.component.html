@@ -1,6 +1,6 @@
 <div class="container mt-4">
-    <h2>Create New Illustration</h2>
-    <form [formGroup]="illustrationForm" (ngSubmit)="onSubmit()" class="mt-4">
+  <h2>{{ isEditMode ? 'Edit Illustration' : 'Create New Illustration' }}</h2>
+  <form [formGroup]="illustrationForm" (ngSubmit)="onSubmit()" class="mt-4">
   
       <div class="mb-3">
         <label for="title" class="form-label">Title:</label>
@@ -22,7 +22,24 @@
       </div>
   
       <!-- ... similar structure for tags and categories ... -->
-  
+      <div formArrayName="categories" class="mb-3">
+        <label class="form-label">Categories:</label>
+        <div *ngFor="let category of categories.controls; let i = index" class="d-flex align-items-center mb-2">
+          <input [formControlName]="i" class="form-control me-2" placeholder="Category name">
+          <button (click)="removeCategory(i)" type="button" class="btn btn-danger btn-sm">Remove</button>
+        </div>
+        <button (click)="addCategory()" type="button" class="btn btn-primary btn-sm">Add Category</button>
+      </div>
+      
+      <div formArrayName="tags" class="mb-3">
+        <label class="form-label">Tags:</label>
+        <div *ngFor="let tag of tags.controls; let i = index" class="d-flex align-items-center mb-2">
+          <input [formControlName]="i" class="form-control me-2">
+          <button (click)="removeTag(i)" class="btn btn-danger btn-sm">Remove</button>
+        </div>
+        <button (click)="addTag()" type="button" class="btn btn-primary btn-sm">Add Tag</button>
+      </div>
+      
       <div class="mb-3">
         <label for="details" class="form-label">Details:</label>
         <textarea id="details" class="form-control" rows="4" formControlName="details"></textarea>
@@ -53,7 +70,9 @@
         <input id="tweetLink" type="text" class="form-control" formControlName="tweetLink">
       </div>
   
-      <button type="submit" class="btn btn-success">Submit</button>
+      <button type="submit" class="btn btn-success">{{ isEditMode ? 'Update' : 'Create' }}</button>
+      <button *ngIf="isEditMode" (click)="cancelEdit()" type="button" class="btn btn-warning">Cancel</button>
+
     </form>
   </div>
   

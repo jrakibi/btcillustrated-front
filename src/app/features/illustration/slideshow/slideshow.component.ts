@@ -84,7 +84,7 @@ export class SlideShowComponent {
   }
 
   ngOnInit(): void {
-    debugger
+    
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       this.illustration = this.illustrations.filter(illustration => illustration.id == id)[0]
@@ -94,7 +94,7 @@ export class SlideShowComponent {
         loaded: false
       }));
     }
-    debugger
+    
     let headerLinks: HeaderLink[] = [
       {
         title: 'RESOURCES',
@@ -150,7 +150,7 @@ export class SlideShowComponent {
   }
 
   onLoadImage(image: any) {
-    debugger
+    
     image.loaded = true
   }
 
