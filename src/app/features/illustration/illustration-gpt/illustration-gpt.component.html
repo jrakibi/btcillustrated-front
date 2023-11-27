@@ -7,25 +7,24 @@
       src="assets/btcIllustrated/slideshow/askGpt.gif"
       alt="Your GIF Description"
     />
+  </div>
+  <div class="gpt-input-section">
+    <div class="input-wrapper">
+      <!-- Left "Magic" Icon -->
+      <i class="fa fa-magic"></i>
 
-    <div class="gpt-input-section">
-      <div class="input-wrapper">
-        <!-- Left "Magic" Icon -->
-        <i class="fa fa-magic"></i>
+      <!-- Input with Placeholder -->
+      <input
+        placeholder="Type your question for GPT:"
+        (keyup.enter)="askGPT()"
+        [(ngModel)]="gptQuestion"
+      />
 
-        <!-- Input with Placeholder -->
-        <input
-          placeholder="Type your question for GPT:"
-          (keyup.enter)="askGPT()"
-          [(ngModel)]="gptQuestion"
-        />
-
-        <!-- Right "Send" Icon -->
-        <i class="fa fa-send" (click)="askGPT()"></i>
-      </div>
-      <div *ngIf="isLoading" class="loader"></div>
-
-      <p>{{ gptResponse }}</p>
+      <!-- Right "Send" Icon -->
+      <i class="fa fa-send" (click)="askGPT()"></i>
     </div>
+    <div *ngIf="isLoading" class="loader"></div>
+
+    <p>{{ gptResponse }}</p>
   </div>
  </div>
