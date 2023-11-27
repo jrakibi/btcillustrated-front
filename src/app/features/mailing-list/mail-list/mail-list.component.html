@@ -2,12 +2,20 @@
 <div class="mailing-list-container">
   <div class="container">
     <h1>Mailing List Explorer</h1>
-    <p>Search through Bitcoin mailing list for topics you want to learn more about</p>
+    <p>Searching through the Bitcoin-dev mailing list is coming soon. Stay tuned!</p>
     <div class="search-box">
-      <input type="text" placeholder="Search the Topic..." />
+      <input (keyup.enter) = "openModal()" type="text" placeholder="Search the Topic..." />
     </div>
-
   </div>
+  
+  <!-- The Modal -->
+  <div class="modal" *ngIf="showModal">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <p>Searching throught Bitcoin-dev mailing list is coming soon. Stay tuned!</p>
+    </div>
+  </div>
+  
   
     
   <div class="card-container">

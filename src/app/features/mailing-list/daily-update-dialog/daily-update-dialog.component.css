@@ -220,3 +220,8 @@ body {
     box-shadow: unset !important;
   }
   
+
+  ::ng-deep .mat-dialog-container {
+    background-color: #FFD54F;
+    border-radius: 10px;
+  }
