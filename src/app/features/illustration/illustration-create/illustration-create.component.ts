@@ -87,9 +87,11 @@ export class IllustrationCreateComponent {
   
       // Populate the categories FormArray
       this.categories.clear();
+      debugger
       illustration.categories.forEach((category) => {
         // Use the id to find the category from savedCategories
         const existingCategory = this.savedCategories.find(c => c.id === category.id);
+        debugger
         this.categories.push(this.fb.group({
           id: existingCategory ? existingCategory.id : category.id,
           name: existingCategory ? existingCategory.name : category.name
@@ -140,6 +142,7 @@ get categories(): FormArray {
 }
 
 addCategory(): void {
+  debugger
   const categoryFormGroup = this.fb.group({
     id: [null], // or the actual ID if editing an existing category
     name: ['']  // the name of the category
@@ -179,8 +182,8 @@ removeTag(index: number): void {
       const formData = this.illustrationForm.getRawValue(); // Use getRawValue() to include disabled fields if any
   
   // Map the categories and tags to their IDs if the backend expects IDs
-    formData.categories = formData.categories.map((categoryFormGroup: any) => categoryFormGroup);
-    formData.tags = formData.tags.map((tagFormGroup: any) => tagFormGroup);
+    formData.categories = formData.categories.map((categoryFormGroup: any) => categoryFormGroup.id);
+    formData.tags = formData.tags.map((tagFormGroup: any) => tagFormGroup.id);
 
       
       if (this.isEditMode && this.currentIllustrationId) {
