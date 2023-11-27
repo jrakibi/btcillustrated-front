@@ -8,6 +8,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-weight: 300;
+
 }
 
 .container {
@@ -63,7 +65,7 @@
 
 .description {
   font-size: 0.9em; 
-  font-weight: bold;
+  font-weight: 300;
   display: block;
   color: #aaa;
   margin-top: 10px; 
@@ -78,9 +80,8 @@
 
 .gallery-look-number {
   font-size: 0.9em;
-  font-weight: bold;
   margin: 20px 0;
-  font-weight: 600;
+  font-weight: 300;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -156,7 +157,7 @@
 }
 
 .explore-btn, .collection-content button {
-  font-weight: bold;
+  font-weight: 500;
   background: unset;
   border: unset;
   color: #fff;
@@ -371,7 +372,7 @@
   color: #aaa; /* Light gray text */
   border: 1px solid #aaa; /* Light gray border */
   padding: 8px 15px; /* Button padding */
-  font-weight: bold;
+  font-weight: 300;
   font-size: 0.8em;
   border-radius: 0; /* Solid borders, no rounding */
   cursor: pointer;
@@ -554,4 +555,9 @@ button:hover {
   background-color: #ced4da00;
   height: 120px;
   width: 100%;
+}
+
+
+.black-dialog-container {
+  background-color: black;
 }

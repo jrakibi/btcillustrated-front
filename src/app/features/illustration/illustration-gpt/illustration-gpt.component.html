@@ -1,4 +1,7 @@
-<app-header [headerOptions]="headerOptions"></app-header>
+ <div class="bob-gpt-container">
+  <h4 style="    font-weight: 100;
+  text-align: center;
+  margin-top: 10px;">Your personal <span style="font-weight: 500;">AI expert</span> in all Bitcoin related topics.</h4>
   <div class="side-video-container">
     <img
       src="assets/btcIllustrated/slideshow/askGpt.gif"
@@ -13,6 +16,7 @@
         <!-- Input with Placeholder -->
         <input
           placeholder="Type your question for GPT:"
+          (keyup.enter)="askGPT()"
           [(ngModel)]="gptQuestion"
         />
 
@@ -24,3 +28,4 @@
       <p>{{ gptResponse }}</p>
     </div>
   </div>
+ </div>

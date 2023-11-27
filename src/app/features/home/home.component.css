@@ -171,11 +171,11 @@ nav {
 }
 
 .card:hover { 
-  background-color: #FFD54F;
+  background-color: #FCD313;
 }
 
 .choose-product {
-  color: #FFD54F;
+  color: #FCD313;
   text-decoration: underline;
   font-size: larger; 
   color: black; 
@@ -184,10 +184,10 @@ nav {
 }
 .home-left
 a:hover {
-  color: #FFD54F;
+  color: #FCD313;
   text-decoration: underline;
 }
 .home-left
 a:hover i {
-  color: #FFD54F;
+  color: #FCD313;
 }

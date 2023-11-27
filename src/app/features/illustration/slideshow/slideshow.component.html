@@ -123,8 +123,8 @@
           src="assets/btcIllustrated/slideshow/askGpt.gif"
           alt="Your GIF Description"
         />
-        <button class="ask-gpt-btn" *ngIf="!showGPTInput" (click)="toggleGPT()">
-          Ask GPT
+        <button class="ask-gpt-btn" (click)="openGptDialog()">
+          Ask Bob GPT
         </button>
 
         <div class="gpt-input-section" *ngIf="showGPTInput">

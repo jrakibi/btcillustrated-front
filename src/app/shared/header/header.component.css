@@ -74,14 +74,14 @@ body, html {
   right: 0;
   bottom: -2px;
   height: 2px;
-  background-color: #fcd83c;
+  background-color: #FCD313;
   transform: scaleX(0);
   transition: transform 0.5s ease-out;
   transform-origin: left center; /* Ensure the scaling starts from the left */
 }
 
 .navbar a:hover, .navbar a:focus {
-  color: #fcd83c;
+  color: #FCD313;
 }
 
 .navbar a:hover::after, .navbar a:focus::after {
@@ -90,7 +90,7 @@ body, html {
 
 /* Call-to-Action Button Styles */
 .cta-container .cta-button {
-  background-color: #fcd83c;
+  background-color: #FCD313;
   color: #1c1e21;
   border: 1px solid #1c1e21;
   border-radius: 50px;
@@ -224,7 +224,7 @@ body, html {
 
 /* Reveal the underline on hover */
 .navbar a:hover::after, .navbar a:focus::after {
-  background-color: #fcd83c; /* Underline color */
+  background-color: #FCD313; /* Underline color */
   transform: scaleX(1); /* Full width underline on hover */
 }
 
@@ -237,13 +237,13 @@ body, html {
 
 /* Maintain white underline color for links when the features section is expanded */
 .header.expanded a::after {
-  background-color: #fcd83c !important /* Set underline color to white */
+  background-color: #FCD313 !important /* Set underline color to white */
 }
 
 /* Ensure the underline expands on hover and maintains white color */
 .header.expanded a:hover::after,
 .header.expanded a:focus::after {
-  background-color: #fcd83c !important; /* Keep the underline color white on hover/focus */
+  background-color: #FCD313 !important; /* Keep the underline color white on hover/focus */
   transform: scaleX(1) !important; /* Ensure the underline scales correctly on hover */
 }
 
@@ -317,7 +317,7 @@ li {
 }
 
 .feature-item:hover{
-  background-color: #fcd83c;
+  background-color: #FCD313;
   border-color: #111;
 }
 
@@ -404,7 +404,7 @@ li {
 
 /* Call-to-Action Button in dark mode */
 .header.dark-mode .cta-container .cta-button {
-  background-color: #fcd83c;
+  background-color: #FCD313;
   color: #111b21;
   /* ... other styles */
 }

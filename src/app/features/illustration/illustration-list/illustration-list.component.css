@@ -26,7 +26,7 @@
 /* Brand styling */
 .brand {
   font-weight: bold;
-  color: #fcd83c;
+  color: #FCD313;
   font-size: 30px;
   margin-right: 30px; /* Space between brand and search bar */
 }
@@ -97,7 +97,7 @@
 
 .tag.active {
   /* styles to highlight the active tag, e.g., change background color */
-  background-color: #fcd83c;
+  background-color: #FCD313;
   color: black;
 }
 
@@ -177,7 +177,7 @@
 
 .icon-circle {
   display: inline-block;
-  background-color: #FFD54F;
+  background-color: #FCD313;
   border: 0.5px solid #000000;
   border-radius: 50%;
   width: 22px;
@@ -374,7 +374,7 @@
 .form-check-input:checked + .form-check-label {
   /* Styles for checked labels, e.g., bold text or different color */
   font-weight: bold;
-  color: #fcd83c;
+  color: #FCD313;
 }
 
 legend {
@@ -402,7 +402,7 @@ legend {
 
 /* Active category style */
 .category-list > div.active {
-  color: #fcd83c; /* White text for active category */
+  color: #FCD313; /* White text for active category */
 }
 
 .form-select {
@@ -474,7 +474,7 @@ legend {
 /* Focus effect for select */
 .custom-form-select:focus {
   outline: none;
-  border-color: #fcd83c; /* Highlight color for focus */
+  border-color: #FCD313; /* Highlight color for focus */
   box-shadow: 0 0 0 2px rgba(240, 173, 78, 0.5); /* Glow effect for focus */
 }
 

@@ -25,7 +25,6 @@ export class HeaderComponent implements OnInit, OnChanges {
 
   }
   ngOnInit(): void {
-    debugger
     if(this.headerOptions) {
       this.isDarkMode = this.headerOptions.isDarkMode
     }

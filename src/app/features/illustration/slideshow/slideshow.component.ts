@@ -8,6 +8,7 @@ import { HeaderLink, HeaderOptions } from 'src/app/shared/header/header-options'
 import { OpenaiService } from 'src/app/core/service/open-ai.service';
 import { MatDialog } from '@angular/material/dialog';
 import { LnurlPayDialogComponent } from 'src/app/features/illustration/lnurl-pay-dialog/lnurl-pay-dialog.component';
+import { IllustrationGptComponent } from '../illustration-gpt/illustration-gpt.component';
 declare var $: any; // Import jQuery
 
 @Component({
@@ -132,7 +133,7 @@ export class SlideShowComponent {
 
   askGPT() {
     this.isLoading = true;
-
+    debugger
     this.openaiService.askGPT(this.gptQuestion).subscribe(
       (responseText: string) => { // Explicitly type the response
         this.gptResponse = responseText;
@@ -160,6 +161,18 @@ export class SlideShowComponent {
       { 
         width: '600px',
       });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed', result);
+    });
+  }
+
+  openGptDialog() {
+    const dialogRef = this.dialog.open(IllustrationGptComponent, { 
+      width: '900px',
+      height: '500px',
+      panelClass: 'black-dialog-container'
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed', result);

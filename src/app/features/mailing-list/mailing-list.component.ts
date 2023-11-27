@@ -12,7 +12,6 @@ export class MailingListComponent implements OnInit {
   headerOptions: HeaderOptions
   constructor(
   ) { 
-    debugger
     this.headerOptions = {
       isUnderlineDisplayed: true,
       isDarkMode: false
