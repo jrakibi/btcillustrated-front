@@ -1,2 +1,15 @@
-<app-loader></app-loader>
-<router-outlet></router-outlet>
+<div *ngIf="!isMobile || !showMobileWarning">
+    <app-loader></app-loader>
+    <router-outlet></router-outlet>
+</div>
+
+<div class="mobile-user-notification" *ngIf="isMobile && showMobileWarning">
+    <div class="mobile-access-warning">
+      <div class="warning-content">
+        <img src="https://btc-illustrated.com/assets/icons/btcillustrated-icon.png" alt="Bitcoin Logo" class="bitcoin-logo"/>
+        <h1>Optimized for Desktop</h1>
+        <p>For the best experience, please access our Bitcoin platform from a desktop device.</p>
+        <button class="continue-button" (click)="continueAnyway()">Continue Anyway</button>
+      </div>
+    </div>
+</div>

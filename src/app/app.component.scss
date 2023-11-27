@@ -1,0 +1,51 @@
+/* styles.css or app.component.css */
+.mobile-user-notification .mobile-access-warning {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #FCF5EB; /* Bitcoin's brand color */
+    color: #ffffff;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .mobile-user-notification .warning-content {
+    max-width: 400px;
+    padding: 20px;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    background-color: #111b21b3;
+  }
+  
+  .mobile-user-notification .bitcoin-logo {
+    width: 80px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .mobile-user-notification h1 {
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+  
+  .mobile-user-notification p {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  .mobile-user-notification .continue-button {
+    padding: 10px 20px;
+    color: #FCF5EB;
+    background-color: #111b21;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .mobile-user-notification .continue-button:hover {
+    background-color: #e5e5e5;
+  }
+  
