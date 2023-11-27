@@ -303,7 +303,7 @@ module.exports = {
                 ]
             }
         ],
-        "no-#FCD313r": "error",
+        "no-debugger": "error",
         "no-empty": "off",
         "no-empty-function": "off",
         "no-eval": "error",
