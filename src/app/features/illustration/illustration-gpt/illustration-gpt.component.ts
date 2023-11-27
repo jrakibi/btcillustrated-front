@@ -57,6 +57,7 @@ export class IllustrationGptComponent implements OnInit {
   isLoading: boolean = false;
 
   askGPT() {
+    debugger
     this.isLoading = true;
 
     this.openaiService.askGPT(this.gptQuestion).subscribe(

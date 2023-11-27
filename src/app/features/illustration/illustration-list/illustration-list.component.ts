@@ -173,7 +173,6 @@ sortIllustrations(order: string): void {
 }
 
 onLoadImage(illustration: Illustration) {
-  debugger
   illustration.thumbnailLoaded = true;
 }
 

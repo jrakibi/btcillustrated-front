@@ -192,7 +192,7 @@ p {
     cursor: pointer;
 }
 .card-container .cards .card:hover {
-    background-color: #fcd83c;
+    background-color: #FCD313;
     border: 1px solid black;
 }
 
