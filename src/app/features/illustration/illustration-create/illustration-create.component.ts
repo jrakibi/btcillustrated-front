@@ -40,7 +40,6 @@ export class IllustrationCreateComponent {
     }
 
   ngOnInit() {
-    #FCD313r
     const illustrationId = this.route.snapshot.params['id'];
     this.loadSavedCategories();
     this.loadSavedTags();
@@ -52,7 +51,6 @@ export class IllustrationCreateComponent {
     }
   }
   loadSavedCategories(): void {
-    #FCD313r
     this.categoryService.getAllCategories().subscribe(
       (data: Category[]) => {
         this.savedCategories = data;
@@ -64,7 +62,6 @@ export class IllustrationCreateComponent {
   }
 
   loadIllustrationData(id: number): void {
-    #FCD313r
     this.illustrationService.getIllustration(id).subscribe(
       (illustration) => {
         // Populate form fields
@@ -87,11 +84,9 @@ export class IllustrationCreateComponent {
   
       // Populate the categories FormArray
       this.categories.clear();
-      #FCD313r
       illustration.categories.forEach((category) => {
         // Use the id to find the category from savedCategories
         const existingCategory = this.savedCategories.find(c => c.id === category.id);
-        #FCD313r
         this.categories.push(this.fb.group({
           id: existingCategory ? existingCategory.id : category.id,
           name: existingCategory ? existingCategory.name : category.name
@@ -142,7 +137,6 @@ get categories(): FormArray {
 }
 
 addCategory(): void {
-  #FCD313r
   const categoryFormGroup = this.fb.group({
     id: [null], // or the actual ID if editing an existing category
     name: ['']  // the name of the category
