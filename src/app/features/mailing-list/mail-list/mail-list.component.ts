@@ -14,6 +14,8 @@ import { DailyUpdateDialogComponent } from '../daily-update-dialog/daily-update-
 export class MailListComponent implements OnInit {
   headerOptions: HeaderOptions
   dailyUpdateData: DailyUpdateData
+  showModal = false;
+
   constructor(
     private mailingListService: MailingListService,
     private router: Router,
@@ -58,6 +60,7 @@ export class MailListComponent implements OnInit {
   openDialog() {
     this.dialog.open(DailyUpdateDialogComponent, {
       width: '44%',
+      height: '600px',
       hasBackdrop: true,
       data: {
         dailyUpdateData: this.dailyUpdateData
@@ -73,6 +76,15 @@ export class MailListComponent implements OnInit {
     };
     this.router.navigate(['/mailing-list', post.file_path], navigationExtras);
 
+  }
+
+
+  openModal() {
+    this.showModal = true;
+  }
+
+  closeModal() {
+    this.showModal = false;
   }
 
 }

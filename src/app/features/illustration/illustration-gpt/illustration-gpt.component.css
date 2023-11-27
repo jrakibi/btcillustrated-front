@@ -67,9 +67,9 @@ img {
   
 }
 .side-video-container img  {
-  max-width: 80%; /* Adjust this percentage based on your desired size */
+  max-width: 100%; /* Adjust this percentage based on your desired size */
   height: auto;
-  margin-bottom: 20px; /* Space between the GIF and the button */
+  margin-bottom: -20px; /* Space between the GIF and the button */
 }
 
 
