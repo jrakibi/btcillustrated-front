@@ -25,6 +25,7 @@ import { QRCodeModule } from 'angularx-qrcode';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { IllustrationCreateComponent } from './illustration-create/illustration-create.component';
 @NgModule({
   declarations: [
     IllustrationComponent,
@@ -34,7 +35,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     IllustrationGptComponent,
     
     LnurlPayDialogComponent,
-    InvoiceQrCodeComponent
+    InvoiceQrCodeComponent,
+    IllustrationCreateComponent
   ],
   imports: [
     RouterModule,

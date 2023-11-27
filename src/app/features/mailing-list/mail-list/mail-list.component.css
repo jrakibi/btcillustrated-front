@@ -1,7 +1,10 @@
+.mailing-list-container {
+    background-color: #fcf5eb;
+    color: black 
+}
 
 .container {
     text-align: center;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     padding: 40px 60px;
     border-radius: 12px;
 }
@@ -22,13 +25,13 @@ p {
 }
 
 .search-box input {
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 15px 15px;
     width: 75%;
     height: 48px;
     text-align: center;
-    background: black;
-    border: 2px solid #fff;
+    background: #fcf5eb;
+    border: 1px solid #000;
     border-radius: 24px;
     font-size: 1rem;
     outline: none;
@@ -73,13 +76,6 @@ p {
 
 
 
-body {
-    background-color: #E5F0FF;
-    padding: 50px;
-}
-
-
-
 .cards {
     display: flex;
     flex-wrap: wrap;
@@ -93,7 +89,7 @@ body {
 } */
 
 .card-container {
-    background-color: #ffffe9;
+    background-color: #fcf5eb;
     padding: 20px;
     width: 100%;
 }
@@ -157,40 +153,48 @@ body {
     display: inline-block;
     background-color: #ffffe9;
     padding: 2px 8px;
+    border: 0.5px solid;
     border-radius: 15px;
     font-size: 12px;
     margin-right: 5px;
 }
 
-.card-container .cards .card:nth-child(1) {
-    background-color: #47B5B2; /* Teal-ish color */
+/* .card-container .cards .card:nth-child(1) {
+    background-color: #47B5B2; 
 }
 
 .card-container .cards .card:nth-child(2) {
-    background-color: #ED6A75; /* Red-ish color */
+    background-color: #ED6A75;
 }
 
 .card-container .cards .card:nth-child(3) {
-    background-color: #47B05A; /* Green-ish color */
+    background-color: #47B05A; 
 }
 
 .card-container .cards .card:nth-child(4) {
-    background-color: #F6B04D; /* Yellow-ish color */
+    background-color: #F6B04D; 
 }
 
 .card-container .cards .card:nth-child(5) {
-    background-color: #4C78A9; /* Blue-ish color */
+    background-color: #4C78A9; 
 }
 
 .card-container .cards .card:nth-child(6) {
-    background-color: #E55934; /* Another shade of red */
+    background-color: #E55934; 
 }
 
 .card-container .cards .card:nth-child(7) {
-    background-color: #2A9D8F; /* Another shade of teal */
+    background-color: #2A9D8F; 
+} */
+.card-container .cards .card {
+    background-color: #fcf5eb;
+    border: 1px solid black;
+    cursor: pointer;
 }
-
-
+.card-container .cards .card:hover {
+    background-color: #fcd83c;
+    border: 1px solid black;
+}
 
 
 
@@ -208,7 +212,6 @@ body {
 }
 
 .card {
-    /* flex: 1; */
-    width: 27%;
-    margin: 15px;
+    width: 30%;
+    margin: 4px 0px;
 }

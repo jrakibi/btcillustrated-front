@@ -46,7 +46,7 @@ subscribe(): void {
 
 
   ngOnInit(): void {
-    debugger
+    
   }
 
 

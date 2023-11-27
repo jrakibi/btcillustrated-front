@@ -28,7 +28,7 @@ export class SearchComponent {
 
   ngOnInit(): void {
     this.illustrationService.getIllustrations().subscribe((illustrations: Illustration[]) => {
-      debugger
+      
       this.loadingService.hide();
 
       this.illustrations = illustrations.map(illustration => ({
@@ -55,10 +55,10 @@ export class SearchComponent {
   }
 
   onSearch(query: string) {
-    debugger
+    
     if (query) {
       this.searchService.search(query).subscribe(data => {
-        debugger
+        
         this.illustrations = data;
       });
     } else {
@@ -67,7 +67,7 @@ export class SearchComponent {
   }
 
   onLoadImage(illustration: any) {
-    debugger
+    
     illustration.thumbnailLoaded = true;
 }
 

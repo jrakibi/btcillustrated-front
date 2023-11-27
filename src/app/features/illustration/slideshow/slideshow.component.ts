@@ -84,7 +84,7 @@ export class SlideShowComponent {
   }
 
   ngOnInit(): void {
-    debugger
+    
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       this.illustration = this.illustrations.filter(illustration => illustration.id == id)[0]
@@ -94,7 +94,7 @@ export class SlideShowComponent {
         loaded: false
       }));
     }
-    debugger
+    
     let headerLinks: HeaderLink[] = [
       {
         title: 'RESOURCES',
@@ -113,7 +113,8 @@ export class SlideShowComponent {
     this.headerOptions = {
       isUnderlineDisplayed: true,
       isSlideShow: true,
-      headerLinks: headerLinks
+      headerLinks: headerLinks,
+      isDarkMode: true
     }
   }
 
@@ -150,12 +151,15 @@ export class SlideShowComponent {
   }
 
   onLoadImage(image: any) {
-    debugger
+    
     image.loaded = true
   }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(LnurlPayDialogComponent, { width: '600px' });
+    const dialogRef = this.dialog.open(LnurlPayDialogComponent, 
+      { 
+        width: '600px',
+      });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed', result);

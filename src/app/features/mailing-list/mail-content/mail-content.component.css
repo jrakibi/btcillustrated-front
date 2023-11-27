@@ -18,12 +18,14 @@ body {
 }
 
 .blog-hero {
-  height: 40%;
-  background-color: #1c1c1c;
+  height: 15%;
+  background-color: #fcf5eb;
 }
 
 .blog-container {
   /* background-color: cadetblue; */
+  background: #fcf5eb;
+    color: black;
 }
 .container {
   padding: 50px 0px;
@@ -114,7 +116,7 @@ html{
   100%{
     stroke-dashoffset:0;
     opacity:0;
-    stroke:yellow;
+    stroke: #fcd83c;;
   }
 }
 

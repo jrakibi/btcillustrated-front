@@ -1,20 +1,24 @@
 <div class="container">
 
-<div mat-dialog-content>
+<div>
+  <div class="instructions">
+    <h3 style="margin-bottom: 10px;">Support with Satoshi</h3>
+    <p>Select an emoji to send a zap or enter a custom amount.</p>
+  </div>
 
     <div class="emoji-container">
-      <div class="emoji-button">
-        <button (click)="setAmount(500)" class="thumb-up-btn" mat-icon-button color="primary">
+      <div class="emoji-button" (click)="setAmount(500)">
+        <button  class="thumb-up-btn" mat-icon-button color="primary">
           <mat-icon>thumb_up</mat-icon><span class="emoji-number">500</span>
         </button>
       </div>
-      <div class="emoji-button">
-        <button (click)="setAmount(1000)" class="favorite-btn" mat-icon-button color="primary">
+      <div class="emoji-button" (click)="setAmount(1000)" >
+        <button class="favorite-btn" mat-icon-button color="primary">
           <mat-icon>favorite</mat-icon><span class="emoji-number">1k</span>
         </button>
       </div>
-      <div class="emoji-button">
-        <button (click)="setAmount(10000)" class="applause-btn" mat-icon-button color="primary">
+      <div class="emoji-button" (click)="setAmount(10000)">
+        <button class="applause-btn" mat-icon-button color="primary">
           <mat-icon>rocket</mat-icon><span class="emoji-number">10k</span>
         </button>
       </div>
@@ -73,7 +77,7 @@
       </div>
       <div mat-dialog-actions class="d-flex justify-content-between">
         <div style="margin-right: 10px;">
-          <button mat-stroked-button mat-dialog-close color="primary">Cancel</button>
+          <button mat-stroked-button mat-dialog-close color="primary" style="border: none;">Cancel</button>
         </div>
         <div>
           <button

@@ -98,7 +98,7 @@ export class LnurlPayDialogComponent implements OnInit  {
   }
 
   async onSubmit() {
-    debugger
+    
     if (this.sendZapForm.valid) {
       let comment = this.sendZapForm.get('comment')?.value
       let amount = this.sendZapForm.get('amount')?.value

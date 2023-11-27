@@ -18,6 +18,7 @@ export class RoadmapComponent implements OnInit {
   ngOnInit(): void {
     this.headerOptions = {
       isUnderlineDisplayed: true,
+      isDarkMode: true
     }
   }
 

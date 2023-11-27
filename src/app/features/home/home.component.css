@@ -5,12 +5,12 @@
   justify-content: center;
   align-items: center;
   color: black;
-  background-color: #FCD313;
+  background-color: #FCF5EB;
 }
 
 .container {
   width: 80%;
-  background-color: #FCD313;
+  background-color: #FCF5EB;
 }
 
 .header {
@@ -117,17 +117,19 @@ nav {
 
 .center-text {
   font-family:'Outfit';
-  font-weight: 400;
   text-align: center;
   font-size: 1.5em;
-  margin-bottom: 110px;
+  margin-bottom: 40px;
+  text-align: left;
+
 }
 .title {
   font-family:'Outfit';
-  font-weight: 700;
+  font-weight: 400;
   text-align: center;
-  font-size: 3.5em;
+  font-size: 60px;
   margin-bottom: 10px;
+  text-align: left;
 }
 .cards {
   display: flex;
@@ -136,13 +138,13 @@ nav {
 
 .card {
   flex: 1;
-  background-color: white;
+  background-color: #fcf5eb;
   padding: 10px;
   border: 2px solid black;
   box-shadow: 3px 3px 0 #000;
   border-radius: 5px;
   text-align: center;
-  margin: 0 10px;
+  margin: 10px;
   position: relative;  /* To enable absolute positioning for hover effect */
   cursor: pointer;
   /* Add transitions for top, left, and box-shadow */
@@ -157,13 +159,35 @@ nav {
 }
 
 .card img {
-  width: 110px;
-  height: 110px;
-  margin: 0 auto 20px;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 10px;
   display: block;
 }
 
 .card p {
   margin: 0;
   font-weight: bold;
+}
+
+.card:hover { 
+  background-color: #FFD54F;
+}
+
+.choose-product {
+  color: #FFD54F;
+  text-decoration: underline;
+  font-size: larger; 
+  color: black; 
+  font-weight: 300;
+  cursor: pointer;
+}
+.home-left
+a:hover {
+  color: #FFD54F;
+  text-decoration: underline;
+}
+.home-left
+a:hover i {
+  color: #FFD54F;
 }

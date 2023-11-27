@@ -18,7 +18,7 @@ export class DailyUpdateDialogComponent implements OnInit {
   
 
   ngOnInit(): void {
-    debugger
+    
     this.dailyUpdateData = this.data.dailyUpdateData
 
     const navigation = this.router.getCurrentNavigation();

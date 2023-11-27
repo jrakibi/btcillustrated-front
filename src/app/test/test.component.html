@@ -1,58 +1,41 @@
-<div class="container mt-5">
-  <div class="row">
-      <!-- Card 1 -->
-      <div class="col-md-4 mb-4">
-        <div class="card rounded-lg shadow" style="width: 18rem; height: 28rem;">
-            <img src="https://source.unsplash.com/random/1" class="card-img h-100" alt="Random Image">
-            <div class="card-img-overlay d-flex flex-column justify-content-between">
-                <a href="https://twitter.com/your_twitter_link" target="_blank" class="text-right">
-                    <i class="fab fa-twitter-square fa-2x"></i>
-                </a>
-                <h5 class="card-title">Card title 1</h5>
-                <p class="card-text">Some example text for card 1.</p>
+<header class="header expanded" [class.expanded]="showFeatures">
+  <div class="logo-container">
+    <a href="https://www.whatsapp.com/">
+      <img src="./../../assets/icons/btcillustrated-icon.png" alt="WhatsApp Main Page" *ngIf="!showFeatures">
+      <img src="./../../assets/icons/btcillustrated-icon-black.png" alt="WhatsApp Main Page"  *ngIf="showFeatures">
+    </a>
+  </div>
+  <nav class="navbar">
+    <ul>
+      <li class="features-dropdown">
+        <a (click)="toggleFeatures()">
+          Features
+          <i class="fa" [ngClass]="{'fa-chevron-down': !showFeatures, 'fa-chevron-up': showFeatures}"></i> <!-- Font Awesome Icon -->
+
+        </a>
+        <div class="features-expanded-content" *ngIf="showFeatures">
+          <!-- Feature items -->
+          <div class="feature-item" *ngFor="let feature of features">
+            <div class="feature-icon">
+              <img [src]="feature.icon" alt="{{ feature.title }}">
             </div>
-        </div>
-    </div>
-
-    <div class="col-md-4 mb-4">
-      <div class="card rounded-lg shadow" style="width: 18rem; height: 28rem;">
-          <img src="https://source.unsplash.com/random/1" class="card-img h-100" alt="Random Image">
-          <div class="card-img-overlay d-flex flex-column justify-content-between">
-              <a href="https://twitter.com/your_twitter_link" target="_blank" class="text-right">
-                  <i class="fab fa-twitter-square fa-2x"></i>
-              </a>
-              <h5 class="card-title">Card title 1</h5>
-              <p class="card-text">Some example text for card 1.</p>
+            <div class="feature-text">
+              <h5>{{ feature.title }}</h5>
+              <p>{{ feature.description }}</p>
+            </div>
+            <i class="fa fa-arrow-right feature-arrow"></i> 
           </div>
-      </div>
-  </div>
-
-  <div class="col-md-4 mb-4">
-    <div class="card rounded-lg shadow" style="width: 18rem; height: 28rem;">
-        <img src="https://source.unsplash.com/random/1" class="card-img h-100" alt="Random Image">
-        <div class="card-img-overlay d-flex flex-column justify-content-between">
-            <a href="https://twitter.com/your_twitter_link" target="_blank" class="text-right">
-                <i class="fab fa-twitter-square fa-2x"></i>
-            </a>
-            <h5 class="card-title">Card title 1</h5>
-            <p class="card-text">Some example text for card 1.</p>
         </div>
-    </div>
-</div>
-
-<div class="col-md-4 mb-4">
-  <div class="card rounded-lg shadow" style="width: 18rem; height: 28rem;">
-      <div style="background-color: bisque;" class="card-img h-100" alt="Random Image"></div>
-      <div class="card-img-overlay d-flex flex-column justify-content-between">
-          <a href="https://twitter.com/your_twitter_link" target="_blank" class="text-right">
-              <i class="fab fa-twitter-square fa-2x"></i>
-          </a>
-          <h5 class="card-title">Card title 1</h5>
-          <p class="card-text">Some example text for card 1.</p>
-      </div>
+      </li>
+      <li><a href="#privacy">Privacy</a></li>
+      <li><a href="#help">Help Center</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#business">For Business</a></li>
+      <li><a href="#web">WhatsApp Web</a></li>
+      <li><a href="#web">Download</a></li>
+    </ul>
+  </nav>
+  <div class="cta-container">
+    <a href="#" class="cta-button">Download</a>
   </div>
-</div>
-
-<!-- ... Duplicate the above card structure for 8 more cards, just update the image URL by incrementing the number at the end, like "/random/2", "/random/3" and so on ... -->
-  </div>
-</div>
+</header>

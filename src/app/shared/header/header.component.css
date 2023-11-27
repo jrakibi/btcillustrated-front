@@ -1,321 +1,430 @@
-.container {
-  position: relative;
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
   width: 100%;
   height: 100%;
 }
-.img-container {
-  background-image: url(https://images.rawpixel.com/image_1000/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjg4Mi1rdWwtMzQuanBn.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
 
-.card-container-clicked .logo {
-  border-bottom: 1px solid #000000 ;
-  padding-bottom: 70px; 
-  color: #000000 ;
-}
-
-.navbar {
-  background: none;
-  margin: 0px 2px 20px 2px;
-}
-
-.navbar .nav-link {
-  color: white;
-  text-transform: uppercase;
-  font-size: 17px;
-  font-weight: 100;
-  cursor: pointer;
-  
-}
-
-.navbar .nav-link:hover {
-  color: #ccc;
-}
-
-.nav-item {
-  margin:  0px 20px 0px 0px;
-}
-
-.card-container-clicked .navbar .nav-link {
-  color: #000000 ;
-}
-
-.navbar .nav-link-clicked {
-  font-weight: bold;
-}
-
-.additional-section {
+/* Header Styles */
+.header {
   display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  width: 100%;
-  padding: 10px 0;
-}
-
-.additional-item {
-  border: 1px solid white;
-  padding: 5px;
-  color: white;
-  margin: 5px;
-  font-size: 15px;
-  width: fit-content;
-
-}
-
-.additional-item>a {
-  color: #000000 ;
-  text-decoration: none;
-}
-
-.card-container-clicked .additional-item {
-  border: 1px solid #000000 ;
-  color: #000000 ;
-}
-
-.centered-image {
-  display: block;
-  width: 44%;
-  max-width: 100%;
-  margin: 166px 350px;
-}
-
-::ng-deep .navbar-expand-lg {
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-}
-
-.view-all {
-  width: fit-content;
-  background: yellow;
-}
-
-.search-container {
-  padding: 10px;
-}
-
-.search-input {
-  width: 300px;
-  background: #000000 ;
-  color: white;
-  padding: 5px;
-  border: 1px solid white;
-  font-size: 16px;
-  text-align: end;
-  text-transform: uppercase;
-  outline: none;
-  padding-right: 20px;
-}
-
-.content {
-  position: relative;
-  margin-top: 100px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.layout-header {
-  display: flex;
-  align-items: center;
   justify-content: space-between;
-  background-color: #000000 ;
-  padding: 30px 30px;
-  position: relative; /* Act as a positioning reference */
-  height: 60px; /* Fix the height */
-  /* margin-bottom: 100px; */
+  align-items: center;
+  background-color: #111b21; /* Original header background color */
+  padding: 10px 40px;
+  /* transition: background-color 0.1s ease; */
+  position: relative; /* Needed for absolute positioning of child elements */
 }
 
-.icon-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: white; /* To make the SVG icon visible against the #000000  background */
-  margin: 0; /* Adjust as needed */
-
+/* Expanded header styles */
+.header.expanded {
+  background-color: #fff !important; /* Background color when expanded */
+  padding-bottom: 20px; /* Increase padding to make space for feature items */
 }
 
-.icon {
-  fill: white; /* This will make the SVG path white */
+/* Logo Styles */
+.logo-container img {
+  width: 130px; /* Adjust as needed */
 }
 
-.logo {
-  font-family: 'Zara';
-  font-size: 1.6em;
-  font-weight: bold;
-  margin: 2px;
-  text-align: left;
-  cursor: pointer;
-  padding-bottom: 0px;
-  color: white; /* Make the text visible on a #000000  background */
-}
-
+/* Navbar Styles */
 .navbar {
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
-.nav-link {
-  margin: 0 15px;
-  cursor: pointer;
-  color: #ffffff;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.nav-link:hover, .nav-link-clicked {
-  color: yellow;
-}
-
-/* .card-container {
-  border: none;
-  transition: 0.3s ease;
-  width: 30%;
-  margin-left: 20px; 
-
-
-} */
-
-.card-container {
-  position: initial;
-  top: 100%; /* Start right below the header */
-  left: 0; /* Align to the left edge of the header */
-  border: none;
-  transition: 0.3s ease;
-  width: 30%;
-}
-
-/* .card-container-clicked {
-  border: 1px solid #00BFFF;
-  background-color: white;
-  color: #000000 ;
-  display: none;
-  flex-direction: column;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.navbar ul {
+  list-style: none;
   display: flex;
-} */
-
-.card-container-clicked {
-  border: 1px solid #00BFFF;
-  background-color: white;
-  color: #000000 ;
-  flex-direction: column;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  display: flex;
+  gap: 20px;
   margin: auto;
 }
 
-.header-links {
-  display: flex;
-  align-items: center;
+.navbar li {
+  font-size: 18px;
+  line-height: 25px;
+  margin: 1em 0;
+  padding: 0 10px;
+  
 }
 
-.link {
-  margin-left: 20px;
-  color: #ffffff;
+/* Navbar Links */
+.navbar a {
   text-decoration: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 300;
   transition: color 0.3s;
+  position: relative; /* This is crucial for the positioning of the pseudo-element */
+  display: inline; /* Change this to 'inline' instead of 'inline-block' if you only want the text to be underlined */
+
 }
 
-.link:hover {
-  color: yellow;
+/* Navbar Links Hover Underline */
+.navbar a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 2px;
+  background-color: #fcd83c;
+  transform: scaleX(0);
+  transition: transform 0.5s ease-out;
+  transform-origin: left center; /* Ensure the scaling starts from the left */
 }
 
+.navbar a:hover, .navbar a:focus {
+  color: #fcd83c;
+}
 
+.navbar a:hover::after, .navbar a:focus::after {
+  transform: scaleX(1);
+}
 
+/* Call-to-Action Button Styles */
+.cta-container .cta-button {
+  background-color: #fcd83c;
+  color: #1c1e21;
+  border: 1px solid #1c1e21;
+  border-radius: 50px;
+  padding: 16px 28px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  white-space: nowrap;
+  z-index: 1;
+}
 
-
-
-
-
-
-
-
-
-.slide-links {
+/* Features Section Styles */
+.features-expanded-content {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 100%; /* Make it span the entire width of the card-container */
-  gap: 30px; /* Provides spacing between links */
+  background-color: #fff; /* Match the header background color when expanded */
+  position: absolute;
+  top: 60px; /* Adjust this if the height of your header is different */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  box-sizing: border-box;
+  padding: 20px 0;
+  /* transition: all 0.1s ease; */
+  visibility: hidden; /* Hide the content initially */
+  opacity: 0;
+  max-height: 0; /* Start with max-height 0 for transition */
+  overflow: hidden;
+}
+
+.header .features-expanded-content {
+  visibility: visible; /* Show the content when header is hovered */
+  opacity: 1;
+  max-height: 1000px; /* Max height when expanded to reveal all content */
+  padding: 20px 130px;
+  z-index: 2;
 }
 
 
-.slide-link {
-  text-transform: uppercase;
-  font-family: VogueAvantGarde, helvetica, sans-serif;
-  font-feature-settings: normal;
-  font-style: normal;
-  letter-spacing: 0.127811em;
-  line-break: auto;
-  line-height: 1.13615em;
-  font-size: 13px;
-  font-weight: 600;
-  overflow-wrap: normal;
-  border: none;
-  min-width: auto;
-  text-decoration: none;
-  white-space: nowrap;
-  color: rgba(255, 255, 255, 0.6);
+.feature-item {
+  width: 200px; /* Adjust as needed */
+  margin: 10px;
+  text-align: center;
+  border-radius: 8px; /* Rounded corners for feature items */
+}
+
+.feature-item img {
+  width: 25px; /* Adjust as needed */
+  margin-bottom: 10px;
+}
+
+.feature-item h5 {
+  margin: 0.5rem 0;
+  color: #111; /* Text color for titles */
+}
+
+.feature-item p {
+  text-align: left;
+  color: #666; /* Text color for descriptions */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar {
+    display: none; /* Hide navbar on smaller screens */
+  }
+
+  .header {
+    flex-direction: column;
+  }
+
+
+  .features-expanded-content {
+    position: static; /* Make it part of the document flow on small screens */
+    top: initial;
+    left: initial;
+    transform: none;
+    width: auto;
+    padding: 20px; /* Adjust padding for mobile screens */
+    display: block; /* Stack the features vertically on mobile screens */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+
+
+/* Navbar Links */
+.navbar a {
+  /* ... existing styles ... */
+  transition: color 0.3s; /* Smooth transition for color change */
+}
+
+/* Change the text color on hover for each link */
+.navbar a:hover, .navbar a:focus {
+  /* color: #1c1e21; Change the text color on hover */
+  color: white; /* Change the text color on hover */
+}
+
+/* Specific Underline Style for Navbar Links */
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: transparent; /* Make the underline transparent initially */
+  transition: background-color 0.3s, transform 0.3s; /* Transition for the underline effect */
+  transform: scaleX(0); /* Start with no underline visible */
+  transform-origin: bottom left;
+}
+
+/* Reveal the underline on hover */
+.navbar a:hover::after, .navbar a:focus::after {
+  background-color: #fcd83c; /* Underline color */
+  transform: scaleX(1); /* Full width underline on hover */
+}
+
+
+/* When the features section is expanded, change all header text to black */
+.header.expanded a,
+.header.expanded .logo-container img {
+  color: #1c1e21 !important; /* Change text color to black */
+}
+
+/* Maintain white underline color for links when the features section is expanded */
+.header.expanded a::after {
+  background-color: #fcd83c !important /* Set underline color to white */
+}
+
+/* Ensure the underline expands on hover and maintains white color */
+.header.expanded a:hover::after,
+.header.expanded a:focus::after {
+  background-color: #fcd83c !important; /* Keep the underline color white on hover/focus */
+  transform: scaleX(1) !important; /* Ensure the underline scales correctly on hover */
+}
+
+
+
+/* Arrow Indicator Styles */
+.arrow-indicator {
+  display: inline-block;
+  margin-left: 5px; /* Spacing between the text and the arrow */
+  border: solid #ffffff; /* Color of the arrow */
+  border-width: 0 2px 2px 0; /* Creates an L shape */
+  padding: 3px; /* Size of the arrow */
+  transform: rotate(45deg); /* Diagonal arrow */
+  transition: transform 0.3s ease; /* Smooth transition for rotation */
+  /* Adjust the line below if the arrow is not vertically centered */
+  position: relative;
+  top: -2px; /* Adjust if necessary for vertical alignment */
+}
+
+/* Rotate the arrow when features are expanded */
+.rotated {
+  transform: rotate(-135deg); /* Arrow pointing upwards */
+}
+
+li {
   cursor: pointer;
 }
 
-.slide-link:hover {
-  color: rgba(255, 255, 255, 0.8); /* Increase opacity on hover */
-}
-
-.active-link {
-  color: #fff; /* Set color of the active link to white */
-}
 
 
-.icon-btn, .card-container-slideshow, .header-links {
-  flex: 1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.features-expanded-content {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px; /* Adjust the space between the cards as needed */
 }
 
-.card-container-slideshow {
-  position: initial;
-  top: 100%; /* Start right below the header */
-  left: 0; /* Align to the left edge of the header */
-  border: none;
-  transition: 0.3s ease;
-  width: 30%;
+.feature-item {
+  border: 1px solid rgba(17, 27, 33, .2);
+  border-radius: 25px;
+  box-sizing: border-box; 
+  padding: 24px 24px 37px;
+  /* width: calc(20%); Adjust width for 4 items per row, accounting for gap */
+  width: 253px;
+  box-sizing: border-box;
+  text-align: left; /* Align text to the left */
+  position: relative; /* For absolute positioning of the arrow icon */
+}
+
+.feature-item:hover{
+  background-color: #fcd83c;
+  border-color: #111;
+}
+
+.feature-icon {
+  display: flex;
+  align-items: center; /* Center the icon vertically */
+}
+
+.feature-icon img {
+  margin-right: 10px; /* Space between icon and title */
+}
+
+.feature-text h5 {
+  margin: 10px 0; /* Space above and below the title */
+  margin: 10px 0;
+  font-size: 24px;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  font-weight: 200;
+}
+
+.feature-text p {
+  margin-bottom: 20px; /* Space below the description */
 }
 
 
 
-.icon-btn {
-  justify-content: flex-start;
+@media (max-width: 768px) {
+  .feature-item {
+    width: calc(50% - 10px); /* Adjust width for 2 items per row on smaller screens */
+  }
 }
 
-.header-links {
-  justify-content: flex-end;
+@media (max-width: 480px) {
+  .feature-item {
+    width: 100%; /* Full width for very small screens */
+  }
 }
+
+
+.feature-item {
+  /* ... existing styles ... */
+  position: relative; /* Needed for absolute positioning of children */
+}
+
+.feature-arrow {
+  position: absolute;
+  bottom: 20px; /* Position towards the bottom of the card */
+  left: 20px; /* Maintain consistent padding from the left */
+  font-size: 14px; /* Size of the arrow icon */
+  color: #333; /* Color of the arrow, change as needed */
+}
+
+/* Adjust the bottom padding of the feature-item to make room for the arrow */
+.feature-item {
+  padding-bottom: 35px; /* Increase padding to avoid overlapping with the arrow */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* DARK AND LIGHT MODE  */
+/* Original header mode with dark background */
+.header.dark-mode {
+  background-color: #111b21; /* Dark background */
+  color: #ffffff; /* Light text */
+}
+
+/* Navbar Links in dark mode */
+.header.dark-mode .navbar a {
+  color: #ffffff; /* Light text */
+}
+
+/* Call-to-Action Button in dark mode */
+.header.dark-mode .cta-container .cta-button {
+  background-color: #fcd83c;
+  color: #111b21;
+  /* ... other styles */
+}
+
+/* New header mode with light background */
+.header.light-mode {
+  background-color: #fcf5eb; /* Light background */
+  color: #111b21; /* Dark text */
+}
+
+/* Navbar Links in light mode */
+.header.light-mode .navbar a {
+  color: #111b21; /* Dark text */
+}
+
+/* Call-to-Action Button in light mode */
+.header.light-mode .cta-container .cta-button {
+  background-color: #111b21;
+  color: #fcf5eb;
+  /* ... other styles */
+}
+
+/* ... other styles */

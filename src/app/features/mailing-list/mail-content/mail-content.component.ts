@@ -17,11 +17,11 @@ export class MailContentComponent implements OnInit {
     private route: ActivatedRoute) {}
 
   ngOnInit() {
-    debugger
+    
     this.filePath = this.route.snapshot.paramMap.get('filePath')
     this.xmlService.fetchXmlData(this.filePath)
       .subscribe((data: any) => {
-        debugger
+        
         this.topic = data;
       });
   }

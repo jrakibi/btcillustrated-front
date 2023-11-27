@@ -21,6 +21,7 @@ import { AboutComponent } from './features/about/about.component';
 import { NewsletterComponent } from './features/newsletter/newsletter.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SupportComponent } from './features/support/support.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { SupportComponent } from './features/support/support.component';
     ReactiveFormsModule,
     RouterModule,
     SharedModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTooltipModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent],

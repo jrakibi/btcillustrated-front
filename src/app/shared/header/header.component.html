@@ -1,74 +1,42 @@
-<header class="layout-header" [ngStyle]="{'border-bottom': headerOptions?.isUnderlineDisplayed ? '1px solid #414141' : 'none'}">
-    <button *ngIf="!headerOptions?.isSlideShow"  aria-label="Open menu" class="icon-btn">
-        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg" fill="inherit" stroke="inherit" class="icon">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M20.4 6.9H3.6v-1h16.8v1zm0 11.2H3.6v-1h16.8v1z"></path>
-        </svg>
-    </button>
-    <div *ngIf="headerOptions?.isSlideShow" class="logo icon-btn" routerLink="/"><span style="color: yellow;">BTC</span> Illustrated</div>
-
-    <div [ngClass]="{'card-container': !headerOptions?.isSlideShow, 'card-container-slideshow':  headerOptions?.isSlideShow, 'card-container-clicked': isCardContainerClicked}">
-        <!-- If isSlide is true, display the 3 links -->
-        <div *ngIf="headerOptions?.isSlideShow" class="slide-links">
-            <a *ngFor="let link of headerOptions?.headerLinks" 
-            [routerLink]="link.route" 
-            routerLinkActive="active-link" 
-            class="slide-link">{{link.title}}</a>
-         
-        </div>
-
-        <!-- If isSlide is false, display the logo -->
-        <div *ngIf="!headerOptions?.isSlideShow" class="logo" routerLink="/"><span style="color: yellow;">BTC</span> Illustrated</div>
-        <div class="">
-            <nav class="navbar navbar-expand-lg"  *ngIf="isCardContainerClicked">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" [ngClass]="{'nav-link-clicked': activeLink === 'Article'}" (click)="setActiveLink('Article')">Articles</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" [ngClass]="{'nav-link-clicked': activeLink === 'illustration'}" (click)="setActiveLink('illustration')">Illustrations</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" [ngClass]="{'nav-link-clicked': activeLink === 'BIPS'}" (click)="setActiveLink('BIPS')">BIPS</a>
-                    </li> -
-                    <li class="nav-item">
-                        <a class="nav-link" [ngClass]="{'nav-link-clicked': activeLink === 'Book'}" (click)="setActiveLink('Book')">Book</a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="additional-section" *ngIf="isLogoClicked && activeLink === 'Article'">
-                <div class="row additional-section">
-                    <div *ngFor="let article of articles | slice:0:8; let i = index" class="additional-item">
-                        <a [routerLink]="['/read', article.id]">{{ article.title }}</a>
-                    </div>
-                </div>    
-                <div class="row" style="margin-top: 33px;">
-                    <div class="additional-item view-all">
-                        <a routerLink="/list">View All ...</a>
-                    </div>
-                </div>
-            </div>
-            <div class="additional-section" *ngIf="isLogoClicked && activeLink === 'illustration'">
-                <div class="row additional-section">
-                    <div *ngFor="let illustration of illustrations | slice:0:8; let i = index" class="additional-item">
-                        <a [routerLink]="['/illustration', illustration.id]">{{ illustration.title }}</a>
-                    </div>
-                </div>    
-                <div class="row" style="margin-top: 33px;">
-                    <div class="additional-item view-all">
-                        <a routerLink="/illustration">View All ...</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+<header [class]="isDarkMode ? 'header dark-mode' : 'header light-mode'" [class.expanded]="showFeatures">
+    <div class="logo-container">
+      <a  [routerLink]="['/home']">
+        <img src="./../../assets/icons/btcillustrated-icon.png" alt="WhatsApp Main Page" *ngIf="isDarkMode">
+        <img src="./../../assets/icons/btcillustrated-icon-black.png" alt="WhatsApp Main Page"  *ngIf="!(isDarkMode && showFeatures) && (showFeatures || !isDarkMode)">
+      </a>
     </div>
-    <div class="header-links">
-        <a class="link" tabindex="0">
-            <div class="search-container">
-                <input type="button" class="search-input" [routerLink]="['/search']" value="Search" placeholder="Search">
-            </div>
-        </a>
-        
-        
+    <nav class="navbar">
+      <ul>
+        <li class="features-dropdown">
+          <a (click)="toggleFeatures()">
+            Produts
+            <i class="fa" [ngClass]="{'fa-angle-down': !showFeatures, 'fa-angle-up': showFeatures}"></i> <!-- Font Awesome Icon -->
+  
+          </a>
+          <div class="features-expanded-content" *ngIf="showFeatures">
+            <!-- Feature items -->
+            <ng-container *ngFor="let feature of features">
+                <div class="feature-item" [routerLink]="feature.link">
+                <div class="feature-icon">
+                    <img [src]="feature.icon" alt="{{ feature.title }}">
+                </div>
+                <div class="feature-text">
+                    <h5>{{ feature.title }}</h5>
+                    <p>{{ feature.description }}</p>
+                </div>
+                <i class="fa fa-arrow-right feature-arrow"></i> 
+                </div>
+            </ng-container>
+          </div>
+        </li>
+        <li><a [routerLink]="['/illustration']">Visuals</a></li>
+        <li><a [routerLink]="['/mailing-list']">MailMerge</a></li>
+        <li><a [routerLink]="['/roadmap']">RoadMap</a></li>
+        <li><a [routerLink]="['/newsletter']">Newsletter</a></li>
+        <li><a [routerLink]="['/support']">Support</a></li>
+      </ul>
+    </nav>
+    <div class="cta-container">
+      <a [routerLink]="['/support']" class="cta-button">#Support</a>
     </div>
-</header>
+  </header>

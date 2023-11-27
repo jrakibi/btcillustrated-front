@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ArticleService } from 'src/app/core/service/article-service';
 import { IllustrationService } from 'src/app/core/service/bips-service';
 import { HeaderOptions } from './header-options';
@@ -9,48 +9,74 @@ import { HeaderOptions } from './header-options';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit, OnChanges {
   @Input() headerOptions: HeaderOptions
-  isLogoClicked = false;
-  activeLink: string = '';
-  articles: any[] = []; // Array to store the articles
-  illustrations: any[] = []; // Array to store the illustrations
-  isCardContainerClicked: boolean = false;
+  @Input() showFeature: boolean
+  isDarkMode = true; // Assuming dark mode is the default
+  state = false;
+  // showFeatures = false;
 
-  constructor(private http: HttpClient, 
-    private articleService: ArticleService,
-    private illustrationService: IllustrationService,
-    ) { }
+  // toggleFeatures(expand: boolean): void {
+  //   this.state = expand;
+  // }
+  showFeatures: boolean = false;
 
-  toggleCardContainer() {
-    this.isCardContainerClicked = !this.isCardContainerClicked;
-    this.isLogoClicked = !this.isLogoClicked;
+  constructor() {
+
   }
-
-
-  setActiveLink(link: string) {
-    this.isLogoClicked = true;
-    this.activeLink = link;
-    if (link === 'Article') {
-      this.getArticles(); 
+  ngOnInit(): void {
+    debugger
+    if(this.headerOptions) {
+      this.isDarkMode = this.headerOptions.isDarkMode
     }
-    if (link === 'illustration') {
-      this.getIllustrations(); 
-    }
-    if (link === 'Bips') {
-      this.getIllustrations(); 
+    if(this.showFeature) {
+      this.showFeatures = this.showFeature
     }
   }
 
-  getArticles() {
-    this.articleService.getArticles().subscribe(articles => {
-      this.articles = articles
-    })
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.showFeature) {
+      this.showFeatures = changes.showFeature.currentValue
+    }
   }
-
-  getIllustrations() {
-    this.illustrationService.getIllustrations().subscribe(illustrations => {
-      this.illustrations = illustrations
-    })
+  
+  toggleFeatures(): void {
+    this.showFeatures = !this.showFeatures;
   }
+  toggleMode(): void {
+    this.isDarkMode = !this.isDarkMode;
+  }
+  features: Array<{title: string, description: string, icon: string, link: string}> = [
+    {
+      title: 'Visuals',
+      description: 'Breaking complex Bitcoin topic in a simple way',
+      icon: 'assets/icons/visual.png',
+      link: '/illustration'
+    },
+    {
+      title: 'MailMerge',
+      description: 'Daily summaries of Bitcoin-dev mailing list.',
+      icon: 'assets/icons/feed.svg',
+      link: '/mailing-list'
+    },
+    {
+      title: 'RoadMap',
+      description: 'Your step-by-stepguide to mastering Bitcoin.',
+      icon: 'assets/icons/roadmap.png',
+      link: '/roadmap'
+    },
+    {
+      title: 'Blog',
+      description: 'Learn about Censensus protocol.',
+      icon: 'assets/icons/blog.svg',
+      link: '/list'
+    },
+    {
+      title: 'Platform',
+      description: 'A full Bitcoin course that takes youfrom 0 to 1.',
+      icon: 'assets/icons/terminal.png',
+      link: '/support'
+    }
+    // Add other features as needed
+  ];
 }

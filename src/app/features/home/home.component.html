@@ -1,44 +1,42 @@
+<app-header [headerOptions]="headerOptions" [showFeature]="showFeature"></app-header>
 <div class="containerr">
     <div class="container">
-        <header class="header">
-            <div class="logo">
-              <strong>BTCillustrated</strong>
-            </div>
-            <nav>
-                <div class="nav-items">
-                  <div class="dropdown">
-                    <button class="dropbtn">Products</button>
-                    <div class="dropdown-content">
-                      <a [routerLink]="['/search']">Visuals</a>
-                      <a [routerLink]="['/mailing-list']">MailMerge</a>
-                      <a [routerLink]="['/roadmap']">RoadMap</a>
-                      <a [routerLink]="['/list']">Blog</a>
-                      <a [routerLink]="['/support']">Plateform</a>
-                    </div>
-                  </div>
-                  <a [routerLink]="['/newsletter']">Newsletter</a>
-                  <a [routerLink]="['/support']">#Support</a>
-                </div>
-                <!-- Search Bar -->
-                <div class="search-bar">
-                  <input type="text" [routerLink]="['/search']"  placeholder="Search ..." class="search-input">
-                  <i class="fa fa-search search-icon"></i>
-                </div>
-              </nav>
-              
-          </header>
           
         <div class="content">
-        <h1 class="title">BTCillustrated</h1>
-          <p class="center-text">
-            The all-new interactive learning experience that teaches you everything about Bitcoin
-          </p>
-          <div class="cards">
-            <div class="card" [routerLink]="[card.link]" *ngFor="let card of cards">
-              <img [src]="card.icon" alt="icon" />
-              <p>{{ card.text }}</p>
+          <div class="row">
+            <div class="col-md-4" style="margin: auto;">
+              <div class="home-left">
+
+                <h1 class="title"><span style="font-weight: 700;">BTC</span><span style="font-weight: 300;">illustrated</span></h1>
+                <p class="center-text">
+                  The all-new interactive learning experience that teaches you everything about Bitcoin
+                </p>
+                <a class="choose-product">
+                  <span style="margin-right: 10px;" (click)="toggleFeaturesHeader()">Choose a product</span>
+                  <i class="fa fa-angle-right"></i> 
+                </a>
+                
+                  </div>
             </div>
+            <div class="offset-md-2 col-md-5"  style="margin: auto;">
+              <div class="home-right">
+                <div class="row">
+                  <!-- Use ngFor to repeat your card component, and each card will take up 6 columns (half of the available space in .col-md-6) -->
+                  <div class="col-6" *ngFor="let card of cards">
+                    <div class="card" [routerLink]="[card.link]">
+                      <img [src]="card.icon" class="card-img-top" alt="{{ card.text }}">
+                      <div class="card-body">
+                        <p class="card-text">{{ card.text }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
           </div>
+
+
         </div>
       </div>
 </div>
