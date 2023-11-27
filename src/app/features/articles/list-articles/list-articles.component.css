@@ -135,7 +135,7 @@ h1 {
     padding: 40px;
     border: 1px solid #ffffff;
     margin: 20px 0;
-    background-color: #2a2a2a;
+    background-color: #111b21;
     color: #fff;
 }
 
@@ -206,9 +206,10 @@ h1 {
     padding: 40px;
     border: 1px solid #ffffff;
     margin: 20px 0;
-    background-color: #2a2a2a;
+    background-color: #111b21;
     color: #fff;
     transition: background-color 0.6s; /* Added transition */
+    cursor: pointer;
 }
 
 .article-card:hover {
