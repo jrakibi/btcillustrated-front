@@ -10,7 +10,7 @@
         <li class="features-dropdown">
           <a (click)="toggleFeatures()">
             Produts
-            <i class="fa" [ngClass]="{'fa-chevron-down': !showFeatures, 'fa-chevron-up': showFeatures}"></i> <!-- Font Awesome Icon -->
+            <i class="fa" [ngClass]="{'fa-angle-down': !showFeatures, 'fa-angle-up': showFeatures}"></i> <!-- Font Awesome Icon -->
   
           </a>
           <div class="features-expanded-content" *ngIf="showFeatures">

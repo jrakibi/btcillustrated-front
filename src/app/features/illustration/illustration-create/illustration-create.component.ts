@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Category, Tag } from 'src/app/core/model/illustration-model';
+import { CategoryService } from 'src/app/core/service/category-service';
 import { IllustrationService } from 'src/app/core/service/illustration-service';
+import { TagService } from 'src/app/core/service/tag-service';
 
 @Component({
   selector: 'app-illustration-create',
@@ -12,20 +15,24 @@ export class IllustrationCreateComponent {
   illustrationForm: FormGroup;
   isEditMode: boolean = false;
   currentIllustrationId: number | null = null;
+  savedCategories: Category[] = []; // Add your saved categories here
+  savedTags: Tag[] = [];
 
   constructor(private fb: FormBuilder,  
     private illustrationService: IllustrationService,
+    private categoryService: CategoryService,
+    private tagService: TagService,
     private route: ActivatedRoute,
     private router: Router) {
       this.illustrationForm = this.fb.group({
-        title: ['', [Validators.required, Validators.maxLength(100)]],
-        thumbnailImage: ['', Validators.required],
+        title: [''],
+        thumbnailImage: [''],
         imagePaths: this.fb.array([]), // Initialize as empty FormArray
         details: [''],
         tags: this.fb.array([]),
         categories: this.fb.array([]), // Initialize as empty FormArray
-        metaTitle: ['', Validators.maxLength(60)],
-        metaDescription: ['', Validators.maxLength(155)],
+        metaTitle: [''],
+        metaDescription: [''],
         slug: [''],
         githubRepoUrl: [''],
         tweetLink: ['']
@@ -35,12 +42,25 @@ export class IllustrationCreateComponent {
   ngOnInit() {
     debugger
     const illustrationId = this.route.snapshot.params['id'];
+    this.loadSavedCategories();
+    this.loadSavedTags();
     if (illustrationId) {
       this.isEditMode = true;
       this.currentIllustrationId = illustrationId;
       // Load the illustration data and populate the form
       this.loadIllustrationData(illustrationId);
     }
+  }
+  loadSavedCategories(): void {
+    debugger
+    this.categoryService.getAllCategories().subscribe(
+      (data: Category[]) => {
+        this.savedCategories = data;
+      },
+      error => {
+        console.error('Error fetching categories', error);
+      }
+    );
   }
 
   loadIllustrationData(id: number): void {
@@ -65,17 +85,27 @@ export class IllustrationCreateComponent {
           this.imagePaths.push(this.fb.control(path));
         });
   
-        // Populate tags FormArray
-        this.tags.clear();
-        illustration.tags.forEach((tag: any) => {
-          this.tags.push(this.fb.control(tag.name));
-        });
-  
-        // Populate categories FormArray
-        this.categories.clear();
-        illustration.categories.forEach((category: any) => {
-          this.categories.push(this.fb.control(category.name));
-        });
+      // Populate the categories FormArray
+      this.categories.clear();
+      illustration.categories.forEach((category) => {
+        // Use the id to find the category from savedCategories
+        const existingCategory = this.savedCategories.find(c => c.id === category.id);
+        this.categories.push(this.fb.group({
+          id: existingCategory ? existingCategory.id : category.id,
+          name: existingCategory ? existingCategory.name : category.name
+        }));
+      });
+
+      // Populate the tags FormArray
+      this.tags.clear();
+      illustration.tags.forEach((tag) => {
+        // Use the id to find the tag from savedTags
+        const existingTag = this.savedTags.find(t => t.id === tag.id);
+        this.tags.push(this.fb.group({
+          id: existingTag ? existingTag.id : tag.id,
+          name: existingTag ? existingTag.name : tag.name
+        }));
+      });
       },
       (error) => {
         console.error('Error fetching illustration', error);
@@ -87,7 +117,20 @@ export class IllustrationCreateComponent {
     return this.illustrationForm.get('imagePaths') as FormArray;
   }
 
-  
+
+
+  loadSavedTags(): void {
+    this.tagService.getAllTags().subscribe(
+      (data: Tag[]) => {
+        this.savedTags = data;
+      },
+      error => {
+        console.error('Error fetching tags', error);
+      }
+    );
+  }
+
+
 get tags(): FormArray {
   return this.illustrationForm.get('tags') as FormArray;
 }
@@ -95,28 +138,37 @@ get tags(): FormArray {
 get categories(): FormArray {
   return this.illustrationForm.get('categories') as FormArray;
 }
-  addImagePath(): void {
-    this.imagePaths.push(this.fb.control(''));
-  }
 
+addCategory(): void {
+  const categoryFormGroup = this.fb.group({
+    id: [null], // or the actual ID if editing an existing category
+    name: ['']  // the name of the category
+  });
+  this.categories.push(categoryFormGroup);
+}
 
-  addCategory(): void {
-    this.categories.push(this.fb.control(''));
-  }
-
-  removeImagePath(index: number): void {
-    this.imagePaths.removeAt(index);
-  }
+addTag(): void {
+  const tagFormGroup = this.fb.group({
+    id: [null], // or the actual ID if editing an existing tag
+    name: ['']  // the name of the tag
+  });
+  this.tags.push(tagFormGroup);
+}
 
   removeCategory(index: number): void {
     this.categories.removeAt(index);
   }
 
+  addImagePath(): void {
+    this.imagePaths.push(this.fb.control(''));
+  }
 
 
-addTag(): void {
-    this.tags.push(this.fb.control(''));
-}
+  removeImagePath(index: number): void {
+    this.imagePaths.removeAt(index);
+  }
+
+
 
 removeTag(index: number): void {
     this.tags.removeAt(index);
@@ -124,12 +176,12 @@ removeTag(index: number): void {
   onSubmit() {
     
     if (this.illustrationForm.valid) {
-      const formData = this.illustrationForm.value;
+      const formData = this.illustrationForm.getRawValue(); // Use getRawValue() to include disabled fields if any
   
-      // Transform tags into the expected structure
-      formData.tags = formData.tags.map(tagName => ({ name: tagName }));
-      formData.categories = formData.categories.map(categoryName => ({ name: categoryName }));
-  
+  // Map the categories and tags to their IDs if the backend expects IDs
+    formData.categories = formData.categories.map((categoryFormGroup: any) => categoryFormGroup);
+    formData.tags = formData.tags.map((tagFormGroup: any) => tagFormGroup);
+
       
       if (this.isEditMode && this.currentIllustrationId) {
         this.illustrationService.updateIllustration(this.currentIllustrationId, formData).subscribe(

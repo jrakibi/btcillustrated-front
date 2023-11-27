@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ArticleService } from 'src/app/core/service/article-service';
 import { IllustrationService } from 'src/app/core/service/bips-service';
 import { HeaderOptions } from './header-options';
@@ -9,8 +9,9 @@ import { HeaderOptions } from './header-options';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit{
+export class HeaderComponent implements OnInit, OnChanges {
   @Input() headerOptions: HeaderOptions
+  @Input() showFeature: boolean
   isDarkMode = true; // Assuming dark mode is the default
   state = false;
   // showFeatures = false;
@@ -28,8 +29,17 @@ export class HeaderComponent implements OnInit{
     if(this.headerOptions) {
       this.isDarkMode = this.headerOptions.isDarkMode
     }
+    if(this.showFeature) {
+      this.showFeatures = this.showFeature
+    }
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.showFeature) {
+      this.showFeatures = changes.showFeature.currentValue
+    }
+  }
+  
   toggleFeatures(): void {
     this.showFeatures = !this.showFeatures;
   }
@@ -39,31 +49,31 @@ export class HeaderComponent implements OnInit{
   features: Array<{title: string, description: string, icon: string, link: string}> = [
     {
       title: 'Visuals',
-      description: 'End-to-end encryption and privacy controls.',
+      description: 'Breaking complex Bitcoin topic in a simple way',
       icon: 'assets/icons/visual.png',
       link: '/illustration'
     },
     {
       title: 'MailMerge',
-      description: 'Message and call for free* around the world.',
+      description: 'Daily summaries of Bitcoin-dev mailing list.',
       icon: 'assets/icons/feed.svg',
       link: '/mailing-list'
     },
     {
       title: 'RoadMap',
-      description: 'Message and call for free* around the world.',
+      description: 'Your step-by-stepguide to mastering Bitcoin.',
       icon: 'assets/icons/roadmap.png',
       link: '/roadmap'
     },
     {
       title: 'Blog',
-      description: 'Message and call for free* around the world.',
+      description: 'Learn about Censensus protocol.',
       icon: 'assets/icons/blog.svg',
       link: '/list'
     },
     {
       title: 'Platform',
-      description: 'Message and call for free* around the world.',
+      description: 'A full Bitcoin course that takes youfrom 0 to 1.',
       icon: 'assets/icons/terminal.png',
       link: '/support'
     }

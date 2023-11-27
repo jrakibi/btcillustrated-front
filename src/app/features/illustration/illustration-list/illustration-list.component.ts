@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Power2 } from 'gsap';
 import { Illustration, Tag, Category } from 'src/app/core/model/illustration-model';
@@ -7,6 +8,7 @@ import { IllustrationService } from 'src/app/core/service/illustration-service';
 import { SearchService } from 'src/app/core/service/search-service';
 import { TagService } from 'src/app/core/service/tag-service';
 import { HeaderOptions } from 'src/app/shared/header/header-options';
+import { LnurlPayDialogComponent } from '../lnurl-pay-dialog/lnurl-pay-dialog.component';
 
 @Component({
   selector: 'app-illustration-list',
@@ -29,6 +31,7 @@ export class IllustrationListComponent implements OnInit {
   constructor(private illustrationService: IllustrationService,
     private searchService: SearchService,
     private tagService: TagService,
+    public dialog: MatDialog,
     private categoryService: CategoryService,
     ) {}
 
@@ -41,6 +44,17 @@ export class IllustrationListComponent implements OnInit {
     this.loadTagsWithCounts()
     this.loadCategories();
 
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(LnurlPayDialogComponent, 
+      { 
+        width: '600px',
+      });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed', result);
+    });
   }
 
   loadIllustrations(): void {

@@ -305,10 +305,12 @@ li {
 }
 
 .feature-item {
-  border: 1px solid #eaeaea; /* Light border color, adjust as needed */
-  border-radius: 10px; /* Rounded corners */
-  padding: 20px;
-  width: calc(20%); /* Adjust width for 4 items per row, accounting for gap */
+  border: 1px solid rgba(17, 27, 33, .2);
+  border-radius: 25px;
+  box-sizing: border-box; 
+  padding: 24px 24px 37px;
+  /* width: calc(20%); Adjust width for 4 items per row, accounting for gap */
+  width: 253px;
   box-sizing: border-box;
   text-align: left; /* Align text to the left */
   position: relative; /* For absolute positioning of the arrow icon */

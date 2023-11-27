@@ -30,3 +30,62 @@
   .mdc-dialog__actions {
     padding: 0px;
   }
+
+  .profile-labels:hover a, .profile-labels:hover mat-icon {
+    color: #FFC107; /* Your brand yellow */
+    transition: color 0.3s ease;
+  }
+  
+  .profile-labels mat-icon {
+    visibility: hidden;
+  }
+  
+  .profile-labels:hover mat-icon {
+    visibility: visible;
+  }
+  
+  .name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333; /* Dark text for the title */
+    text-align: center;
+  }
+  
+  .profile-labels a {
+    color: #555; /* Dark grey text for the invoice */
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .profile-labels:hover a {
+    color: #FFC107; /* Brand yellow for hover state */
+  }
+  
+  .profile-labels mat-icon {
+    color: #888; /* Light grey for the copy icon */
+    transition: visibility 0.3s ease;
+    visibility: hidden; /* Hide icon by default */
+  }
+  
+  .profile-labels:hover mat-icon {
+    visibility: visible; /* Show icon on hover */
+  }
+  
+  .profile-labels a:hover {
+    text-decoration: underline; /* Underline on hover for better affordance */
+  }
+  
+  .explanation-text {
+    font-size: 14px;
+    color: #555; /* Dark grey for explanatory text */
+    text-align: center;
+    margin-bottom: 20px; /* Space before the QR code */
+  }
+  
+  .clipboard-instruction {
+    font-size: 12px;
+    color: #666; /* Light grey for clipboard instruction */
+    text-align: center;
+    margin-top: 10px; /* Space after the clickable invoice code */
+  }
+  

@@ -115,6 +115,12 @@
           <div class="col-md-3 mb-3"  *ngFor="let illustration of illustrations">
             <div class="card">
               <div class="card-icons">
+
+                <a (click)="openDialog()" target="_blank" rel="noopener noreferrer">
+                  <span class="icon-circle" style="background-color: #111b21;">
+                    <i class="fa fa-bolt" style="color: #ffc107;"></i>
+                  </span>
+                </a>
                 <a href="{{ illustration.githubRepoUrl || 'https://github.com/jrakibi/btcillustrated/' }}" target="_blank" rel="noopener noreferrer">
                   <span class="icon-circle">
                     <i class="fab fa-github"></i>
