@@ -60,7 +60,6 @@ export class MailListComponent implements OnInit {
   openDialog() {
     this.dialog.open(DailyUpdateDialogComponent, {
       width: '44%',
-      height: '600px',
       hasBackdrop: true,
       data: {
         dailyUpdateData: this.dailyUpdateData

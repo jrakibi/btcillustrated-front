@@ -1,0 +1,223 @@
+  
+  .dialog-background { 
+    background-color: #111b21;
+    color: white;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  svg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 150px;
+    width: 150px;
+  }
+  
+.dialog-background  {
+  color: white;
+  margin-bottom: 50px;
+  .dialog-header {
+  padding-top: 50px;
+  padding-bottom: 60px;
+    text-align: center;
+    position: relative;
+
+    h1 {
+      font-weight: 300;
+      font-size: xxx-large;
+    }
+
+    span {
+      font-size: 1.25rem;
+      font-weight: 100;
+    }
+
+    .close-button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 24px;
+      border: none;
+      background: none;
+    }
+  }
+
+  .keywords-container {
+    text-align: left;
+    position: relative; // Add this to position the progress bar
+
+    .keyword-title {
+      display: block;
+      margin-bottom: 15px;
+      color: #FBD312;
+      font-size: xx-large;
+      font-weight: 100;
+    }
+    .keywords-wrapper {
+      padding-bottom: 10px;
+      overflow-x: auto; // Enables horizontal scrolling
+      scrollbar-width: thin; // For Firefox
+      scrollbar-color: #fcd211 #111b21; // For Firefox
+      -ms-overflow-style: none; // For Internet Explorer and Edge
+      &::-webkit-scrollbar {
+        height: 7px; // Height of the scrollbar
+      }
+      &::-webkit-scrollbar-track {
+        background: #fcd2116b;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: #000000;
+        border-radius: 10px;
+        border: 1px solid #fcd2116b;
+      }
+    }
+    .keywords {
+      display: inline-flex;
+      gap: 10px;
+      
+      .keyword {
+        border: 0.5px solid #fcd21159;
+        border-radius: 20px;
+        padding: 5px 15px;
+        font-weight: 100;
+        width: max-content;
+        font-size: small;
+        cursor: pointer;
+      }
+
+      .keyword:hover {
+        background: #fcd211;
+        color: black;
+      }
+    }
+  }
+
+  hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    opacity: 1;
+    border: 0.3px solid #fcd211;
+  }
+
+  .audio-section {
+    display: flex;
+    align-items: baseline;
+    justify-content: left;
+    grid-gap: 10px;
+    gap: 10px;
+    margin: 50px 0 30px 0;
+    .play-button {
+      border: 1px solid;
+      border-radius: 50%;
+      background: none;
+      color: #fcd211;
+      width: 66px;
+      height: 66px;
+    }
+
+    .play-button:hover {
+      color: #111b21;
+      background: #fcd211;
+    }
+    
+    span {
+      font-size: xx-large;
+      font-weight: lighter;
+      color: #fcd211;
+      margin-left: 20px;
+    }
+  }
+
+  .chat-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: auto;
+    margin-top: 60px;
+    width: 88%;
+    .chat-bubble {
+      border-radius: 15px;
+      margin-bottom: 20px;
+      font-weight: lighter;
+      font-size: medium;
+      border: 0.5px solid white;
+      max-width: fit-content;
+      
+      .icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        padding: 8px;
+        border: 0.5px solid white;
+        position: absolute;
+      }
+
+      &.seedhammer {
+        background: #0B141A;
+        text-align: start;
+
+        .icon {
+          background: #0B141A;
+          margin-left: -50px;
+        }
+        .text-content {
+          // margin-left: 50px;
+          margin: 12px;
+          text-align: left;
+          padding-right: 20px;
+          border-top-left-radius: 4px;
+          border-bottom-left-radius: 4px;
+        }
+      }
+
+      &.me {
+        align-self: flex-end;
+        text-align: end;
+        .icon {
+          margin-right: -50px;
+          margin-left: 10px;
+        }
+        .text-content {
+          // margin-right: 50px;
+          margin: 12px;
+          text-align: right;
+          padding-left: 20px;
+          border-top-right-radius: 4px;
+          border-bottom-right-radius: 4px;
+        }
+      }
+    }
+
+  }
+}
+
+// Add media queries and other responsive design adjustments as needed.
+@media (min-width: 1400px) {
+  .container, 
+  .container-lg, 
+  .container-md, 
+  .container-sm, 
+  .container-xl, 
+  .container-xxl {
+      max-width: 1140px;
+  }
+}
+
+/* Responsive design adjustments */
+@media (max-width: 600px) {
+  .dialog-background .chat-container .chat-bubble .icon {
+    width: 30px;
+    height: 30px;
+    left: -35px; /* Adjust for smaller screens */
+    right: -35px; /* Adjust for smaller screens */
+  }
+
+  .dialog-background .chat-container .chat-bubble .text-content {
+    margin-left: 35px; /* Adjust for smaller screens */
+    margin-right: 35px; /* Adjust for smaller screens */
+  }
+}

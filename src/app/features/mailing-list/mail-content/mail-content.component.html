@@ -1,4 +1,4 @@
-<div class="blog-hero">
+<!-- <div class="blog-hero">
     <div id="bitcoin">
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
            width="200px" height="200px" viewBox="100 100 400 400" xml:space="preserve">
@@ -24,19 +24,26 @@
                 
       </svg>
       </div>
-</div>
+</div> -->
 <div class="blog-container">
     <div class="container">
         <h1>{{topic?.title}}</h1>
         <!-- <p>How we stopped trying to scale and discovered a new way to succeed</p> -->
         <div class="author-info">
-            <img src="https://pbs.twimg.com/profile_images/1363441325731946504/iCgoITQy_400x400.jpg" alt="Author">
-            <div>
-                <!-- <strong>{{topic.authorName}}</strong> -->
-                <strong>{{topic?.authorName | extractName}}</strong>
-
-                <p>{{topic?.entries[0].published  | date : "dd/MM/yyyy 'at' hh:mm" }}</p>
+            <div class="email-author">
+                <img src="https://pbs.twimg.com/profile_images/1363441325731946504/iCgoITQy_400x400.jpg" alt="Author">
+                <div class="author-details">
+                    <strong>{{topic?.authorName | extractName}}</strong>
+                    <p>{{topic?.entries[0].published  | date : "dd/MM/yyyy 'at' hh:mm" }}</p>
+                </div>
             </div>
+
+            <!-- Button on the right -->
+            <button class="generate-site-btn" style="color: black;"  (click)="onExplainClick()">
+                <!-- <i class="your-icon-class"></i> Replace with your actual icon class -->
+                Explain like I'm 5
+            </button>
+            
         </div>
         <div class="article-content">
             <!-- <h2>Our small beginnings</h2> -->
