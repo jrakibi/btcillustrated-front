@@ -15,6 +15,8 @@ export class MailContentComponent implements OnInit {
 
   topic: Topic;
   filePath: string
+  formattedSummary: string;
+
   constructor(
     private xmlService: MailingListService,
     private dialog: MatDialog,
@@ -22,12 +24,14 @@ export class MailContentComponent implements OnInit {
     private route: ActivatedRoute) {}
 
   ngOnInit() {
-    
+    debugger
     this.filePath = this.route.snapshot.paramMap.get('filePath')
     this.xmlService.fetchXmlData(this.filePath)
       .subscribe((data: any) => {
         
         this.topic = data;
+        this.formattedSummary = this.topic?.entries[0].summary.replace(/\n/g, '<br>');
+
       });
   }
 

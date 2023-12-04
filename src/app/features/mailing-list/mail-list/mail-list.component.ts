@@ -40,15 +40,15 @@ export class MailListComponent implements OnInit {
   ngOnInit(): void {
     this.getDailyUpdate();
 
-    setTimeout(() => {
-      this.openDialog();
-    }, 2500);  // 5 seconds delay
+    // setTimeout(() => {
+    //   this.openDialog();
+    // }, 2500);  // 5 seconds delay
   }
 
   getDailyUpdate() {
     this.mailingListService.getDailyUpdate().subscribe(
       (data: any) => {
-        
+        debugger
         this.dailyUpdateData = data
       },
       (error) => {

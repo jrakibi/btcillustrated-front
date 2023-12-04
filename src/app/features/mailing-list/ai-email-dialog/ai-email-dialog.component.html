@@ -1,83 +1,83 @@
+<button mat-dialog-close class="close-button">&times;</button>
+
 <div class="dialog-background">
   <div class="loading" *ngIf="isLoading">
-    <svg viewBox="0 0 100 100">
-      <g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="6">
-        <!-- left line -->
-        <path d="M 21 40 V 59">
-          <animateTransform
-          attributeName="transform"
-          attributeType="XML"
-          type="rotate"
-          values="0 21 59; 180 21 59"
-          dur="2s"
-          repeatCount="indefinite" />
-        </path>
-        <!-- right line -->
-        <path d="M 79 40 V 59">
-          <animateTransform
-          attributeName="transform"
-          attributeType="XML"
-          type="rotate"
-          values="0 79 59; -180 79 59"
-          dur="2s"
-          repeatCount="indefinite" />
-        </path>
-        <!-- top line -->
-        <path d="M 50 21 V 40">
+    <div class="fixed-content">
+      <svg viewBox="0 0 100 100">
+        <g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="6">
+          <path d="M 21 40 V 59">
+            <animateTransform
+            attributeName="transform"
+            attributeType="XML"
+            type="rotate"
+            values="0 21 59; 180 21 59"
+            dur="2s"
+            repeatCount="indefinite" />
+          </path>
+          <path d="M 79 40 V 59">
+            <animateTransform
+            attributeName="transform"
+            attributeType="XML"
+            type="rotate"
+            values="0 79 59; -180 79 59"
+            dur="2s"
+            repeatCount="indefinite" />
+          </path>
+          <path d="M 50 21 V 40">
+            <animate
+            attributeName="d"
+            values="M 50 21 V 40; M 50 59 V 40"
+            dur="2s"
+            repeatCount="indefinite" />
+          </path>
+          <path d="M 50 60 V 79">
+            <animate
+            attributeName="d"
+            values="M 50 60 V 79; M 50 98 V 79"
+            dur="2s"
+            repeatCount="indefinite" />
+          </path>
+          <path d="M 50 21 L 79 40 L 50 60 L 21 40 Z">
           <animate
-          attributeName="d"
-          values="M 50 21 V 40; M 50 59 V 40"
-          dur="2s"
-          repeatCount="indefinite" />
-        </path>
-        <!-- btm line -->
-        <path d="M 50 60 V 79">
+            attributeName="stroke"
+            values="rgba(255,255,255,1); rgba(100,100,100,0)"
+            dur="2s"
+            repeatCount="indefinite" />
+          </path>
+          <path d="M 50 40 L 79 59 L 50 79 L 21 59 Z"/>
+          <path d="M 50 59 L 79 78 L 50 98 L 21 78 Z">
           <animate
-          attributeName="d"
-          values="M 50 60 V 79; M 50 98 V 79"
-          dur="2s"
-          repeatCount="indefinite" />
-        </path>
-        <!-- top box -->
-        <path d="M 50 21 L 79 40 L 50 60 L 21 40 Z">
-        <animate
-          attributeName="stroke"
-          values="rgba(255,255,255,1); rgba(100,100,100,0)"
-          dur="2s"
-          repeatCount="indefinite" />
-        </path>
-        <!-- mid box -->
-        <path d="M 50 40 L 79 59 L 50 79 L 21 59 Z"/>
-        <!-- btm box -->
-        <path d="M 50 59 L 79 78 L 50 98 L 21 78 Z">
-        <animate
-          attributeName="stroke"
-          values="rgba(100,100,100,0); rgba(255,255,255,1)"
-          dur="2s"
-          repeatCount="indefinite" />
-        </path>
-        <animateTransform
-          attributeName="transform"
-          attributeType="XML"
-          type="translate"
-          values="0 0; 0 -19"
-          dur="2s"
-          repeatCount="indefinite" />
-      </g>
-    </svg>
-    
-    <h4>Loading ...</h4>
+            attributeName="stroke"
+            values="rgba(100,100,100,0); rgba(255,255,255,1)"
+            dur="2s"
+            repeatCount="indefinite" />
+          </path>
+          <animateTransform
+            attributeName="transform"
+            attributeType="XML"
+            type="translate"
+            values="0 0; 0 -19"
+            dur="2s"
+            repeatCount="indefinite" />
+        </g>
+      </svg>
+      <p class="loading-text">Loading conversation...</p>
+    </div>
+    <p *ngIf="currentInfoText" [@fadeInOut] class="info-text">
+      " {{ currentInfoText }} "
+    </p>
+
   </div>
 
 
   <div *ngIf="!isLoading">
+  <!-- <div> -->
     <div class="container">
       <div class="dialog-header">
-        <h1>A proposal for a "PSBT for descriptors"</h1>
-        <span>Turn boring Emails into engaging conversation</span>
-        <button mat-dialog-close class="close-button">&times;</button>
+        <h1>{{topic.title}}</h1>
+        <span>Turn boring bitcoin mailing-list mails into engaging conversation</span>
       </div>
-    
+
       <div class="keywords-container">
         <span class="keyword-title">Keywords</span>
         <div class="keywords-wrapper">
@@ -86,36 +86,48 @@
           </div>
         </div>
       </div>
-    
-    
+
+
       <div class="audio-section">
         <button class="play-button">
           <i class="fa fa-play"></i>
         </button>
         <span>Listen to this conversation</span>
       </div>
-    
+
       <div class="chat-container">
-        <!-- Dynamically add chat bubbles from your TypeScript object -->
-        <ng-container *ngFor="let message of dialogueResponse.dialogue">
-          <div class="chat-bubble" [ngClass]="{'seedhammer': message.speaker === 'Author', 'me': message.speaker === 'Me'}">
-            <img [src]="message.speaker === 'Author' ? 
-            'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAECklEQVR4nO2Za4gWZRTHn61NctfFNhIp80OmFua1zawPJQRFqKAhmlcsv5W1SJAQIgURIUQblpfAsvoQkYiIIomgQWZgoqKGdsPoiqWiFStbuj857H/ZcZzZeeZ9Zt59Bf+w7MvMOf/zPzPP5ZxnnLsG54B64H7gBeBD4EvgV+AMcAG4qN9/APuAjcArwBRgYJ8/Q+ABYB1wmsrRAXwGLAT6VTuBh4DdMUFHgbXA08DDwO1AM3A9UKfftwKTgNnA68AuJdINe2OtwA1lJzAQWA90KvBfwKvAXQGcNwGLgK9jD2Vcsep7At4NHFegdmA50FhwjMeBY4px3oabKzjA+Mg8OAAMLzTA5bFuBFYrlr35JUURj9AQMmwGGgohzo7bqkRsxZsZSjYAOKIktlV7VQFeVOx/gDtDiFaJ6BugqVCV/ho+lobPKyVo0Wb2HzC2cIX+OpqBP5VM/iGmoWR4oxSFlQ2xQ3kdx0TG5i2lKfTX0wiclKbJeRzflNM7rkYAvCxNb/s6WDnxm5zuK1CIlTRfBfiPkaZfTKOPw7huh0qDJnAOE+fJQJ4fxDPRx/g5Gb8fEjTGOUecWwN5VonneR/j92T8bI4A84BzwNSU+23iXBG7Pk1+8zzjLBbPeh/jL2T8iCf5KOBf+UxPsdmr+4/Frk/XdfMf5RFrouz3+Qj7ScZjPZdFK7kNG1Js+qmStbqpOeH+BvkfzaqmgQbVXtbD3JElzvYOwxCPRKIiGjKe4rGU+/1to/Odl3S10oZNWYb/y7B/ht1cn2FhZbjsPujFZiTwt+yeyog7WPPqiqEaN2wvOJGPshaPPIkYgJcixWy9SwLws4yGJhrkH1rfyqaliKEVmXffySe58QIOymBCokGOya7KtVOTPbGXyTPZU1a8U8DNSQbWBRrmu8Dl18awru9N8Z2RZ/mNA9iZWhNGSuY1Lv+GOCV2fYW42lL8cm2IcQD3aHGyv9Hxmw92v2oXCCtJxDUnlMujbPkkaSJ1n5gEnS1FeohhITwehyOGE73VRqtdAHQGvCeEozfYcNJxq2FH2gRG43eQqzHQlcCnKlfQcdX4rJ79XVdD4PIEbPN+y86UXcZu2yGne12NgB5YArf5Oq2U0x6v9rIKQMjr1BTp3xe4qzURgz7AoC9Q5X63KDmROuCw/GeXoq4aiRiAZ+S/y/UhgOuk42KlBE3qHDu9V4oSQNenO8PvISTbyq6bPDQ8IQ27Q0iWiWRtoeryadguDUtDv+Sm9hZlg55DvlNJpzF5iIaL6PtCFfrFnqsu06un9/k0bThbmMIe7lnAo3Zorgc2RCXSk5Eu0PBa36/hHry94HShlUUVEtmvE/cf9X+LDtUHlBKwUNISeVNxLZFaeyPuKsAlT4JiPrq2WQcAAAAASUVORK5CYII=' 
-            : 
-            'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAADM0lEQVR4nO2ZS2xMURjHzwyq1dDSiDTCgnqTSkjakFhIBOnOAiG1KJsiSCMRVhqJruqx8IpELKXUIzYoiUcitZB4pkEtpIg01COI90++9Ju4qXTmnLn3To+YfzKrOd9/fmfuved7XGPyyuvfElABrAYagf3AHmAHsBAYbHwWMAioAx6QXp3AAuOjgHLgZgD2BdAC7AUa9CNX5pF+/xk4AMwzvggoDQA+BmqARD9rk0Bznyt0AhiWe/K/4Y4r0G2gxGK9bGY6sAXo1tjTuaHtH2o88AP4DlRmET8B6NHNLImH0g5kvUK0hvDYmbrFzEAJOKMQa0N4TFOPp9HSuUG0K0R1yGP7C/BrwB564IluZGpIn/fqUxodnRtAhwJMCenzSX1GREfnBnBNAbLO1MAo9fgYLZ0bhCQz0coQHlXqcS9aOjcIKQRFTSE8tqrHoWjp3CAWK8SVEB7n1WNVtHRuEEsV4kM25TlQALxTj5p4KO1ArirEtv4KxQzxCWC7elyOh9Lt+K0M4VGpHg+jpXODOKkQdSE81qlHS7R0bhBrFOKZNE9ZxDdorKg2Hkr7OumU1klSZiQdYpOB0qRVvOKltYO6o0AzHGJmaUyH8UX09uOi3Q4xTRpz2PgiYI5CSbc32rK+eqMx841PAs4qmOSWsjTrhgMXdW2b8U3AWOBVpkZLehddIxl9ovFR9E5SMm1EJiiiTuOrgPsWG0n16F3GV/Gn9Z2ZYYQk6jY+ChgjXZ5CjkuzrkQT6FfZlPFJ9Ca3u7qJCxbrW1LJEJibG8o0kkwunR3wLTD7LbeIKwtM7WVSeQyYbXIpaaCAZdIV6i0i+qkzYOtxjuaToxqb0g1gOTAkzg0UAhsD1So6xjmS7uG28JVT7GDg+RI9BzYDRVFuIKEvcOSdR0pyW2wCRkb4OyXAhsCzJnqp/UoirHkxcC5g3J6LqTmwqM+LIyl/irM1GwpcV6PXwIrIiTMz1AZuOWEpyMZkXyoDA5NjIbU/2ruUpdk1eJK+vJETpSo2SnueamWRY77CJXCX/gOXjCcC2pSp0SXolgbVG08E1KcOHJegt/irHttNFOG/CkNc3Lzy+u/0G2OFKmFs1enpAAAAAElFTkSuQmCC'
-            " 
-            alt="{{ message.speaker }}" class="icon">
-            <div class="text-content">
-              <p>{{ message.text }}</p>
+        <ng-container *ngFor="let message of dialogueResponse?.dialogue; let i = index">
+          <!-- Use ngIf to only display the current and previous messages -->
+          <ng-container *ngIf="i <= currentDialogueIndex">
+            <div class="chat-bubble"
+              [ngClass]="{'seedhammer': message.speaker === 'Author', 'me': message.speaker === 'Me'}">
+              <img [src]="getImageSource(message.speaker)" alt="{{ message.speaker }}" class="icon">
+              <div class="text-content">
+                <!-- <p><span style="font-weight: 400;">{{ message.speaker === 'Author' ? topic.authorName : 'Bob' }}: </span>{{ currentTexts[i] }}</p> -->
+              
+                <p>
+                  <span style="font-weight: 400;"> 
+                    <!-- {{ message.speaker === 'Author' ? (topic.authorName | extractName) : 'Bob' }}: -->
+                    {{ message.speaker === 'Author' ? 'SeedHammer': 'Me' }}:
+                  </span>
+                  {{ currentTexts[i] }}
+                </p>
+                
+              </div>
             </div>
-          </div>
+
+            <!-- <div class="chat-bubble" [ngClass]="{'seedhammer': message.speaker === 'Author', 'me': message.speaker === 'Me'}">
+              <img [src]="getImageSource(message.speaker)" alt="{{ message.speaker }}" class="icon">
+              <div class="speaker-name">{{ message.speaker === 'Author' ? 'Speaker' : 'Me' }}</div>
+              <div class="text-content">
+                <p>{{ message.text }}</p>
+              </div>
+            </div> -->
+            
+          </ng-container>
         </ng-container>
       </div>
-    
     </div>
-
-    
   </div>
 
 </div>
-

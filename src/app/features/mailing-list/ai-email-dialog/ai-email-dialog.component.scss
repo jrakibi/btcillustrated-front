@@ -1,28 +1,93 @@
-  
-  .dialog-background { 
-    background-color: #111b21;
-    color: white;
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100vw;
-    height: 100vh;
-  }
 
-  svg {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 150px;
-    width: 150px;
-  }
-  
-.dialog-background  {
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 40px;
+  border: none;
+  background: none;
+  color: white;
+  font-weight: 100;
+}
+.container {
+  /* Remove the height restriction if it's there */
+  margin: auto;
+  max-width: 1140px;
+  /* Or any other max width you prefer */
+  width: 100%;
+  /* Use the full width of the dialog */
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.dialog-background {
+  background-color: #111b21;
+  color: white;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100vw;
+  height: 100vh;
+
+
+
+  overflow-y: auto;
+  /* Allow vertical scrolling */
+  display: flex;
+  flex-direction: column;
+}
+
+.loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+}
+
+.fixed-content {
+  /* Ensure this content does not move */
+  position: relative;
+  display: inline-block;
+  /* Keeps SVG and text aligned */
+}
+
+svg {
+  height: 150px;
+  width: 150px;
+}
+
+.loading-text {
+  color: white;
+  font-size: larger;
+  font-weight: normal;
+  margin-top: 20px;
+  /* Adjust as needed for space between SVG and text */
+}
+
+
+.info-text {
+  color: #aaa;
+  font-size: 1.3em;
+  font-weight: 100;
+  margin-top: 149px;
+  position: absolute;
+  width: 100%;
+  top: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.dialog-background {
   color: white;
   margin-bottom: 50px;
+
   .dialog-header {
-  padding-top: 50px;
-  padding-bottom: 60px;
+    padding-top: 50px;
+    padding-bottom: 60px;
     text-align: center;
     position: relative;
 
@@ -36,14 +101,6 @@
       font-weight: 100;
     }
 
-    .close-button {
-      position: absolute;
-      top: 0;
-      right: 0;
-      font-size: 24px;
-      border: none;
-      background: none;
-    }
   }
 
   .keywords-container {
@@ -57,28 +114,33 @@
       font-size: xx-large;
       font-weight: 100;
     }
+
     .keywords-wrapper {
       padding-bottom: 10px;
       overflow-x: auto; // Enables horizontal scrolling
       scrollbar-width: thin; // For Firefox
       scrollbar-color: #fcd211 #111b21; // For Firefox
       -ms-overflow-style: none; // For Internet Explorer and Edge
+
       &::-webkit-scrollbar {
         height: 7px; // Height of the scrollbar
       }
+
       &::-webkit-scrollbar-track {
         background: #fcd2116b;
       }
+
       &::-webkit-scrollbar-thumb {
         background-color: #000000;
         border-radius: 10px;
         border: 1px solid #fcd2116b;
       }
     }
+
     .keywords {
       display: inline-flex;
       gap: 10px;
-      
+
       .keyword {
         border: 0.5px solid #fcd21159;
         border-radius: 20px;
@@ -110,6 +172,7 @@
     grid-gap: 10px;
     gap: 10px;
     margin: 50px 0 30px 0;
+
     .play-button {
       border: 1px solid;
       border-radius: 50%;
@@ -123,7 +186,7 @@
       color: #111b21;
       background: #fcd211;
     }
-    
+
     span {
       font-size: xx-large;
       font-weight: lighter;
@@ -139,14 +202,22 @@
     margin: auto;
     margin-top: 60px;
     width: 88%;
+    margin-bottom: 70px;
+
     .chat-bubble {
+
+      position: relative;
+      padding-left: 20px;
+      padding-right: 20px;
+
+
       border-radius: 15px;
       margin-bottom: 20px;
       font-weight: lighter;
       font-size: medium;
       border: 0.5px solid white;
       max-width: fit-content;
-      
+
       .icon {
         width: 40px;
         height: 40px;
@@ -164,6 +235,7 @@
           background: #0B141A;
           margin-left: -50px;
         }
+
         .text-content {
           // margin-left: 50px;
           margin: 12px;
@@ -177,15 +249,17 @@
       &.me {
         align-self: flex-end;
         text-align: end;
+
         .icon {
           margin-right: -50px;
           margin-left: 10px;
         }
+
         .text-content {
           // margin-right: 50px;
           margin: 12px;
           text-align: right;
-          padding-left: 20px;
+          // padding-left: 20px;
           border-top-right-radius: 4px;
           border-bottom-right-radius: 4px;
         }
@@ -197,13 +271,14 @@
 
 // Add media queries and other responsive design adjustments as needed.
 @media (min-width: 1400px) {
-  .container, 
-  .container-lg, 
-  .container-md, 
-  .container-sm, 
-  .container-xl, 
+
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
   .container-xxl {
-      max-width: 1140px;
+    max-width: 1140px;
   }
 }
 
@@ -212,12 +287,44 @@
   .dialog-background .chat-container .chat-bubble .icon {
     width: 30px;
     height: 30px;
-    left: -35px; /* Adjust for smaller screens */
-    right: -35px; /* Adjust for smaller screens */
+    left: -35px;
+    /* Adjust for smaller screens */
+    right: -35px;
+    /* Adjust for smaller screens */
   }
 
   .dialog-background .chat-container .chat-bubble .text-content {
-    margin-left: 35px; /* Adjust for smaller screens */
-    margin-right: 35px; /* Adjust for smaller screens */
+    margin-left: 35px;
+    /* Adjust for smaller screens */
+    margin-right: 35px;
+    /* Adjust for smaller screens */
   }
 }
+
+.seedhammer .icon {
+  left: 0;
+  /* Align the icon to the left inside the chat bubble */
+  transform: translateX(-50%);
+  /* Center it over the left edge */
+}
+
+.me .icon {
+  right: 0;
+  /* Align the icon to the right inside the chat bubble */
+  transform: translateX(50%);
+  /* Center it over the right edge */
+}
+
+// .speaker-name {
+//   position: absolute;
+//   bottom: -20px; /* Adjust as needed */
+//   width: 100%;
+//   text-align: center;
+//   color: white;
+//   font-size: 0.8em; /* Adjust as needed */
+// }
+
+// .text-content {
+//   /* Existing styles */
+//   padding-top: 20px; /* Add padding to avoid text overlaying the speaker name */
+// }

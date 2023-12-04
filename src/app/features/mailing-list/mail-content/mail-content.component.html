@@ -39,15 +39,20 @@
             </div>
 
             <!-- Button on the right -->
-            <button class="generate-site-btn" style="color: black;"  (click)="onExplainClick()">
-                <!-- <i class="your-icon-class"></i> Replace with your actual icon class -->
+            <!-- <button class="generate-site-btn" style="color: black;"  (click)="onExplainClick()">
                 Explain like I'm 5
-            </button>
+            </button> -->
+
+            <button class="generateee"  (click)="onExplainClick()" >
+                Explain like I'm 5
+              </button>
             
         </div>
         <div class="article-content">
             <!-- <h2>Our small beginnings</h2> -->
-            <p>{{topic?.entries[0].summary}}</p>
+            <!-- <p>{{topic?.entries[0].summary}}</p> -->
+            <p [innerHTML]="formattedSummary"></p>
+
         </div>
     </div>
 </div>
