@@ -1,0 +1,32 @@
+<div class="dialog-background">
+    <div class="dialog-box">
+      <div class="dialog-header">
+        <h2>Let's personalize your AI experience!</h2>
+        <p class="subheader">Are you more technical or non-technical?</p>
+        <span class="close-button">&times;</span>
+      </div>
+      <div class="card-container">
+        <div class="card technical" (click)="openAIEmailDialog('technical')">
+          <div class="icon-text-container">
+            <div class="icon-circle technical"><i class="fa fa-cog icon-technical"></i></div>
+            <span>Technical</span>
+          </div>
+          <div class="details-arrow-container">
+            <p>For in-depth technical details.</p>
+            <i class="fa fa-arrow-right arrow-right"></i>
+          </div>
+        </div>
+        <div class="card non-technical" (click)="openAIEmailDialog('non-technical')">
+          <div class="icon-text-container">
+            <div class="icon-circle non-technical"><i class="fa fa-user icon-non-technical"></i></div>
+            <span>Non-Technical</span>
+          </div>
+          <div class="details-arrow-container">
+            <p>Get the big picture in simple terms.</p>
+            <i class="fa fa-arrow-right arrow-right"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

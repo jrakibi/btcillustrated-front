@@ -9,6 +9,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { TruncatePipe } from 'src/app/core/pipe/truncate-pipe';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ExtractNamePipe } from 'src/app/core/pipe/extra-name-pipe';
+import { AiEmailDialogComponent } from './ai-email-dialog/ai-email-dialog.component';
+import { UserTypeDialogComponent } from './user-type-dialog/user-type-dialog.component';
 
 
 
@@ -21,7 +23,9 @@ import { ExtractNamePipe } from 'src/app/core/pipe/extra-name-pipe';
 
 
       TruncatePipe,
-      ExtractNamePipe
+      ExtractNamePipe,
+      AiEmailDialogComponent,
+      UserTypeDialogComponent
   ],
   imports: [
     CommonModule,
