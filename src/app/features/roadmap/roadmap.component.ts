@@ -49,20 +49,10 @@ export class RoadmapComponent implements OnInit {
   }
 
 
-  // public isScrolled = false;
-
-  // @HostListener('window:scroll', ['$event'])
-  // onWindowScroll(event: Event): void {
-  //   const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-  //   this.isScrolled = scrollPosition > 50;
-  // }
 
   public isScrolled = false;
 
-  // @HostListener('window:scroll', [])
-  // onWindowScroll() {
-  //   this.isScrolled = window.scrollY > 50;  // You can adjust this value based on when you want the transition to start
-  // }
+
   @HostListener('window:scroll', [])
   onWindowScroll(event: Event): void {
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
