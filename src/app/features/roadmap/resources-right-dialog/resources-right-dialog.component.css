@@ -104,3 +104,16 @@
 ::ng-deep .cdk-overlay-container {
   z-index: 1001;
 }
+
+::ng-deep .mat-dialog-container {
+  padding: 0px !important;
+
+  /* background-color: unset !important; */
+  box-shadow: unset !important;
+}
+
+
+::ng-deep .mat-dialog-container {
+  background-color: white !important;
+  border-radius: 10px !important;
+}
