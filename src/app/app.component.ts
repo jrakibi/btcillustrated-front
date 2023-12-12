@@ -9,6 +9,7 @@ export class AppComponent {
   title = 'BTC Illustrated';
   isMobile: boolean = false;
   showMobileWarning: boolean = true;
+  showHeader = true;
 
   ngOnInit() {
     this.checkDeviceSize();
@@ -22,5 +23,9 @@ export class AppComponent {
 
   continueAnyway() {
     this.showMobileWarning = false; // Hide mobile warning and show platform content
+  }
+
+  hideHeader() {
+    this.showHeader = false;
   }
 }

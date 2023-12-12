@@ -24,7 +24,7 @@ export class RoadmapComponent implements OnInit {
 
   openDialog() {
     this.dialog.open(ResourcesRightDialogComponent, {
-      width: '30%',
+      width: '35%',
       height: '100%',
       panelClass: 'right-dialog-container',
       position: {
@@ -37,7 +37,7 @@ export class RoadmapComponent implements OnInit {
 
   openElementDialog() {
     this.dialog.open(ResourcesRightDialogComponent, {
-      width: '30%',
+      width: '35%',
       height: '100%',
       panelClass: 'right-dialog-container',
       hasBackdrop: true,

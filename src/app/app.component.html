@@ -1,5 +1,12 @@
 <div *ngIf="!isMobile || !showMobileWarning">
-    <app-loader></app-loader>
+  <div class="experimental-header" *ngIf="showHeader">
+    This is an experimental release. Ongoing Development in Progress
+    <button class="close-btn" (click)="hideHeader()">×</button>
+  </div>
+  
+  
+  
+  <app-loader></app-loader>
     <router-outlet></router-outlet>
 </div>
 
