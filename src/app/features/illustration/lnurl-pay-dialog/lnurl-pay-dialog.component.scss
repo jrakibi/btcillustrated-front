@@ -97,3 +97,9 @@ body {
   margin-bottom: 15px;    
   text-align: center;
 }
+
+
+::ng-deep .mat-dialog-container {
+  background-color: #fcf5eb !important;
+  border-radius: 10px !important;
+}
