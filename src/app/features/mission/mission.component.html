@@ -8,6 +8,8 @@
     <div class="content-section">
       <div class="left-column">
         <img src="assets/images/globe.svg" alt="Globe" class="globe-image">
+        <a class="contact-me">#SUPPORT</a>
+
       </div>
       <div class="right-column">
         <div class="text-content">
@@ -18,37 +20,21 @@
     </div>
   
     
-  <!-- <div class="section-container section-edges-space">
-    <div class="title-container">
-        <h2 class="page-section-title">Our Learning Ecosystem</h2>
-      </div>
-    <div class="content-container">
-
-      <div class="image-container">
-        <img src="/assets/images/ai.avif" alt="AI Visuals">
-      </div>
-      <div class="text-container">
-        <h3>Breaking complex Bitcoin topic in a simple way</h3>
-        <p>Breaking complex Bitcoin topic in a simple way</p>
-        <button class="read-more-btn">Read More</button>
-      </div>
-    </div>
-    <div class="navigation-arrows">
-        <button class="arrow left-arrow"><i class="fas fa-arrow-left"></i></button>
-        <button class="arrow right-arrow"><i class="fas fa-arrow-right"></i></button>
-    </div>
-  </div> -->
-
-
+ 
   <div class="section-container section-edges-space">
     <div class="title-container">
-      <h2 class="page-section-title">Our Learning Ecosystem</h2>
+      <h2 class="page-section-title">Learning Ecosystem</h2>
     </div>
     <div class="content-container">
       <ng-container *ngFor="let slide of slides; let i = index">
         <div *ngIf="currentSlideIndex === i" class="content-container slide">
-          <div class="image-container">
-            <img [src]="slide.image" alt="AI Visuals" >
+          <!-- Check if the slide type is 'image' -->
+          <div *ngIf="slide.type === 'image'" class="image-container">
+            <img [src]="slide.src" alt="{{ slide.title }}" >
+          </div>
+          <!-- Check if the slide type is 'video' -->
+          <div *ngIf="slide.type === 'video'" class="image-container">
+            <video [src]="slide.src" autoplay loop muted></video>
           </div>
           <div class="text-container">
             <h3>{{ slide.title }}</h3>
@@ -59,15 +45,16 @@
       </ng-container>
     </div>
     <div class="navigation-arrows">
-      <button class="arrow left-arrow" (click)="goToPreviousSlide()">
-        <i class="fas fa-arrow-left"></i>
-      </button>
-      <button class="arrow right-arrow" (click)="goToNextSlide()">
-        <i class="fas fa-arrow-right"></i>
-      </button>
-    </div>
+        <button class="arrow left-arrow" (click)="goToPreviousSlide()">
+          <i class="fas fa-arrow-left"></i>
+        </button>
+        <button class="arrow right-arrow" (click)="goToNextSlide()">
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
   </div>
   
+
   
 </div>
 </div>
@@ -76,7 +63,7 @@
 
 
 <div class="vision-section">
-    <h2 class="page-section-title">Our Vision</h2>
+    <h2 class="page-section-title">Vision</h2>
     <div class="cards-container">
     <div class="card">
     </div>
@@ -103,9 +90,63 @@
 
 
   <div class="mission-section">
-    <h2 class="page-section-title">Our Mission</h2>
-    <p class="mission-statement1">Build an interactive platform that teaches you EVERYTHING about Bitcoin</p>
+    <h2 class="page-section-title">Mission</h2>
+    <p class="mission-statement1">Build <br> <span style="margin-left: 40px;">An  <span class="education-hub" sty>education hub</span></span></p>
     <p class="mission-statement2">I'm actively looking for funding to work on this platform full-time. Aiming to <span>Onboard more Bitcoin developers</span> to the space.</p>
-    <a class="contact-me">Contact me @BTCillustrated</a>
+    <div class="contact-button">
+        <a class="contact-me">Contact me @BTCillustrated</a>
+        <a class="BTC-address">BTC address</a>
+        <a class="lightning-address">Lightning address</a>
+    </div>
   </div>
+  
+
+  <div class="content">
+    <small>We weclome you to join us!</small>
+    <h1>
+        Get Inspired!
+    </h1>
+
+    <div class="buttons">
+
+        <input type="text" placeholder="Just a paceholder">
+
+        <!-- The Glow Button -->
+        <a href="https://stacksorted.com/" class="GlowingButton" target="_blank">
+
+
+
+            <!-- Glow -->
+            <div class="GlowingButton__glowWrap l"><span class="GlowingButton__glow"></span></div>
+            <div class="GlowingButton__glowWrap r"><span class="GlowingButton__glow"></span></div>
+            <!-- /Glow -->
+            <!-- Overlay -->
+            <span class="GlowingButton__overlay"></span>
+            <!-- Overlay -->
+            <!-- Content -->
+            <div class="GlowingButton__content">
+                <span>Visit Stacksorted</span>
+                <span>Visit Stacksorted</span>
+            </div>
+            <!-- /Content -->
+
+
+        </a>
+        <!-- /The Glow Button -->
+    </div>
+</div>
+<script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.158.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.158.0/examples/jsm/"
+      }
+    }
+  </script>
+
+
+
+
+
+
   

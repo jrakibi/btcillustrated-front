@@ -4,7 +4,7 @@ import { trigger, transition, animate, style, query, group } from '@angular/anim
 @Component({
   selector: 'app-mission',
   templateUrl: './mission.component.html',
-  styleUrls: ['./mission.component.css'],
+  styleUrls: ['./mission.component.css', './mission.component.scss'],
   animations: [
     trigger('slideAnimation', [
       // Slide left to right animation
@@ -40,7 +40,16 @@ export class MissionComponent implements OnInit {
   currentSlideIndex = 0;
   slides = [
     {
-      image: '/assets/images/ai.avif',
+      type: 'video', // A slide with a video
+      src: '/assets/videos/explai.mov',
+      title: 'Understanding Bitcoin Transactions',
+      content: 'Learn how Bitcoin transactions work with our interactive video content.',
+      buttonText: 'Learn More',
+      buttonLink: '#'
+    },
+    {
+      type: 'image', // Specify the type of content
+      src: '/assets/images/ai.avif',      
       title: 'Breaking complex Bitcoin topic in a simple way',
       content: 'Dive into the intricate world of Bitcoin with our comprehensive learning resources.',
       buttonText: 'Read More',
@@ -49,7 +58,8 @@ export class MissionComponent implements OnInit {
     {
       title: 'Revolutionizing Bitcoin Education',
       content: 'BTCillustrated, where Bitcoin\'s complexities become clear through interactive learning.',
-      image: '/assets/images/ai.avif',
+      type: 'image', // Specify the type of content
+      src: '/assets/images/ai.avif',
       buttonText: 'Read More',
       buttonLink: '#'
     },
@@ -57,25 +67,19 @@ export class MissionComponent implements OnInit {
     {
       title: 'Advanced Blockchain Concepts',
       content: 'Dive deep into blockchain technology and its applications beyond cryptocurrencies.',
+      type: 'image', // Specify the type of content
       image: '/assets/images/ai.avif',
       buttonText: 'Read More',
       buttonLink: '#'
     }
   ];
 
-  goToNextSlide() {
-    if (this.currentSlideIndex === this.slides.length - 1) {
-      this.currentSlideIndex = 0;
-    } else {
-      this.currentSlideIndex++;
-    }
+  goToNextSlide(): void {
+    this.currentSlideIndex = (this.currentSlideIndex + 1) % this.slides.length;
   }
 
-  goToPreviousSlide() {
-    if (this.currentSlideIndex === 0) {
-      this.currentSlideIndex = this.slides.length - 1;
-    } else {
-      this.currentSlideIndex--;
-    }
+  goToPreviousSlide(): void {
+    this.currentSlideIndex = 
+      this.currentSlideIndex === 0 ? this.slides.length - 1 : this.currentSlideIndex - 1;
   }
 }

@@ -17,7 +17,7 @@
 
 .page-title {
   text-align: center;
-  padding-top: 50px;
+  padding: 50px;
   font-size: 5rem;
   color: transparent;
   background-image: linear-gradient(90deg, #c97e64, #d8a679 11.46%, #97d9d7 33.33%, #e99e52);
@@ -44,12 +44,14 @@
   justify-content: center;
   align-items: center;
   padding: 100px 50px;
+  flex-direction: column;
 }
 
 .globe-image {
   width: 100%;
   max-width: 300px;
   height: auto;
+  margin-bottom: 60px;
 }
 
 .text-content {
@@ -66,6 +68,8 @@
   text-transform: uppercase;
   font-weight: inherit;
   margin-bottom: 36px;
+  margin: auto;
+  padding: 30px 0;
 }
 
 .mission {
@@ -141,7 +145,7 @@
   flex: 0 0 40%;
 }
 
-.image-container img {
+.image-container img, .image-container video {
   max-width: 100%;
   height: auto;
 }
@@ -278,7 +282,7 @@
 
 .vision-section {
   text-align: center;
-  padding: 50px 0;
+  padding: 120px 0;
   background-color: #051419; /* Adjust to match your theme */
 }
 
@@ -297,6 +301,7 @@
 .card {
   flex: 1;
   padding: 20px;
+  padding-bottom: 50px;
   border-right: 1px solid hsla(0,0%,100%,.15); /* Right border for card */
   text-align: left;
   color: #fff;
@@ -340,6 +345,8 @@
 .section-edges-space {
   padding-left: 10rem;
   padding-right: 10rem;
+  padding-bottom: 120px;
+  border-bottom: 1px solid hsla(0,0%,100%,.15);
 }
 
 
@@ -369,19 +376,24 @@
 
 
 
+
+
 .mission-section {
   background-image: url('/assets/images/bg-mission.avif');
   background-size: cover;
   background-position: center;
   position: relative;
   color: #fff;
-  text-align: center; /* Centers the content */
+  text-align: left; /* Align text to the left */
   padding: 50px; /* Adds space around the content */
-  color: #fff; /* Sets the text color to white */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligns content to the left */
+  justify-content: center;
+  height: 90vh; /* Sets the section height to full viewport height */
   border-top: 1px solid hsla(0,0%,100%,.15);
-  font-size: xxx-large;
-
 }
+
 
 .mission-title {
   margin-bottom: 55rem; /* Adds space below the title */
@@ -395,8 +407,17 @@
   width: 70%;
   margin: auto;
   font-weight: bolder;
+  text-transform: uppercase;
+  font-size: 5rem;
+  line-height: normal;
 }
-
+.education-hub {
+  font-size: 5rem;
+  font-weight: bolder;
+  color: transparent;
+  background-image: linear-gradient(90deg, #c97e64, #d8a679 11.46%, #97d9d7 33.33%, #e99e52);
+  -webkit-background-clip: text;
+}
 .mission-statement2 {
   margin-bottom: 10px; /* Adds space between the paragraphs */
   width: 70%;
@@ -413,11 +434,8 @@
   -webkit-background-clip: text;
 }
 
-.contact-me {
-  /* background: linear-gradient(101.81deg, rgb(240, 135, 255) -4.52%, rgb(110, 31, 206) 54.5%, rgba(110, 31, 206, 0.2) 101.41%); */
+.contact-me, .BTC-address, .lightning-address {
   background: linear-gradient(101.81deg, #c97e64 -4.52%, #d8a679 54.5%, #97d9d7 101.41%);
-  /* background: linear-gradient(90deg, #c97e64, #d8a679 11.46%, #97d9d7 33.33%, #e99e52); */
-  /* background: linear-gradient(90deg, #c97e64, #d8a679 11.46%, #97d9d7 33.33%, #e99e52); */
   color: black;
   font-weight: normal;
   text-transform: uppercase;
@@ -432,3 +450,191 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+.BTC-address, .lightning-address  {
+  margin-left: 20px;
+  background: transparent;
+  margin-left: 20px;
+  color: white;
+  border: 1px solid white;
+}
+
+
+.contact-button {
+  width: 70%;
+  margin: auto;
+  margin-top: 60px;
+}
+
+
+
+
+
+
+
+.content {
+  padding-top: 200px;
+  padding-bottom: 200px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  gap: 20px;
+  background-color: #051419;
+}
+
+small {
+  font-size: 16px;
+  color: rgb(91, 90, 85);
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -2px;
+  line-height: 1;
+  font-weight: normal;
+}
+
+.section-btns {
+  display: inline-flex;
+  padding: 10px 20px;
+  background: white;
+  color: #000;
+  border-radius: 18px;
+  gap: 10px;
+  text-wrap: nowrap;
+}
+
+.section-btns.right {
+  background: transparent;
+  color: white;
+}
+
+input {
+  border-radius: 14px;
+  height: 40px;
+  background: rgba(83, 83, 83, 0.2);
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
+  color: rgb(101, 101, 101);
+  display: inline-flex;
+  width: 200px;
+  align-items: center;
+  padding: 0 15px;
+  transition: 0.5s all ease;
+  box-shadow: none;
+  border: none;
+}
+
+input:hover {
+  color: #fff;
+}
+
+.buttons {
+  display: flex;
+  gap: 17px;
+  justify-content: center;
+}
+/* Glowing Button */
+.GlowingButton {
+  position: relative;
+  display: inline-flex;
+  height: 40px;
+  width: 160px;
+  align-items: center;
+  justify-content: center;
+}
+
+.GlowingButton__overlay {
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 14px;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.GlowingButton__glowWrap {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 65.93%;
+  height: 86.36%;
+}
+
+.GlowingButton__glowWrap.l {
+  left: -4px;
+}
+
+.GlowingButton__glowWrap.r {
+  right: -4px;
+}
+
+.GlowingButton__glow {
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  border-radius: 14px;
+  filter: blur(15px);
+  display: block;
+  will-change: transform, filter, opacity;
+  transition: 0.6s all cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.GlowingButton__glowWrap.l .GlowingButton__glow {
+  background: rgb(213, 159, 255);
+}
+
+.GlowingButton__glowWrap.r .GlowingButton__glow {
+  background: rgb(117, 215, 245);
+}
+
+.GlowingButton__content {
+  overflow: hidden;
+  color: #000;
+  position: relative;
+
+  height: fit-content;
+  z-index: 3;
+}
+
+.GlowingButton__content span {
+}
+
+.GlowingButton__content span {
+  display: block;
+  transition: 0.5s transform cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.GlowingButton__content span:nth-child(2) {
+  position: absolute;
+}
+
+/* Hover State */
+.GlowingButton:hover .GlowingButton__content span:nth-child(1) {
+  transform: translateY(-100%);
+}
+
+.GlowingButton:hover .GlowingButton__content span:nth-child(2) {
+  transform: translateY(-100%);
+}
+
+.GlowingButton:hover .GlowingButton__glow {
+  filter: blur(20px);
+  opacity: 1;
+}
+
+
+
+
