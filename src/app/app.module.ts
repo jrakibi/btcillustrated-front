@@ -22,6 +22,7 @@ import { NewsletterComponent } from './features/newsletter/newsletter.component'
 import { MatDialogModule } from '@angular/material/dialog';
 import { SupportComponent } from './features/support/support.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MissionComponent } from './features/mission/mission.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     AboutComponent,
     NewsletterComponent,
     SupportComponent,
+    MissionComponent,
 
   ],
   imports: [

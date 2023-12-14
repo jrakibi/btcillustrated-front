@@ -1,0 +1,339 @@
+/* Existing styles */
+::ng-deep .header.dark-mode {
+  background-color: #111b2100 !important;
+}
+
+.mission-comp {
+  background: #051419;
+}
+
+.landing-page {
+  background-image: url('/assets/images/bg-mission.avif');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #fff;
+}
+
+.page-title {
+  text-align: center;
+  padding-top: 50px;
+  font-size: 5rem;
+  color: transparent;
+  background-image: linear-gradient(90deg, #c97e64, #d8a679 11.46%, #97d9d7 33.33%, #e99e52);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Content section styles */
+.content-section {
+  display: flex;
+  border-top: 1px solid hsla(0,0%,100%,.15);
+  border-bottom: 1px solid hsla(0,0%,100%,.15);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.left-column {
+  border-right: 1px solid hsla(0,0%,100%,.5);
+}
+
+.left-column, .right-column {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.globe-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+.text-content {
+  max-width: 80%;
+  text-align: left;
+}
+
+/* Additional styles for section titles and text */
+.page-section-title {
+  font-size: large;
+  line-height: 26px;
+  color: rgb(130 149 155);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-weight: inherit;
+  margin-bottom: 36px;
+}
+
+.mission {
+  font-size: xxx-large;
+  line-height: 62px;
+  font-weight: initial;
+}
+
+.interactive {
+  color: transparent;
+  background-image: linear-gradient(90deg, #c97e64, #d8a679 11.46%, #97d9d7 33.33%, #e99e52);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 3rem;
+    padding-top: 20px;
+  }
+
+  .content-section {
+    flex-direction: column;
+    border-top: 1px solid hsla(0,0%,100%,.1);
+    border-bottom: 1px solid hsla(0,0%,100%,.1);
+  }
+
+  .left-column {
+    border-right: none;
+    border-bottom: 1px solid hsla(0,0%,100%,.5);
+    padding-bottom: 20px;
+  }
+
+  .right-column {
+    padding-top: 20px;
+  }
+
+  .globe-image {
+    max-width: 200px;
+  }
+
+  .mission {
+    font-size: larger;
+    line-height: normal;
+  }
+}
+
+/* Section container adjustments */
+.section-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 50px;
+}
+
+.title-container {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  min-height: 150px;
+}
+
+.content-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.image-container {
+  flex: 0 0 33%;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+.text-container {
+  margin-left: 50px;
+  flex-grow: 1;
+  max-width: none;
+}
+
+.text-container h3 {
+  margin-bottom: 10px;
+}
+
+.text-container p {
+  margin-bottom: 20px;
+}
+
+.read-more-btn {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.navigation-arrows {
+  position: absolute;
+  top: 50%;
+  left: 0; /* Align the left side of the container with the left side of the section-container */
+  right: 0; /* Align the right side of the container with the right side of the section-container */
+  transform: translateY(-50%);
+  z-index: 10; /* Ensure arrows are above other elements */
+  display: flex;
+  justify-content: space-between; /* This will push the arrows to the edges */
+}
+
+.arrow {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  /* Remove absolute positioning from individual arrows */
+}
+
+.left-arrow {
+  /* If you need to adjust the left arrow's position, do it here. For example: */
+  margin-left: 2rem; /* Adjust as needed */
+}
+
+.right-arrow {
+  /* If you need to adjust the right arrow's position, do it here. For example: */
+  margin-right: 2rem; /* Adjust as needed */
+}
+
+
+.arrow.disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* Further responsive adjustments if needed */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .content-container {
+    gap: 30px;
+  }
+}
+
+/* Ensures the arrows are visible and positioned correctly */
+@media (max-width: 768px) {
+  .navigation-arrows {
+    top: auto;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding: 0;
+    justify-content: space-between;
+  }
+
+  .arrow {
+    font-size: 1.5rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.vision-section {
+  text-align: center;
+  padding: 50px 0;
+  background-color: #051419; /* Adjust to match your theme */
+}
+
+.vision-title {
+  color: #fff;
+  margin-bottom: 40px; /* Space between title and cards */
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid hsla(0,0%,100%,.15); /* Top border */
+  border-bottom: 1px solid hsla(0,0%,100%,.15); /* Bottom border */
+}
+
+.card {
+  flex: 1;
+  padding: 20px;
+  border-right: 1px solid hsla(0,0%,100%,.15); /* Right border for card */
+  text-align: left;
+  color: #fff;
+  background: transparent;
+  border-radius: unset;
+  cursor: pointer;
+}
+
+.card:hover {
+  background-color: rgba(91,255,252,.04);
+}
+
+.card p {
+  font-size: large;
+  line-height: 26px;
+  margin-top: 40px;
+}
+
+.card h3 {
+  font-weight: bolder;
+}
+
+.card:first-child {
+  border-left: none; /* Remove left border for the first card */
+  max-width: 100px;
+}
+
+.card:last-child {
+  border-right: none; /* Remove right border for the last card */
+  max-width: 100px;
+}
+
+.card img {
+  margin-bottom: 20px; /* Space between image and title */
+  width: 111px;
+}
+
+/* You can add further styles for h3 and p elements inside .card as needed */
+
+
+.section-edges-space {
+  padding-left: 10rem;
+  padding-right: 10rem;
+}

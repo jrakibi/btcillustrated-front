@@ -13,6 +13,7 @@ import { AboutComponent } from './features/about/about.component';
 import { MailingListComponent } from './features/mailing-list/mailing-list.component';
 import { NewsletterComponent } from './features/newsletter/newsletter.component';
 import { SupportComponent } from './features/support/support.component';
+import { MissionComponent } from './features/mission/mission.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'about',  component: AboutComponent },
   { path: 'newsletter',  component: NewsletterComponent },
   { path: 'support',  component: SupportComponent },
+  { path: 'mission',  component: MissionComponent },
   {
     path: 'mailing-list',
     loadChildren: () => import('./features/mailing-list/mailing-list.module').then(m => m.MailingListModule)
