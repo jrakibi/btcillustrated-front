@@ -43,7 +43,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px;
+  padding: 100px 50px;
 }
 
 .globe-image {
@@ -129,18 +129,16 @@
   align-self: flex-start;
   display: flex;
   align-items: center;
-  min-height: 150px;
 }
 
 .content-container {
   display: flex;
   justify-content: space-around;
-  align-items: center;
   margin-top: 20px;
 }
 
 .image-container {
-  flex: 0 0 33%;
+  flex: 0 0 40%;
 }
 
 .image-container img {
@@ -149,25 +147,31 @@
 }
 
 .text-container {
-  margin-left: 50px;
+  margin-left: 100px;
+  margin-right: 100px;
   flex-grow: 1;
   max-width: none;
 }
 
 .text-container h3 {
   margin-bottom: 10px;
+  font-size: xxx-large;
 }
 
 .text-container p {
-  margin-bottom: 20px;
+  margin-bottom: 50px;
+  margin-top: 50px;
 }
 
 .read-more-btn {
   background-color: white;
   color: black;
   border: none;
-  padding: 10px 20px;
+  padding: 15px 40px;
   cursor: pointer;
+  text-decoration: none;
+  font-weight: normal;
+  font-size: large;
 }
 
 .navigation-arrows {
@@ -336,4 +340,95 @@
 .section-edges-space {
   padding-left: 10rem;
   padding-right: 10rem;
+}
+
+
+
+
+
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  width: 100%;
+  /* Other styles for your slide */
+}
+
+/* Your navigation arrow styles */
+
+
+
+
+
+
+
+
+
+
+
+.mission-section {
+  background-image: url('/assets/images/bg-mission.avif');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #fff;
+  text-align: center; /* Centers the content */
+  padding: 50px; /* Adds space around the content */
+  color: #fff; /* Sets the text color to white */
+  border-top: 1px solid hsla(0,0%,100%,.15);
+  font-size: xxx-large;
+
+}
+
+.mission-title {
+  margin-bottom: 55rem; /* Adds space below the title */
+  /* You can add more styling for the title as needed */
+
+}
+
+.mission-statement1 {
+  margin-bottom: 10px; /* Adds space between the paragraphs */
+  /* You can add more styling for the paragraphs as needed */
+  width: 70%;
+  margin: auto;
+  font-weight: bolder;
+}
+
+.mission-statement2 {
+  margin-bottom: 10px; /* Adds space between the paragraphs */
+  width: 70%;
+  margin: auto;
+  margin-top: 30px;
+  font-size: x-large;
+}
+
+.mission-statement2 span {
+  font-weight: 500;
+  font-size: xx-large;
+  color: transparent;
+  background-image: linear-gradient(90deg, #c97e64, #d8a679 11.46%, #97d9d7 33.33%, #e99e52);
+  -webkit-background-clip: text;
+}
+
+.contact-me {
+  /* background: linear-gradient(101.81deg, rgb(240, 135, 255) -4.52%, rgb(110, 31, 206) 54.5%, rgba(110, 31, 206, 0.2) 101.41%); */
+  background: linear-gradient(101.81deg, #c97e64 -4.52%, #d8a679 54.5%, #97d9d7 101.41%);
+  /* background: linear-gradient(90deg, #c97e64, #d8a679 11.46%, #97d9d7 33.33%, #e99e52); */
+  /* background: linear-gradient(90deg, #c97e64, #d8a679 11.46%, #97d9d7 33.33%, #e99e52); */
+  color: black;
+  font-weight: normal;
+  text-transform: uppercase;
+  line-height: 1.25rem;
+  font-size: 0.95rem;
+  width: fit-content;
+  background-color: rgb(20, 241, 149);
+  border-radius: 2.25rem;
+  padding: 0.875rem 1.5rem;
+  border: 1px solid black;
+  transition: box-shadow .25s ease,transform .25s ease;
+  text-decoration: none;
+  cursor: pointer;
 }

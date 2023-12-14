@@ -17,7 +17,8 @@
       </div>
     </div>
   
-  <div class="section-container section-edges-space">
+    
+  <!-- <div class="section-container section-edges-space">
     <div class="title-container">
         <h2 class="page-section-title">Our Learning Ecosystem</h2>
       </div>
@@ -36,7 +37,38 @@
         <button class="arrow left-arrow"><i class="fas fa-arrow-left"></i></button>
         <button class="arrow right-arrow"><i class="fas fa-arrow-right"></i></button>
     </div>
+  </div> -->
+
+
+  <div class="section-container section-edges-space">
+    <div class="title-container">
+      <h2 class="page-section-title">Our Learning Ecosystem</h2>
+    </div>
+    <div class="content-container">
+      <ng-container *ngFor="let slide of slides; let i = index">
+        <div *ngIf="currentSlideIndex === i" class="content-container slide">
+          <div class="image-container">
+            <img [src]="slide.image" alt="AI Visuals" >
+          </div>
+          <div class="text-container">
+            <h3>{{ slide.title }}</h3>
+            <p>{{ slide.content }}</p>
+            <a class="read-more-btn" [href]="slide.buttonLink">{{ slide.buttonText }}</a>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+    <div class="navigation-arrows">
+      <button class="arrow left-arrow" (click)="goToPreviousSlide()">
+        <i class="fas fa-arrow-left"></i>
+      </button>
+      <button class="arrow right-arrow" (click)="goToNextSlide()">
+        <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
   </div>
+  
+  
 </div>
 </div>
   
@@ -66,5 +98,14 @@
       <div class="card">
     </div>
     </div>
+  </div>
+  
+
+
+  <div class="mission-section">
+    <h2 class="page-section-title">Our Mission</h2>
+    <p class="mission-statement1">Build an interactive platform that teaches you EVERYTHING about Bitcoin</p>
+    <p class="mission-statement2">I'm actively looking for funding to work on this platform full-time. Aiming to <span>Onboard more Bitcoin developers</span> to the space.</p>
+    <a class="contact-me">Contact me @BTCillustrated</a>
   </div>
   
