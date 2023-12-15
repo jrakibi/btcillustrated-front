@@ -44,7 +44,7 @@ export class MissionComponent implements OnInit {
       src: '/assets/videos/explai.mov',
       title: 'Understanding Bitcoin Transactions',
       content: 'Learn how Bitcoin transactions work with our interactive video content.',
-      buttonText: 'Learn More',
+      buttonText: 'Start Now',
       buttonLink: '#'
     },
     {
@@ -52,24 +52,24 @@ export class MissionComponent implements OnInit {
       src: '/assets/images/ai.avif',      
       title: 'Breaking complex Bitcoin topic in a simple way',
       content: 'Dive into the intricate world of Bitcoin with our comprehensive learning resources.',
-      buttonText: 'Read More',
+      buttonText: 'Start Now',
       buttonLink: '#'
     },
     {
       title: 'Revolutionizing Bitcoin Education',
       content: 'BTCillustrated, where Bitcoin\'s complexities become clear through interactive learning.',
-      type: 'image', // Specify the type of content
-      src: '/assets/images/ai.avif',
-      buttonText: 'Read More',
+      type: 'video', // A slide with a video
+      src: '/assets/videos/explai.mov',
+      buttonText: 'Start Now',
       buttonLink: '#'
     },
     // Generate random content for two more slides
     {
       title: 'Advanced Blockchain Concepts',
       content: 'Dive deep into blockchain technology and its applications beyond cryptocurrencies.',
-      type: 'image', // Specify the type of content
-      image: '/assets/images/ai.avif',
-      buttonText: 'Read More',
+      type: 'video', // A slide with a video
+      src: '/assets/videos/explai.mov',
+      buttonText: 'Start Now',
       buttonLink: '#'
     }
   ];
