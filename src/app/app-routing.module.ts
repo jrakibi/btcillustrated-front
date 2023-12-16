@@ -33,7 +33,8 @@ const routes: Routes = [
   { path: 'search',  component: SearchComponent },
   { path: 'about',  component: AboutComponent },
   { path: 'newsletter',  component: NewsletterComponent },
-  { path: 'support',  component: SupportComponent },
+  // { path: 'support',  component: SupportComponent },
+  { path: 'support',  component: MissionComponent },
   { path: 'mission',  component: MissionComponent },
   {
     path: 'mailing-list',

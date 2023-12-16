@@ -3,6 +3,7 @@ export class HeaderOptions {
     isSlideShow?: boolean = false
     headerLinks?: HeaderLink[]
     isDarkMode?: boolean = true
+    isTransparent?: boolean = false
 }
 
 export interface HeaderLink {

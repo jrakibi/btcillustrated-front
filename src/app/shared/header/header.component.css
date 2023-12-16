@@ -388,7 +388,22 @@ li {
 
 
 
+/* TRANSPARENT MODE */
+.header.transparent-mode {
+  background-color: transparent; /* Dark background */
+  color: #ffffff; /* Light text */
+}
 
+/* Navbar Links in dark mode */
+.header.transparent-mode .navbar a {
+  color: #ffffff; /* Light text */
+}
+
+/* Call-to-Action Button in dark mode */
+.header.transparent-mode .cta-container .cta-button {
+  background-color: #FCD313;
+  color: #111b21;
+}
 
 /* DARK AND LIGHT MODE  */
 /* Original header mode with dark background */
@@ -406,7 +421,6 @@ li {
 .header.dark-mode .cta-container .cta-button {
   background-color: #FCD313;
   color: #111b21;
-  /* ... other styles */
 }
 
 /* New header mode with light background */
