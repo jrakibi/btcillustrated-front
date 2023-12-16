@@ -1,0 +1,377 @@
+
+//Colors
+$white-20: rgba(255, 255, 255, 0.2);
+$white-60: rgba(255, 255, 255, 0.6);
+$white: rgba(255, 255, 255, 1);
+$main-color: #ffc107;
+$bg-color: #051419;
+
+* {
+   outline: none;
+}
+
+//Timeline
+.timeline-carousel {
+   margin: 0;
+   font-weight: 400;
+   padding: 86px 6.9444% 90px 6.9444%;
+   position: relative;
+   overflow: hidden;
+
+   border-top: 1px solid hsla(0,0%,100%,.15);
+   border-bottom: 1px solid hsla(0,0%,100%,.15);
+   .slick-list {
+      overflow: visible;
+   }
+   .slick-dots {
+      bottom: -73px;
+   }
+   h1 {
+      color: $white;
+      font-weight: 700;
+   }
+   p {
+      color: $white;
+      font-weight: 300;
+   }
+   &__image {
+      padding-right: 30px;
+   }
+   &__item {
+      cursor: grab;
+      cursor: -moz-grab;
+      cursor: -webkit-grab;
+      .media-wrapper {
+         opacity: 0.4;
+         padding-bottom: 71.4%;
+         -webkit-transition: all 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+         -o-transition: all 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+         transition: all 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+      }
+      &:last-child {
+         .timeline-carousel__item-inner {
+            &:after {
+               width: calc(100% - 30px);
+            }
+         }
+      }
+   }
+   &__item-inner {
+      position: relative;
+      padding-top: 45px;
+      &:after {
+         position: absolute;
+         width: 100%;
+         top: 45px;
+         left: 0;
+         content: "";
+         border-bottom: 1px solid $white-20;
+      }
+      .year {
+         font-size: 36px;
+         line-height: 36px;
+         color: $white;
+         display: table;
+         letter-spacing: -1px;
+         padding-right: 10px;
+         background-color: $bg-color;
+         z-index: 1;
+         position: relative;
+         margin: -15px 0 20px;
+         font-weight: 600;
+         &:after {
+            content: "";
+            position: absolute;
+            display: block;
+            left: -10px;
+            top: 0;
+            height: 100%;
+            width: 10px;
+            background-color: $bg-color;
+            z-index: 3;
+         }
+      }
+      .month {
+         font-size: larger;
+         text-transform: uppercase;
+         color: $main-color;
+         display: block;
+         margin-bottom: 10px;
+         font-weight: 300;
+      }
+      p {
+         font-size: large;
+         line-height: 22px;
+         color: $white;
+         width: 60%;
+         font-weight: 300;
+         margin-bottom: 15px;
+      }
+
+      .read-more {
+         font-size: 12px;
+         color: $main-color;
+         display: table;
+         margin-bottom: 10px;
+         font-weight: 900;
+         text-decoration: none;
+         position: relative;
+         &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -1px;
+            width: 0;
+            border-bottom: 2px solid $main-color;
+            -webkit-transition: all 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+            -o-transition: all 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+            transition: all 0.2s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+         }
+         &:hover {
+            &:after {
+               width: 100%;
+            }
+         }
+      }
+      .pointer {
+         height: 29px;
+         position: relative;
+         z-index: 1;
+         margin: -4px 0 16px;
+      }
+   }
+
+   .slick-active {
+      .media-wrapper {
+         opacity: 1 !important;
+      }
+   }
+}
+
+// Slick dots
+.slick-dots {
+   bottom: 160px;
+   list-style: none;
+   position: absolute;
+   width: 100%;
+   left: 0;
+   text-align: center;
+   z-index: 2;
+   li {
+      cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+      display: inline-block;
+      margin: 0 6px;
+      position: relative;
+      width: 10px;
+      height: 10px;
+      &:last-child {
+         margin-right: 0;
+      }
+      &.slick-active {
+         button {
+            background: $main-color;
+            border-color: $main-color;
+         }
+      }
+      button {
+         display: block;
+         font-size: 0;
+         width: 10px;
+         height: 10px;
+         padding: 0;
+         background-color: $white-60;
+         border-color: $white-60;
+         cursor: pointer;
+         -webkit-transition: all 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+         -o-transition: all 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+
+         transition: all 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+         &:hover {
+            background: $main-color;
+            border-color: $main-color;
+         }
+      }
+   }
+}
+
+
+.timeline-carousel__media {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+
+  .media-image, .media-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+    object-fit: cover; /* This will cover the area, maintaining aspect ratio */
+    cursor: pointer;
+  }
+}
+
+
+// Link
+.link{
+   position:absolute;
+   left:0;
+   bottom:0;
+   padding:20px;
+   z-index:9999;
+   a{
+      display:flex;
+      align-items:center;
+      text-decoration:none;
+      color:#fff;
+   }
+   .fa{
+      font-size:28px;
+      margin-right:8px;
+      color:#fff;
+   }
+}
+
+
+.check-icon {
+  color: #4CAF50; /* Green color for check mark */
+}
+
+.cross-icon {
+  color: #F44336; /* Red color for cross icon */
+}
+
+.fa-ul {
+  font-size: large;
+  color: white;
+  width: 60%;
+  font-weight: lighter;
+  margin-bottom: 15px;
+}
+
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3em; // Adjust the size of the play icon
+  color: #fff; // White color for the play icon
+  z-index: 10;
+  cursor: pointer;
+  text-decoration: none;
+  &:hover {
+    color: #ffc107; // Highlight color when hovered
+  }
+  .fa-play-circle {
+    transition: color 0.3s ease;
+  }
+}
+.video-thumbnail {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 56.25%; /* Aspect ratio */
+  width: 100%; /* or fixed width if required */
+  height: 0; /* This will make the div responsive based on the padding-bottom */
+  
+  .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3em; // Adjust the size of the play icon
+    color: #fff; // White color for the play icon
+    z-index: 10;
+    cursor: pointer;
+    text-decoration: none;
+    &:hover {
+      color: #ffc107; // Highlight color when hovered
+    }
+    .fa-play-circle {
+      transition: color 0.3s ease;
+    }
+  }
+}
+
+
+.media-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* ... other styles ... */
+}
+
+.media-video.show-controls::after {
+  content: '\f04c'; /* Font Awesome pause icon unicode */
+  font-family: 'Font Awesome 5 Free'; /* Adjust based on the version of Font Awesome you're using */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em;
+  color: white;
+  z-index: 10;
+  pointer-events: none; /* This prevents the pseudo-element from capturing mouse events */
+}
+
+
+.pause-button {
+  display: none; /* Hide by default */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3em;
+  color: white;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Show the pause button when hovering */
+.timeline-carousel__media:hover .pause-button {
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+::ng-deep .slick-next:before {
+  font-size: 36px;
+}
+
+::ng-deep .slick-prev:before {
+  font-size: 36px;
+}
+
+::ng-deep .slick-prev {
+  left: -55px;
+}
+::ng-deep .slick-next {
+  right: -55px;
+}
+
+
+
+

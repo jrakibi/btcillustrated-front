@@ -1,0 +1,618 @@
+Existing styles
+::ng-deep .header.dark-mode {
+  background-color: #111b2100 !important;
+}
+
+.mission-comp {
+  background: #051419;
+}
+
+.landing-page {
+  background-image: url('/assets/images/bg-mission.avif');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #fff;
+}
+
+.page-title {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 50px;
+  font-weight: 500;
+  font-size: 5rem;
+  color: transparent;
+  background-image: linear-gradient(90deg, #c97e64, #d8a679 11.46%, #97d9d7 33.33%, #e99e52);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Content section styles */
+.content-section {
+  display: flex;
+  border-top: 1px solid hsla(0,0%,100%,.15);
+  border-bottom: 1px solid hsla(0,0%,100%,.15);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.left-column {
+  border-right: 1px solid hsla(0,0%,100%,.5);
+}
+
+.left-column, .right-column {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 50px;
+  flex-direction: column;
+}
+
+.globe-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 60px;
+}
+
+.text-content {
+  max-width: 80%;
+  text-align: left;
+}
+
+/* Additional styles for section titles and text */
+.page-section-title {
+  font-size: large;
+  line-height: 26px;
+  color: rgb(130 149 155);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-weight: inherit;
+  margin-bottom: 36px;
+  margin: auto;
+  padding: 30px 0;
+}
+
+.mission {
+  font-size: xxx-large;
+  line-height: 62px;
+  font-weight: initial;
+}
+
+.interactive {
+  color: transparent;
+  background-image: linear-gradient(90deg, #c97e64, #d8a679 11.46%, #97d9d7 33.33%, #e99e52);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 3rem;
+    padding-top: 20px;
+  }
+
+  .content-section {
+    flex-direction: column;
+    border-top: 1px solid hsla(0,0%,100%,.1);
+    border-bottom: 1px solid hsla(0,0%,100%,.1);
+  }
+
+  .left-column {
+    border-right: none;
+    border-bottom: 1px solid hsla(0,0%,100%,.5);
+    padding-bottom: 20px;
+  }
+
+  .right-column {
+    padding-top: 20px;
+  }
+
+  .globe-image {
+    max-width: 200px;
+  }
+
+  .mission {
+    font-size: larger;
+    line-height: normal;
+  }
+}
+
+/* Section container adjustments */
+.section-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 50px;
+}
+
+.title-container {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+}
+
+.content-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.image-container {
+  flex: 0 0 40%;
+}
+
+.image-container img, .image-container video {
+  max-width: 100%;
+  height: auto;
+}
+
+.text-container {
+  margin-left: 100px;
+  margin-right: 100px;
+  flex-grow: 1;
+  max-width: none;
+}
+
+.text-container h3 {
+  margin-bottom: 10px;
+  font-size: xxx-large;
+  font-weight: 300;
+}
+
+.text-container p {
+  margin-bottom: 50px;
+  margin-top: 50px;
+  font-size: x-large;
+  font-weight: lighter;
+}
+
+.read-more-btn {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 15px 40px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: normal;
+  font-size: large;
+}
+
+.navigation-arrows {
+  position: absolute;
+  top: 50%;
+  left: 0; /* Align the left side of the container with the left side of the section-container */
+  right: 0; /* Align the right side of the container with the right side of the section-container */
+  transform: translateY(-50%);
+  z-index: 10; /* Ensure arrows are above other elements */
+  display: flex;
+  justify-content: space-between; /* This will push the arrows to the edges */
+}
+
+.arrow {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  /* Remove absolute positioning from individual arrows */
+}
+
+.left-arrow {
+  /* If you need to adjust the left arrow's position, do it here. For example: */
+  margin-left: 2rem; /* Adjust as needed */
+}
+
+.right-arrow {
+  /* If you need to adjust the right arrow's position, do it here. For example: */
+  margin-right: 2rem; /* Adjust as needed */
+}
+
+
+.arrow.disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* Further responsive adjustments if needed */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .content-container {
+    gap: 30px;
+  }
+}
+
+/* Ensures the arrows are visible and positioned correctly */
+@media (max-width: 768px) {
+  .navigation-arrows {
+    top: auto;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding: 0;
+    justify-content: space-between;
+  }
+
+  .arrow {
+    font-size: 1.5rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.vision-section {
+  text-align: center;
+  padding: 120px 0;
+  background-color: #051419; /* Adjust to match your theme */
+  margin-top: 20px;
+  border-top: 1px solid hsla(0,0%,100%,.15);
+}
+
+.vision-title {
+  color: #fff;
+  margin-bottom: 40px; /* Space between title and cards */
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid hsla(0,0%,100%,.15); /* Top border */
+  border-bottom: 1px solid hsla(0,0%,100%,.15); /* Bottom border */
+}
+
+.card {
+  flex: 1;
+  padding: 20px;
+  padding-bottom: 50px;
+  border-right: 1px solid hsla(0,0%,100%,.15); /* Right border for card */
+  text-align: left;
+  color: #fff;
+  background: transparent;
+  border-radius: unset;
+  cursor: pointer;
+}
+
+.card:hover {
+  background-color: rgba(91,255,252,.04);
+}
+
+.card p {
+  font-size: large;
+  line-height: 26px;
+  margin-top: 40px;
+}
+
+.card h3 {
+  font-weight: bolder;
+}
+
+.card:first-child {
+  border-left: none; /* Remove left border for the first card */
+  max-width: 100px;
+}
+
+.card:last-child {
+  border-right: none; /* Remove right border for the last card */
+  max-width: 100px;
+}
+
+.card img {
+  margin-bottom: 20px; /* Space between image and title */
+  width: 111px;
+}
+
+/* You can add further styles for h3 and p elements inside .card as needed */
+
+
+.section-edges-space {
+  padding-left: 10rem;
+  padding-right: 10rem;
+  padding-bottom: 120px;
+  border-bottom: 1px solid hsla(0,0%,100%,.15);
+}
+
+
+
+
+
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  width: 100%;
+  /* Other styles for your slide */
+}
+
+/* Your navigation arrow styles */
+
+
+
+
+
+
+
+
+
+
+
+
+.mission-and-cta-backg {
+  background-image: url('/assets/images/bg-mission.avif');
+
+  background-size: cover;
+  background-position: center;
+}
+.mission-section {
+  position: relative;
+  color: #fff;
+  text-align: left; /* Align text to the left */
+  padding: 50px; /* Adds space around the content */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligns content to the left */
+  justify-content: center;
+  border-top: 1px solid hsla(0,0%,100%,.15);
+  border-bottom: 1px solid hsla(0,0%,100%,.15);
+}
+
+
+.mission-title {
+  margin-bottom: 55rem; /* Adds space below the title */
+  /* You can add more styling for the title as needed */
+
+}
+
+.mission-statement1 {
+  margin-bottom: 10px; /* Adds space between the paragraphs */
+  /* You can add more styling for the paragraphs as needed */
+  width: 70%;
+  margin: auto;
+  font-weight: bolder;
+  text-transform: uppercase;
+  font-size: 4.5rem;
+  line-height: normal;
+}
+.education-hub {
+  font-size: 4.5rem;
+  font-weight: bolder;
+  color: transparent;
+  background-image: linear-gradient(90deg, #c97e64, #d8a679 11.46%, #97d9d7 33.33%, #e99e52);
+  -webkit-background-clip: text;
+}
+.mission-statement2 {
+  margin-bottom: 10px; /* Adds space between the paragraphs */
+  width: 70%;
+  margin: auto;
+  margin-top: 30px;
+  font-size: large;
+  padding-right: 200px;
+}
+
+.mission-statement2 span {
+  font-weight: 500;
+  color: transparent;
+  background-image: linear-gradient(90deg, #c97e64, #d8a679 11.46%, #97d9d7 33.33%, #e99e52);
+  -webkit-background-clip: text;
+}
+
+.contact-me, .BTC-address, .lightning-address {
+  background: linear-gradient(101.81deg, #c97e64 -4.52%, #d8a679 54.5%, #97d9d7 101.41%);
+  color: black;
+  font-weight: normal;
+  text-transform: uppercase;
+  line-height: 1.25rem;
+  font-size: 0.95rem;
+  width: fit-content;
+  background-color: rgb(20, 241, 149);
+  border-radius: 2.25rem;
+  padding: 0.875rem 1.5rem;
+  border: 1px solid black;
+  transition: box-shadow .25s ease,transform .25s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.BTC-address, .lightning-address  {
+  margin-left: 20px;
+  background: transparent;
+  margin-left: 20px;
+  color: white;
+  border: 1px solid white;
+}
+
+
+.contact-button {
+  width: 70%;
+  margin: auto;
+  margin-top: 60px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer-dark h3 {
+  margin-top:0;
+  margin-bottom:12px;
+  font-weight:bold;
+  font-size:16px;
+}
+
+.footer-dark ul {
+  padding:0;
+  list-style:none;
+  line-height:1.6;
+  font-size:14px;
+  margin-bottom:0;
+}
+
+.footer-dark ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.6;
+}
+
+.footer-dark ul a:hover {
+  opacity:0.8;
+}
+
+@media (max-width:767px) {
+  .footer-dark .item:not(.social) {
+    text-align:center;
+    padding-bottom:20px;
+  }
+}
+
+.footer-dark .item.text {
+  margin-bottom:36px;
+}
+
+@media (max-width:767px) {
+  .footer-dark .item.text {
+    margin-bottom:0;
+  }
+}
+
+.footer-dark .item.text p {
+  opacity:0.6;
+  margin-bottom:0;
+}
+
+.footer-dark .item.social {
+  text-align:center;
+}
+
+@media (max-width:991px) {
+  .footer-dark .item.social {
+    text-align:center;
+    margin-top:20px;
+  }
+}
+
+.footer-dark .item.social > a {
+  font-size:20px;
+  width:36px;
+  height:36px;
+  line-height:36px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  box-shadow:0 0 0 1px rgba(255,255,255,0.4);
+  margin:0 8px;
+  color:#fff;
+  opacity:0.75;
+}
+
+.footer-dark .item.social > a:hover {
+  opacity:0.9;
+}
+
+.footer-dark .copyright {
+  text-align:center;
+  padding-top:24px;
+  opacity:0.3;
+  font-size:13px;
+  margin-bottom:0;
+}
+
+.footer-dark {
+  padding:50px 0;
+  padding-top: 60px;
+  color:#f0f9ff;
+}

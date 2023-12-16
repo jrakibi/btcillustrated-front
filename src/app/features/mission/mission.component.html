@@ -1,0 +1,262 @@
+<div class="mission-comp">
+
+    <div class="landing-page">
+        <app-header [headerOptions]="headerOptions"></app-header>
+
+        <h1 class="page-title">Revolutionizing Bitcoin Education</h1>
+        <div class="content-section">
+            <div class="left-column">
+                <img src="assets/images/globe.svg" alt="Globe" class="globe-image">
+                <a class="contact-me" (click)="scrollToMission()">#SUPPORT</a>
+
+            </div>
+            <div class="right-column">
+                <div class="text-content">
+                    <h2 class="page-section-title">About BTC illustrated</h2>
+                    <p class="mission">BTCillustrated, where Bitcoin's complexities become clear through <span
+                            class="interactive">interactive learning</span>. </p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="section-container section-edges-space">
+            <div class="title-container">
+                <h2 class="page-section-title">Learning Ecosystem</h2>
+            </div>
+            <div class="content-container">
+                <ng-container *ngFor="let slide of slides; let i = index">
+                    <div *ngIf="currentSlideIndex === i" class="content-container slide">
+                        <!-- Check if the slide type is 'image' -->
+                        <div *ngIf="slide.type === 'image'" class="image-container">
+                            <img [src]="slide.src" alt="{{ slide.title }}">
+                        </div>
+                        <!-- Check if the slide type is 'video' -->
+                        <div *ngIf="slide.type === 'video'" class="image-container">
+                            <video [src]="slide.src" autoplay loop muted></video>
+                        </div>
+                        <div class="text-container">
+                            <h3>{{ slide.title }}</h3>
+                            <p>{{ slide.content }}</p>
+                            <a class="read-more-btn" [routerLink]="[slide.buttonLink]" target="_blank">{{
+                                slide.buttonText }}</a>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="navigation-arrows">
+                <button class="arrow left-arrow" (click)="goToPreviousSlide()">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <button class="arrow right-arrow" (click)="goToNextSlide()">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+    <div class="vision-section">
+        <h2 class="page-section-title">Vision</h2>
+        <div class="cards-container">
+            <div class="card">
+            </div>
+            <div class="card">
+                <img src="/assets/images/event-stay-current.svg" alt="Stay Current">
+                <h3>Onboard</h3>
+                <!-- <p>Onboard more developers to participate in shaping a new financial world order, by contributing to the bitcoin ecosystem</p> -->
+                <p>Encourage more developers to be part of creating a new financial order by contributing to the Bitcoin
+                    ecosystem.</p>
+            </div>
+            <div class="card">
+                <img src="/assets/images/event-explore.svg" alt="Explore">
+                <h3>Community</h3>
+                <p>Bridge the gap between experienced developers and newcomers by facilitating and encouraging dialogue,
+                    discussion, and an inclusive environment for all. </p>
+            </div>
+            <div class="card">
+                <img src="/assets/images/event-talk.svg" alt="Talk">
+                <h3>Innovation</h3>
+                <p>Make it easy for anyone with a Bitcoin idea to build it, share it, and improve the way we use money
+                    around the world.</p>
+            </div>
+            <div class="card">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <section class="timeline-carousel">
+        <h2 class="page-section-title">ROADMAP</h2>
+
+        <div class="timeline-carousel__item-wrapper" data-js="timeline-carousel">
+            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+                <div ngxSlickItem *ngFor="let item of items; let i = index" class="timeline-carousel__item">
+                    <div *ngIf="item.type === 'image'" class="timeline-carousel__media">
+                        <img class="media-image" [src]="item.source" alt="Image Description">
+                    </div>
+
+
+                    <!-- Inside your ngxSlickItem *ngFor loop -->
+                    <div *ngIf="item.type === 'video'" class="timeline-carousel__media"
+                        (mouseenter)="onVideoMouseEnter(i)" (mouseleave)="onVideoMouseLeave(i)">
+                        <a *ngIf="currentlyPlayingIndex !== i" href="#" class="play-button"
+                            (click)="playVideo($event, i)">
+                            <i class="fa fa-play"></i>
+                        </a>
+
+                        <a *ngIf="currentlyPlayingIndex === i && isHovering" href="#" class="pause-button"
+                            (click)="playVideo($event, i)">
+                            <i class="fa fa-pause"></i>
+                        </a>
+
+                        <video #videoPlayer class="media-video" [src]="item.source" [poster]="item.poster"
+                            (click)="playVideo($event, i)">
+                            <source [src]="item.source" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <div class="timeline-carousel__item-inner">
+                        <span class="year">{{ item.year }}</span>
+                        <span class="month">{{ item.title }}</span>
+                        <p><span style="font-weight: bolder;">Goal: </span>{{ item.description }}</p>
+                    </div>
+                    <ul class="fa-ul">
+                        <li *ngFor="let feature of item.features">
+                            <span class="fa-li">
+                                <i class="fa" [class.fa-check]="feature.done" [class.fa-times]="!feature.done"
+                                    [ngClass]="{'check-icon': feature.done, 'cross-icon': !feature.done}"></i>
+                            </span>
+                            {{ feature.name }}
+                            <!-- <span *ngIf="!feature.done">- Not done</span> -->
+                        </li>
+                    </ul>
+                </div>
+            </ngx-slick-carousel>
+        </div>
+    </section>
+
+
+    <div class="mission-and-cta-backg">
+
+        <div class="mission-section" #missionSection>
+            <h2 class="page-section-title">Mission</h2>
+            <!-- <p class="mission-statement1">Build <br> <span style="margin-left: 40px;">An  <span class="education-hub" sty>education hub</span></span></p> -->
+            <p class="mission-statement1">Bitcoin Education<br>
+                <span style="margin-left: 60px;"> built differenly </span> <br>
+                <span class="education-hub" style="margin-left: 30px;">Simple. Interactive.
+                </span>
+
+            </p>
+
+            <!-- <p class="mission-statement2">I'm actively looking for funding to work on this platform full-time. Aiming to Onboard more Bitcoin developers to the space.</p> -->
+            <p class="mission-statement2">
+
+                If you've tried to learn about Bitcoin, you know it can be confusing and overwhelming. There's just so
+                much to know, and most of discussions out there assume a ton of prior knowledge and context.
+                <br>
+                Bitcoin education needs a more interactive and engaging platform, particularly for newcomers to the
+                space, ensuring they don't feel overwhelmed about where to begin.
+                <br>
+                <br>
+
+                I'm crafting a platform rich with animations, drawings and hands-on lab to break down complex Bitcoin
+                topics into simpler terms.
+                <br>
+
+                The big goal is to build a bridge between experienced developer and newcomers facilitating and
+                encouraging for more dialogue and discussion between them.
+                <br><br>
+                <span>I'm actively looking for funding to work on this platform full-time. Aiming to onboard more
+                    Bitcoin developers to the space.</span>
+            </p>
+
+
+            <div class="contact-button">
+                <a class="contact-me" href="https://twitter.com/BTCillustrated" target="_blank">Contact me
+                    @BTCillustrated</a>
+                <!-- <a class="BTC-address" disabled>Donation BTC address</a>
+                <a class="lightning-address">Donation Lightning address</a> -->
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <div class="footer-dark">
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-3 item">
+                            <h3>Services</h3>
+                            <ul>
+                                <li><a [routerLink]="['/illustration']">Visuals</a></li>
+                                <li><a [routerLink]="['/mailing-list']">Daily Update</a></li>
+                                <li><a [routerLink]="['/roadmap']">>RoadMap</a></li>
+                                <li><a [routerLink]="['/list']">>Blog</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-3 item">
+                            <h3>About</h3>
+                            <ul>
+                                <li><a [routerLink]="['/newsletter']">>Newsletter</a></li>
+                                <li><a [routerLink]="['/list']">>Blog</a></li>
+                                <li><a [routerLink]="['/support']">#Support</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 item text">
+                            <h3>BTCillustrated</h3>
+                            <p>The All new interactive learning platform to make Bitcoin's tough topics easier to
+                                understand through animations, tons of exercises, real-world projects and fun mini-games
+                                and activities.
+                            </p>
+                        </div>
+                        <div class="col item social">
+                            <a href="https://twitter.com/BTCillustrated" target="_blank"><i
+                                    class="fa fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/coder.journey/" target="_blank"><i
+                                    class="fa fa-instagram"></i></a>
+                            <a href="https://github.com/jrakibi/BTCillustrated" target="_blank"><i class="fa fa-github"></i></a>
+
+                            <a href="http://btc-illustrated.com/" target="_blank"><i class="fa fa-globe"></i></a>
+                        </div>
+                    </div>
+                    <p class="copyright">BTC illustrated © 2023</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
