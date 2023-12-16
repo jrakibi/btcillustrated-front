@@ -1,7 +1,7 @@
 <div class="mission-comp">
 
     <div class="landing-page">
-        <app-header [headerOptions]="headerOptions" ></app-header>
+        <app-header [headerOptions]="headerOptions"></app-header>
 
         <h1 class="page-title">Revolutionizing Bitcoin Education</h1>
         <div class="content-section">
@@ -39,7 +39,8 @@
                         <div class="text-container">
                             <h3>{{ slide.title }}</h3>
                             <p>{{ slide.content }}</p>
-                            <a class="read-more-btn" [routerLink]="[slide.buttonLink]" target="_blank">{{ slide.buttonText }}</a>
+                            <a class="read-more-btn" [routerLink]="[slide.buttonLink]" target="_blank">{{
+                                slide.buttonText }}</a>
                         </div>
                     </div>
                 </ng-container>
@@ -70,17 +71,20 @@
                 <img src="/assets/images/event-stay-current.svg" alt="Stay Current">
                 <h3>Onboard</h3>
                 <!-- <p>Onboard more developers to participate in shaping a new financial world order, by contributing to the bitcoin ecosystem</p> -->
-                <p>Encourage more developers to be part of creating a new financial order by contributing to the Bitcoin ecosystem.</p>
+                <p>Encourage more developers to be part of creating a new financial order by contributing to the Bitcoin
+                    ecosystem.</p>
             </div>
             <div class="card">
                 <img src="/assets/images/event-explore.svg" alt="Explore">
                 <h3>Community</h3>
-                <p>Bridge the gap between experienced developers and newcomers by facilitating and encouraging dialogue, discussion, and an inclusive environment for all. </p>
+                <p>Bridge the gap between experienced developers and newcomers by facilitating and encouraging dialogue,
+                    discussion, and an inclusive environment for all. </p>
             </div>
             <div class="card">
                 <img src="/assets/images/event-talk.svg" alt="Talk">
                 <h3>Innovation</h3>
-                <p>Make it easy for anyone with a Bitcoin idea to build it, share it, and improve the way we use money around the world.</p>
+                <p>Make it easy for anyone with a Bitcoin idea to build it, share it, and improve the way we use money
+                    around the world.</p>
             </div>
             <div class="card">
             </div>
@@ -126,7 +130,7 @@
                     <div class="timeline-carousel__item-inner">
                         <span class="year">{{ item.year }}</span>
                         <span class="month">{{ item.title }}</span>
-                        <p ><span style="font-weight: bolder;">Goal: </span>{{ item.description }}</p>
+                        <p><span style="font-weight: bolder;">Goal: </span>{{ item.description }}</p>
                     </div>
                     <ul class="fa-ul">
                         <li *ngFor="let feature of item.features">
@@ -174,12 +178,14 @@
                 The big goal is to build a bridge between experienced developer and newcomers facilitating and
                 encouraging for more dialogue and discussion between them.
                 <br><br>
-                <span>I'm actively looking for funding to work on this platform full-time. Aiming to onboard more Bitcoin developers to the space.</span>
+                <span>I'm actively looking for funding to work on this platform full-time. Aiming to onboard more
+                    Bitcoin developers to the space.</span>
             </p>
 
 
             <div class="contact-button">
-                <a class="contact-me" href="https://twitter.com/BTCillustrated" target="_blank">Contact me @BTCillustrated</a>
+                <a class="contact-me" href="https://twitter.com/BTCillustrated" target="_blank">Contact me
+                    @BTCillustrated</a>
                 <!-- <a class="BTC-address" disabled>Donation BTC address</a>
                 <a class="lightning-address">Donation Lightning address</a> -->
             </div>
@@ -217,10 +223,20 @@
                         </div>
                         <div class="col-md-6 item text">
                             <h3>BTCillustrated</h3>
-                            <p>The All new interactive learning platform to make Bitcoin's tough topics easier to understand through animations,  tons of exercises, real-world projects and fun mini-games and activities.
+                            <p>The All new interactive learning platform to make Bitcoin's tough topics easier to
+                                understand through animations, tons of exercises, real-world projects and fun mini-games
+                                and activities.
                             </p>
                         </div>
-                        <div class="col item social"><a href="https://twitter.com/BTCillustrated" target="_blank"><i class="fa fa-twitter"></i></a><a href="https://www.instagram.com/coder.journey/" target="_blank"><i class="fa fa-instagram"></i></a><a href="http://btc-illustrated.com/" target="_blank"><i class="fa fa-globe"></i></a></div>
+                        <div class="col item social">
+                            <a href="https://twitter.com/BTCillustrated" target="_blank"><i
+                                    class="fa fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/coder.journey/" target="_blank"><i
+                                    class="fa fa-instagram"></i></a>
+                            <a href="https://github.com/jrakibi/BTCillustrated" target="_blank"><i class="fa fa-github"></i></a>
+
+                            <a href="http://btc-illustrated.com/" target="_blank"><i class="fa fa-globe"></i></a>
+                        </div>
                     </div>
                     <p class="copyright">BTC illustrated © 2023</p>
                 </div>
