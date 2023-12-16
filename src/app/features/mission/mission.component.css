@@ -1,4 +1,4 @@
-/* Existing styles */
+Existing styles
 ::ng-deep .header.dark-mode {
   background-color: #111b2100 !important;
 }
@@ -162,11 +162,14 @@
 .text-container h3 {
   margin-bottom: 10px;
   font-size: xxx-large;
+  font-weight: 300;
 }
 
 .text-container p {
   margin-bottom: 50px;
   margin-top: 50px;
+  font-size: x-large;
+  font-weight: lighter;
 }
 
 .read-more-btn {
@@ -381,11 +384,13 @@
 
 
 
-
-.mission-section {
+.mission-and-cta-backg {
   background-image: url('/assets/images/bg-mission.avif');
+
   background-size: cover;
   background-position: center;
+}
+.mission-section {
   position: relative;
   color: #fff;
   text-align: left; /* Align text to the left */
@@ -396,6 +401,7 @@
   justify-content: center;
   height: 90vh; /* Sets the section height to full viewport height */
   border-top: 1px solid hsla(0,0%,100%,.15);
+  border-bottom: 1px solid hsla(0,0%,100%,.15);
 }
 
 

@@ -23,6 +23,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { SupportComponent } from './features/support/support.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MissionComponent } from './features/mission/mission.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { MissionComponent } from './features/mission/mission.component';
     RouterModule,
     SharedModule,
     MatDialogModule,
-    MatTooltipModule
+    MatTooltipModule,
+    SlickCarouselModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent],
