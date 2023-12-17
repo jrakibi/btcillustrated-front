@@ -24,6 +24,7 @@ import { SupportComponent } from './features/support/support.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MissionComponent } from './features/mission/mission.component';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { NgxTwitterWidgetsModule } from "ngx-twitter-widgets";
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     SharedModule,
     MatDialogModule,
     MatTooltipModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    NgxTwitterWidgetsModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent],
