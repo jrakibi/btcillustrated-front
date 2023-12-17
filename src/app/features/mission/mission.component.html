@@ -195,26 +195,20 @@
 
 
         <!-- wall-of-love.component.html -->
-        <div class="container">
-            <h2 class="page-section-title" style="margin: auto;">Wall of love </h2>
-
-            <div class="wall-of-love">
-            
-                <div *ngFor="let tweet of tweets" class="tweet-embed">
-                  <blockquote class="twitter-tweet" [attr.data-tweet-id]="tweet.id">
-                    <!-- Tweet will be embedded here by the Twitter script -->
-            
-                    <ngx-twitter-tweet
-                    [tweetID]="tweet.id"
-                    [options]="{ size: 'large', text: 'Tweet from Twitter' }">
-                    </ngx-twitter-tweet>
-                  </blockquote>
-                </div>
-              </div>
-              
-            
-        </div>
-
+<!-- wall-of-love.component.html -->
+<div class="testimonial-section">
+    <h2 class="page-section-title" style="margin: auto;">Wall of love </h2>
+  
+    <div class="wall-of-love">
+      <div *ngFor="let tweet of tweets" class="tweet-embed">
+        <ngx-twitter-tweet
+          [tweetID]="tweet.id"
+          [options]="{ size: 'large' }">
+        </ngx-twitter-tweet>
+      </div>
+    </div>
+  </div>
+  
 
 
 
