@@ -69,14 +69,6 @@ export class MissionComponent implements OnInit  {
     },
     {
       type: 'image', // Specify the type of content
-      src: '/assets/images/bitcoin-only.svg',      
-      title: 'Bitcoin Focused',
-      content: "A platform 100% Focused on Bitcoin and it's ecosystem",
-      buttonText: 'Start Now',
-      buttonLink: '/home'
-    },
-    {
-      type: 'image', // Specify the type of content
       src: '/assets/images/coding3.png',      
       title: 'Interactive Coding Lessons',
       content: 'In-browser, step-by-step lessons guide you through the fundamentals of Bitcoin. Start building your first Bitcoin-driven application today.',
@@ -90,6 +82,14 @@ export class MissionComponent implements OnInit  {
       content: 'A platform rich with Visuals and animations to simplify complex technical Bitcoin concepts and BIPs.',
       buttonText: 'Start Now',
       buttonLink: '/illustration'
+    },
+    {
+      type: 'image', // Specify the type of content
+      src: '/assets/images/bitcoin-only.svg',      
+      title: 'Bitcoin Focused',
+      content: "Open sourced platform, 100% Focused on Bitcoin and it's ecosystem",
+      buttonText: 'Start Now',
+      buttonLink: '/home'
     }
   ];
 
