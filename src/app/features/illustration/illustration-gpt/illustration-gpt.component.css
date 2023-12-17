@@ -3,6 +3,7 @@
   color: white;
 } */
 
+
 .bob-gpt-container {
   position: relative;
   color: white;
@@ -21,7 +22,7 @@
   background-image: url('https://media.istockphoto.com/id/1191154632/photo/black-gold-background-gradient-texture-soft-golden-with-light-technology-diagonal-gray-and.webp?b=1&s=170667a&w=0&k=20&c=k_4uP2TAZES7MVEJPUcD9KUVSuv87oYOGUgbLS5PynM=');
   background-size: cover;
   background-position: center;
-  opacity: 0.5; /* Adjust the opacity as needed */
+  /* opacity: 0.5;  */
 }
 
 /* Ensure that the content of .bob-gpt-container is positioned above the pseudo-element */
