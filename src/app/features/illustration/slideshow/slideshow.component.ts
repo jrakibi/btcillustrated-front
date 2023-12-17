@@ -168,7 +168,7 @@ export class SlideShowComponent {
 
   openGptDialog() {
     const dialogRef = this.dialog.open(IllustrationGptComponent, { 
-      width: '900px',
+      // width: '900px',
       height: '500px',
       panelClass: 'black-dialog-container'
     });
