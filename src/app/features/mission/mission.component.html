@@ -203,7 +203,7 @@
       <div *ngFor="let tweet of tweets" class="tweet-embed">
         <ngx-twitter-tweet
           [tweetID]="tweet.id"
-          [options]="{ size: 'large', theme : 'light' }">
+          [options]="{ size: 'large', theme : 'dark' }">
         </ngx-twitter-tweet>
       </div>
     </div>
@@ -226,15 +226,15 @@
                             <ul>
                                 <li><a [routerLink]="['/illustration']">Visuals</a></li>
                                 <li><a [routerLink]="['/mailing-list']">Daily Update</a></li>
-                                <li><a [routerLink]="['/roadmap']">>RoadMap</a></li>
-                                <li><a [routerLink]="['/list']">>Blog</a></li>
+                                <li><a [routerLink]="['/roadmap']">RoadMap</a></li>
+                                <li><a [routerLink]="['/list']">Blog</a></li>
                             </ul>
                         </div>
                         <div class="col-sm-6 col-md-3 item">
                             <h3>About</h3>
                             <ul>
-                                <li><a [routerLink]="['/newsletter']">>Newsletter</a></li>
-                                <li><a [routerLink]="['/list']">>Blog</a></li>
+                                <li><a [routerLink]="['/newsletter']">Newsletter</a></li>
+                                <li><a [routerLink]="['/list']">Blog</a></li>
                                 <li><a [routerLink]="['/support']">#Support</a></li>
                             </ul>
                         </div>
