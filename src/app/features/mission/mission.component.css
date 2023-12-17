@@ -403,7 +403,6 @@ Existing styles
   border-bottom: 1px solid hsla(0,0%,100%,.15);
 }
 
-
 .mission-title {
   margin-bottom: 55rem; /* Adds space below the title */
   /* You can add more styling for the title as needed */
@@ -625,16 +624,34 @@ Existing styles
 .wall-of-love {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 16px;
+  grid-row-gap: 0; /* This removes vertical space between grid items */
+  grid-column-gap: 16px; /* This maintains space between columns */
   padding: 16px;
 }
 
+/* Ensure that individual tweet embeds do not have extra spacing */
 .tweet-embed {
+  margin: 0; /* Remove any margin from individual tweet embeds */
+  padding: 0; /* Remove any padding from individual tweet embeds */
   border-radius: 8px;
   overflow: hidden;
 }
-/* your-component.component.css */
-ngx-twitter-timeline {
-  margin: 10px;
-  /* Additional styling as needed */
+
+/* Reset margins within the ngx-twitter-tweet component */
+ngx-twitter-tweet {
+  margin: 0 !important; /* Important to override any internal styles */
+}
+
+
+
+.testimonial-section {
+  position: relative;
+  color: #fff;
+  text-align: left; /* Align text to the left */
+  padding: 50px; /* Adds space around the content */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top: 1px solid hsla(0,0%,100%,.15);
+  border-bottom: 1px solid hsla(0,0%,100%,.15);
 }
