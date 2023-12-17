@@ -1,56 +1,28 @@
-<app-header></app-header>
-<div class="container">
-    <div class="container-fluid p-0">
-        <div class="articles-container">
-            <div class="row">
-                <div class="col-md-4 col-sm-12">
-                    <div class="video-spacer"></div>
-                    <div class="sticky-container"> <!-- This is the new sticky container -->
-                        <div class="d-flex justify-content-center align-items-center video-container">
-                            <video autoplay loop class="centered-image">
-                                <!-- <source src="assets/btcIllustrated/2018_39.mp4" type="video/mp4"> -->
-                                    <!-- <source src="assets/btcIllustrated/2020_14.mp4" type="video/mp4"> -->
-                                <!-- <source src="assets/btcIllustrated/2018_39.mp4" type="video/mp4"> -->
-                                <!-- <source src="assets/btcIllustrated/2018_55.mp4" type="video/mp4"> -->
-                                <!-- <source src="assets/btcIllustrated/2018_64.mp4" type="video/mp4"> -->
-                                <source src="assets/btcIllustrated/2019_19.mp4" type="video/mp4"> // winner 1
-                                <!-- <source src="assets/btcIllustrated/2019_27.mp4" type="video/mp4"> -->
-                                <!-- <source src="assets/btcIllustrated/2020_14.mp4" type="video/mp4"> -->
-                                <!-- <source src="assets/btcIllustrated/2021_07.mp4" type="video/mp4"> // 2 -->
-                                <!-- <source src="assets/btcIllustrated/2021_09.mp4" type="video/mp4"> //3 -->
-                                Your browser does not support HTML video.
-                            </video>                        
-                        </div>
-                        <h1 style="margin-top: 50px; color: #FCD313; font-size: 26px; font-family: 'Zara'; text-transform:  uppercase;">Consensus</h1>
-                    </div>
-                </div>
-                <div class="col-md-8 col-sm-12">
-                    <!-- <div class="overflow-hidden w-10 mx-auto rounded-lg mt-10 mb-16">
-                        <svg class="text-react mx-auto w-24 animate-move" width="123" height="16" viewBox="0 0 123 16">
-                            <polyline fill="none" stroke="currentColor" stroke-width="4" points="652.5 379 662.5 369 672.5 379 682.5 369 692.5 379 702.5 369 712.5 379 722.5 369 732.5 379 742.5 369 752.5 379 762.5 369 772.5 379" transform="translate(-651 -366)"></polyline>
-                        </svg>
-                    </div> -->
-                    
-                    <div class="row">
-                        <div class="col-md-4" *ngFor="let article of articles">
-                            <div class="article-card" [routerLink]="['/read', article.id]">
-                                <h2 style="font-size: 1.5em;">{{ article.title }}</h2>
-                                <p style="margin-top: 30px;">"{{article?.thumbnailImage | slice:0:150 }}..." </p>
-                                <a  [routerLink]="['/read', article.id]" class="read-more-btn">Read more</a>
-                                <!-- <span class="btnBefore"></span>
-                                <span class="btnAfter"></span> -->
+<div class="mission-comp">
 
-                                <span class="btnTopLeft"></span>
-                                <span class="btnTopRight"></span>
-                                <span class="btnBottomLeft"></span>
-                                <span class="btnBottomRight"></span>
+    <div class="landing-page">
+        <app-header></app-header>
+        <h1 class="page-title">BLOG</h1>
+        <div class="vision-section">
+            <h2 class="page-section-title">Consensus articles</h2>
+            <div *ngFor="let row of groupedArticles">
+                <div class="cards-container">
+                    <div class="card empty-card"></div> 
+                    <div class="card" *ngFor="let article of row">
+                        <div [routerLink]="['/read', article.id]" style="margin-bottom: 40px;">
+                            <img src="{{ article.thumbnailImage }}" alt="{{ article.altText }}">
+                            <h2 style="font-size: 1.5em;">{{ article.title }}</h2>
+                            <p [style.margin-top.px]="30" [innerHTML]="getArticleDescription(article?.content)"></p>
 
-                            </div>
+                            <i class="fa fa-arrow-right" [routerLink]="['/read', article.id]" aria-hidden="true"></i>
+                            <!-- <a [routerLink]="['/read', article.id]" class="read-more-btn">Read more</a> -->
                         </div>
                     </div>
+                    <div class="card empty-card"></div>
                 </div>
             </div>
         </div>
     </div>
-    
 </div>
+
+

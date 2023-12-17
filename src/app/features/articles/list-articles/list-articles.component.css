@@ -274,3 +274,38 @@ h1 {
     width: 100%;
     height: 100%;
 }
+
+
+
+
+
+
+
+.empty-card {
+    visibility: hidden;
+    flex: 1;
+}
+
+.card {
+    padding: 50px !important;
+    position: relative; /* Add relative positioning */
+    border-right: 1px solid hsla(0,0%,100%,.15);
+    border-left: 1px solid hsla(0,0%,100%,.15);
+}
+
+.card img {
+    width: 100% !important;
+    height: auto; /* Maintain aspect ratio */
+}
+.fa-arrow-right {
+    cursor: pointer;
+    margin-left: 10px; /* Example spacing */
+    font-size: 23px;
+    position: absolute; /* Absolute position the arrow */
+    bottom: 20px; /* Adjust as necessary for spacing from the bottom */
+    transform: translateX(-50%); /* Align center of the icon with the center of the card */
+}
+
+.vision-section {
+    padding: 20px 0;
+}
