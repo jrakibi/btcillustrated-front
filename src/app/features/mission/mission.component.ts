@@ -3,6 +3,7 @@ import { trigger, transition, animate, style, query, group } from '@angular/anim
 import { SlickCarouselComponent } from 'ngx-slick-carousel';
 import { HeaderOptions } from 'src/app/shared/header/header-options';
 
+declare const twttr: any; // This declares the Twitter object which will be loaded later
 
 @Component({
   selector: 'app-mission',
@@ -43,6 +44,15 @@ export class MissionComponent implements OnInit  {
     this.headerOptions = {
       isUnderlineDisplayed: true,
       isTransparent: true
+    }
+
+    // Dynamically load the Twitter script
+    if (!window['twttr']) {
+      const script = document.createElement('script');
+      script.setAttribute('src', 'https://platform.twitter.com/widgets.js');
+      document.body.appendChild(script);
+    } else {
+      twttr.widgets.load();
     }
   }
 
@@ -273,6 +283,19 @@ export class MissionComponent implements OnInit  {
   scrollToMission(): void {
     this.missionSection.nativeElement.scrollIntoView({ behavior: 'smooth' });
   }
+
+
+  tweets = [
+    { id: '1666470998160318467' },
+    { id: '1706722987796238615' },
+    { id: '1688216939456319488' },
+    { id: '1674140683450593280' },
+    { id: '1696415151652581462' },
+    { id: '1644885090588147712' },
+    { id: '1664341518524489737' },
+    { id: '1712580270853857659' },
+    { id: '1706743656965980444' },
+  ];
 }
 
 

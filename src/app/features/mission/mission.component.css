@@ -616,3 +616,26 @@ Existing styles
   padding-top: 60px;
   color:#f0f9ff;
 }
+
+
+
+
+
+/* wall-of-love.component.css */
+.wall-of-love {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  padding: 16px;
+}
+
+.tweet-embed {
+  border: 1px solid #e1e8ed;
+  border-radius: 8px;
+  overflow: hidden;
+}
+/* your-component.component.css */
+ngx-twitter-timeline {
+  margin: 10px;
+  /* Additional styling as needed */
+}
