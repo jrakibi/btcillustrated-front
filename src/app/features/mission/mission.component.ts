@@ -178,9 +178,10 @@ export class MissionComponent implements OnInit  {
       type: 'image',
       source: 'assets/images/BITCOIN.png',
       features: [
-        { name: '12 Modules that expalains Bitcoin from A to Z', done: false },
-        { name: 'Real world inspired Projects', done: false },
+        { name: '12 Modules that explain Bitcoin from A to Z', done: false },
+        { name: 'Complete guide on learning Bitcoin programming and usage from the command', done: false },
         { name: 'Integrate an IDE for developers to code inside the platfrom', done: false },
+        { name: 'Real world inspired Projects', done: false },
       ],
     },
     {
@@ -190,7 +191,7 @@ export class MissionComponent implements OnInit  {
       type: 'image',
       source: 'assets/images/LIGHTNING.png',
       features: [
-        { name: 'Modules that explains Lightning', done: false },
+        { name: 'Modules that explain Lightning', done: false },
         { name: 'Real world inspired Projects', done: false },
         { name: 'Integrate an IDE for developers to code inside the platfrom', done: false },
       ],
