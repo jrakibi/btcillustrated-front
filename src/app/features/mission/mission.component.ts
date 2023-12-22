@@ -154,7 +154,7 @@ export class MissionComponent implements OnInit  {
         { name: 'Daily digests on Bitcoin and LN development', done: true },
         { name: 'AI feature to convert email from Bitcoin-dev mailing list into an interactive dialog.', done: true },
         { name: 'Adjust tone of conversation for non-technical reader', done: false },
-        { name: 'Curate news from other sources (Eg. Bitcoin Optech)', done: false },
+        { name: 'Curate news from other reputable sources (Eg. Bitcoin Optech)', done: false },
         // { name: 'Extract important  keyword from the conversation and connect each to my own Bitcoin illustrations, @bitcoinoptech, or other reputable Bitcoin resources for in-depth exploration..', done: false },
       ],
     },
