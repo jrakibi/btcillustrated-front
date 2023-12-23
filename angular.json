@@ -145,7 +145,6 @@
       }
     }
   },
-  "defaultProject": "btcillustrated",
   "cli": {
     "analytics": false
   }
