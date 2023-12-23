@@ -64,6 +64,11 @@ export class IllustrationListComponent implements OnInit {
           thumbnailLoaded: false
         }));
         this.allIllustrations = this.illustrations;
+
+
+          // TO DELETE
+        this.illustrations = []
+        this.allIllustrations = []
       },
       error => {
         console.error('Error fetching illustrations', error);

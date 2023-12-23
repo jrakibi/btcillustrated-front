@@ -4,9 +4,7 @@
     <div class="brand">BTC<span class="illustrated">illustrated</span></div>
     <div class="search-bar">
       <i class="fa fa-search"></i>
-      <input type="text" 
-      (input)="onSearch($event.target.value)" 
-      placeholder="Search a topic">
+      <input type="text" (input)="onSearch($event.target.value)" placeholder="Search a topic">
     </div>
   </div>
   <div class="tags-line">
@@ -17,18 +15,17 @@
         <span class="tag" [class.active]="activeTag === null" (click)="filterIllustrationsByTag(null)">
           All
         </span>
-        
+
         <!-- Iterate over tags and highlight the active tag -->
-        <span *ngFor="let tag of tagsWithCounts | keyvalue"
-              class="tag" [class.active]="tag.key === activeTag"
-              (click)="filterIllustrationsByTag(tag.key)">
+        <span *ngFor="let tag of tagsWithCounts | keyvalue" class="tag" [class.active]="tag.key === activeTag"
+          (click)="filterIllustrationsByTag(tag.key)">
           {{ tag.key }} ({{ tag.value }})
         </span>
       </div>
     </div>
-    
+
   </div>
-  
+
 </header>
 
 
@@ -42,37 +39,38 @@
           <div class="filter-sidebar bg-dark text-white" aria-label="Filters">
             <div class="text-center">
               <!-- Show the number of displayed illustrations -->
-              <div class="my-3">Showing {{ displayedIllustrationsCount }} of {{ allIllustrations.length }} illustrations</div>
+              <div class="my-3">Showing {{ displayedIllustrationsCount }} of {{ allIllustrations.length }} illustrations
+              </div>
               <!-- Clear button to reset filters -->
-              <a (click)="clearFilters()" role="button" class="text-decoration-underline text-white d-block mb-3">Clear</a>
+              <a (click)="clearFilters()" role="button"
+                class="text-decoration-underline text-white d-block mb-3">Clear</a>
             </div>
             <hr class="my-2 text-white"> <!-- Separator -->
-          
+
             <!-- Category list with clickable items -->
             <div class="my-3 category-list">
               <!-- "All" category to reset the filter -->
               <legend>Categories</legend>
-  
-              <div (click)="toggleCategorySelection(null)"
-                  [class.active]="selectedCategory === null">
+
+              <div (click)="toggleCategorySelection(null)" [class.active]="selectedCategory === null">
                 All
               </div>
-              
+
               <!-- List of categories -->
-              <div *ngFor="let category of categories" 
-                  (click)="toggleCategorySelection(category.name)"
-                  [class.active]="selectedCategory === category.name">
+              <div *ngFor="let category of categories" (click)="toggleCategorySelection(category.name)"
+                [class.active]="selectedCategory === category.name">
                 {{ category.name }}
               </div>
             </div>
-  
-            
+
+
             <hr class="my-2 text-white"> <!-- Separator -->
-          
+
             <div class="my-3 sort-fieldset">
               <fieldset>
                 <legend>Sort by</legend>
-                <select id="sort" class="custom-form-select" [(ngModel)]="sortOrder" (change)="sortIllustrations(sortOrder)">
+                <select id="sort" class="custom-form-select" [(ngModel)]="sortOrder"
+                  (change)="sortIllustrations(sortOrder)">
                   <option value="custom">Custom</option>
                   <option value="alphabetical-asc">Alphabetical (A to Z)</option>
                   <option value="alphabetical-desc">Alphabetical (Z to A)</option>
@@ -80,99 +78,94 @@
                 </select>
               </fieldset>
             </div>
-            
-            
+
+
             <hr class="my-2 text-white"> <!-- Separator -->
-          
+
             <div class="my-3">
               <fieldset>
                 <legend>Showing</legend>
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" id="all_illustrations"
-                         (change)="selectedTags.clear(); filterIllustrations();"
-                         [checked]="selectedTags.size === 0">
+                    (change)="selectedTags.clear(); filterIllustrations();" [checked]="selectedTags.size === 0">
                   <label class="form-check-label" for="all_illustrations">All illustrations</label>
                 </div>
                 <div class="form-check" *ngFor="let tag of tagsWithCounts | keyvalue">
-                  <input class="form-check-input" type="checkbox" [id]="tag.key"
-                         (change)="toggleTagSelection(tag.key)"
-                         [checked]="selectedTags.has(tag.key)">
+                  <input class="form-check-input" type="checkbox" [id]="tag.key" (change)="toggleTagSelection(tag.key)"
+                    [checked]="selectedTags.has(tag.key)">
                   <label class="form-check-label" [for]="tag.key">{{ tag.key }}</label>
                 </div>
                 <!-- ... -->
               </fieldset>
-              
-            </div>
-          </div>
-          </div>
-    
-    
-    
-    
-      <div class="col-md-9">
-        <div class="card-container">
-        <div class="row">
-          <div class="col-md-3 mb-3"  *ngFor="let illustration of illustrations">
-            <div class="card">
-              <div class="card-icons">
 
-                <a (click)="openDialog()" target="_blank" rel="noopener noreferrer">
-                  <span class="icon-circle" style="background-color: #111b21;">
-                    <i class="fa fa-bolt" style="color: #ffc107;"></i>
-                  </span>
-                </a>
-                <a href="{{ illustration.githubRepoUrl || 'https://github.com/jrakibi/btcillustrated/' }}" target="_blank" rel="noopener noreferrer">
-                  <span class="icon-circle">
-                    <i class="fab fa-github"></i>
-                  </span>
-                </a>
-                <a href="{{ illustration.tweetLink || 'https://twitter.com/BTCillustrated' }}" target="_blank" rel="noopener noreferrer">
-                  <span class="icon-circle">
-                    <i class="fab fa-twitter"></i>
-                  </span>
-                </a>
-              </div>
-              
-              
-              
-  <!-- ... -->
-  <div class="card-image" [routerLink]="['/illustration', illustration.id]" style="text-align: center; padding: 20px;">
-      <!-- Placeholder container -->
-      <div class="ph-item" *ngIf="!illustration.thumbnailLoaded">
-      <div class="ph-col-12">
-          <div class="ph-picture"></div>
-          <div class="ph-row">
-              <!-- Modify to suit your look -->
-          </div>
-      </div>
-  </div>
-  
-      <img [src]="illustration.thumbnailImage || (illustration.imagePaths.length > 0 ? illustration.imagePaths[0] : 'default_image_path')" 
-      alt="{{ illustration.title }}" 
-      style="max-width: 100%; height: auto;"
-      (load)="onLoadImage(illustration)"
-      [hidden]="!illustration.thumbnailLoaded">
-  
-  </div>
-              <div class="card-title" [routerLink]="['/illustration', illustration.id]">
-                <button matTooltip="{{ illustration.title }}" matTooltipClass="custom-tooltip">
-                  {{ illustration.title }}
-                </button>
-              </div>
-              
-              
             </div>
           </div>
         </div>
+
+
+
+
+        <div class="col-md-9">
+          <div class="card-container" *ngIf="illustrations.length > 0; else mindMapper">
+            <div class="row">
+              <div class="col-md-3 mb-3" *ngFor="let illustration of illustrations">
+                <div class="card">
+                  <div class="card-icons">
+
+                    <a (click)="openDialog()" target="_blank" rel="noopener noreferrer">
+                      <span class="icon-circle" style="background-color: #111b21;">
+                        <i class="fa fa-bolt" style="color: #ffc107;"></i>
+                      </span>
+                    </a>
+                    <a href="{{ illustration.githubRepoUrl || 'https://github.com/jrakibi/btcillustrated/' }}"
+                      target="_blank" rel="noopener noreferrer">
+                      <span class="icon-circle">
+                        <i class="fab fa-github"></i>
+                      </span>
+                    </a>
+                    <a href="{{ illustration.tweetLink || 'https://twitter.com/BTCillustrated' }}" target="_blank"
+                      rel="noopener noreferrer">
+                      <span class="icon-circle">
+                        <i class="fab fa-twitter"></i>
+                      </span>
+                    </a>
+                  </div>
+
+                  <!-- ... -->
+                  <div class="card-image" [routerLink]="['/illustration', illustration.id]"
+                    style="text-align: center; padding: 20px;">
+                    <!-- Placeholder container -->
+                    <div class="ph-item" *ngIf="!illustration.thumbnailLoaded">
+                      <div class="ph-col-12">
+                        <div class="ph-picture"></div>
+                        <div class="ph-row">
+                          <!-- Modify to suit your look -->
+                        </div>
+                      </div>
+                    </div>
+
+                    <img
+                      [src]="illustration.thumbnailImage || (illustration.imagePaths.length > 0 ? illustration.imagePaths[0] : 'default_image_path')"
+                      alt="{{ illustration.title }}" style="max-width: 100%; height: auto;"
+                      (load)="onLoadImage(illustration)" [hidden]="!illustration.thumbnailLoaded">
+
+                  </div>
+                  <div class="card-title" [routerLink]="['/illustration', illustration.id]">
+                    <button matTooltip="{{ illustration.title }}" matTooltipClass="custom-tooltip">
+                      {{ illustration.title }}
+                    </button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <ng-template #mindMapper>
+            <div class="card-container">
+              <app-illustration-search></app-illustration-search>
+            </div>
+          </ng-template>
+        </div>
       </div>
     </div>
-    
-    
-    
-    
-    
-    
-    </div>
   </div>
-</div>
-

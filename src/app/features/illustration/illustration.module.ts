@@ -26,6 +26,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { IllustrationCreateComponent } from './illustration-create/illustration-create.component';
+import { IllustrationSearchComponent } from './illustration-list/illustration-search/illustration-search.component';
 @NgModule({
   declarations: [
     IllustrationComponent,
@@ -36,7 +37,8 @@ import { IllustrationCreateComponent } from './illustration-create/illustration-
     
     LnurlPayDialogComponent,
     InvoiceQrCodeComponent,
-    IllustrationCreateComponent
+    IllustrationCreateComponent,
+    IllustrationSearchComponent
   ],
   imports: [
     RouterModule,
