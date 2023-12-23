@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+import { OpenaiService } from 'src/app/core/service/open-ai.service';
 
 @Component({
   selector: 'app-illustration-search',
@@ -7,9 +10,55 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IllustrationSearchComponent implements OnInit {
 
-  constructor() { }
+  showDropdown: string | null = null;
+  form: FormGroup;
+
+  constructor(
+    private http: HttpClient,
+    private openaiService: OpenaiService) {
+    this.form = new FormGroup({
+      userInput: new FormControl(''),
+      workflow: new FormControl(''), // Assuming single selection for simplicity
+      tone: new FormControl(''), // Assuming single selection for simplicity
+    });
+  }
 
   ngOnInit(): void {
   }
+
+  submitData() {
+    debugger
+    if (this.form.valid) {
+      const userInput = this.form.get('userInput').value;
+      this.openaiService.getMindMapper(userInput).subscribe({
+        next: (response) => {
+          debugger
+
+        },
+        error: (err) => {
+          debugger
+          console.error('Error generating mind map:', err);
+        }
+      });
+    }
+  }
+
+
+  toggleDropdown(dropdownKey: string) {
+    debugger
+    this.showDropdown = this.showDropdown === dropdownKey ? null : dropdownKey;
+  }
+
+  selectDropdownOption(dropdownKey: string, option: string) {
+    debugger
+
+    this.form.get(dropdownKey).setValue(option);
+    this.showDropdown = null; // Hide dropdown after selection
+  }
+
+
+  selectTag(prompt: string) {
+  }
+
 
 }

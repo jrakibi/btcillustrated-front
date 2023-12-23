@@ -27,6 +27,7 @@ import {MatInputModule} from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { IllustrationCreateComponent } from './illustration-create/illustration-create.component';
 import { IllustrationSearchComponent } from './illustration-list/illustration-search/illustration-search.component';
+import { MindMapperComponent } from './mind-mapper/mind-mapper.component';
 @NgModule({
   declarations: [
     IllustrationComponent,
@@ -38,7 +39,8 @@ import { IllustrationSearchComponent } from './illustration-list/illustration-se
     LnurlPayDialogComponent,
     InvoiceQrCodeComponent,
     IllustrationCreateComponent,
-    IllustrationSearchComponent
+    IllustrationSearchComponent,
+    MindMapperComponent
   ],
   imports: [
     RouterModule,

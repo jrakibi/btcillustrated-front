@@ -78,7 +78,7 @@
 }
 
 .dropdown-content {
-  display: none;
+  display: none; /* Hide by default */
   position: absolute;
   background-color: #111b21;
   min-width: 160px;
@@ -94,7 +94,6 @@
   padding: 6px 16px;
   text-decoration: none;
   display: block;
-  border-bottom: 1px solid #ccc;
 }
 
 .dropdown-content a:last-child {
@@ -102,12 +101,14 @@
 }
 
 .dropdown-content a:hover {
-  background-color: #f6f6f6;
+  background-color: #1e2b34;
+  cursor: pointer;
 }
 
-.dropdown:hover .dropdown-content {
-  display: block;
+.dropdown-content.show {
+  display: block; /* Show when .show class is applied */
 }
+
 
 .search-options {
   display: flex;

@@ -1,25 +1,40 @@
-<div class="container brand-shadow">
+<form [formGroup]="form" (ngSubmit)="submitData()">
+  <div class="container brand-shadow">
     <div class="search-bar">
-      <input type="text" placeholder="Enter your goal, task, or next big project ...">
-      <i class="fas fa-paper-plane search-icon"></i>
+      <input type="text" formControlName="userInput" placeholder="Enter your goal, task, or next big project ...">
+      <i class="fas fa-paper-plane search-icon" (click)="submitData()"></i>
     </div>
     <div class="tags">
-      <button class="tag-button"><i class="far fa-lightbulb"></i> View prompts</button>
-      <div class="dropdown">
-        <button class="tag-button dropdown-toggle"><i class="fas fa-brain"></i> Mind Maps</button>
-        <div class="dropdown-content">
-          <a>
-            <i class="fas fa-brain"></i> 
-            Option 1
-        </a>
-          <a>
-            <i class="fas fa-brain"></i> 
-            Option 2
-        </a>
+        <button class="tag-button" type="button"><i class="far fa-lightbulb"></i> View prompts</button>
+        <div class="dropdown">
+          <button class="tag-button dropdown-toggle" type="button" (click)="toggleDropdown('workflow')">
+            <i class="fas fa-brain"></i> {{ form.value.workflow || 'Workflow' }}
+          </button>
+          <div class="dropdown-content" [class.show]="showDropdown === 'workflow'">
+            <a (click)="selectDropdownOption('workflow', 'Mind map')">
+              <i class="fas fa-brain"></i> Mind map
+            </a>
+            <a (click)="selectDropdownOption('workflow', 'Notes')">
+              <i class="fas fa-brain"></i> Notes
+            </a>
+          </div>
         </div>
+        <div class="dropdown">
+          <button class="tag-button dropdown-toggle" type="button" (click)="toggleDropdown('tone')">
+            <i class="fas fa-comments"></i> {{ form.value.tone || 'Tone' }}
+          </button>
+          <div class="dropdown-content" [class.show]="showDropdown === 'tone'">
+            <a (click)="selectDropdownOption('tone', 'Technical')">
+              <i class="fas fa-user"></i> Technical
+            </a>
+            <a (click)="selectDropdownOption('tone', 'Non-technical')">
+              <i class="fas fa-user"></i> Non-technical
+            </a>
+          </div>
+        </div>
+        <!-- Repeat for other tags like 'Persona', etc. -->
       </div>
-      <!-- Repeat for other tags like 'Persona', etc. -->
-    </div>
+      
     <div class="search-options">
       <!-- Repeat the structure below for each search option -->
       <div class="option">
