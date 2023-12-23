@@ -185,33 +185,4 @@ onLoadImage(illustration: Illustration) {
     }
   }
 
-
-  onSearchEnter(query: string): void {
-    this.lastSearchQuery = query;
-    debugger
-    if (query) {
-      this.searchService.searchIllustartions(query).subscribe(data => {
-        if (data.length > 0) {
-          this.illustrations = data;
-          this.noResultsFound = false;
-        } else {
-          this.illustrations = [];
-          this.noResultsFound = true;
-        }
-      });
-    } else {
-      this.illustrations = [...this.allIllustrations];
-      this.noResultsFound = false;
-    }
-  }
-
-  onGenerateMindMap(query: string): void {
-    // Placeholder for mind map generation logic
-    // You would call an AI service or another method here to generate the mind map
-    console.log(`Generating mind map for: ${query}`);
-    // After generating, you would then update your illustrations or display the mind map
-  }
-
-  noResultsFound = false;
-  lastSearchQuery = '';
 }

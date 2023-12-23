@@ -1,6 +1,6 @@
 <app-header [headerOptions]="headerOptions"></app-header>
 <header class="header">
-  <!-- <div class="brand-and-search-container">
+  <div class="brand-and-search-container">
     <div class="brand">BTC<span class="illustrated">illustrated</span></div>
     <div class="search-bar">
       <i class="fa fa-search"></i>
@@ -8,23 +8,7 @@
       (input)="onSearch($event.target.value)" 
       placeholder="Search a topic">
     </div>
-  </div> -->
-  <div class="brand-and-search-container">
-    <div class="brand">BTC<span class="illustrated">illustrated</span></div>
-    <div class="search-bar">
-      <i class="fa fa-search"></i>
-      <input type="text" #searchInput
-             (input)="onSearch($event.target.value)" 
-             (keyup.enter)="onSearchEnter(searchInput.value)"
-             placeholder="Search a topic or type to generate a mind map...">
-      <button (click)="onSearchEnter(searchInput.value)">Search</button>
-    </div>
   </div>
-  <div *ngIf="noResultsFound" class="no-results-container">
-    <p>No illustrations found for '{{ lastSearchQuery }}'. Would you like to generate a mind map?</p>
-    <button (click)="onGenerateMindMap(lastSearchQuery)">Generate Mind Map</button>
-  </div>
-  
   <div class="tags-line">
     <span class="tags-title">Popular Tags:</span>
     <div class="tags-container">
