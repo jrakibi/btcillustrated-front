@@ -131,6 +131,13 @@
 }
 
 
+.option span {
+  font-weight: 100;
+}
+
+.option .topic {
+  font-weight: 200;
+}
 
 .brand-shadow {
   --tw-translate-x: -0.5rem;
