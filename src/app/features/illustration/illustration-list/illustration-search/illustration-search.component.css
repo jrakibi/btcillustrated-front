@@ -5,7 +5,7 @@
 }
 
 
-.search-bar {
+.search-bar-ai {
   position: relative;
   display: flex;
   align-items: center;
@@ -13,7 +13,7 @@
   padding-bottom: 10px;
 }
 
-.search-bar input {
+.search-bar-ai input {
   flex-grow: 1;
   padding: 10px;
   border: 1px solid #FCF5EB;
@@ -120,6 +120,7 @@
   align-items: center;
   padding: 10px;
   border-radius: 50px;
+  cursor: pointer;
 }
 
 .option:hover {
@@ -137,6 +138,24 @@
 
 .option .topic {
   font-weight: 200;
+}
+/* Use a pseudo-element to create the blinking cursor */
+.search-bar-ai input[type="text"]::after {
+  content: '';
+
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { background-color: transparent; }
+  50% { background-color: white; }
+}
+
+/* Use a pseudo-element to create the blinking cursor */
+.search-bar-ai input[type="text"]::after {
+  background: -webkit-linear-gradient(90deg, #c97e64, #d8a679 11.46%, #97d9d7 33.33%, #e99e52);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .brand-shadow {

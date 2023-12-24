@@ -1,0 +1,46 @@
+.graph-container {
+  width: 100%;
+  height: 800px; /* Adjust height as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: linear-gradient(90deg, #c97e64, #d8a679 11.46%, #97d9d7 33.33%, #e99e52); */
+
+  /* background: -webkit-linear-gradient(90deg, #c97e64, #d8a679 11.46%, #97d9d7 33.33%, #e99e52); */
+  background: rgb(0,0,0);
+  background: radial-gradient(circle, rgba(236,230,221,1) 0%, rgba(17,27,33,1) 100%);
+
+  background: rgb(236,230,221);
+background: linear-gradient(90deg, rgba(236,230,221,1) 0%, rgba(17,27,33,1) 50%, rgba(0,0,0,1) 100%);
+}
+
+.chart-container {
+  width: 100%;
+  height: 100%;
+}
+
+.node rect {
+  fill: #ffffff; /* Node background color */
+  stroke: black;
+  stroke-width: 1px;
+  rx: 5; /* Border radius for rounded corners */
+}
+
+.node foreignObject div {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  justify-content: flex-start; /* Align items to the left */
+  font-size: 12px;
+  color: #000000; /* Text color */
+  overflow-wrap: break-word;
+}
+.node foreignObject div i {
+  margin-right: 5px; /* Add some space between the icon and the text */
+}
+.edge-path,
+.edge {
+  fill: none;
+  stroke: #ffffff; /* Edge color */
+  stroke-width: 2px;
+}
+

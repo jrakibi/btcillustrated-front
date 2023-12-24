@@ -60,5 +60,18 @@ export class IllustrationSearchComponent implements OnInit {
   selectTag(prompt: string) {
   }
 
-
+  
+  setSearchBarValue(topic: string) {
+    // Set the value of userInput to the chosen topic
+    this.form.get('userInput').setValue(`Create Mind Map for ${topic}`);
+    // Focus on the input field after setting its value
+    setTimeout(() => {
+      const inputElement: any = document.querySelector('.search-bar-ai input[type="text"]');
+      inputElement.focus();
+      // Place the cursor at the end of the input value
+      const valLength = inputElement.value.length;
+      inputElement.setSelectionRange(valLength, valLength);
+    }, 0);
+  }
+  
 }

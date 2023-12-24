@@ -28,6 +28,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { IllustrationCreateComponent } from './illustration-create/illustration-create.component';
 import { IllustrationSearchComponent } from './illustration-list/illustration-search/illustration-search.component';
 import { MindMapperComponent } from './mind-mapper/mind-mapper.component';
+import { NgxGraphModule } from '@swimlane/ngx-graph';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     IllustrationComponent,
@@ -58,7 +62,13 @@ import { MindMapperComponent } from './mind-mapper/mind-mapper.component';
     
     MatInputModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+
+    NgxGraphModule,
+
+
+    DragDropModule,
+
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   entryComponents: [LnurlPayDialogComponent],

@@ -1,1 +1,75 @@
-<p>mind-mapper works!</p>
+<div class="graph-container">
+    <ngx-graph
+      class="chart-container"
+      [view]="[width, height]"
+      [nodes]="nodes"
+      [links]="links"
+      [layout]="layout"
+      [enableZoom]="false"
+      [autoZoom]="false"
+      [panOnZoom]="true"
+      [autoCenter]="true">
+    
+      <!-- <ng-template #nodeTemplate let-node>
+        <svg:g class="node" [attr.transform]="'translate(' + node.dimension.width / 2 + ',' + node.dimension.height / 2 + ')'">
+          <svg:rect [attr.width]="node.dimension.width" [attr.height]="node.dimension.height" [attr.fill]="node.data.color"></svg:rect>
+          <svg:text alignment-baseline="central" [attr.x]="10" [attr.y]="node.dimension.height / 2">{{ node.label }}</svg:text>
+        </svg:g>
+      </ng-template> -->
+    
+      <ng-template #nodeTemplate let-node>
+        <svg:g class="node" [attr.transform]="'translate(' + (node.fixedWidth / 2) + ',' + (node.dynamicHeight / 2) + ')'">
+          <svg:rect [attr.width]="node.fixedWidth" [attr.height]="node.dynamicHeight" [attr.fill]="node.data.color" stroke="black"></svg:rect>
+          <svg:foreignObject [attr.width]="node.fixedWidth" [attr.height]="node.dynamicHeight">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: center; height: 100%; padding-left: 10px;">
+              <span style="font-size: 14px; padding-right: 4px;">●</span> <!-- Use a Unicode character -->
+              <div style="text-align: left; overflow-wrap: break-word; padding-right: 10px;">
+                <i class="far fa-user"></i> 
+
+                {{ node.label }}
+              </div>
+            </div>
+          </svg:foreignObject>
+        </svg:g>
+      </ng-template>
+      
+
+      
+      <!-- <ng-template #nodeTemplate let-node>
+        <svg:g class="node"
+            [attr.transform]="'translate(' + node.dimension.width / 2 + ',' + node.dimension.height / 2 + ')'">
+            <svg:g *ngIf="node.id === 'node-0'">
+            <svg:rect [attr.width]="node.dimension.width" [attr.height]="node.dimension.height" fill="none" stroke="#000"></svg:rect>
+            <svg:foreignObject [attr.width]="node.dimension.width" [attr.height]="node.dimension.height">
+              <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: center; height: 100%;">
+                <i class="fas fa-brain" style="font-size: 24px;"></i>
+                <div style="margin-left: 10px;">
+                  <div style="font-size: 16px; font-weight: bold;">Main Topic:</div>
+                  <div style="font-size: 16px;">{{ node.label }}</div>
+                </div>
+              </div>
+            </svg:foreignObject>
+          </svg:g>
+            <svg:g *ngIf="node.id !== 'node-0'">
+                <svg:rect [attr.width]="node.dimension.width" [attr.height]="node.dimension.height"
+                    [attr.fill]="node.data.color"></svg:rect>
+                <svg:text alignment-baseline="central" [attr.x]="10" [attr.y]="node.dimension.height / 2">{{ node.label }}</svg:text>
+            </svg:g>
+
+        </svg:g>
+    </ng-template> -->
+      
+      <ng-template #linkTemplate let-link>
+        <svg:path
+          class="edge-path"
+          [attr.d]="calculateCustomPath(link)"
+          stroke-width="2"
+          stroke="black"></svg:path>
+      </ng-template>
+      
+      
+      <!-- You can add more templates for labels, arrows, etc., if needed -->
+    
+    </ngx-graph>
+  </div>
+  

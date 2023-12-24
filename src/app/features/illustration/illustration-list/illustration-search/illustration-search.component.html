@@ -1,63 +1,67 @@
 <form [formGroup]="form" (ngSubmit)="submitData()">
   <div class="container brand-shadow">
-    <div class="search-bar">
+
+    <div class="search-bar-ai">
       <input type="text" formControlName="userInput" placeholder="Enter your goal, task, or next big project ...">
       <i class="fas fa-paper-plane search-icon" (click)="submitData()"></i>
     </div>
     <div class="tags">
-        <button class="tag-button" type="button"><i class="far fa-lightbulb"></i> View prompts</button>
-        <div class="dropdown">
-          <button class="tag-button dropdown-toggle" type="button" (click)="toggleDropdown('workflow')">
-            <i class="fas fa-brain"></i> {{ form.value.workflow || 'Workflow' }}
-          </button>
-          <div class="dropdown-content" [class.show]="showDropdown === 'workflow'">
-            <a (click)="selectDropdownOption('workflow', 'Mind map')">
-              <i class="fas fa-brain"></i> Mind map
-            </a>
-            <a (click)="selectDropdownOption('workflow', 'Notes')">
-              <i class="fas fa-brain"></i> Notes
-            </a>
-          </div>
+      <!-- <button class="tag-button" type="button"><i class="far fa-lightbulb"></i> View prompts</button> -->
+      <div class="dropdown">
+        <button class="tag-button dropdown-toggle" type="button" (click)="toggleDropdown('workflow')">
+          <i class="fas fa-brain"></i> {{ form.value.workflow || 'Workflow' }}
+        </button>
+        <div class="dropdown-content" [class.show]="showDropdown === 'workflow'">
+          <a (click)="selectDropdownOption('workflow', 'Mind map')">
+            <i class="far fa-lightbulb"></i> Mind map
+          </a>
+          <a (click)="selectDropdownOption('workflow', 'Notes')">
+            <i class="far fa-lightbulb"></i> Notes
+          </a>
         </div>
-        <div class="dropdown">
-          <button class="tag-button dropdown-toggle" type="button" (click)="toggleDropdown('tone')">
-            <i class="fas fa-comments"></i> {{ form.value.tone || 'Tone' }}
-          </button>
-          <div class="dropdown-content" [class.show]="showDropdown === 'tone'">
-            <a (click)="selectDropdownOption('tone', 'Technical')">
-              <i class="fas fa-user"></i> Technical
-            </a>
-            <a (click)="selectDropdownOption('tone', 'Non-technical')">
-              <i class="fas fa-user"></i> Non-technical
-            </a>
-          </div>
-        </div>
-        <!-- Repeat for other tags like 'Persona', etc. -->
       </div>
-      
+      <div class="dropdown">
+        <button class="tag-button dropdown-toggle" type="button" (click)="toggleDropdown('tone')">
+          <i class="fas fa-comments"></i> {{ form.value.tone || 'Tone' }}
+        </button>
+        <div class="dropdown-content" [class.show]="showDropdown === 'tone'">
+          <a (click)="selectDropdownOption('tone', 'Technical')">
+            <i class="far fa-user"></i> Technical
+          </a>
+          <a (click)="selectDropdownOption('tone', 'Non-technical')">
+            <i class="far fa-user"></i> Non-technical
+          </a>
+        </div>
+      </div>
+
+      <button class="tag-button" type="file"><i class="fa fa-cloud-upload"></i> Upload fille (.pdf, .txt)</button>
+      <!-- Repeat for other tags like 'Persona', etc. -->
+    </div>
+
     <div class="search-options">
       <!-- Repeat the structure below for each search option -->
-      <div class="option">
-        <i class="fas fa-star"></i> 
+      <div class="option" (click)="setSearchBarValue('AssumeUTXO ')">
+        <i class="far fa-star"></i>
         <span>Create Mind Map for <span class="topic">AssumeUTXO</span> ... </span>
-        
+
       </div>
-      <div class="option">
-        <i class="fas fa-star"></i> 
+      <div class="option" (click)="setSearchBarValue('P2SH ')">
+        <i class="far fa-star"></i>
         <span>Create Mind Map for <span class="topic">P2SH</span> ... </span>
       </div>
-      <div class="option">
-        <i class="fas fa-star"></i> 
+      <div class="option" (click)="setSearchBarValue('Transaction pinning attack ')">
+        <i class="far fa-star"></i>
         <span>Create Mind Map for <span class="topic">Transaction pinning attack</span> ... </span>
       </div>
-      <div class="option">
-        <i class="fas fa-star"></i> 
-        <span>Create Mind Map for <span class="topic">Segwit</span>... </span>
+      <div class="option" (click)="setSearchBarValue('Segwit')">
+        <i class="far fa-star"></i>
+        <span>Create Mind Map for <span class="topic">Segwit </span>... </span>
       </div>
-      <div class="option">
-        <i class="fas fa-star"></i> 
+      <div class="option" (click)="setSearchBarValue(' ')">
+        <i class="far fa-star"></i>
         <span>Create Mind Map for <span class="topic"> ...</span> </span>
       </div>
       <!-- Add more options here -->
     </div>
-</div>
+  </div>
+</form>
