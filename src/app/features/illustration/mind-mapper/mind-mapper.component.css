@@ -1,19 +1,115 @@
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full height of the viewport */
+  background-color: #111b21; /* Set the background to #111b21 */
+}
+
+app-header {
+  flex-shrink: 0; /* Ensure the header does not shrink */
+}
+
+.app-container {
+  display: flex;
+  height: 100vh; /* Full viewport height */
+  background-color: #111b21; /* Set the background to #111b21 */
+
+  flex-grow: 1; /* Grow to fill the remaining space */
+  overflow: hidden; /* Prevent scrollbars if the content is too large */
+}
+
+
+.history-panel {
+  width: 250px; /* Fixed width for the history panel */
+  background-color: #111b21; /* Dark grey for the side panel */
+  overflow-y: auto;
+  color: white; /* Light text for readability */
+  border-right: 1px solid #343436;
+}
+
+.card {
+  margin: 8px;
+  padding: 16px;
+  background-color: #111b21; /* Slightly lighter grey for cards */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Shadow for depth */
+  color: white; /* Light text for readability */
+}
+
+.workspace {
+  flex-grow: 1; /* Take the remaining space */
+  display: flex;
+  flex-direction: column;
+}
+
+.workspace-header, .footer {
+  flex-shrink: 0; /* Don't allow these to grow or shrink */
+}
+.workspace-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: #111b21; /* Dark grey for the header */
+  border-bottom: 1px solid #343436; /* Slightly lighter border */
+  color: white; /* Light text for readability */
+}
+
+.header-left .fas {
+  margin-right: 8px;
+  color: #8e8e93; /* Subtle color for icons */
+}
+
+.mind-map-title {
+  font-weight: bold;
+  color: white; /* Light text for readability */
+}
+
+.header-center .fas {
+  margin-right: 8px;
+  cursor: pointer;
+  color: #8e8e93; /* Subtle color for icons */
+}
+
+.share-button {
+  background-color: #0a84ff; /* Blue for the button */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
 .graph-container {
+  flex-grow: 1;
+  /* Keep the rest of your graph container styles */
+}
+
+.footer {
+  padding: 16px;
+  background-color: #111b21; /* Dark grey for the footer */
+  border-top: 1px solid #343436; /* Slightly lighter border */
+}
+
+.search-bar {
   width: 100%;
-  height: 800px; /* Adjust height as needed */
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #5e5e5e; /* Grey border for the search bar */
+  background-color: #111b21; /* Slightly lighter grey */
+  color: white; /* Light text for readability */
+}
+
+
+
+.graph-container {
+  flex-grow: 1; /* Allow the graph container to take up the remaining space */
+  overflow: auto; /* Add scroll only if needed */
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: linear-gradient(90deg, #c97e64, #d8a679 11.46%, #97d9d7 33.33%, #e99e52); */
-
-  /* background: -webkit-linear-gradient(90deg, #c97e64, #d8a679 11.46%, #97d9d7 33.33%, #e99e52); */
-  background: rgb(0,0,0);
-  background: radial-gradient(circle, rgba(236,230,221,1) 0%, rgba(17,27,33,1) 100%);
-
-  background: rgb(236,230,221);
-background: linear-gradient(90deg, rgba(236,230,221,1) 0%, rgba(17,27,33,1) 50%, rgba(0,0,0,1) 100%);
+  background-color: #111b21; /* Same as app-container for consistency */
 }
-
 .chart-container {
   width: 100%;
   height: 100%;

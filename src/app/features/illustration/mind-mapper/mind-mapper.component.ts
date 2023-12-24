@@ -1,5 +1,8 @@
 import { ChangeDetectorRef, Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Edge, Node, Layout } from '@swimlane/ngx-graph';
+import { LnurlPayDialogComponent } from '../lnurl-pay-dialog/lnurl-pay-dialog.component';
+import { HeaderOptions } from 'src/app/shared/header/header-options';
 
 interface MyNode extends Node {
   label: string;
@@ -18,16 +21,20 @@ interface MyLink extends Edge {
   selector: 'app-mind-mapper',
   templateUrl: './mind-mapper.component.html',
   styleUrls: ['./mind-mapper.component.css'],
-  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class MindMapperComponent implements OnInit {
-  width = 2000; // Example width
-  height = 1000; // Example height
+  // width = 2000; // Example width
+  // height = 1000; // Example height
+  width = 100; // 100% of the viewport width
+  height = 80; // 80% of the viewport height, leaving some space for headers and footers
+
   nodes: MyNode[] = [];
   links: MyLink[] = [];
   layout: String | Layout = 'dagre';
   idCounter = 0; // Counter to keep track of unique IDs for nodes and links
 
+
+  headerOptions: HeaderOptions
   private jsonData = {
     "title": "assumeUTXO",
     "summary": "assumeUTXO is a tool used in Bitcoin development to simulate the state of the Unspent Transaction Output (UTXO) set.",
@@ -59,11 +66,18 @@ export class MindMapperComponent implements OnInit {
     ]
 }
 
+constructor(public dialog: MatDialog) {
+}
 
   ngOnInit(): void {
     const graphData = this.transformToGraphData(this.jsonData);
     this.nodes = graphData.nodes;
     this.links = graphData.links;
+    this.headerOptions = {
+      isUnderlineDisplayed: true,
+      isSlideShow: true,
+      isDarkMode: true,
+    }
   }
 
   private generateId(): string {
@@ -160,4 +174,15 @@ export class MindMapperComponent implements OnInit {
     }
     return lineCount * lineHeight;
   }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(LnurlPayDialogComponent, 
+
+      );
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed', result);
+    });
+  }
+
 }

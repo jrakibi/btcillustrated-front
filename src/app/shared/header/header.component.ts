@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit, OnChanges {
   @Input() headerOptions: HeaderOptions;
   @Input() showFeature: boolean;
   isDarkMode: boolean = true
+  isUnderlineDisplayed = true
   isTransparent: boolean = false
   showFeatures: boolean = false;
 
@@ -37,6 +38,7 @@ export class HeaderComponent implements OnInit, OnChanges {
     if (this.headerOptions) {
       this.isDarkMode = this.headerOptions.isDarkMode ?? this.isDarkMode;
       this.isTransparent = this.headerOptions.isTransparent ?? this.isTransparent;
+      this.isUnderlineDisplayed = this.headerOptions.isUnderlineDisplayed ?? this.isUnderlineDisplayed;
     }
   }
 

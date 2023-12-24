@@ -1,5 +1,5 @@
 <!-- <header [class]="isDarkMode ? 'header dark-mode' : 'header light-mode'" [class.expanded]="showFeatures"> -->
-  <header [class]="headerClass" [class.expanded]="showFeatures">
+  <header [class]="headerClass" [class.header-underline]="isUnderlineDisplayed" [class.expanded]="showFeatures">
     <div class="logo-container">
       <a  [routerLink]="['/home']">
         <img src="./../../assets/icons/btcillustrated-icon.png" alt="WhatsApp Main Page" *ngIf="isDarkMode">
