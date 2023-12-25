@@ -21,7 +21,7 @@ import { ThankYouDialogComponent } from './thank-you-dialog/thank-you-dialog.com
         HeaderComponent,
         LoaderComponent,
         ThankYouDialogComponent,
-
+        TruncatePipe
 
     ],
     imports: [
@@ -32,6 +32,7 @@ import { ThankYouDialogComponent } from './thank-you-dialog/thank-you-dialog.com
     ],
     exports: [
         HeaderComponent,
+        TruncatePipe
     ],
 
 })
