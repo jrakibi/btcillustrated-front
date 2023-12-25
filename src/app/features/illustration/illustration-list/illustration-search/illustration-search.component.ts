@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AppContext } from 'src/app/core/service/app-context';
 import { OpenaiService } from 'src/app/core/service/open-ai.service';
 
 @Component({
@@ -18,7 +19,9 @@ export class IllustrationSearchComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private router: Router,
-    private openaiService: OpenaiService) {
+    private openaiService: OpenaiService,
+    private appContext: AppContext,
+    ) {
     this.form = new FormGroup({
       userInput: new FormControl(''),
       workflow: new FormControl(''), // Assuming single selection for simplicity
@@ -31,18 +34,23 @@ export class IllustrationSearchComponent implements OnInit {
 
   submitData() {
     debugger
+    this.isLoading = true; 
+
     if (this.form.valid) {
       const userInput = this.form.get('userInput').value;
       this.openaiService.getMindMapper(userInput).subscribe({
         next: (response) => {
           debugger
+          this.appContext.storeMindMapperData(response); // Store the data
           this.isLoading = false; // Hide loading animation
-          this.router.navigate(['/mindmapper']);
+          this.router.navigate(['/illustration', 'mindmapper']);
         },
         error: (err) => {
           debugger
           this.isLoading = false; // Hide loading animation
           console.error('Error generating mind map:', err);
+
+
         }
       });
     }

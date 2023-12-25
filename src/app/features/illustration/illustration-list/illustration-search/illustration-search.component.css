@@ -34,7 +34,7 @@
 .search-icon {
   position: absolute;
   right: 10px;
-
+  cursor: pointer;
 
   background: -webkit-linear-gradient(90deg, #c97e64, #d8a679 11.46%, #97d9d7 33.33%, #e99e52);
   -webkit-background-clip: text;
@@ -163,7 +163,7 @@
   --tw-translate-x: -0.5rem;
   --tw-translate-y: -0.5rem;
   transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  border-width: 3px;
+  border-width: 1px;
   --tw-border-opacity: 1;
   --tw-shadow: 10px 10px 0 #FCF5EB;
   --tw-shadow-colored: 10px 10px 0 var(--tw-shadow-color);

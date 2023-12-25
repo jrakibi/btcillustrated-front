@@ -250,7 +250,8 @@ app-header {
   overflow-wrap: break-word;
 }
 .node foreignObject div i {
-  margin-right: 5px; /* Add some space between the icon and the text */
+  /* margin-right: 10px;  */
+  margin: 0 16px;
 }
 .edge-path,
 .edge {

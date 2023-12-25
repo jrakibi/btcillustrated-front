@@ -7,9 +7,9 @@
         <div class="box search-bar-ai">
           <input type="text" formControlName="userInput" placeholder="Enter the bitcoin topic you're looking for ...">
           <!-- Conditionally display either the icon or the loader -->
-          <i *ngIf="isLoading" class="fas fa-paper-plane search-icon" (click)="submitData()"></i>
+          <i *ngIf="!isLoading" class="fas fa-paper-plane search-icon" (click)="submitData()"></i>
           <!-- This is your loader, which will show when isLoading is true -->
-          <div *ngIf="!isLoading" class="loader"></div>
+          <div *ngIf="isLoading" class="loader"></div>
         </div>
       
       <div class="tags">
