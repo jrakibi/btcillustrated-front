@@ -34,6 +34,7 @@
     "jquery": "^3.7.1",
     "light-bolt11-decoder": "^3.0.0",
     "material-icons": "^1.13.8",
+    "ng-animated-border": "^2.0.0",
     "ngx-quill": "^13.4.0",
     "ngx-slick-carousel": "^0.5.1",
     "ngx-twitter-widgets": "^1.0.3",

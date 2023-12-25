@@ -87,6 +87,7 @@ constructor(public dialog: MatDialog,
 }
 
   ngOnInit(): void {
+    
     this.form = new FormGroup({
       userInput: new FormControl(''),
       workflow: new FormControl(''), // Assuming single selection for simplicity

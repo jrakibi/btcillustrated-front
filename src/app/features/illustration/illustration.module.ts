@@ -31,6 +31,7 @@ import { MindMapperComponent } from './mind-mapper/mind-mapper.component';
 import { NgxGraphModule } from '@swimlane/ngx-graph';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgAnimatedBorderModule } from 'ng-animated-border'
 
 @NgModule({
   declarations: [
@@ -68,6 +69,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
     DragDropModule,
+
+    NgAnimatedBorderModule
 
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

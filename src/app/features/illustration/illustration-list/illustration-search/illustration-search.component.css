@@ -10,13 +10,13 @@
   display: flex;
   align-items: center;
   border-bottom: 1px solid #FCF5EB;
-  padding-bottom: 10px;
+  /* padding-bottom: 10px; */
 }
 
 .search-bar-ai input {
   flex-grow: 1;
   padding: 10px;
-  border: 1px solid #FCF5EB;
+  border: unset;
   border-radius: 4px;
   font-weight: 200;
   /* background: transparent; */
@@ -52,7 +52,8 @@
   border: 1px solid #98938d;
   border-radius: 20px;
   margin-right: 10px;
-  padding: 5px 15px;
+  padding: 2px 10px;
+  font-size: small;
   color: #FCF5EB;
   font-weight: 100;
   display: flex;
@@ -207,3 +208,81 @@
     box-shadow: 0 0 18px #FCF5EB;
   }
 } */
+
+
+.myCssAnimation {
+  padding: 1rem;
+  text-align: center;
+  color:white;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+
+  background: linear-gradient(270deg, #e922e9, #f75d21, #5543f7, #00dbff, #92db32);
+  background-size: 600% 600%;
+  animation: borderAnimation 4s ease infinite;
+}
+
+@keyframes borderAnimation {
+0% { background-position: 0 50%; }
+50% { background-position: 100% 50%; }
+100% { background-position: 0 50%; }
+}
+
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #0000;
+  border-radius: 12px;
+  background: linear-gradient(#111b21, #111b21) padding-box, linear-gradient( var(--angle), #d49a72, #9ad7d1 ) border-box;
+  animation: 8s rotate linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+
+
+.loader {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  border: 2px solid #d8a679;
+  margin-right: 10px;
+  border-radius: 10rem;
+  background: linear-gradient(#c97e64, #97d9d7, #e99e52);
+  box-shadow: 0px 0px 100px -50px black;
+  animation: animate 1s linear infinite;
+}
+
+.loader::before {
+  position: absolute;
+  content: "";
+  background: #111b21;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  border-radius: 10rem;
+  box-shadow: inset 0px 0px 100px -70px #111b21;
+}
+
+@keyframes animate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

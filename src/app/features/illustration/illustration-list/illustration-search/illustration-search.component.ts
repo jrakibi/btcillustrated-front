@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { OpenaiService } from 'src/app/core/service/open-ai.service';
 
 @Component({
@@ -12,9 +13,11 @@ export class IllustrationSearchComponent implements OnInit {
 
   showDropdown: string | null = null;
   form: FormGroup;
+  isLoading = false; // New property to manage loader state
 
   constructor(
     private http: HttpClient,
+    private router: Router,
     private openaiService: OpenaiService) {
     this.form = new FormGroup({
       userInput: new FormControl(''),
@@ -33,10 +36,12 @@ export class IllustrationSearchComponent implements OnInit {
       this.openaiService.getMindMapper(userInput).subscribe({
         next: (response) => {
           debugger
-
+          this.isLoading = false; // Hide loading animation
+          this.router.navigate(['/mindmapper']);
         },
         error: (err) => {
           debugger
+          this.isLoading = false; // Hide loading animation
           console.error('Error generating mind map:', err);
         }
       });
