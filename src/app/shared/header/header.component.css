@@ -442,3 +442,7 @@ li {
 }
 
 /* ... other styles */
+
+.header-underline {
+  border-bottom: 1px solid #343436;
+}

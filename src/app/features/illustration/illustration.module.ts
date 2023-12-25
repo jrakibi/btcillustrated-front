@@ -26,6 +26,14 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { IllustrationCreateComponent } from './illustration-create/illustration-create.component';
+import { IllustrationSearchComponent } from './illustration-list/illustration-search/illustration-search.component';
+import { MindMapperComponent } from './mind-mapper/mind-mapper.component';
+import { NgxGraphModule } from '@swimlane/ngx-graph';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgAnimatedBorderModule } from 'ng-animated-border'
+import { TruncatePipe } from 'src/app/core/pipe/truncate-pipe';
+
 @NgModule({
   declarations: [
     IllustrationComponent,
@@ -36,7 +44,10 @@ import { IllustrationCreateComponent } from './illustration-create/illustration-
     
     LnurlPayDialogComponent,
     InvoiceQrCodeComponent,
-    IllustrationCreateComponent
+    IllustrationCreateComponent,
+    IllustrationSearchComponent,
+    MindMapperComponent,
+    TruncatePipe
   ],
   imports: [
     RouterModule,
@@ -54,7 +65,15 @@ import { IllustrationCreateComponent } from './illustration-create/illustration-
     
     MatInputModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+
+    NgxGraphModule,
+
+
+    DragDropModule,
+
+    NgAnimatedBorderModule
+
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   entryComponents: [LnurlPayDialogComponent],

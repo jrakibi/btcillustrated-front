@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { DialogueResponse } from '../model/ai-interfaces';
+import { DialogueResponse, MindMapperResponse } from '../model/ai-interfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -25,4 +25,11 @@ export class OpenaiService {
       return this.http.post<DialogueResponse>(url, emailContent);
     }
   
+    getMindMapper(topic: string): Observable<MindMapperResponse> {
+      debugger
+      const url = `${this.baseUrl}/mind-mapper?topic=${topic}`;
+      // Since we are expecting a JSON object, we don't need to specify a response type here
+      return this.http.get<MindMapperResponse>(url, { responseType: 'json' }); // Expecting text
+    }
+
 }

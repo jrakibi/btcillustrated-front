@@ -1,0 +1,609 @@
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full height of the viewport */
+  background-color: #111b21; /* Set the background to #111b21 */
+}
+app-header {
+  flex-shrink: 0; /* Ensure the header does not shrink */
+}
+
+.app-container {
+  display: flex;
+  height: 100vh; /* Full viewport height */
+  background-color: #111b21; /* Set the background to #111b21 */
+
+  flex-grow: 1; /* Grow to fill the remaining space */
+  overflow: hidden; /* Prevent scrollbars if the content is too large */
+}
+
+
+.history-panel {
+  width: 200px;
+  background-color: #111b21;
+  overflow-y: auto;
+  color: white;
+  border-right: 1px solid #343436;
+}
+
+.history-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  font-size: 15px;
+}
+
+.history-header .fas {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.card {
+  margin: 12px;
+  background-color: #1a2b33;
+  border: 1px solid #2e3e48;
+  border-radius: 8px;
+  position: relative;
+  cursor: pointer;
+}
+
+.image-container {
+  width: 100%;
+  height: 90px; /* Adjust as needed */
+  /* background-color: black;  */
+}
+
+.image-container img {
+  width: 60%;
+  margin-left: 14%;
+  height: 100%;
+  object-fit: contain;
+  display: block; /* Hide image if error in loading */
+}
+
+.fallback-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.card-tag {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: #1a2b33;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 14px;
+  border: 1px solid #2e3e48;
+}
+
+.card-tag2 {
+  position: absolute;
+  bottom: -2px;
+  left: -2px;
+  background-color: #eeede1;
+  color: #111b21;
+  padding: 0px 4px;
+  border-radius: 0 6px;
+  font-size: 14px;
+  border: 2px solid #343436;
+}
+
+
+.card {
+  margin: 8px;
+  padding: 16px;
+  background-color: #111b21; /* Slightly lighter grey for cards */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Shadow for depth */
+  color: white; /* Light text for readability */
+}
+
+.workspace {
+  flex-grow: 1; /* Take the remaining space */
+  display: flex;
+  flex-direction: column;
+}
+
+.workspace-header, .footer {
+  flex-shrink: 0; /* Don't allow these to grow or shrink */
+}
+.workspace-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: #111b21; /* Dark grey for the header */
+  border-bottom: 1px solid #343436; /* Slightly lighter border */
+  color: white; /* Light text for readability */
+}
+
+.header-left .fas {
+  margin-right: 8px;
+  color: #eeede1; /* Subtle color for icons */
+}
+
+.mind-map-title {
+  font-weight: bold;
+  color: #eeede1; /* Light text for readability */
+}
+
+.header-center .fas {
+  margin-right: 8px;
+  cursor: pointer;
+  color: #8e8e93; /* Subtle color for icons */
+}
+.header-icon {
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  margin: 0 10px;
+  background: #1a2b33;
+  padding: 6px 10px;
+  border-radius: 10px;
+  object-fit: contain;
+  object-position: center;
+  border: 1px solid #eeede1;
+}
+
+.header-icon:hover {
+  background: #111b21;
+}
+
+.generate-button {
+  background-color: #111b21;
+  color: #eeede1;
+  border: 1px solid #eeede1;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.graph-container {
+  flex-grow: 1;
+  /* Keep the rest of your graph container styles */
+}
+
+
+.search-bar {
+  width: 100%;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #5e5e5e; /* Grey border for the search bar */
+  background-color: #111b21; /* Slightly lighter grey */
+  color: white; /* Light text for readability */
+}
+
+
+
+.graph-container {
+  flex-grow: 1; /* Allow the graph container to take up the remaining space */
+  overflow: auto; /* Add scroll only if needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #111b21; /* Same as app-container for consistency */
+}
+
+.graph-container {
+  position: relative;
+  /* ... other styles ... */
+}
+
+.zoom-controls {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.zoom-button {
+  background-color: #1a2b33;
+  color: #eeede1;
+  border: 0.7px solid #eeede1;
+  margin: 3px;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.zoom-button:hover {
+  background-color: #111b21;
+}
+
+.zoom-button i {
+  pointer-events: none; /* Prevents the icon from blocking the click event */
+}
+
+
+.chart-container {
+  width: 100%;
+  height: 100%;
+}
+
+.node rect {
+  fill: #ffffff; /* Node background color */
+  stroke: black;
+  stroke-width: 1px;
+  rx: 5; /* Border radius for rounded corners */
+}
+.root-node {
+  fill: #fbd414 !important; /* Node background color */
+  stroke: black;
+  stroke-width: 1px;
+  rx: 5; /* Border radius for rounded corners */
+}
+.sections-node {
+  fill: #eeede1 !important; /* Node background color */
+  stroke: black;
+  stroke-width: 1px;
+  rx: 5; /* Border radius for rounded corners */
+}
+.summaryy-node {
+  fill: #eeede1 !important; /* Node background color */
+}
+
+.node foreignObject div {
+  /* display: flex; */
+  align-items: center; /* Align items vertically */
+  justify-content: flex-start; /* Align items to the left */
+  font-size: 12px;
+  color: #000000; /* Text color */
+  overflow-wrap: break-word;
+}
+.node foreignObject div i {
+  /* margin-right: 10px;  */
+  margin: 0 16px;
+}
+.edge-path,
+.edge {
+  fill: none;
+  stroke: #ffffff; /* Edge color */
+  stroke-width: 2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Additional Footer Styles */
+.footer {
+  background-color: #111b21; /* Dark grey for the footer */
+  border-top: 1px solid #343436; /* Slightly lighter border */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  background: #1a2b33;
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid #343436;    
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  background: #1a2b3373;
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid #343436;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 10px; /* Space between cards */
+}
+
+.card-preview {
+  width: 160px; /* Fixed width for cards */
+  height: 90px; /* Fixed height for cards */
+  margin: 0 10px; /* Space between cards */
+  background-color: #1a2b33;
+  border: 2px solid #343436; /* Solid border for normal cards */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.card-preview.dashed {
+  border-style: dashed; /* Dashed border for the 'Regenerate' card */
+}
+
+.card-preview2 {
+  width: 140px; /* Fixed width for cards */
+  height: 90px; /* Fixed height for cards */
+  margin: 0 10px; /* Space between cards */
+  background-color: #111b21;
+  border: 1px solid #343436; /* Solid border for normal cards */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.card-preview2:hover {
+  background-color: #192b32;
+}
+
+.card-preview2.dashed {
+  border-style: dashed; /* Dashed border for the 'Regenerate' card */
+  color: #eeede2;
+  font-size: 14px;
+}
+
+
+.card-preview img, .card-preview2 img  {
+  width: auto;
+  height: 84%;
+  object-fit: cover;
+}
+.card-text {
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  /* Additional styling if needed */
+}
+.card-preview .fallback {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+}
+
+.card-preview .regenerate-icon {
+  margin-right: 8px;
+}
+
+.search-container {
+  width: 100%; /* Full width of the container */
+  max-width: 600px; /* Maximum width of the search container */
+  margin: 0 auto; /* Centering the search container */
+}
+
+.search-bar-ai {
+  position: relative;
+  margin-top: 20px;
+
+    border-bottom: unset;
+    padding-bottom: unset;
+}
+
+.search-bar-ai input {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 50px;
+  /* border: none; */
+  background-color: #1a2b33;
+  color: white;
+}
+
+.search-bar-ai input:focus + .tags {
+  display: flex; /* Show tags when the input is focused */
+}
+
+.search-bar-ai .search-icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  cursor: pointer;
+}
+
+.tags {
+  flex-wrap: wrap;
+}
+
+
+
+.tag-button {
+  /* background-color: #0a84ff; */
+  margin-right: 10px;
+  /* border: none; */
+  border-radius: 20px;
+  /* padding: 8px 16px; */
+  color: white;
+  cursor: pointer;
+  font-size: 11px;
+  padding: 4px 12px;
+  border: 1px solid #525252;
+}
+
+/* Responsive adjustments might be necessary depending on the full layout */
+@media (max-width: 768px) {
+  .search-container {
+    width: 80%;
+  }
+}
+
+/* Assuming .dropdown-content is your dropdown container */
+.dropdown-content {
+  position: absolute;
+  bottom: 100%; /* Positions the dropdown above the dropdown button */
+  left: 0;
+  min-width: 150px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  margin-bottom: 10px;
+}
+
+/* If your dropdown button is at the bottom of the viewport, add a class to it when it's active, e.g., .dropdown-active */
+.dropdown-active .dropdown-content {
+  top: auto; /* Removes the bottom positioning */
+  bottom: 100%; /* Positions the dropdown below the dropdown button */
+}
+.dropdown-content a {
+  font-size: smaller;
+}
+
+
+
+
+
+
+
+
+/* Additional styles for the main topic node */
+.main-topic {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.main-topic .node-icon {
+  font-size: 20px; /* Adjust size as needed */
+  margin-right: 10px;
+}
+
+.main-topic-title {
+  font-weight: bold;
+  font-size: 16px; /* Adjust size as needed */
+}
+
+.main-topic-subtitle {
+  font-size: 14px; /* Adjust size as needed */
+  color: #ccc; /* Lighter color for subtitle */
+}
+
+/* Additional global styles, if not already defined */
+.node-content {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-left: 10px;
+}
+
+.node-text {
+  text-align: left;
+  overflow-wrap: break-word;
+  padding-right: 10px;
+}
+
+.root-node-text {
+  text-align: left;
+  overflow-wrap: break-word;
+  padding-right: 10px;
+  margin-left: 16px;
+  font-size: 20px !important;
+}
+
+
+.node foreignObject div {
+  /* display: flex; */
+  align-items: center; /* Align items vertically */
+  justify-content: flex-start; /* Align items to the left */
+  font-size: 16px;
+  color: #000000; /* Text color */
+  overflow-wrap: break-word;
+}
+
+/* Define the styles for each level */
+.level-0 {
+  /* styles for root nodes */
+}
+.level-1 {
+  /* styles for first-level nodes */
+}
+.level-2 {
+  /* styles for second-level nodes */
+}
+/* Add more levels as needed */
+
+
+.summary-node {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px;
+  height: 100%;
+}
+
+.summary-node .node-header {
+  font-weight: bold;
+  margin-bottom: 5px; /* Adjust space between header and body as needed */
+  font-size: 1em; /* Adjust font size as needed */
+  width: 100%;
+  text-align: left;
+}
+
+.summary-node .node-body {
+  font-weight: normal;
+  text-align: left;
+  width: 100%;
+}
+
+
+.references-node {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  height: 100%;
+  text-align: left;
+}
+
+.references-node .node-header {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 1em;
+}
+
+.references-node .node-body ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.references-node .node-body li {
+  margin-bottom: 5px;
+  line-height: 1.5; /* Adjust line height for better readability */
+  display: flex;
+  align-items: center;
+}
+
+.references-node .node-body .reference-dot {
+  height: 5px;
+  width: 5px;
+  background-color: black; /* Choose a color that fits the design */
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px; /* Space between the dot and the text */
+}
+
+.references-node .node-body a {
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
+

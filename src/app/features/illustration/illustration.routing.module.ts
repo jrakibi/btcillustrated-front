@@ -8,6 +8,8 @@ import { IllustrationListComponent } from './illustration-list/illustration-list
 import { IllustrationResourcesComponent } from './illustration-resources/illustration-resources.component';
 import { IllustrationGptComponent } from './illustration-gpt/illustration-gpt.component';
 import { IllustrationCreateComponent } from './illustration-create/illustration-create.component';
+import { IllustrationSearchComponent } from './illustration-list/illustration-search/illustration-search.component';
+import { MindMapperComponent } from './mind-mapper/mind-mapper.component';
 
 const routes: Routes = [
   {
@@ -18,6 +20,14 @@ const routes: Routes = [
         path: '',
         component: IllustrationListComponent,
         pathMatch: 'full'
+      },
+      {
+        path: 'search',
+        component: IllustrationSearchComponent,
+      },
+      {
+        path: 'mindmapper',
+        component: MindMapperComponent,
       },
       {
         path: 'form/:id',

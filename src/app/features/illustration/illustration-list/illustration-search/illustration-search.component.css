@@ -1,0 +1,304 @@
+.container {
+  border: 1px solid #FCF5EB;
+  padding: 20px;
+  width: 80%;
+}
+
+
+.search-bar-ai {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #FCF5EB;
+  /* padding-bottom: 10px; */
+}
+
+.search-bar-ai input {
+  flex-grow: 1;
+  padding: 10px;
+  border: unset;
+  border-radius: 4px;
+  font-weight: 500;
+  /* background: transparent; */
+  /* color: white; */
+
+
+  /* color: transparent;
+  background-image: linear-gradient(90deg, #c97e64, #d8a679 11.46%, #97d9d7 33.33%, #e99e52);
+  -webkit-background-clip: text; */
+  background: -webkit-linear-gradient(90deg, #c97e64, #d8a679 11.46%, #97d9d7 33.33%, #e99e52);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+
+  background: -webkit-linear-gradient(90deg, #c97e64, #d8a679 11.46%, #97d9d7 33.33%, #e99e52);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tags {
+  display: flex;
+  padding-top: 10px;
+  margin-bottom: 20px;
+}
+
+.tag-button {
+  background: transparent;
+  border: 1px solid #98938d;
+  border-radius: 20px;
+  margin-right: 10px;
+  padding: 2px 10px;
+  font-size: small;
+  color: #FCF5EB;
+  font-weight: 100;
+  display: flex;
+  align-items: center;
+}
+
+.tag-button i {
+  margin-right: 5px;
+}
+
+.tag-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #FCF5EB;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none; /* Hide by default */
+  position: absolute;
+  background-color: #111b21;
+  min-width: 160px;
+  box-shadow: 0 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 4px;
+  border: 1px solid;
+  margin-top: 10px;
+}
+
+.dropdown-content a {
+  color: #FCF5EB;
+  padding: 6px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #1e2b34;
+  cursor: pointer;
+}
+
+.dropdown-content.show {
+  display: block; /* Show when .show class is applied */
+}
+
+
+.search-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: #1e2b34;
+}
+
+.option i {
+  margin-right: 10px;
+}
+
+
+.option span {
+  font-weight: 100;
+}
+
+.option .topic {
+  font-weight: 200;
+}
+/* Use a pseudo-element to create the blinking cursor */
+.search-bar-ai input[type="text"]::after {
+  content: '';
+
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { background-color: transparent; }
+  50% { background-color: white; }
+}
+
+/* Use a pseudo-element to create the blinking cursor */
+.search-bar-ai input[type="text"]::after {
+  background: -webkit-linear-gradient(90deg, #c97e64, #d8a679 11.46%, #97d9d7 33.33%, #e99e52);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brand-shadow {
+  --tw-translate-x: -0.5rem;
+  --tw-translate-y: -0.5rem;
+  transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  --tw-shadow: 10px 10px 0 #FCF5EB;
+  --tw-shadow-colored: 10px 10px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow,0 0 #FCF5EB),var(--tw-ring-shadow,0 0 #FCF5EB),var(--tw-shadow);
+}
+
+/* .brand-shadow {
+  position: relative;
+  animation: animateGradient 8s infinite alternate, animateShadow 2s infinite alternate;
+  border-radius: 8px;
+  background-size: 300% 300%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.brand-shadow::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  z-index: -1;
+  background: inherit;
+  filter: blur(10px);
+}
+
+@keyframes animateGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes animateShadow {
+  0% {
+    box-shadow: 0 0 8px #FCF5EB;
+  }
+  100% {
+    box-shadow: 0 0 18px #FCF5EB;
+  }
+} */
+
+
+.myCssAnimation {
+  padding: 1rem;
+  text-align: center;
+  color:white;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+
+  background: linear-gradient(270deg, #e922e9, #f75d21, #5543f7, #00dbff, #92db32);
+  background-size: 600% 600%;
+  animation: borderAnimation 4s ease infinite;
+}
+
+@keyframes borderAnimation {
+0% { background-position: 0 50%; }
+50% { background-position: 100% 50%; }
+100% { background-position: 0 50%; }
+}
+
+
+.box {
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #0000 !important;
+  border-radius: 12px;
+  background: linear-gradient(#111b21, #111b21) padding-box, linear-gradient( var(--angle), #d49a72, #9ad7d1 ) border-box;
+  animation: 8s rotate linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+
+
+.loader {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  border: 2px solid #d8a679;
+  margin-right: 10px;
+  border-radius: 10rem;
+  background: linear-gradient(#c97e64, #97d9d7, #e99e52);
+  box-shadow: 0px 0px 100px -50px black;
+  animation: animate 1s linear infinite;
+}
+
+.loader::before {
+  position: absolute;
+  content: "";
+  background: #111b21;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  border-radius: 10rem;
+  box-shadow: inset 0px 0px 100px -70px #111b21;
+}
+
+@keyframes animate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ask-gpt-title h2 {
+  color: #FCF5EB; /* Adjust the color to match your design */
+  text-align: center; /* Center the title */
+  font-size: 2rem; /* Adjust the size as needed */
+  margin-bottom: 10px; /* Space below the title */
+  /* Add padding, background or other styles as needed to match the design of the form */
+}
+
+.ask-gpt-title .no-result {
+  color: #FCF5EB; /* Adjust the color to match your design */
+  text-align: center; /* Center the title */
+  font-size: 1rem; /* Adjust the size as needed */
+  margin-bottom: 10px; /* Space below the title */
+  /* Add padding, background or other styles as needed to match the design of the form */
+}

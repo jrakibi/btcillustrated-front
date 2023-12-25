@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, OnInit, Output, Renderer2 } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Power2 } from 'gsap';
@@ -16,6 +16,7 @@ import { LnurlPayDialogComponent } from '../lnurl-pay-dialog/lnurl-pay-dialog.co
   styleUrls: ['./illustration-list.component.css']
 })
 export class IllustrationListComponent implements OnInit {
+
   illustrations: Illustration[] = [];
   allIllustrations: Illustration[] = [];
   filteredIllustrations: Illustration[] = [];
@@ -64,6 +65,11 @@ export class IllustrationListComponent implements OnInit {
           thumbnailLoaded: false
         }));
         this.allIllustrations = this.illustrations;
+
+
+          // TO DELETE
+        // this.illustrations = []
+        // this.allIllustrations = []
       },
       error => {
         console.error('Error fetching illustrations', error);
@@ -142,6 +148,7 @@ export class IllustrationListComponent implements OnInit {
   
  // Method to clear all filters
  clearFilters(): void {
+  this.isCreateMindMapDisplayed = false
   this.selectedTags.clear();
   this.selectedCategory = null;
   this.activeTag = null;
@@ -185,4 +192,9 @@ onLoadImage(illustration: Illustration) {
     }
   }
 
+  isCreateMindMapDisplayed: boolean = false
+  createMindMap() {
+    debugger
+    this.isCreateMindMapDisplayed  = true
+  }
 }

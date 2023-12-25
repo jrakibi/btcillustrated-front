@@ -43,6 +43,7 @@
   width: 60%; /* Width of search bar increased */
   max-width: 800px; /* Maximum width of search bar */
   border: 1px solid white;
+  margin-right: 40px;
 }
 
 .search-bar i {
@@ -560,3 +561,34 @@ legend {
   height: 120px;
   width: 100%;
 }
+
+
+.box {
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #0000 !important;
+  padding: 7px;
+  border-radius: 12px;
+  background: linear-gradient(#111b21, #111b21) padding-box, linear-gradient( var(--angle), #d49a72, #9ad7d1 ) border-box;
+  animation: 8s rotate linear infinite;
+}
+
+.box:hover span{
+  background: -webkit-linear-gradient(90deg, #c97e64, #d8a679 11.46%, #97d9d7 33.33%, #e99e52);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+

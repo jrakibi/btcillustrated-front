@@ -9,3 +9,16 @@ export interface DialogueResponse {
     text: string;
   }
   
+
+  // mind-mapper-response.model.ts
+
+export interface MindMapperResponse {
+  title: string;
+  summary: string;
+  details: Detail[];
+}
+
+export interface Detail {
+  title: string;
+  explanations: string[];
+}
