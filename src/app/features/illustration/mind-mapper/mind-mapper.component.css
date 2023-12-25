@@ -158,8 +158,8 @@ app-header {
 
 .generate-button {
   background-color: #111b21;
-  color: #fbd414;
-  border: 1px solid #fbd414;
+  color: #eeede1;
+  border: 1px solid #eeede1;
   padding: 8px 16px;
   border-radius: 8px;
   cursor: pointer;
@@ -239,6 +239,15 @@ app-header {
   stroke: black;
   stroke-width: 1px;
   rx: 5; /* Border radius for rounded corners */
+}
+.sections-node {
+  fill: #eeede1 !important; /* Node background color */
+  stroke: black;
+  stroke-width: 1px;
+  rx: 5; /* Border radius for rounded corners */
+}
+.summaryy-node {
+  fill: #eeede1 !important; /* Node background color */
 }
 
 .node foreignObject div {
@@ -529,3 +538,72 @@ app-header {
   /* styles for second-level nodes */
 }
 /* Add more levels as needed */
+
+
+.summary-node {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px;
+  height: 100%;
+}
+
+.summary-node .node-header {
+  font-weight: bold;
+  margin-bottom: 5px; /* Adjust space between header and body as needed */
+  font-size: 1em; /* Adjust font size as needed */
+  width: 100%;
+  text-align: left;
+}
+
+.summary-node .node-body {
+  font-weight: normal;
+  text-align: left;
+  width: 100%;
+}
+
+
+.references-node {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  height: 100%;
+  text-align: left;
+}
+
+.references-node .node-header {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 1em;
+}
+
+.references-node .node-body ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.references-node .node-body li {
+  margin-bottom: 5px;
+  line-height: 1.5; /* Adjust line height for better readability */
+  display: flex;
+  align-items: center;
+}
+
+.references-node .node-body .reference-dot {
+  height: 5px;
+  width: 5px;
+  background-color: black; /* Choose a color that fits the design */
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px; /* Space between the dot and the text */
+}
+
+.references-node .node-body a {
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
+

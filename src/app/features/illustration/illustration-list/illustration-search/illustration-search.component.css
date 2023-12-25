@@ -233,7 +233,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 3px solid #0000;
+  border: 3px solid #0000 !important;
   border-radius: 12px;
   background: linear-gradient(#111b21, #111b21) padding-box, linear-gradient( var(--angle), #d49a72, #9ad7d1 ) border-box;
   animation: 8s rotate linear infinite;

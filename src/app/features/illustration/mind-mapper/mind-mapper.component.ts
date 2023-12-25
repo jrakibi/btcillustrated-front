@@ -98,7 +98,8 @@ export class MindMapperComponent implements OnInit {
       tone: new FormControl(''), // Assuming single selection for simplicity
     });
 
-    const mindMapData: MindMapperResponse = this.appContext.retrieveMindMapperData();
+    // const mindMapData: MindMapperResponse = this.appContext.retrieveMindMapperData();
+    const mindMapData = this.jsonData;
     if (mindMapData) {
       this.jsonData = mindMapData; // Assign the dynamic data to the jsonData property
       const graphData = this.transformToGraphData(this.jsonData);
@@ -162,16 +163,16 @@ export class MindMapperComponent implements OnInit {
   }
 
   submitData() {
-    debugger
+    
     if (this.form.valid) {
       const userInput = this.form.get('userInput').value;
       this.openaiService.getMindMapper(userInput).subscribe({
         next: (response) => {
-          debugger
+          
 
         },
         error: (err) => {
-          debugger
+          
           console.error('Error generating mind map:', err);
         }
       });
@@ -198,6 +199,58 @@ export class MindMapperComponent implements OnInit {
     };
     nodes.push(rootNode);
 
+    // Create Summary Node
+    const summaryNode: MyNode = {
+      id: this.generateId(),
+      label: 'Summary\n' + jsonData.summary, // Add the summary text here
+      data: { summary: jsonData.summary},
+      fixedWidth: 400, // Width can be adjusted as needed
+      dynamicHeight: this.estimateHeight('Summary\n' + jsonData.summary, 200), // Adjust the estimateHeight call as needed
+      level: 1 // New intermediate level
+    };
+    nodes.push(summaryNode);
+
+       // Create Section Node
+       const sectionNode: MyNode = {
+        id: this.generateId(),
+        label: 'Sections\n', // Add the summary text here
+        data: { section: "Sections"},
+        fixedWidth: 400, // Width can be adjusted as needed
+        dynamicHeight: this.estimateHeight('Sections\n', 200) + 50, // Adjust the estimateHeight call as needed
+        level: 1 // New intermediate level
+      };
+      nodes.push(sectionNode);
+  
+    // Create References Node with dummy data
+    const referencesNode: MyNode = {
+      id: this.generateId(),
+      label: 'References\n1. Bitcoin Whitepaper\n2. Satoshi Nakamoto’s Forum Posts\n3. Other Relevant Research', // Replace with actual references
+      data: { explanations: 'References\n1. Bitcoin Whitepaper\n2. Satoshi Nakamoto’s Forum Posts\n3. Other Relevant Research'},
+      fixedWidth: 400, // Width can be adjusted as needed
+      dynamicHeight: this.estimateHeight('References\n1. Bitcoin Whitepaper\n2. Satoshi Nakamoto’s Forum Posts\n3. Other Relevant Research', 200), // Adjust the estimateHeight call as needed
+      level: 1 // New intermediate level
+    };
+    nodes.push(referencesNode);
+
+    links.push({
+      id: this.generateId(),
+      source: rootNode.id,
+      target: summaryNode.id,
+      label: '' // Optional: add a label if needed
+    });
+    links.push({
+      id: this.generateId(),
+      source: rootNode.id,
+      target: referencesNode.id,
+      label: '' // Optional: add a label if needed
+    });
+    links.push({
+      id: this.generateId(),
+      source: rootNode.id,
+      target: sectionNode.id,
+      label: '' // Optional: add a label if needed
+    });
+
     jsonData.details.forEach(detail => {
       let estimatedHeight = this.estimateHeight(detail.title, 200);
 
@@ -205,15 +258,15 @@ export class MindMapperComponent implements OnInit {
         id: this.generateId(),
         label: detail.title,
         data: { explanations: detail.explanations },
-        fixedWidth: 200, // Set this to your desired width
+        fixedWidth: 400, // Set this to your desired width
         dynamicHeight: estimatedHeight + 40, // Set the estimated height
-        level: 1
+        level: 2 // Now this is level 2
       };
       nodes.push(detailNode);
 
       links.push({
         id: this.generateId(),
-        source: rootNode.id,
+        source: sectionNode.id, // Changed from rootNode.id to summaryNode.id
         target: detailNode.id,
         label: '' // Optional: add a label if needed
       });
@@ -227,7 +280,7 @@ export class MindMapperComponent implements OnInit {
           data: {},
           fixedWidth: 500, // Set this to your desired width
           dynamicHeight: estimatedHeight, // Set the estimated height
-          level: 2
+          level: 3
         };
         nodes.push(explanationNode);
 
@@ -266,7 +319,7 @@ export class MindMapperComponent implements OnInit {
 
 
   private estimateHeight(text: string, nodeWidth: number): number {
-    debugger
+    
     const lineHeight = 20; // Set an approximate line height
     const charsPerLine = nodeWidth / 10; // Estimate chars per line based on an average character width
     const lineCount = Math.ceil(text.length / charsPerLine);
@@ -291,12 +344,12 @@ export class MindMapperComponent implements OnInit {
 
 
   toggleDropdown(dropdownKey: string) {
-    debugger
+    
     this.showDropdown = this.showDropdown === dropdownKey ? null : dropdownKey;
   }
 
   selectDropdownOption(dropdownKey: string, option: string) {
-    debugger
+    
 
     this.form.get(dropdownKey).setValue(option);
     this.showDropdown = null; // Hide dropdown after selection
