@@ -18,7 +18,7 @@
   padding: 10px;
   border: unset;
   border-radius: 4px;
-  font-weight: 200;
+  font-weight: 500;
   /* background: transparent; */
   /* color: white; */
 
@@ -230,7 +230,7 @@
 
 
 .box {
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   border: 3px solid #0000 !important;
@@ -285,4 +285,20 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.ask-gpt-title h2 {
+  color: #FCF5EB; /* Adjust the color to match your design */
+  text-align: center; /* Center the title */
+  font-size: 2rem; /* Adjust the size as needed */
+  margin-bottom: 10px; /* Space below the title */
+  /* Add padding, background or other styles as needed to match the design of the form */
+}
+
+.ask-gpt-title .no-result {
+  color: #FCF5EB; /* Adjust the color to match your design */
+  text-align: center; /* Center the title */
+  font-size: 1rem; /* Adjust the size as needed */
+  margin-bottom: 10px; /* Space below the title */
+  /* Add padding, background or other styles as needed to match the design of the form */
 }

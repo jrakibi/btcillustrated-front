@@ -53,36 +53,37 @@ export class MindMapperComponent implements OnInit {
   form: FormGroup;
 
   headerOptions: HeaderOptions
-  public jsonData = {
-    "title": "assumeUTXO",
-    "summary": "assumeUTXO is a tool used in Bitcoin development to simulate the state of the Unspent Transaction Output (UTXO) set.",
-    "details": [
-      {
-        "title": "Simulating UTXO Set",
-        "explanations": [
-          "The UTXO set represents all the unspent transaction outputs in the Bitcoin network.",
-          "assumeUTXO is a tool that allows developers to create a simulated UTXO set for testing purposes.",
-          "This tool helps developers analyze and understand the behavior of their code without interacting with the real Bitcoin network."
-        ]
-      },
-      {
-        "title": "Testing Bitcoin Code",
-        "explanations": [
-          "assumeUTXO is particularly useful for testing Bitcoin code that relies on the state of the UTXO set.",
-          "Developers can use assumeUTXO to create specific scenarios and test how their code handles different UTXO states.",
-          "By simulating different UTXO sets, developers can ensure their code functions correctly in various scenarios."
-        ]
-      },
-      {
-        "title": "Debugging and Optimization",
-        "explanations": [
-          "assumeUTXO can also be used for debugging and optimizing Bitcoin code.",
-          "Developers can simulate specific UTXO sets to identify potential issues or bottlenecks in their code.",
-          "By analyzing the behavior of their code with different UTXO sets, developers can make improvements and optimize performance."
-        ]
-      }
-    ]
-  }
+  // public jsonData = {
+  //   "title": "assumeUTXO",
+  //   "summary": "assumeUTXO is a tool used in Bitcoin development to simulate the state of the Unspent Transaction Output (UTXO) set.",
+  //   "details": [
+  //     {
+  //       "title": "Simulating UTXO Set",
+  //       "explanations": [
+  //         "The UTXO set represents all the unspent transaction outputs in the Bitcoin network.",
+  //         "assumeUTXO is a tool that allows developers to create a simulated UTXO set for testing purposes.",
+  //         "This tool helps developers analyze and understand the behavior of their code without interacting with the real Bitcoin network."
+  //       ]
+  //     },
+  //     {
+  //       "title": "Testing Bitcoin Code",
+  //       "explanations": [
+  //         "assumeUTXO is particularly useful for testing Bitcoin code that relies on the state of the UTXO set.",
+  //         "Developers can use assumeUTXO to create specific scenarios and test how their code handles different UTXO states.",
+  //         "By simulating different UTXO sets, developers can ensure their code functions correctly in various scenarios."
+  //       ]
+  //     },
+  //     {
+  //       "title": "Debugging and Optimization",
+  //       "explanations": [
+  //         "assumeUTXO can also be used for debugging and optimizing Bitcoin code.",
+  //         "Developers can simulate specific UTXO sets to identify potential issues or bottlenecks in their code.",
+  //         "By analyzing the behavior of their code with different UTXO sets, developers can make improvements and optimize performance."
+  //       ]
+  //     }
+  //   ]
+  // }
+  public jsonData
 
   constructor(public dialog: MatDialog,
     private appContext: AppContext,
@@ -98,8 +99,8 @@ export class MindMapperComponent implements OnInit {
       tone: new FormControl(''), // Assuming single selection for simplicity
     });
 
-    // const mindMapData: MindMapperResponse = this.appContext.retrieveMindMapperData();
-    const mindMapData = this.jsonData;
+    const mindMapData: MindMapperResponse = this.appContext.retrieveMindMapperData();
+    // const mindMapData = this.jsonData;
     if (mindMapData) {
       this.jsonData = mindMapData; // Assign the dynamic data to the jsonData property
       const graphData = this.transformToGraphData(this.jsonData);
@@ -114,19 +115,19 @@ export class MindMapperComponent implements OnInit {
         {
           title: 'Mind Map 1',
           imageUrl: 'assets/btcIllustrated/mindmap/test.png',
-          tag: 'Notes'
+          tag: 'AssumeUTXO'
         },
         {
           title: 'Mind Map 2',
           // imageUrl: 'https://source.unsplash.com/random/200x120',
-          imageUrl: 'assets/btcIllustrated/mindmap/test.png',
-          tag: 'Mind Map'
+          imageUrl: 'assets/btcIllustrated/mindmap/test2.png',
+          tag: 'Segwit'
         },
         {
           title: 'Mind Map 3',
           // imageUrl: 'https://source.unsplash.com/random/200x120',
-          imageUrl: 'assets/btcIllustrated/mindmap/test.png',
-          tag: 'Chart'
+          imageUrl: 'assets/btcIllustrated/mindmap/test3.png',
+          tag: 'CTV'
         }
         // ...add more if needed
       ];
@@ -136,21 +137,24 @@ export class MindMapperComponent implements OnInit {
         {
           title: 'Mind Map 2',
           // imageUrl: 'https://source.unsplash.com/random/200x120',
-          imageUrl: 'assets/btcIllustrated/mindmap/mindmap.png',
-          tag: 'Ver1'
+          imageUrl: 'assets/btcIllustrated/mindmap/test.png',
+          // imageUrl: 'assets/btcIllustrated/mindmap/mindmap.png',
+          tag: 'Version 1'
         },
         {
           title: 'Mind Map 3',
           // imageUrl: 'https://source.unsplash.com/random/200x120',
           // imageUrl: null,
-          imageUrl: 'assets/btcIllustrated/mindmap/notes.png',
-          tag: 'Ver2'
+          imageUrl: 'assets/btcIllustrated/mindmap/test3.png',
+          // imageUrl: 'assets/btcIllustrated/mindmap/notes.png',
+          tag: 'Version 2'
         },
         {
           title: 'Mind Map 1',
           // imageUrl: null,
-          imageUrl: 'assets/btcIllustrated/mindmap/chart.png',
-          tag: 'Ver3'
+          imageUrl: 'assets/btcIllustrated/mindmap/test3.png',
+          // imageUrl: 'assets/btcIllustrated/mindmap/chart.png',
+          tag: 'Version 3'
         },
       ];
     } else {
@@ -367,4 +371,12 @@ export class MindMapperComponent implements OnInit {
     this.zoomLevel = Math.max(this.zoomLevel - this.zoomStep, 0.5); // min zoom level 0.5
     this.graphComponent.zoomTo(this.zoomLevel);
   }
+
+  truncateUrl(url: string, length: number): string {
+    if (url.length > length) {
+      return url.substring(0, length) + '...';
+    }
+    return url;
+  }
+  
 }

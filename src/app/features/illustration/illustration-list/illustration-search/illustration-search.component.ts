@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AppContext } from 'src/app/core/service/app-context';
@@ -11,6 +11,7 @@ import { OpenaiService } from 'src/app/core/service/open-ai.service';
   styleUrls: ['./illustration-search.component.css']
 })
 export class IllustrationSearchComponent implements OnInit {
+  @Output() createMindMapClicked = new EventEmitter<boolean>();
 
   showDropdown: string | null = null;
   form: FormGroup;
@@ -87,4 +88,8 @@ export class IllustrationSearchComponent implements OnInit {
     }, 0);
   }
   
+  createMindMap() {
+    debugger
+    this.createMindMapClicked.emit(true)
+  }
 }

@@ -23,7 +23,7 @@
                     <img src="{{ map.imageUrl }}" alt="Mind Map" onerror="this.style.display='none'" />
                     <div class="fallback-image" *ngIf="!map.imageUrl">No Image</div>
                 </div>
-                <div class="card-tag">assumeUTXO</div>
+                <div class="card-tag">{{map.tag}}</div>
             </div>
         </div>
 
@@ -76,9 +76,9 @@
                                 <!-- Custom HTML for root node -->
 
                                 <svg:rect class="root-node" [attr.width]="node.fixedWidth"
-                                    [attr.height]="node.dynamicHeight" [attr.fill]="node.data.color" stroke="black"
+                                    [attr.height]="node.dynamicHeight + 40" [attr.fill]="node.data.color" stroke="black"
                                     fill="#fbd414"></svg:rect>
-                                <svg:foreignObject [attr.width]="node.fixedWidth" [attr.height]="node.dynamicHeight">
+                                <svg:foreignObject [attr.width]="node.fixedWidth" [attr.height]="node.dynamicHeight + 40">
                                     <div xmlns="http://www.w3.org/1999/xhtml" class="node-content main-topic">
                                         <i class="fas fa-pencil-alt node-icon" style="    font-size: 20px;
                                       padding: 16px;
@@ -86,13 +86,12 @@
                                       color: white;
                                       border-radius: 10px;"></i> <!-- Pencil icon for the main topic -->
                                         <div class="root-node-text">
-                                            <div class="main-topic-title">Main Topic</div>
-                                            <div class="main-topic-subtitle">{{ node.label }}</div>
+                                            <div class="main-topic-title" style="font-size: 18px !important;">Main Topic: </div>
+                                            <div class="main-topic-subtitle" style="font-size: 20px !important;">{{ node.label }}</div>
                                         </div>
                                     </div>
-                                </svg:foreignObject>                             
-                             </ng-container>
-                          
+                                </svg:foreignObject>
+                            </ng-container>
 
 
 
@@ -105,67 +104,93 @@
 
 
 
-                                     <!-- Level 1 Summary Node -->
-                                     <ng-container *ngIf="node.level === 1 && node.label.startsWith('Summary')">
-                                        <svg:rect class="summaryy-node"  [attr.width]="node.fixedWidth" [attr.height]="node.dynamicHeight"
-                                            [attr.fill]="node.data.color" stroke="black"></svg:rect>
-                                        <svg:foreignObject [attr.width]="node.fixedWidth" [attr.height]="node.dynamicHeight">
-                                          <div xmlns="http://www.w3.org/1999/xhtml" class="node-content summary-node">
-                                            <div class="node-header">Summary</div>
-                                            <div class="node-body">{{ node.data.summary }}</div>
-                                          </div>
-                                        </svg:foreignObject>
-                                      </ng-container>
-                                      
 
-                                      <ng-container *ngIf="node.level === 1 && node.label.startsWith('Sections')">
-                                        <!-- Custom HTML for root node -->
-                                        <svg:rect class="sections-node" [attr.width]="node.fixedWidth"
-                                            [attr.height]="node.dynamicHeight" [attr.fill]="node.data.color" stroke="black"
-                                            fill="#fbd414"></svg:rect>
-                                        <svg:foreignObject [attr.width]="node.fixedWidth" [attr.height]="node.dynamicHeight">
-                                            <div xmlns="http://www.w3.org/1999/xhtml" class="node-content main-topic">
-                                                <i class="fa fa-sitemap node-icon" style="font-size: 20px;
+                            <!-- Level 1 Summary Node -->
+                            <ng-container *ngIf="node.level === 1 && node.label.startsWith('Summary')">
+                                <svg:rect class="summaryy-node" [attr.width]="node.fixedWidth"
+                                    [attr.height]="node.dynamicHeight" [attr.fill]="node.data.color" stroke="black">
+                                </svg:rect>
+                                <svg:foreignObject [attr.width]="node.fixedWidth" [attr.height]="node.dynamicHeight">
+                                    <div xmlns="http://www.w3.org/1999/xhtml" class="node-content summary-node">
+                                        <div class="node-header">Summary</div>
+                                        <div class="node-body">{{ node.data.summary }}</div>
+                                    </div>
+                                </svg:foreignObject>
+                            </ng-container>
+
+
+                            <ng-container *ngIf="node.level === 1 && node.label.startsWith('Sections')">
+                                <!-- Custom HTML for root node -->
+                                <svg:rect class="sections-node" [attr.width]="node.fixedWidth"
+                                    [attr.height]="node.dynamicHeight" [attr.fill]="node.data.color" stroke="black"
+                                    fill="#fbd414"></svg:rect>
+                                <svg:foreignObject [attr.width]="node.fixedWidth" [attr.height]="node.dynamicHeight">
+                                    <div xmlns="http://www.w3.org/1999/xhtml" class="node-content main-topic">
+                                        <i class="fa fa-sitemap node-icon" style="font-size: 20px;
                                               padding: 16px;
                                               background: #111b21;
                                               color: white;
                                               border-radius: 10px;"></i> <!-- Pencil icon for the main topic -->
-                                                <div class="root-node-text">
-                                                    <div class="main-topic-title">Sections</div>
-                                                </div>
-                                            </div>
-                                        </svg:foreignObject>                             
-                                     </ng-container>
+                                        <div class="root-node-text">
+                                            <div class="main-topic-title">Sections</div>
+                                        </div>
+                                    </div>
+                                </svg:foreignObject>
+                            </ng-container>
 
                             <!-- Level 1 References Node -->
                             <ng-container *ngIf="node.level === 1 && node.label.startsWith('References')">
-                                <svg:rect [attr.width]="node.fixedWidth" [attr.height]="node.dynamicHeight + 50"
+                                <svg:rect [attr.width]="node.fixedWidth" [attr.height]="node.dynamicHeight + 70"
                                     [attr.fill]="node.data.color" stroke="black"></svg:rect>
-                                <svg:foreignObject [attr.width]="node.fixedWidth" [attr.height]="node.dynamicHeight + 50">
-                                  <div xmlns="http://www.w3.org/1999/xhtml" class="node-content summary-node">
-                                    <div class="node-header">References</div>
-                                    <div class="node-body">
-                                      <ul>
-                                        <li><span class="reference-dot"></span><a href="http://example.com/link1" target="_blank">Reference 1</a></li>
-                                        <li><span class="reference-dot"></span><a href="http://example.com/link2" target="_blank">Reference 2</a></li>
-                                        <li><span class="reference-dot"></span><a href="http://example.com/link3" target="_blank">Reference 3</a></li>
-                                        <!-- Add more list items as needed -->
-                                      </ul>
+                                <svg:foreignObject [attr.width]="node.fixedWidth"
+                                    [attr.height]="node.dynamicHeight + 70">
+                                    <div xmlns="http://www.w3.org/1999/xhtml" class="node-content summary-node">
+                                        <div class="node-header">References</div>
+                                        <div class="node-body">
+                                            <ul>
+
+
+
+
+                                                <li><span class="reference-dot"></span><a
+                                                        href="https://bitcoinops.org/en/topics/assumeutxo"
+                                                        target="_blank">{{
+                                                        truncateUrl('https://bitcoinops.org/en/topics/assumeutxo', 30)
+                                                        }}</a></li>
+                                                <li><span class="reference-dot"></span><a
+                                                        href="https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-April/016891.html "
+                                                        target="_blank">{{
+                                                        truncateUrl('https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-April/016891.html',
+                                                        30) }}</a></li>
+                                                <li><span class="reference-dot"></span><a
+                                                        href="https://bitcoin.stackexchange.com/questions/117534#117535 "
+                                                        target="_blank">{{
+                                                        truncateUrl('https://bitcoin.stackexchange.com/questions/117534#117535',
+                                                        30) }}</a></li>
+                                                <li><span class="reference-dot"></span><a
+                                                        href="https://btctranscripts.com/bitcoin-core-dev-tech/2019-06/2019-06-07-assumeutxo "
+                                                        target="_blank">{{
+                                                        truncateUrl('https://btctranscripts.com/bitcoin-core-dev-tech/2019-06/2019-06-07-assumeutxo',
+                                                        30) }}</a></li>
+                                                <!-- [4]: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2019-April/016825.html 
+[5]: https://btctranscripts.com/bitcoin-core-dev-tech/2023-09/assumeUTXO-update  -->
+                                                <!-- Add more list items as needed -->
+                                            </ul>
+                                        </div>
                                     </div>
-                                  </div>
                                 </svg:foreignObject>
-                              </ng-container>
-                              
-                              
+                            </ng-container>
 
 
 
-  <!-- Add additional ng-container templates for other levels as needed -->
 
-  
 
-                              <!-- Level 1 node -->
-                              <ng-container *ngIf="node.level === 2">
+                            <!-- Add additional ng-container templates for other levels as needed -->
+
+
+
+                            <!-- Level 1 node -->
+                            <ng-container *ngIf="node.level === 2">
                                 <svg:rect [attr.width]="node.fixedWidth" [attr.height]="node.dynamicHeight"
                                     [attr.fill]="node.data.color" stroke="black"></svg:rect>
                                 <svg:foreignObject [attr.width]="node.fixedWidth" [attr.height]="node.dynamicHeight">
@@ -179,14 +204,14 @@
                                         </div>
                                     </div>
                                 </svg:foreignObject>
-                              </ng-container>
-                          
-                              <!-- Level 2 node -->
-                              <ng-container *ngIf="node.level === 3">
+                            </ng-container>
+
+                            <!-- Level 2 node -->
+                            <ng-container *ngIf="node.level === 3">
                                 <svg:rect [attr.width]="node.fixedWidth" [attr.height]="node.dynamicHeight"
                                     [attr.fill]="node.data.color" stroke="black"></svg:rect>
                                 <svg:foreignObject [attr.width]="node.fixedWidth" [attr.height]="node.dynamicHeight">
-                                    <div xmlns="http://www.w3.org/1999/xhtml" class="level-two-node" 
+                                    <div xmlns="http://www.w3.org/1999/xhtml" class="level-two-node"
                                         style="display: flex; align-items: center; height: 100%; padding-left: 12px; padding-right: 14px;">
                                         <span style="font-size: 14px; padding-right: 14px;">●</span>
                                         <!-- <div style="text-align: left; overflow-wrap: break-word; padding-right: 10px;">
@@ -198,11 +223,12 @@
 
 
                                         <span class="node-label">{{ node.label }}</span>
-                                        <i class="fas fa-ellipsis-v node-options-icon" (click)="toggleNodeOptions(node)"></i>
-                                      
+                                        <i class="fas fa-ellipsis-v node-options-icon"
+                                            (click)="toggleNodeOptions(node)"></i>
+
                                     </div>
                                 </svg:foreignObject>
-                              </ng-container>
+                            </ng-container>
 
 
 

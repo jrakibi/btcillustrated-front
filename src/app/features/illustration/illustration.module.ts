@@ -32,6 +32,7 @@ import { NgxGraphModule } from '@swimlane/ngx-graph';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgAnimatedBorderModule } from 'ng-animated-border'
+import { TruncatePipe } from 'src/app/core/pipe/truncate-pipe';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { NgAnimatedBorderModule } from 'ng-animated-border'
     InvoiceQrCodeComponent,
     IllustrationCreateComponent,
     IllustrationSearchComponent,
-    MindMapperComponent
+    MindMapperComponent,
+    TruncatePipe
   ],
   imports: [
     RouterModule,
