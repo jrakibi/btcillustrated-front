@@ -1,8 +1,10 @@
 import { ChangeDetectorRef, Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Edge, Node, Layout } from '@swimlane/ngx-graph';
+import { Edge, GraphComponent, Node } from '@swimlane/ngx-graph';
 import { LnurlPayDialogComponent } from '../lnurl-pay-dialog/lnurl-pay-dialog.component';
 import { HeaderOptions } from 'src/app/shared/header/header-options';
+import { FormGroup, FormControl } from '@angular/forms';
+import { OpenaiService } from 'src/app/core/service/open-ai.service';
 
 interface MyNode extends Node {
   label: string;
@@ -13,14 +15,24 @@ interface MyNode extends Node {
   // You may need to add these properties based on the layout calculation ngx-graph performs
 }
 
+interface MindMap {
+  title: string;
+  imageUrl: string;
+  tag: string;
+}
+interface Layout {
+  title: string;
+  imageUrl: string;
+  tag: string;
+}
+
 interface MyLink extends Edge {
   label?: string;
 }
-
 @Component({
   selector: 'app-mind-mapper',
   templateUrl: './mind-mapper.component.html',
-  styleUrls: ['./mind-mapper.component.css'],
+  styleUrls: [ './../illustration-list/illustration-search/illustration-search.component.css', './mind-mapper.component.css',],
 })
 export class MindMapperComponent implements OnInit {
   // width = 2000; // Example width
@@ -32,10 +44,14 @@ export class MindMapperComponent implements OnInit {
   links: MyLink[] = [];
   layout: String | Layout = 'dagre';
   idCounter = 0; // Counter to keep track of unique IDs for nodes and links
+  mindMaps: MindMap[] = [];
+  layoutsMindMapper: Layout[] = [];
+  showTags: boolean = true;
 
+  form: FormGroup;
 
   headerOptions: HeaderOptions
-  private jsonData = {
+  public jsonData = {
     "title": "assumeUTXO",
     "summary": "assumeUTXO is a tool used in Bitcoin development to simulate the state of the Unspent Transaction Output (UTXO) set.",
     "details": [
@@ -66,10 +82,16 @@ export class MindMapperComponent implements OnInit {
     ]
 }
 
-constructor(public dialog: MatDialog) {
+constructor(public dialog: MatDialog, 
+  private openaiService: OpenaiService) {
 }
 
   ngOnInit(): void {
+    this.form = new FormGroup({
+      userInput: new FormControl(''),
+      workflow: new FormControl(''), // Assuming single selection for simplicity
+      tone: new FormControl(''), // Assuming single selection for simplicity
+    });
     const graphData = this.transformToGraphData(this.jsonData);
     this.nodes = graphData.nodes;
     this.links = graphData.links;
@@ -77,6 +99,66 @@ constructor(public dialog: MatDialog) {
       isUnderlineDisplayed: true,
       isSlideShow: true,
       isDarkMode: true,
+    }
+    this.mindMaps = [
+      {
+        title: 'Mind Map 1',
+        imageUrl: 'assets/btcIllustrated/mindmap/test.png',
+        tag: 'Notes'
+      },
+      {
+        title: 'Mind Map 2',
+        // imageUrl: 'https://source.unsplash.com/random/200x120',
+        imageUrl: 'assets/btcIllustrated/mindmap/test.png',
+        tag: 'Mind Map'
+      },
+      {
+        title: 'Mind Map 3',
+        // imageUrl: 'https://source.unsplash.com/random/200x120',
+        imageUrl: 'assets/btcIllustrated/mindmap/test.png',
+        tag: 'Chart'
+      }
+      // ...add more if needed
+    ];
+
+
+    this.layoutsMindMapper = [
+      {
+        title: 'Mind Map 2',
+        // imageUrl: 'https://source.unsplash.com/random/200x120',
+        imageUrl: 'assets/btcIllustrated/mindmap/mindmap.png',
+        tag: 'Ver1'
+      },
+      {
+        title: 'Mind Map 3',
+        // imageUrl: 'https://source.unsplash.com/random/200x120',
+        // imageUrl: null,
+        imageUrl: 'assets/btcIllustrated/mindmap/notes.png',
+        tag: 'Ver2'
+      },
+      {
+        title: 'Mind Map 1',
+        // imageUrl: null,
+        imageUrl: 'assets/btcIllustrated/mindmap/chart.png',
+        tag: 'Ver3'
+      },
+    ];
+  }
+
+  submitData() {
+    debugger
+    if (this.form.valid) {
+      const userInput = this.form.get('userInput').value;
+      this.openaiService.getMindMapper(userInput).subscribe({
+        next: (response) => {
+          debugger
+
+        },
+        error: (err) => {
+          debugger
+          console.error('Error generating mind map:', err);
+        }
+      });
     }
   }
 
@@ -95,7 +177,7 @@ constructor(public dialog: MatDialog) {
       label: jsonData.title,
       data: { summary: jsonData.summary },
       fixedWidth: 300, // Set this to your desired width
-      dynamicHeight: estimatedHeight // Set the estimated height
+      dynamicHeight: estimatedHeight + 40 // Set the estimated height
     };
     nodes.push(rootNode);
 
@@ -107,7 +189,7 @@ constructor(public dialog: MatDialog) {
         label: detail.title,
         data: { explanations: detail.explanations },
         fixedWidth: 200, // Set this to your desired width
-        dynamicHeight: estimatedHeight // Set the estimated height
+        dynamicHeight: estimatedHeight + 40// Set the estimated height
       };
       nodes.push(detailNode);
 
@@ -119,7 +201,7 @@ constructor(public dialog: MatDialog) {
       });
 
       detail.explanations.forEach(exp => {
-      let estimatedHeight = this.estimateHeight(exp, 500);
+      let estimatedHeight = this.estimateHeight(exp, 500) + 40;
 
         const explanationNode: MyNode = {
           id: this.generateId(),
@@ -185,4 +267,32 @@ constructor(public dialog: MatDialog) {
     });
   }
 
+
+  showDropdown: string | null = null;
+
+
+  toggleDropdown(dropdownKey: string) {
+    debugger
+    this.showDropdown = this.showDropdown === dropdownKey ? null : dropdownKey;
+  }
+
+  selectDropdownOption(dropdownKey: string, option: string) {
+    debugger
+
+    this.form.get(dropdownKey).setValue(option);
+    this.showDropdown = null; // Hide dropdown after selection
+  }
+
+  @ViewChild(GraphComponent) graphComponent: GraphComponent;
+  zoomLevel: number = 1.0;
+  zoomStep: number = 0.1;
+  zoomIn(): void {
+    this.zoomLevel = Math.min(this.zoomLevel + this.zoomStep, 2); // max zoom level 2
+    this.graphComponent.zoomTo(this.zoomLevel);
+  }
+
+  zoomOut(): void {
+    this.zoomLevel = Math.max(this.zoomLevel - this.zoomStep, 0.5); // min zoom level 0.5
+    this.graphComponent.zoomTo(this.zoomLevel);
+  }
 }
