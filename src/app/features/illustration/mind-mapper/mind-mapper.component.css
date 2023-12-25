@@ -516,3 +516,15 @@ app-header {
   color: #000000; /* Text color */
   overflow-wrap: break-word;
 }
+
+/* Define the styles for each level */
+.level-0 {
+  /* styles for root nodes */
+}
+.level-1 {
+  /* styles for first-level nodes */
+}
+.level-2 {
+  /* styles for second-level nodes */
+}
+/* Add more levels as needed */

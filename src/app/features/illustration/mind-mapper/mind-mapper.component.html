@@ -11,7 +11,11 @@
 
                 </span>
                 <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="15" width="15" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path fill="#ffffff" d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160zm352-160l-160 160c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L301.3 256 438.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0z"/></svg>                
+                    <svg xmlns="http://www.w3.org/2000/svg" height="15" width="15"
+                        viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                        <path fill="#ffffff"
+                            d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160zm352-160l-160 160c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L301.3 256 438.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0z" />
+                    </svg>
                 </span>
             </div>
             <div class="card" *ngFor="let map of mindMaps">
@@ -48,53 +52,89 @@
             <!-- Graph Container -->
             <div class="graph-container">
 
-                <ngx-graph class="chart-container" [nodes]="nodes" [links]="links" [layout]="layout"
-              [enableZoom]="true" [autoZoom]="false" [panOnZoom]="true" [autoCenter]="true">
-   
+                <ngx-graph class="chart-container" [nodes]="nodes" [links]="links" [layout]="layout" [enableZoom]="true"
+                    [autoZoom]="false" [panOnZoom]="true" [autoCenter]="true">
+
                     <ng-template #nodeTemplate let-node>
                         <svg:g class="node"
+                            [ngClass]="{'level-0': node.level === 0, 'level-1': node.level === 1, 'level-2': node.level === 2}"
                             [attr.transform]="'translate(' + (node.fixedWidth / 2) + ',' + (node.dynamicHeight / 2) + ')'">
 
 
 
 
-                            <ng-container *ngIf="node.id === 'node-0'"> <!-- Assuming 'node-0' is your main topic node ID -->
-    
-                                <svg:rect class="root-node" [attr.width]="node.fixedWidth" [attr.height]="node.dynamicHeight"
-                                [attr.fill]="node.data.color" stroke="black" fill="#fbd414"></svg:rect>
-                                <svg:foreignObject  [attr.width]="node.fixedWidth" [attr.height]="node.dynamicHeight">
+
+
+
+
+
+
+
+
+
+                            <ng-container *ngIf="node.level === 0">
+                                <!-- Custom HTML for root node -->
+
+                                <svg:rect class="root-node" [attr.width]="node.fixedWidth"
+                                    [attr.height]="node.dynamicHeight" [attr.fill]="node.data.color" stroke="black"
+                                    fill="#fbd414"></svg:rect>
+                                <svg:foreignObject [attr.width]="node.fixedWidth" [attr.height]="node.dynamicHeight">
                                     <div xmlns="http://www.w3.org/1999/xhtml" class="node-content main-topic">
-                                      <i class="fas fa-pencil-alt node-icon" style="    font-size: 20px;
+                                        <i class="fas fa-pencil-alt node-icon" style="    font-size: 20px;
                                       padding: 16px;
                                       background: #111b21;
                                       color: white;
                                       border-radius: 10px;"></i> <!-- Pencil icon for the main topic -->
-                                      <div class="root-node-text">
-                                        <div class="main-topic-title">Main Topic</div>
-                                        <div class="main-topic-subtitle">{{ node.label }}</div>
-                                      </div>
+                                        <div class="root-node-text">
+                                            <div class="main-topic-title">Main Topic</div>
+                                            <div class="main-topic-subtitle">{{ node.label }}</div>
+                                        </div>
                                     </div>
-                                  </svg:foreignObject>
-                                </ng-container>
-
-                                <ng-container *ngIf="node.id !== 'node-0'">
-                                    <svg:rect [attr.width]="node.fixedWidth" [attr.height]="node.dynamicHeight"
+                                </svg:foreignObject>                             
+                             </ng-container>
+                          
+                              <!-- Level 1 node -->
+                              <ng-container *ngIf="node.level === 1">
+                                <svg:rect [attr.width]="node.fixedWidth" [attr.height]="node.dynamicHeight"
                                     [attr.fill]="node.data.color" stroke="black"></svg:rect>
                                 <svg:foreignObject [attr.width]="node.fixedWidth" [attr.height]="node.dynamicHeight">
                                     <div xmlns="http://www.w3.org/1999/xhtml"
                                         style="display: flex; align-items: center; height: 100%; padding-left: 10px;">
-                                        <span style="font-size: 14px; padding-right: 4px;">●</span>
+                                        <i class="far fa-user"></i>
                                         <!-- Use a Unicode character -->
                                         <div style="text-align: left; overflow-wrap: break-word; padding-right: 10px;">
-                                            <i class="far fa-user"></i>
-    
+
                                             {{ node.label }}
                                         </div>
                                     </div>
                                 </svg:foreignObject>
-                                </ng-container>
+                              </ng-container>
+                          
+                              <!-- Level 2 node -->
+                              <ng-container *ngIf="node.level === 2">
+                                <svg:rect [attr.width]="node.fixedWidth" [attr.height]="node.dynamicHeight"
+                                    [attr.fill]="node.data.color" stroke="black"></svg:rect>
+                                <svg:foreignObject [attr.width]="node.fixedWidth" [attr.height]="node.dynamicHeight">
+                                    <div xmlns="http://www.w3.org/1999/xhtml" class="level-two-node" 
+                                        style="display: flex; align-items: center; height: 100%; padding-left: 10px;">
+                                        <span style="font-size: 14px; padding-right: 14px;">●</span>
+                                        <!-- <div style="text-align: left; overflow-wrap: break-word; padding-right: 10px;">
+                                            {{ node.label }}
+                                        </div> -->
 
-                             
+
+
+
+
+                                        <span class="node-label">{{ node.label }}</span>
+                                        <i class="fas fa-ellipsis-v node-options-icon" (click)="toggleNodeOptions(node)"></i>
+                                      
+                                    </div>
+                                </svg:foreignObject>
+                              </ng-container>
+
+
+
                         </svg:g>
                     </ng-template>
 
@@ -111,12 +151,12 @@
 
                 <div class="zoom-controls">
                     <button class="zoom-button zoom-in" (click)="zoomIn()">
-                      <i class="fas fa-plus"></i>
+                        <i class="fas fa-plus"></i>
                     </button>
                     <button class="zoom-button zoom-out" (click)="zoomOut()">
-                      <i class="fas fa-minus"></i>
+                        <i class="fas fa-minus"></i>
                     </button>
-                  </div>
+                </div>
             </div>
 
 
@@ -131,7 +171,7 @@
                     <div class="card-container" *ngFor="let map of layoutsMindMapper">
                         <div class="card card-preview2">
                             <img src="{{ map.imageUrl }}" alt="Card Image" />
-                        <div class="card-tag2">{{ map.tag }}</div>
+                            <div class="card-tag2">{{ map.tag }}</div>
 
                         </div>
                         <!-- <div class="card-text">{{ map.tag }}</div> -->
@@ -143,19 +183,19 @@
 
                     </div> -->
                     <div class="card card-preview2 dashed">
-                      <i class="fas fa-sync-alt"></i>
-                      <span class="regenerate-icon">Regenerate</span>
+                        <i class="fas fa-sync-alt"></i>
+                        <span class="regenerate-icon">Regenerate</span>
                     </div>
-                  </div>
-                <div class="search-container"  >
+                </div>
+                <div class="search-container">
                     <div class="search-bar-ai">
                         <input type="text" placeholder="Generate a mind map for ..." (focus)="showTags=true">
-                        <i class="fas fa-paper-plane search-icon"  (click)="submitData()"></i>
-                      </div>
+                        <i class="fas fa-paper-plane search-icon" (click)="submitData()"></i>
+                    </div>
 
-                      <div class="tags" *ngIf="showTags">                        
+                    <div class="tags" *ngIf="showTags">
                         <!-- <button class="tag-button" type="button"><i class="far fa-lightbulb"></i> View prompts</button> -->
-                        <div class="dropdown" >
+                        <div class="dropdown">
                             <button class="tag-button dropdown-toggle" type="button"
                                 (click)="toggleDropdown('workflow')">
                                 <i class="fas fa-brain"></i> {{ form.value.workflow || 'Workflow' }}

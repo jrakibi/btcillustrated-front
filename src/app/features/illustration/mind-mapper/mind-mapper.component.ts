@@ -11,7 +11,7 @@ interface MyNode extends Node {
   data: any;
   fixedWidth: number;
   dynamicHeight: number; // Add this new property
-
+  level: number;
   // You may need to add these properties based on the layout calculation ngx-graph performs
 }
 
@@ -177,7 +177,8 @@ constructor(public dialog: MatDialog,
       label: jsonData.title,
       data: { summary: jsonData.summary },
       fixedWidth: 300, // Set this to your desired width
-      dynamicHeight: estimatedHeight + 40 // Set the estimated height
+      dynamicHeight: estimatedHeight + 40, // Set the estimated height
+      level: 0
     };
     nodes.push(rootNode);
 
@@ -189,7 +190,8 @@ constructor(public dialog: MatDialog,
         label: detail.title,
         data: { explanations: detail.explanations },
         fixedWidth: 200, // Set this to your desired width
-        dynamicHeight: estimatedHeight + 40// Set the estimated height
+        dynamicHeight: estimatedHeight + 40, // Set the estimated height
+        level: 1
       };
       nodes.push(detailNode);
 
@@ -208,7 +210,8 @@ constructor(public dialog: MatDialog,
           label: exp,
           data: {},
           fixedWidth: 500, // Set this to your desired width
-          dynamicHeight: estimatedHeight // Set the estimated height
+          dynamicHeight: estimatedHeight, // Set the estimated height
+          level: 2
         };
         nodes.push(explanationNode);
 
