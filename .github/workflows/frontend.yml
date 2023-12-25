@@ -27,7 +27,7 @@ jobs:
 
       - name: Build Angular Project
         run: |
-          ng build --configuration production
+          npx ng build --configuration production
 
       - name: Configure AWS CLI
         run: |
