@@ -16,6 +16,15 @@ Welcome to `Bitcoin Illustrated`, an interactive platform dedicated to teaching,
 - **Deployment**: AWS
 - **AI**: Open AI APIs
 
+## ❤️ Donations
+If you appreciate the work being done and would like to support the continuous improvement and creation of new illustrations,
+
+1. **Lightning**: `globaltadpole21@walletofsatoshi.com`
+2. **Lightning QR Code**: 
+
+    <img src="https://github.com/jrakibi/BTCillustrated/assets/19940301/902e0ff3-954b-4736-8af2-59bd65ba1b59" width="200" />
+
+
 ## 🚀 Features
 
 - Interactive courses on Bitcoin development.
