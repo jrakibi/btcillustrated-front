@@ -2,7 +2,8 @@
 
 Welcome to `Bitcoin Illustrated`, an interactive platform dedicated to teaching, understanding, and illustrating the intricacies of Bitcoin.
 
-![Banner](https://pbs.twimg.com/profile_banners/1363439894505418754/1677100704/1500x500)
+![Banner](https://github.com/jrakibi/btcillustrated-front/assets/19940301/1fb3414e-5144-4eaa-bb17-b0f600a6d7e4/1500x500)
+
 
 ## 📌 Introduction
 
