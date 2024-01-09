@@ -7,12 +7,12 @@
       <input type="text" (input)="onSearch($event.target.value)" placeholder="Search a topic">
     </div>
     <!-- Disable tempo -->
-    <!-- <div class="box" style="cursor: pointer;"   (click)="createMindMap()">
+    <div class="box" style="cursor: pointer;"   (click)="createMindMap()">
       <span>
         <i class="fas fa-robot" style="margin-right: 10px;"></i> Create Mind Map
         
       </span>
-    </div> -->
+    </div>
 
   </div>
   <div class="tags-line">
@@ -114,7 +114,7 @@
 
 
         <div class="col-md-9">
-          <div class="card-container" *ngIf="illustrations.length > 0 && !isCreateMindMapDisplayed;">
+          <div class="card-container" *ngIf="illustrations.length > 0 && !isCreateMindMapDisplayed; else mindMapper">
             <div class="row">
               <div class="col-md-3 mb-3" *ngFor="let illustration of illustrations">
                 <div class="card">
