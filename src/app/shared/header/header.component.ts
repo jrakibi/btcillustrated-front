@@ -96,12 +96,12 @@ export class HeaderComponent implements OnInit, OnChanges {
       icon: 'assets/icons/blog.svg',
       link: '/list'
     },
-    {
-      title: 'Platform',
-      description: 'A full Bitcoin course that takes youfrom 0 to 1.',
-      icon: 'assets/icons/terminal.png',
-      link: '/support'
-    }
+    // {
+    //   title: 'Platform',
+    //   description: 'A full Bitcoin course that takes youfrom 0 to 1.',
+    //   icon: 'assets/icons/terminal.png',
+    //   link: 'https://foss.btc-illustrated.com/'
+    // }
     // Add other features as needed
   ];
 }
